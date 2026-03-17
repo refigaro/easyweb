@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Easyweb | Professional, fast, and hassle-free websites for your business. Custom design and guaranteed high performance.">
+    <title>Easyweb | Your professional website, fast and easy.</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans para un look muy SaaS/Startup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1', // Indigo (Tech)
+                            600: '#4f46e5',
+                            900: '#312e81',
+                        },
+                        accent: {
+                            400: '#34d399', // Mint green (Fácil/Rápido)
+                            500: '#10b981',
+                        },
+                        dark: '#0f172a' // Slate 900
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Patrón de fondo sutil para el Hero */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Estilos para el FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Easyweb -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">
+                    e
+                </div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">
+                    Easy<span class="text-primary-600">web</span>
+                </span>
+            </a>
+            
+            <!-- Enlaces Desktop -->
+            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="#como-funciona" class="hover:text-primary-600 transition-colors">How it works</a>
+                <a href="#beneficios" class="hover:text-primary-600 transition-colors">Benefits</a>
+                <a href="#precios" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="#portafolio" class="hover:text-primary-600 transition-colors">Our Work</a>
+            </div>
+
+            <!-- CTA Header -->
+            <a href="#contacto" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get Started
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+            <!-- Menu móvil -->
+            <button class="md:hidden text-dark">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+            <div class="absolute inset-0 bg-grid-pattern z-0 opacity-50"></div>
+            
+            <!-- Elemento de resplandor (Glow) de fondo -->
+            <div class="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] bg-primary-100 rounded-full blur-[100px] z-0"></div>
+            <div class="absolute bottom-0 left-0 -ml-40 -mb-40 w-[20rem] h-[20rem] bg-accent-400/20 rounded-full blur-[80px] z-0"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+                
+                <div class="reveal active inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-8 border border-slate-200 shadow-sm">
+                    <span class="flex h-2 w-2 relative">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                    </span>
+                    The fastest way to launch your business
+                </div>
+                
+                <h1 class="reveal active text-5xl md:text-7xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl mx-auto">
+                    Your professional website, <br class="hidden md:block"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">zero hassle.</span>
+                </h1>
+                
+                <p class="reveal active text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    We handle the design, code, and servers. You focus on selling. Blazing-fast websites, optimized for Google, and ready in record time.
+                </p>
+                
+                <div class="reveal active flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contacto" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-all shadow-glow hover:shadow-primary-500/50 hover:-translate-y-1">
+                        Get my website
+                        <i data-lucide="rocket" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#precios" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border-2 border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
+                        View plans & pricing
+                    </a>
+                </div>
+
+                <!-- Trust Badges (Prueba social) -->
+                <div class="reveal active mt-16 pt-8 border-t border-slate-100 flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+                    <div class="flex items-center gap-2 font-bold text-slate-500"><i data-lucide="shield-check" class="w-5 h-5 text-accent-500"></i> Secure Code</div>
+                    <div class="flex items-center gap-2 font-bold text-slate-500"><i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i> Lightning Fast</div>
+                    <div class="flex items-center gap-2 font-bold text-slate-500"><i data-lucide="smartphone" class="w-5 h-5 text-primary-500"></i> 100% Mobile Ready</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Cómo funciona (El núcleo del concepto "Easy") -->
+        <section id="como-funciona" class="py-24 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="reveal text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Literally, it's that easy.</h2>
+                    <p class="text-lg text-slate-600">Forget endless meetings and confusing technical jargon.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Paso 1 -->
+                    <div class="reveal bg-white p-8 rounded-2xl shadow-soft border border-slate-100 relative text-center">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-dark text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">1</div>
+                        <div class="mt-4 mb-6 inline-flex p-4 rounded-full bg-primary-50 text-primary-600">
+                            <i data-lucide="message-circle" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Tell us your idea</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We'll have a quick 20-minute call to understand your business, your brand, and your goals.</p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="reveal bg-white p-8 rounded-2xl shadow-soft border border-slate-100 relative text-center" style="transition-delay: 100ms;">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">2</div>
+                        <div class="mt-4 mb-6 inline-flex p-4 rounded-full bg-accent-50 text-accent-500">
+                            <i data-lucide="layout" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">We design & build</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Our expert team creates your website using cutting-edge technology. You won't have to touch a single line of code.</p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="reveal bg-white p-8 rounded-2xl shadow-soft border border-slate-100 relative text-center" style="transition-delay: 200ms;">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-accent-500 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">3</div>
+                        <div class="mt-4 mb-6 inline-flex p-4 rounded-full bg-green-50 text-green-600">
+                            <i data-lucide="rocket" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">Launch</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">We review the details with you and publish it to the world. Optimized, fast, and ready to welcome customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Beneficios Técnicos explicados para mortales -->
+        <section id="beneficios" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="inline-block px-3 py-1 bg-primary-50 text-primary-600 font-bold rounded-full text-sm mb-4">Why Easyweb?</div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">Not just a pretty website, a sales engine.</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Many agencies deliver slow, clunky sites that look terrible on mobile. With Easyweb, premium performance comes standard.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-primary-100 p-2 rounded-lg text-primary-600 mt-1"><i data-lucide="gauge" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-dark text-lg">Extreme Speed (WPO)</h4>
+                                <p class="text-slate-600 text-sm">We optimize images and code so your site loads almost instantly, preventing your customers from bouncing.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-accent-100 p-2 rounded-lg text-accent-600 mt-1"><i data-lucide="search" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-dark text-lg">Google Friendly (SEO)</h4>
+                                <p class="text-slate-600 text-sm">Built with the exact semantic structure search engines demand, helping you show up when customers search for you.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-slate-100 p-2 rounded-lg text-slate-700 mt-1"><i data-lucide="edit-3" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-dark text-lg">Self-Manageable</h4>
+                                <p class="text-slate-600 text-sm">We hand over a super simple dashboard. If you want to change a photo or text tomorrow, you can do it yourself without paying us extra.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal relative">
+                    <!-- Decoración -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-500 to-accent-400 rounded-3xl transform rotate-3 opacity-20"></div>
+                    <!-- Imagen o mockup de una web de alto rendimiento -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Web Performance Dashboard" class="relative z-10 rounded-3xl shadow-2xl border border-slate-100 object-cover">
+                    
+                    <!-- Tarjeta flotante de rendimiento -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 z-20 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">98</div>
+                        <div>
+                            <p class="font-bold text-dark text-sm">Speed Score</p>
+                            <p class="text-xs text-green-500 font-bold">Excellent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NUEVA: Precios (Pricing Transparente) -->
+        <section id="precios" class="py-24 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="reveal text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Clear plans. No surprises.</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose the package that fits your business stage. One-time payment, the website is 100% yours.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Plan Básico -->
+                    <div class="reveal bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-dark mb-2">Starter</h3>
+                            <p class="text-slate-500 text-sm">Perfect for local businesses and services.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-dark">$499</span>
+                            <span class="text-slate-500">/one-time payment</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Landing Page Design (1 page)</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> WhatsApp button integration</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Basic contact form</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> 100% Mobile responsive</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Delivery in 7 business days</li>
+                        </ul>
+                        <a href="#contacto" class="w-full block text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded-full transition-colors">Choose Plan</a>
+                    </div>
+
+                    <!-- Plan Profesional (Destacado) -->
+                    <div class="reveal bg-dark rounded-3xl p-8 shadow-2xl border border-primary-500 relative flex flex-col transform md:-translate-y-4" style="transition-delay: 100ms;">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-glow">
+                            Most Popular
+                        </div>
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Corporate</h3>
+                            <p class="text-slate-400 text-sm">For companies seeking absolute market authority.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-white">$899</span>
+                            <span class="text-slate-400">/one-time payment</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Multi-page site (Up to 5 pages)</li>
+                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> 100% Custom UI/UX design</li>
+                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Advanced SEO Optimization</li>
+                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Self-managed dashboard (WP)</li>
+                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Delivery in 14 business days</li>
+                        </ul>
+                        <a href="#contacto" class="w-full block text-center bg-primary-600 hover:bg-primary-500 text-white font-bold py-3 rounded-full transition-colors shadow-glow">Choose Plan</a>
+                    </div>
+
+                    <!-- Plan E-commerce -->
+                    <div class="reveal bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col" style="transition-delay: 200ms;">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-dark mb-2">E-commerce</h3>
+                            <p class="text-slate-500 text-sm">Sell your products online 24/7.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-dark">$1,499</span>
+                            <span class="text-slate-500">/one-time payment</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Full Online Store (WooCommerce)</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Payment gateways configuration</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Up to 20 initial products loaded</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> 1-on-1 admin training session</li>
+                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Delivery in 21 business days</li>
+                        </ul>
+                        <a href="#contacto" class="w-full block text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded-full transition-colors">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Portafolio / Proyectos -->
+        <section id="portafolio" class="py-24 bg-slate-900 text-white border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="reveal mb-16 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Don't just take our word for it.</h2>
+                        <p class="text-lg text-slate-400">Check out some of the recent projects we've built for businesses like yours.</p>
+                    </div>
+                </div>
+
+                <!-- Grid de Proyectos -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Proyecto 1 -->
+                    <a href="#" class="reveal group block rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-primary-500 transition-colors">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" alt="E-commerce Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-primary-400 transition-colors">Frikko HVAC</h3>
+                                <span class="text-xs font-bold bg-primary-900 text-primary-300 px-2 py-1 rounded">Online Store</span>
+                            </div>
+                            <p class="text-slate-400 text-sm">Complete e-commerce and dynamic catalog redesign.</p>
+                        </div>
+                    </a>
+
+                    <!-- Proyecto 2 -->
+                    <a href="#" class="reveal group block rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-accent-500 transition-colors" style="transition-delay: 100ms;">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=1000" alt="Landing Page Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">TechNova SaaS</h3>
+                                <span class="text-xs font-bold bg-accent-900/50 text-accent-400 px-2 py-1 rounded">Landing Page</span>
+                            </div>
+                            <p class="text-slate-400 text-sm">Landing page optimized to capture high-quality leads.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NUEVA: Preguntas Frecuentes (FAQ) -->
+        <section class="py-24 bg-white border-b border-slate-100">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-dark mb-4">Got questions? We have answers.</h2>
+                    <p class="text-lg text-slate-600">We solve the most common questions so you can make the best decision.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                            <span>Do I have to pay a monthly fee for my website?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                            Not for the website design. Our packages are a <strong>one-time payment</strong> and you own the site 100%. However, like any website, you will need yearly Hosting and a Domain (.com). We can guide you to get the best and most affordable ones.
+                        </div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                            <span>Can I edit texts and images myself later?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                            Absolutely! Our sites are built on WordPress with a super intuitive dashboard. We'll provide a short video tutorial so you can change texts, photos, or add products without needing to code.
+                        </div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                            <span>What if I don't like the initial design?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                            We won't move to the coding stage until you are 100% happy. First, we present visual mockups for you to review. All our plans include 2 rounds of design revisions to refine colors, typography, and structure.
+                        </div>
+                    </details>
+                    
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                            <span>Do you include copywriting or photos?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                            Ideally, you provide the text about your business (about us, services) and your own photos. If you don't have photos, we can include high-quality, royalty-free stock images at no extra cost.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section id="contacto" class="py-32 px-6 max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-dark mb-6">Ready for a professional website?</h2>
+            <p class="text-xl text-slate-600 mb-10">Book a free 20-minute call today. No strings attached, let's just chat about how we can help your business grow.</p>
+            
+            <a href="#" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:-translate-y-1 duration-300 shadow-glow">
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+                Book a Free Call
+            </a>
+            <p class="mt-4 text-sm text-slate-500 font-medium">We respond fast. Very fast.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xs">e</div>
+                <span class="font-extrabold text-xl tracking-tight text-dark">
+                    Easy<span class="text-primary-600">web</span>
+                </span>
+            </a>
+            
+            <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that work.</p>
+            
+            <div class="flex items-center gap-4 text-slate-400">
+                <a href="#" class="hover:text-primary-500 transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-primary-500 transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>

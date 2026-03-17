@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom corporate website design. Build trust, generate leads, and establish your brand authority with a high-performance Easyweb website.">
+    <title>Corporate Website Design | Easyweb</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="easyweb-home.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="easyweb-home.html#como-funciona" class="hover:text-primary-600 transition-colors">How it works</a>
+                <a href="easyweb-portfolio.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="easyweb-contact-en.html" class="hover:text-primary-600 transition-colors">Contact</a>
+            </div>
+
+            <a href="easyweb-contact-en.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Book a Call <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24">
+        <!-- Hero Service -->
+        <section class="max-w-7xl mx-auto px-6 text-center mb-20">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100 reveal active">
+                Corporate Web Design
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-dark mb-6 tracking-tight reveal active">Build trust and generate <br class="hidden md:block"/><span class="text-primary-600">high-quality B2B leads.</span></h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto reveal active mb-10">Your corporate website is your hardest-working sales rep. We build professional, scalable sites designed to establish authority and convert visitors into clients.</p>
+            <div class="reveal active flex justify-center gap-4">
+                <a href="easyweb-contact-en.html" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-all shadow-glow hover:-translate-y-1">
+                    Start Your Project
+                </a>
+            </div>
+        </section>
+
+        <!-- What's Included -->
+        <section class="max-w-5xl mx-auto px-6 mb-24">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 reveal">
+                <h2 class="text-2xl font-bold text-dark mb-8 text-center">What's included in the Corporate Plan</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-700"><i data-lucide="check-circle-2" class="text-accent-500 w-6 h-6 flex-shrink-0"></i> <span><strong>Custom UI/UX Design:</strong> No generic templates. A unique design that reflects your brand identity.</span></li>
+                        <li class="flex items-start gap-3 text-slate-700"><i data-lucide="check-circle-2" class="text-accent-500 w-6 h-6 flex-shrink-0"></i> <span><strong>Up to 5 Core Pages:</strong> Home, About Us, Services, Case Studies, and Contact.</span></li>
+                        <li class="flex items-start gap-3 text-slate-700"><i data-lucide="check-circle-2" class="text-accent-500 w-6 h-6 flex-shrink-0"></i> <span><strong>Lead Generation Forms:</strong> Strategically placed forms connected to your CRM or email.</span></li>
+                    </ul>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-slate-700"><i data-lucide="check-circle-2" class="text-accent-500 w-6 h-6 flex-shrink-0"></i> <span><strong>CMS Integration (WordPress):</strong> Easily update content, team members, or services yourself.</span></li>
+                        <li class="flex items-start gap-3 text-slate-700"><i data-lucide="check-circle-2" class="text-accent-500 w-6 h-6 flex-shrink-0"></i> <span><strong>Technical SEO Foundation:</strong> Optimized structure and meta tags for better Google rankings.</span></li>
+                        <li class="flex items-start gap-3 text-slate-700"><i data-lucide="check-circle-2" class="text-accent-500 w-6 h-6 flex-shrink-0"></i> <span><strong>Mobile-First Approach:</strong> Flawless experience on smartphones and tablets.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why it matters -->
+        <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center mb-24 reveal">
+            <div>
+                <h2 class="text-3xl font-extrabold text-dark mb-6">Stop losing deals due to an outdated website.</h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">In the B2B space, your prospects will research you before they ever reach out. An outdated, slow, or confusing website silently kills deals by destroying trust.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">We focus on clear messaging, professional aesthetics, and frictionless navigation so your prospects quickly understand your value proposition and take action.</p>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-100 aspect-video">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Corporate Dashboard Design" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="max-w-4xl mx-auto px-6 text-center reveal">
+            <div class="bg-primary-50 p-10 rounded-3xl border border-primary-100">
+                <h3 class="text-2xl font-bold text-dark mb-4">Ready to elevate your corporate image?</h3>
+                <p class="text-slate-600 mb-8">Corporate packages start at $899. Let's build a platform that matches the quality of your services.</p>
+                <a href="easyweb-contact-en.html" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-3 px-8 rounded-full transition-all shadow-glow">
+                    Discuss Your Project
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 px-6 text-center">
+        <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that perform.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>

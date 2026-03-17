@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easyweb — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =============================================
+     DESIGN TOKENS — Easyweb Design System v1.0
+  ============================================= */
+  :root {
+    /* --- COLOR PRIMITIVES --- */
+
+    /* Primary — Cyan (from color-swatches.svg) */
+    --color-primary-50:  #caffff;
+    --color-primary-100: #72ffff;
+    --color-primary-200: #54efff;
+    --color-primary-300: #30d8f8;
+    --color-primary-400: #21d2f2;  /* Brand Cyan ★ */
+    --color-primary-500: #00c2e2;
+    --color-primary-600: #00accb;
+    --color-primary-700: #007a99;
+    --color-primary-900: #004e62;
+
+    /* Secondary — Green (from color-swatches.svg) */
+    --color-secondary-50:  #bfffb1;
+    --color-secondary-100: #81ff66;
+    --color-secondary-200: #67fa4f;
+    --color-secondary-300: #4be337;
+    --color-secondary-400: #27cc1a;
+    --color-secondary-500: #00b500;  /* Brand Green ★ */
+    --color-secondary-600: #008500;
+    --color-secondary-900: #004a00;
+
+    /* Auxiliary — Teal (from color-swatches.svg) */
+    --color-aux-50:  #defff7;
+    --color-aux-100: #bcffef;
+    --color-aux-200: #a5ead9;
+    --color-aux-300: #8fd4c2;
+    --color-aux-400: #87cbba;  /* Brand Teal ★ */
+    --color-aux-500: #7abdad;
+    --color-aux-600: #64a797;
+    --color-aux-700: #00856c;
+    --color-aux-900: #004236;
+
+    /* Accent — Orange (from color-swatches.svg) */
+    --color-accent-50:  #ffebae;
+    --color-accent-100: #ffd75b;
+    --color-accent-200: #ffc044;
+    --color-accent-300: #ffaa2c;
+    --color-accent-400: #ff9100;  /* Brand Orange ★ */
+    --color-accent-500: #ff950a;
+    --color-accent-600: #ea8000;
+    --color-accent-700: #b05200;
+    --color-accent-900: #713500;
+
+    /* Grayscale (from color-swatches.svg) */
+    --color-gray-100: #eaeaea;
+    --color-gray-200: #bcbcbc;
+    --color-gray-300: #9b9b9b;
+    --color-gray-400: #7b7b7b;
+    --color-gray-500: #5a5a5a;
+    --color-gray-600: #3e3e3e;
+    --color-gray-700: #242424;
+    --color-gray-800: #444444;  /* Brand text gray */
+    --color-gray-900: #333333;  /* Brand text dark */
+    --color-black:    #000000;
+    --color-white:    #ffffff;
+
+    /* --- SEMANTIC TOKENS --- */
+
+    /* Brand */
+    --brand-primary:       var(--color-primary-400);   /* #21d2f2 */
+    --brand-primary-dark:  var(--color-primary-600);   /* #00accb */
+    --brand-primary-light: var(--color-primary-50);    /* #caffff */
+    --brand-cta:           var(--color-secondary-500); /* #00b500 */
+    --brand-cta-hover:     var(--color-secondary-600); /* #008500 */
+
+    /* Text */
+    --text-primary:   var(--color-gray-900);
+    --text-secondary: var(--color-gray-600);
+    --text-muted:     var(--color-gray-400);
+    --text-on-dark:   var(--color-white);
+    --text-on-brand:  var(--color-white);
+
+    /* Surfaces */
+    --surface-base:    var(--color-white);
+    --surface-subtle:  var(--color-gray-50);
+    --surface-muted:   var(--color-gray-100);
+    --surface-dark:    var(--color-gray-900);
+    --surface-brand:   var(--brand-primary);
+
+    /* Borders */
+    --border-light:  var(--color-gray-200);
+    --border-medium: var(--color-gray-300);
+    --border-dark:   var(--color-gray-700);
+
+    /* Feedback */
+    --color-success: var(--color-secondary-500);
+    --color-warning: var(--color-accent-500);
+    --color-error:   #ef4444;
+    --color-info:    var(--color-primary-500);
+
+    /* --- TYPOGRAPHY --- */
+    --font-display: 'Work Sans', sans-serif;
+    --font-body:    'Work Sans', sans-serif;
+    --font-mono:    'JetBrains Mono', monospace;
+
+    /* Type Scale (from style guide) */
+    --text-3xl:     6rem;      /* 96px / 110% lh / 1% ls */
+    --text-2xl:     4.5rem;    /* 72px / 110% lh / -4% ls */
+    --text-xl:      4rem;      /* 64px / 110% lh / -4% ls */
+    --text-lg:      3.25rem;   /* 52px / 110% lh / -4% ls */
+    --text-md:      2.25rem;   /* 36px / 110% lh / -4% ls */
+    --text-sm:      2rem;      /* 32px / 110% lh / -4% ls */
+    --text-lead:    2rem;      /* 32px / 120% lh / 0 ls  */
+    --text-summary: 1.5rem;    /* 24px / 120% lh / 0 ls  */
+    --text-body:    1.125rem;  /* 18px / 120% lh / 0 ls  */
+    --text-small:   0.875rem;  /* 14px */
+    --text-xs:      0.75rem;   /* 12px */
+
+    /* Font Weights */
+    --fw-light:     300;
+    --fw-regular:   400;
+    --fw-medium:    500;
+    --fw-semibold:  600;
+    --fw-bold:      700;
+    --fw-extrabold: 800;
+    --fw-black:     900;
+
+    /* --- SPACING SCALE --- */
+    --space-1:  0.25rem;   /* 4px */
+    --space-2:  0.5rem;    /* 8px */
+    --space-3:  0.75rem;   /* 12px */
+    --space-4:  1rem;      /* 16px */
+    --space-5:  1.25rem;   /* 20px */
+    --space-6:  1.5rem;    /* 24px */
+    --space-8:  2rem;      /* 32px */
+    --space-10: 2.5rem;    /* 40px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+    --space-24: 6rem;      /* 96px */
+    --space-32: 8rem;      /* 128px */
+
+    /* --- BORDER RADIUS --- */
+    --radius-sm:   0.25rem;   /* 4px */
+    --radius-md:   0.5rem;    /* 8px */
+    --radius-lg:   0.75rem;   /* 12px */
+    --radius-xl:   1rem;      /* 16px */
+    --radius-2xl:  1.5rem;    /* 24px */
+    --radius-3xl:  2rem;      /* 32px */
+    --radius-full: 9999px;
+
+    /* --- SHADOWS --- */
+    --shadow-xs:    0 1px 2px 0 rgba(0,0,0,.05);
+    --shadow-sm:    0 2px 8px -1px rgba(0,0,0,.08);
+    --shadow-md:    0 4px 20px -2px rgba(0,0,0,.10);
+    --shadow-lg:    0 8px 32px -4px rgba(0,0,0,.14);
+    --shadow-xl:    0 16px 48px -8px rgba(0,0,0,.18);
+    --shadow-glow-cyan:  0 0 24px rgba(33,210,242,.35);
+    --shadow-glow-green: 0 0 24px rgba(2,192,0,.30);
+
+    /* --- MOTION --- */
+    --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+    --duration-fast:   150ms;
+    --duration-base:   250ms;
+    --duration-slow:   400ms;
+    --duration-slower: 600ms;
+
+    /* --- LAYOUT --- */
+    --sidebar-width: 260px;
+    --content-max:   900px;
+  }
+
+  /* =============================================
+     BASE RESET & GLOBAL
+  ============================================= */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    color: var(--text-primary);
+    background: var(--surface-subtle);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* =============================================
+     LAYOUT
+  ============================================= */
+  .ds-wrapper { display: flex; min-height: 100vh; }
+
+  /* SIDEBAR */
+  .ds-sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background: var(--color-white);
+    border-right: 1px solid var(--border-light);
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ds-sidebar::-webkit-scrollbar { width: 4px; }
+  .ds-sidebar::-webkit-scrollbar-track { background: transparent; }
+  .ds-sidebar::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: 2px; }
+
+  .ds-sidebar-logo {
+    padding: var(--space-6);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .ds-sidebar-logo img { height: 32px; }
+
+  .ds-sidebar-badge {
+    font-size: 10px;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--color-primary-100);
+    color: var(--color-primary-700);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+  }
+
+  .ds-nav { padding: var(--space-4) 0 var(--space-8); flex: 1; }
+
+  .ds-nav-section {
+    padding: var(--space-3) var(--space-6) var(--space-2);
+    font-size: 10px;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+  }
+
+  .ds-nav a {
+    display: block;
+    padding: var(--space-2) var(--space-6);
+    font-size: 0.875rem;
+    font-weight: var(--fw-medium);
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color var(--duration-fast) var(--ease-smooth),
+                border-color var(--duration-fast) var(--ease-smooth),
+                background var(--duration-fast) var(--ease-smooth);
+  }
+
+  .ds-nav a:hover {
+    color: var(--brand-primary);
+    background: var(--color-primary-50);
+    border-left-color: var(--brand-primary);
+  }
+
+  .ds-nav a.active {
+    color: var(--brand-primary);
+    border-left-color: var(--brand-primary);
+    font-weight: var(--fw-semibold);
+  }
+
+  /* MAIN CONTENT */
+  .ds-main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: var(--space-16) var(--space-12);
+    max-width: calc(var(--sidebar-width) + var(--content-max) + var(--space-24));
+  }
+
+  /* =============================================
+     SECTION STRUCTURE
+  ============================================= */
+  .ds-section {
+    margin-bottom: var(--space-24);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .ds-section:last-child { border-bottom: none; }
+
+  .ds-section-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .ds-section-num {
+    font-size: var(--text-3xl);
+    font-weight: var(--fw-black);
+    line-height: 1;
+    color: var(--border-light);
+    letter-spacing: -0.04em;
+  }
+
+  .ds-section-title {
+    font-size: var(--text-md);
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+  }
+
+  .ds-section-desc {
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-10);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .ds-subsection { margin-bottom: var(--space-10); }
+
+  .ds-subsection-title {
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  /* HERO */
+  .ds-hero {
+    background: var(--surface-dark);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-16) var(--space-12);
+    margin-bottom: var(--space-24);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ds-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(33,210,242,.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .ds-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(2,192,0,.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .ds-hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brand-primary);
+    margin-bottom: var(--space-4);
+    position: relative; z-index: 1;
+  }
+
+  .ds-hero h1 {
+    font-size: var(--text-xl);
+    font-weight: var(--fw-black);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+    position: relative; z-index: 1;
+  }
+
+  .ds-hero h1 span { color: var(--brand-primary); }
+
+  .ds-hero p {
+    font-size: var(--text-body);
+    color: var(--color-gray-400);
+    max-width: 480px;
+    position: relative; z-index: 1;
+  }
+
+  .ds-hero-meta {
+    display: flex;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    position: relative; z-index: 1;
+  }
+
+  .ds-hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .ds-hero-meta-label {
+    font-size: 0.7rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-600);
+  }
+
+  .ds-hero-meta-value {
+    font-size: 0.875rem;
+    font-weight: var(--fw-semibold);
+    color: var(--color-gray-300);
+  }
+
+  /* =============================================
+     COLOR SYSTEM
+  ============================================= */
+  .color-palette { display: flex; flex-direction: column; gap: var(--space-4); }
+
+  .color-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .color-row-name {
+    font-size: 0.8rem;
+    font-weight: var(--fw-bold);
+    color: var(--text-secondary);
+  }
+
+  .color-swatches { display: flex; gap: var(--space-1); flex: 1; }
+
+  .swatch {
+    flex: 1;
+    height: 48px;
+    border-radius: var(--radius-md);
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--duration-fast) var(--ease-spring);
+  }
+
+  .swatch:hover { transform: scaleY(1.15) translateY(-2px); }
+
+  .swatch::after {
+    content: attr(data-hex);
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity var(--duration-fast);
+  }
+
+  .swatch:hover::after { opacity: 1; }
+
+  .color-swatches-wrapper { padding-bottom: var(--space-6); }
+
+  /* Semantic color cards */
+  .semantic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .semantic-card {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+  }
+
+  .semantic-swatch { height: 80px; }
+
+  .semantic-info {
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-base);
+  }
+
+  .semantic-name {
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+    color: var(--text-primary);
+    display: block;
+  }
+
+  .semantic-token {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--brand-primary);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .semantic-hex {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    display: block;
+  }
+
+  /* =============================================
+     TYPOGRAPHY
+  ============================================= */
+  .type-specimen { margin-bottom: var(--space-6); }
+
+  .type-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-6);
+    align-items: baseline;
+    padding: var(--space-5) 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .type-meta { flex-shrink: 0; }
+  .type-meta-label { font-size: 0.75rem; font-weight: var(--fw-bold); color: var(--text-primary); }
+  .type-meta-specs { font-size: 0.65rem; font-family: var(--font-mono); color: var(--text-muted); line-height: 1.8; }
+  .type-meta-token { font-size: 0.65rem; font-family: var(--font-mono); color: var(--brand-primary); }
+
+  /* =============================================
+     SPACING
+  ============================================= */
+  .spacing-grid { display: flex; flex-direction: column; gap: var(--space-3); }
+
+  .spacing-row {
+    display: grid;
+    grid-template-columns: 80px 120px 1fr;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .spacing-bar-track {
+    height: 24px;
+    background: var(--surface-muted);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .spacing-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-cta));
+    border-radius: var(--radius-sm);
+  }
+
+  .spacing-label { font-size: 0.75rem; font-weight: var(--fw-bold); color: var(--text-primary); }
+  .spacing-value { font-size: 0.7rem; font-family: var(--font-mono); color: var(--text-muted); }
+
+  /* =============================================
+     BORDER RADIUS
+  ============================================= */
+  .radius-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+  }
+
+  .radius-item { text-align: center; }
+
+  .radius-box {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-primary-100), var(--color-primary-200));
+    border: 2px solid var(--color-primary-300);
+    margin-bottom: var(--space-2);
+  }
+
+  .radius-name { font-size: 0.7rem; font-weight: var(--fw-bold); color: var(--text-secondary); }
+  .radius-value { font-size: 0.65rem; font-family: var(--font-mono); color: var(--text-muted); }
+
+  /* =============================================
+     SHADOWS
+  ============================================= */
+  .shadow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .shadow-card {
+    background: var(--surface-base);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .shadow-name { font-size: 0.75rem; font-weight: var(--fw-bold); color: var(--text-primary); }
+  .shadow-token { font-size: 0.65rem; font-family: var(--font-mono); color: var(--brand-primary); }
+  .shadow-value { font-size: 0.6rem; font-family: var(--font-mono); color: var(--text-muted); line-height: 1.6; }
+
+  /* =============================================
+     COMPONENTS
+  ============================================= */
+  .component-preview {
+    background: var(--surface-base);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .preview-canvas {
+    padding: var(--space-10) var(--space-12);
+    background: var(--surface-subtle);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: 120px;
+  }
+
+  .preview-canvas.dark {
+    background: var(--surface-dark);
+  }
+
+  .preview-canvas.center { justify-content: center; }
+
+  .preview-code {
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-gray-900);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-gray-300);
+    overflow-x: auto;
+    border-top: 1px solid var(--color-gray-700);
+  }
+
+  .preview-code .token-var { color: var(--brand-primary); }
+  .preview-code .token-str { color: var(--brand-cta); }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-weight: var(--fw-bold);
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: transform var(--duration-fast) var(--ease-spring),
+                box-shadow var(--duration-base) var(--ease-smooth),
+                background var(--duration-fast) var(--ease-smooth),
+                opacity var(--duration-fast);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn:active { transform: scale(0.96) !important; }
+  .btn:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 3px; }
+
+  /* Primary CTA */
+  .btn-primary {
+    background: var(--brand-cta);
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-glow-green);
+  }
+  .btn-primary:hover {
+    background: var(--brand-cta-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(2,192,0,.40);
+  }
+
+  /* Brand */
+  .btn-brand {
+    background: var(--brand-primary);
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-glow-cyan);
+  }
+  .btn-brand:hover {
+    background: var(--color-primary-500);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(33,210,242,.45);
+  }
+
+  /* Dark */
+  .btn-dark {
+    background: var(--surface-dark);
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+  }
+  .btn-dark:hover { background: var(--color-gray-700); transform: translateY(-2px); }
+
+  /* Outline */
+  .btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    padding: 12px 26px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--border-medium);
+  }
+  .btn-outline:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+
+  /* Ghost */
+  .btn-ghost {
+    background: transparent;
+    color: var(--brand-primary);
+    padding: 12px 20px;
+    border-radius: var(--radius-lg);
+  }
+  .btn-ghost:hover { background: var(--color-primary-50); }
+
+  /* Sizes */
+  .btn-sm { font-size: 0.8rem; padding: 8px 18px; }
+  .btn-lg { font-size: 1.05rem; padding: 18px 36px; }
+
+  /* BADGES */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.72rem;
+    font-weight: var(--fw-bold);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.01em;
+  }
+
+  .badge-primary { background: var(--color-primary-100); color: var(--color-primary-700); }
+  .badge-green   { background: var(--color-secondary-100); color: var(--color-secondary-700); }
+  .badge-orange  { background: var(--color-accent-100); color: var(--color-accent-700); }
+  .badge-gray    { background: var(--color-gray-100); color: var(--color-gray-700); }
+  .badge-dark    { background: var(--surface-dark); color: var(--color-white); }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    background: currentColor;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface-base);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--duration-base) var(--ease-smooth),
+                transform var(--duration-base) var(--ease-smooth),
+                border-color var(--duration-base) var(--ease-smooth);
+  }
+
+  .card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--border-medium); }
+
+  .card-title { font-size: 1.1rem; font-weight: var(--fw-bold); color: var(--text-primary); margin-bottom: var(--space-2); }
+  .card-body  { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+  .card-icon  {
+    width: 48px; height: 48px;
+    border-radius: var(--radius-xl);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: var(--space-4);
+  }
+
+  /* INPUTS */
+  .input-group { display: flex; flex-direction: column; gap: var(--space-2); }
+
+  .input-label { font-size: 0.8rem; font-weight: var(--fw-semibold); color: var(--text-primary); }
+
+  .input {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: var(--surface-base);
+    border: 1.5px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: 10px 14px;
+    width: 100%;
+    outline: none;
+    transition: border-color var(--duration-fast) var(--ease-smooth),
+                box-shadow var(--duration-fast) var(--ease-smooth);
+  }
+
+  .input:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(33,210,242,.15);
+  }
+
+  .input.error { border-color: var(--color-error); }
+  .input.success { border-color: var(--color-success); }
+  .input-hint { font-size: 0.75rem; color: var(--text-muted); }
+  .input-hint.error { color: var(--color-error); }
+
+  /* ALERTS */
+  .alert {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid;
+    font-size: 0.875rem;
+  }
+
+  .alert-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .alert-content { flex: 1; }
+  .alert-title { font-weight: var(--fw-bold); margin-bottom: 2px; }
+  .alert-body  { opacity: 0.85; }
+
+  .alert-info    { background: var(--color-primary-50);    border-color: var(--brand-primary);   color: var(--color-primary-800); }
+  .alert-success { background: var(--color-secondary-50);  border-color: var(--color-success);    color: var(--color-secondary-800); }
+  .alert-warning { background: var(--color-accent-50);     border-color: var(--color-warning);    color: var(--color-accent-800); }
+  .alert-error   { background: #fef2f2;                    border-color: var(--color-error);      color: #991b1b; }
+
+  /* LOGO SECTION */
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+
+  .logo-card {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+  }
+
+  .logo-card.dark-bg { background: var(--surface-dark); }
+  .logo-card.gray-bg { background: var(--color-gray-100); }
+  .logo-card.white-bg { background: var(--color-white); }
+  .logo-card.cyan-bg { background: var(--brand-primary); }
+
+  /* MOTION */
+  .motion-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-6); }
+
+  .motion-card {
+    background: var(--surface-base);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+  }
+
+  .motion-demo {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--brand-primary);
+    margin-bottom: var(--space-4);
+    cursor: pointer;
+  }
+
+  .motion-card:hover .motion-demo-spring   { transform: scale(1.3); transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .motion-card:hover .motion-demo-smooth   { transform: translateX(20px); transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+  .motion-card:hover .motion-demo-out      { transform: rotate(45deg); transition: transform 400ms cubic-bezier(0, 0, 0.2, 1); }
+
+  .motion-name  { font-size: 0.8rem; font-weight: var(--fw-bold); color: var(--text-primary); }
+  .motion-token { font-size: 0.65rem; font-family: var(--font-mono); color: var(--brand-primary); }
+  .motion-value { font-size: 0.65rem; font-family: var(--font-mono); color: var(--text-muted); margin-top: var(--space-1); }
+
+  /* ICON SECTION */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    background: var(--surface-base);
+    transition: border-color var(--duration-fast), background var(--duration-fast);
+    cursor: default;
+  }
+
+  .icon-item:hover { border-color: var(--brand-primary); background: var(--color-primary-50); }
+  .icon-item img { width: 40px; height: 40px; object-fit: contain; }
+  .icon-item span { font-size: 0.6rem; font-weight: var(--fw-medium); color: var(--text-muted); text-align: center; }
+
+  /* TOKEN TABLE */
+  .token-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  .token-table th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.7rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .token-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+
+  .token-table tr:last-child td { border-bottom: none; }
+  .token-table tr:hover td { background: var(--surface-subtle); }
+
+  .tt-name { font-family: var(--font-mono); color: var(--brand-primary); font-size: 0.75rem; }
+  .tt-value { font-family: var(--font-mono); color: var(--text-secondary); font-size: 0.75rem; }
+  .tt-desc { color: var(--text-secondary); }
+
+  /* UTILITY */
+  .row { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: flex-start; }
+  .col { flex: 1; min-width: 200px; }
+  .mt-4 { margin-top: var(--space-4); }
+  .mt-6 { margin-top: var(--space-6); }
+  .mt-8 { margin-top: var(--space-8); }
+  .gap-3 { gap: var(--space-3); }
+</style>
+</head>
+<body>
+<div class="ds-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar-logo">
+      <img src="../brand_assets/logotipo.svg" alt="Easyweb">
+      <span class="ds-sidebar-badge">DS v1</span>
+    </div>
+    <nav class="ds-nav">
+      <div class="ds-nav-section">Overview</div>
+      <a href="#intro">Introducción</a>
+      <a href="#brand">Marca</a>
+
+      <div class="ds-nav-section">Fundamentos</div>
+      <a href="#color">Colores</a>
+      <a href="#typography">Tipografía</a>
+      <a href="#spacing">Espaciado</a>
+      <a href="#radius">Border Radius</a>
+      <a href="#shadows">Sombras</a>
+      <a href="#motion">Motion</a>
+
+      <div class="ds-nav-section">Componentes</div>
+      <a href="#buttons">Botones</a>
+      <a href="#badges">Badges</a>
+      <a href="#cards">Tarjetas</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#alerts">Alertas</a>
+
+      <div class="ds-nav-section">Assets</div>
+      <a href="#icons">Iconos</a>
+      <a href="#tokens">Token Reference</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="ds-main">
+
+    <!-- HERO -->
+    <div class="ds-hero" id="intro">
+      <span class="ds-hero-tag">Design System</span>
+      <h1>Easyweb<br><span>Design System</span></h1>
+      <p>Fundamentos visuales, tokens y componentes para crear productos consistentes, accesibles y on-brand.</p>
+      <div class="ds-hero-meta">
+        <div class="ds-hero-meta-item">
+          <span class="ds-hero-meta-label">Versión</span>
+          <span class="ds-hero-meta-value">1.0.0</span>
+        </div>
+        <div class="ds-hero-meta-item">
+          <span class="ds-hero-meta-label">Fuente</span>
+          <span class="ds-hero-meta-value">Work Sans</span>
+        </div>
+        <div class="ds-hero-meta-item">
+          <span class="ds-hero-meta-label">Actualizado</span>
+          <span class="ds-hero-meta-value">Mar 2026</span>
+        </div>
+        <div class="ds-hero-meta-item">
+          <span class="ds-hero-meta-label">Colores</span>
+          <span class="ds-hero-meta-value">5 paletas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND -->
+    <section class="ds-section" id="brand">
+      <div class="ds-section-header">
+        <span class="ds-section-num">01</span>
+        <h2 class="ds-section-title">Marca</h2>
+      </div>
+      <p class="ds-section-desc">El logotipo de Easyweb combina la mascota (monstruito azul) con el wordmark en gris oscuro. La tilde del símbolo "ý" es el elemento cyan que referencia la paleta primaria de la marca.</p>
+
+      <div class="ds-subsection">
+        <div class="ds-subsection-title">Logo — 4 Variantes oficiales</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4);">
+
+          <!-- Horizontal default -->
+          <div style="display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="logo-card white-bg" style="border:1px solid var(--border-light);">
+              <img src="../brand_assets/logotipo.svg" style="height:44px" alt="Logo horizontal">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:0 var(--space-1);">
+              <span style="font-size:0.72rem; font-weight:var(--fw-bold); color:var(--text-primary);">Horizontal</span>
+              <span style="font-size:0.65rem; font-family:var(--font-mono); color:var(--text-muted);">logotipo.svg</span>
+            </div>
+          </div>
+
+          <!-- Vertical -->
+          <div style="display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="logo-card white-bg" style="border:1px solid var(--border-light); min-height:140px;">
+              <img src="../brand_assets/logo-vertical.svg" style="height:100px" alt="Logo vertical">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:0 var(--space-1);">
+              <span style="font-size:0.72rem; font-weight:var(--fw-bold); color:var(--text-primary);">Vertical</span>
+              <span style="font-size:0.65rem; font-family:var(--font-mono); color:var(--text-muted);">logo-vertical.svg</span>
+            </div>
+          </div>
+
+          <!-- Negativo (oscuro) -->
+          <div style="display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="logo-card dark-bg" style="background:#3e3e3e;">
+              <img src="../brand_assets/logotipo-invertido.svg" style="height:44px" alt="Logo negativo">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:0 var(--space-1);">
+              <span style="font-size:0.72rem; font-weight:var(--fw-bold); color:var(--text-primary);">Negativo</span>
+              <span style="font-size:0.65rem; font-family:var(--font-mono); color:var(--text-muted);">logotipo-invertido.svg</span>
+            </div>
+          </div>
+
+          <!-- Sobre color primario -->
+          <div style="display:flex; flex-direction:column; gap:var(--space-2);">
+            <div class="logo-card" style="background:#21d2f2;">
+              <img src="../brand_assets/logotipo-sobre-primario.svg" style="height:44px" alt="Logo sobre primario">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:0 var(--space-1);">
+              <span style="font-size:0.72rem; font-weight:var(--fw-bold); color:var(--text-primary);">Sobre Color Primario</span>
+              <span style="font-size:0.65rem; font-family:var(--font-mono); color:var(--text-muted);">logotipo-sobre-primario.svg</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ds-subsection mt-8">
+        <div class="ds-subsection-title">Clearspace & Uso incorrecto</div>
+        <div style="background:var(--surface-base); border:1px solid var(--border-light); border-radius:var(--radius-xl); padding:var(--space-6);">
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:var(--space-2);">
+            <li style="font-size:0.875rem; color:var(--text-secondary); display:flex; gap:var(--space-3); align-items:center;">
+              <span style="color:var(--color-error); font-size:1.1rem;">✗</span> No modificar colores del logotipo
+            </li>
+            <li style="font-size:0.875rem; color:var(--text-secondary); display:flex; gap:var(--space-3); align-items:center;">
+              <span style="color:var(--color-error); font-size:1.1rem;">✗</span> No usar sobre fondos con bajo contraste
+            </li>
+            <li style="font-size:0.875rem; color:var(--text-secondary); display:flex; gap:var(--space-3); align-items:center;">
+              <span style="color:var(--color-error); font-size:1.1rem;">✗</span> No distorsionar ni escalar de forma no proporcional
+            </li>
+            <li style="font-size:0.875rem; color:var(--text-secondary); display:flex; gap:var(--space-3); align-items:center;">
+              <span style="color:var(--color-success); font-size:1.1rem;">✓</span> Usar siempre el SVG original sin modificar
+            </li>
+            <li style="font-size:0.875rem; color:var(--text-secondary); display:flex; gap:var(--space-3); align-items:center;">
+              <span style="color:var(--color-success); font-size:1.1rem;">✓</span> Clearspace mínimo: igual al alto de la mascota en todos lados
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLOR -->
+    <section class="ds-section" id="color">
+      <div class="ds-section-header">
+        <span class="ds-section-num">02</span>
+        <h2 class="ds-section-title">Sistema de Color</h2>
+      </div>
+      <p class="ds-section-desc">Cinco paletas de color definen el sistema. Cada una tiene 10 pasos (50–900). Los tokens semánticos mapean los primitivos a roles funcionales.</p>
+
+      <div class="ds-subsection">
+        <div class="ds-subsection-title">Paletas Primitivas</div>
+        <div class="color-palette color-swatches-wrapper">
+
+          <!-- Fuente: color-swatches.svg -->
+          <div class="color-row">
+            <span class="color-row-name">Primario<br><small style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">Cyan</small></span>
+            <div class="color-swatches">
+              <div class="swatch" style="background:#caffff; border:1px solid #e0e0e0;" data-hex="#caffff" title="50"></div>
+              <div class="swatch" style="background:#72ffff" data-hex="#72ffff" title="100"></div>
+              <div class="swatch" style="background:#54efff" data-hex="#54efff" title="200"></div>
+              <div class="swatch" style="background:#30d8f8" data-hex="#30d8f8" title="300"></div>
+              <div class="swatch" style="background:#21d2f2; outline:2px solid #21d2f2; outline-offset:2px;" data-hex="#21d2f2" title="400 — Brand ★"></div>
+              <div class="swatch" style="background:#00c2e2" data-hex="#00c2e2" title="500"></div>
+              <div class="swatch" style="background:#00accb" data-hex="#00accb" title="600"></div>
+              <div class="swatch" style="background:#007a99" data-hex="#007a99" title="700"></div>
+              <div class="swatch" style="background:#004e62" data-hex="#004e62" title="900"></div>
+            </div>
+          </div>
+
+          <div class="color-row">
+            <span class="color-row-name">Secundario<br><small style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">Green</small></span>
+            <div class="color-swatches">
+              <div class="swatch" style="background:#bfffb1; border:1px solid #e0e0e0;" data-hex="#bfffb1" title="50"></div>
+              <div class="swatch" style="background:#81ff66" data-hex="#81ff66" title="100"></div>
+              <div class="swatch" style="background:#67fa4f" data-hex="#67fa4f" title="200"></div>
+              <div class="swatch" style="background:#4be337" data-hex="#4be337" title="300"></div>
+              <div class="swatch" style="background:#27cc1a" data-hex="#27cc1a" title="400"></div>
+              <div class="swatch" style="background:#00b500; outline:2px solid #00b500; outline-offset:2px;" data-hex="#00b500" title="500 — Brand CTA ★"></div>
+              <div class="swatch" style="background:#008500" data-hex="#008500" title="600"></div>
+              <div class="swatch" style="background:#004a00" data-hex="#004a00" title="900"></div>
+            </div>
+          </div>
+
+          <div class="color-row">
+            <span class="color-row-name">Auxiliar<br><small style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">Teal</small></span>
+            <div class="color-swatches">
+              <div class="swatch" style="background:#defff7; border:1px solid #e0e0e0;" data-hex="#defff7" title="50"></div>
+              <div class="swatch" style="background:#bcffef" data-hex="#bcffef" title="100"></div>
+              <div class="swatch" style="background:#a5ead9" data-hex="#a5ead9" title="200"></div>
+              <div class="swatch" style="background:#8fd4c2" data-hex="#8fd4c2" title="300"></div>
+              <div class="swatch" style="background:#87cbba; outline:2px solid #87cbba; outline-offset:2px;" data-hex="#87cbba" title="400 — Brand ★"></div>
+              <div class="swatch" style="background:#7abdad" data-hex="#7abdad" title="500"></div>
+              <div class="swatch" style="background:#64a797" data-hex="#64a797" title="600"></div>
+              <div class="swatch" style="background:#00856c" data-hex="#00856c" title="700"></div>
+              <div class="swatch" style="background:#004236" data-hex="#004236" title="900"></div>
+            </div>
+          </div>
+
+          <div class="color-row">
+            <span class="color-row-name">Acento<br><small style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">Orange</small></span>
+            <div class="color-swatches">
+              <div class="swatch" style="background:#ffebae; border:1px solid #e0e0e0;" data-hex="#ffebae" title="50"></div>
+              <div class="swatch" style="background:#ffd75b" data-hex="#ffd75b" title="100"></div>
+              <div class="swatch" style="background:#ffc044" data-hex="#ffc044" title="200"></div>
+              <div class="swatch" style="background:#ffaa2c" data-hex="#ffaa2c" title="300"></div>
+              <div class="swatch" style="background:#ff9100; outline:2px solid #ff9100; outline-offset:2px;" data-hex="#ff9100" title="400 — Brand ★"></div>
+              <div class="swatch" style="background:#ff950a" data-hex="#ff950a" title="500"></div>
+              <div class="swatch" style="background:#ea8000" data-hex="#ea8000" title="600"></div>
+              <div class="swatch" style="background:#b05200" data-hex="#b05200" title="700"></div>
+              <div class="swatch" style="background:#713500" data-hex="#713500" title="900"></div>
+            </div>
+          </div>
+
+          <div class="color-row">
+            <span class="color-row-name">Grises<br><small style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted)">Gray</small></span>
+            <div class="color-swatches">
+              <div class="swatch" style="background:#ffffff; border:1px solid #e0e0e0;" data-hex="#ffffff" title="White"></div>
+              <div class="swatch" style="background:#eaeaea; border:1px solid #e0e0e0;" data-hex="#eaeaea" title="100"></div>
+              <div class="swatch" style="background:#bcbcbc" data-hex="#bcbcbc" title="200"></div>
+              <div class="swatch" style="background:#9b9b9b" data-hex="#9b9b9b" title="300"></div>
+              <div class="swatch" style="background:#7b7b7b" data-hex="#7b7b7b" title="400"></div>
+              <div class="swatch" style="background:#5a5a5a" data-hex="#5a5a5a" title="500"></div>
+              <div class="swatch" style="background:#444444" data-hex="#444444" title="800 — Brand Text"></div>
+              <div class="swatch" style="background:#3e3e3e" data-hex="#3e3e3e" title="600"></div>
+              <div class="swatch" style="background:#242424" data-hex="#242424" title="700"></div>
+              <div class="swatch" style="background:#000000" data-hex="#000000" title="Black"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ds-subsection mt-8">
+        <div class="ds-subsection-title">Tokens Semánticos</div>
+        <div class="semantic-grid">
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--brand-primary)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Brand Primary</span>
+              <span class="semantic-token">--brand-primary</span>
+              <span class="semantic-hex">#21D2F2</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--brand-cta)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Brand CTA</span>
+              <span class="semantic-token">--brand-cta</span>
+              <span class="semantic-hex">#02C000</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--text-primary)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Text Primary</span>
+              <span class="semantic-token">--text-primary</span>
+              <span class="semantic-hex">#333333</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--text-secondary)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Text Secondary</span>
+              <span class="semantic-token">--text-secondary</span>
+              <span class="semantic-hex">#4b5563</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--surface-base); border:1px solid var(--border-light)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Surface Base</span>
+              <span class="semantic-token">--surface-base</span>
+              <span class="semantic-hex">#ffffff</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--surface-subtle)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Surface Subtle</span>
+              <span class="semantic-token">--surface-subtle</span>
+              <span class="semantic-hex">#f9fafb</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--surface-dark)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Surface Dark</span>
+              <span class="semantic-token">--surface-dark</span>
+              <span class="semantic-hex">#333333</span>
+            </div>
+          </div>
+          <div class="semantic-card">
+            <div class="semantic-swatch" style="background:var(--color-error)"></div>
+            <div class="semantic-info">
+              <span class="semantic-name">Error</span>
+              <span class="semantic-token">--color-error</span>
+              <span class="semantic-hex">#ef4444</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="ds-section" id="typography">
+      <div class="ds-section-header">
+        <span class="ds-section-num">03</span>
+        <h2 class="ds-section-title">Tipografía</h2>
+      </div>
+      <p class="ds-section-desc">Work Sans en todos los niveles. La escala de tamaños fue definida en la guía de marca original. Los headings grandes usan tracking negativo para mayor impacto visual.</p>
+
+      <div class="ds-subsection">
+        <div class="ds-subsection-title">Escala Tipográfica</div>
+        <div class="type-specimen">
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">3XL</div>
+              <div class="type-meta-specs">96px / 110% / 1%</div>
+              <div class="type-meta-token">--text-3xl</div>
+            </div>
+            <div style="font-size:var(--text-3xl); font-weight:var(--fw-black); line-height:1.1; letter-spacing:0.01em; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;">Easyweb</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">2XL</div>
+              <div class="type-meta-specs">72px / 110% / -4%</div>
+              <div class="type-meta-token">--text-2xl</div>
+            </div>
+            <div style="font-size:var(--text-2xl); font-weight:var(--fw-black); line-height:1.1; letter-spacing:-0.04em;">Tu web</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">XL</div>
+              <div class="type-meta-specs">64px / 110% / -4%</div>
+              <div class="type-meta-token">--text-xl</div>
+            </div>
+            <div style="font-size:var(--text-xl); font-weight:var(--fw-black); line-height:1.1; letter-spacing:-0.04em;">Zero hassle</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">LG</div>
+              <div class="type-meta-specs">52px / 110% / -4%</div>
+              <div class="type-meta-token">--text-lg</div>
+            </div>
+            <div style="font-size:var(--text-lg); font-weight:var(--fw-bold); line-height:1.1; letter-spacing:-0.04em;">Diseño profesional</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">MD</div>
+              <div class="type-meta-specs">36px / 110% / -4%</div>
+              <div class="type-meta-token">--text-md</div>
+            </div>
+            <div style="font-size:var(--text-md); font-weight:var(--fw-bold); line-height:1.1; letter-spacing:-0.04em;">Simple y sin complicaciones</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">SM</div>
+              <div class="type-meta-specs">32px / 110% / -4%</div>
+              <div class="type-meta-token">--text-sm</div>
+            </div>
+            <div style="font-size:var(--text-sm); font-weight:var(--fw-semibold); line-height:1.1; letter-spacing:-0.04em;">Planes transparentes, sin sorpresas</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">Lead</div>
+              <div class="type-meta-specs">32px / 120% / 0</div>
+              <div class="type-meta-token">--text-lead</div>
+            </div>
+            <div style="font-size:var(--text-lead); font-weight:var(--fw-medium); line-height:1.2;">Lanzamos tu sitio en tiempo récord</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">Summary</div>
+              <div class="type-meta-specs">24px / 120% / 0</div>
+              <div class="type-meta-token">--text-summary</div>
+            </div>
+            <div style="font-size:var(--text-summary); font-weight:var(--fw-regular); line-height:1.2;">Tu presencia digital, rápida y profesional</div>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">
+              <div class="type-meta-label">Body</div>
+              <div class="type-meta-specs">18px / 120% / 0</div>
+              <div class="type-meta-token">--text-body</div>
+            </div>
+            <div style="font-size:var(--text-body); line-height:1.7; color:var(--text-secondary); max-width:500px;">Nos encargamos del diseño, el código y los servidores. Tú enfócate en vender. Sitios ultrarrápidos, optimizados para Google y listos en tiempo récord.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ds-subsection mt-8">
+        <div class="ds-subsection-title">Pesos disponibles</div>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-6);">
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:300; color:var(--text-secondary);">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">300 Light</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:400; color:var(--text-secondary);">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">400 Regular</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:500; color:var(--text-secondary);">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">500 Medium</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:600;">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">600 SemiBold</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:700;">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">700 Bold</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:800;">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">800 ExtraBold</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:2rem; font-weight:900;">Aa</div>
+            <div style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; font-family:var(--font-mono);">900 Black</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACING -->
+    <section class="ds-section" id="spacing">
+      <div class="ds-section-header">
+        <span class="ds-section-num">04</span>
+        <h2 class="ds-section-title">Espaciado</h2>
+      </div>
+      <p class="ds-section-desc">Escala de 8pt con multiplicadores seleccionados. Todos los espaciados deben usar los tokens definidos, nunca valores arbitrarios.</p>
+
+      <div class="spacing-grid">
+        <div class="spacing-row">
+          <span class="spacing-label">--space-1</span>
+          <span class="spacing-value">4px / 0.25rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:4px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-2</span>
+          <span class="spacing-value">8px / 0.5rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:8px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-3</span>
+          <span class="spacing-value">12px / 0.75rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:12px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-4</span>
+          <span class="spacing-value">16px / 1rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:16px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-6</span>
+          <span class="spacing-value">24px / 1.5rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:24px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-8</span>
+          <span class="spacing-value">32px / 2rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:32px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-10</span>
+          <span class="spacing-value">40px / 2.5rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:40px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-12</span>
+          <span class="spacing-value">48px / 3rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:48px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-16</span>
+          <span class="spacing-value">64px / 4rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:64px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-24</span>
+          <span class="spacing-value">96px / 6rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:96px"></div></div>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">--space-32</span>
+          <span class="spacing-value">128px / 8rem</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:128px"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BORDER RADIUS -->
+    <section class="ds-section" id="radius">
+      <div class="ds-section-header">
+        <span class="ds-section-num">05</span>
+        <h2 class="ds-section-title">Border Radius</h2>
+      </div>
+      <p class="ds-section-desc">El sistema usa radios generosos que refuerzan la personalidad amigable y moderna de Easyweb. Los botones principales usan <code style="font-family:var(--font-mono); font-size:0.85em; color:var(--brand-primary);">--radius-full</code>.</p>
+
+      <div class="radius-grid">
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-sm)"></div>
+          <div class="radius-name">sm</div>
+          <div class="radius-value">4px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-md)"></div>
+          <div class="radius-name">md</div>
+          <div class="radius-value">8px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-lg)"></div>
+          <div class="radius-name">lg</div>
+          <div class="radius-value">12px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-xl)"></div>
+          <div class="radius-name">xl</div>
+          <div class="radius-value">16px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-2xl)"></div>
+          <div class="radius-name">2xl</div>
+          <div class="radius-value">24px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-3xl)"></div>
+          <div class="radius-name">3xl</div>
+          <div class="radius-value">32px</div>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius:var(--radius-full)"></div>
+          <div class="radius-name">full</div>
+          <div class="radius-value">9999px</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHADOWS -->
+    <section class="ds-section" id="shadows">
+      <div class="ds-section-header">
+        <span class="ds-section-num">06</span>
+        <h2 class="ds-section-title">Sombras</h2>
+      </div>
+      <p class="ds-section-desc">Sistema de sombras por capas. Los glows coloridos se usan exclusivamente en elementos interactivos (botones CTA, highlights de marca).</p>
+
+      <div class="shadow-grid">
+        <div class="shadow-card" style="box-shadow:var(--shadow-xs)">
+          <div class="shadow-name">Extra Small</div>
+          <div class="shadow-token">--shadow-xs</div>
+          <div class="shadow-value">0 1px 2px 0<br>rgba(0,0,0,.05)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow:var(--shadow-sm)">
+          <div class="shadow-name">Small</div>
+          <div class="shadow-token">--shadow-sm</div>
+          <div class="shadow-value">0 2px 8px -1px<br>rgba(0,0,0,.08)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow:var(--shadow-md)">
+          <div class="shadow-name">Medium</div>
+          <div class="shadow-token">--shadow-md</div>
+          <div class="shadow-value">0 4px 20px -2px<br>rgba(0,0,0,.10)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow:var(--shadow-lg)">
+          <div class="shadow-name">Large</div>
+          <div class="shadow-token">--shadow-lg</div>
+          <div class="shadow-value">0 8px 32px -4px<br>rgba(0,0,0,.14)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow:var(--shadow-xl)">
+          <div class="shadow-name">X-Large</div>
+          <div class="shadow-token">--shadow-xl</div>
+          <div class="shadow-value">0 16px 48px -8px<br>rgba(0,0,0,.18)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow:var(--shadow-glow-cyan)">
+          <div class="shadow-name">Glow Cyan</div>
+          <div class="shadow-token">--shadow-glow-cyan</div>
+          <div class="shadow-value">0 0 24px<br>rgba(33,210,242,.35)</div>
+        </div>
+        <div class="shadow-card" style="box-shadow:var(--shadow-glow-green)">
+          <div class="shadow-name">Glow Green</div>
+          <div class="shadow-token">--shadow-glow-green</div>
+          <div class="shadow-value">0 0 24px<br>rgba(2,192,0,.30)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOTION -->
+    <section class="ds-section" id="motion">
+      <div class="ds-section-header">
+        <span class="ds-section-num">07</span>
+        <h2 class="ds-section-title">Motion</h2>
+      </div>
+      <p class="ds-section-desc">Animar solo <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--brand-primary)">transform</code> y <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--brand-primary)">opacity</code>. Nunca <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--color-error)">transition-all</code>. Pasa el cursor sobre las tarjetas para ver cada easing en acción.</p>
+
+      <div class="motion-grid">
+        <div class="motion-card">
+          <div class="motion-demo motion-demo-spring"></div>
+          <div class="motion-name">Spring</div>
+          <div class="motion-token">--ease-spring</div>
+          <div class="motion-value">cubic-bezier(0.34, 1.56, 0.64, 1)</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-demo motion-demo-smooth" style="background:var(--brand-cta)"></div>
+          <div class="motion-name">Smooth</div>
+          <div class="motion-token">--ease-smooth</div>
+          <div class="motion-value">cubic-bezier(0.4, 0, 0.2, 1)</div>
+        </div>
+        <div class="motion-card">
+          <div class="motion-demo motion-demo-out" style="background:var(--color-aux-500)"></div>
+          <div class="motion-name">Ease Out</div>
+          <div class="motion-token">--ease-out</div>
+          <div class="motion-value">cubic-bezier(0, 0, 0.2, 1)</div>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <div class="ds-subsection-title">Duraciones</div>
+        <table class="token-table" style="background:var(--surface-base); border:1px solid var(--border-light); border-radius:var(--radius-xl); overflow:hidden;">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Valor</th>
+              <th>Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="tt-name">--duration-fast</td><td class="tt-value">150ms</td><td class="tt-desc">Hover states, fades sutiles</td></tr>
+            <tr><td class="tt-name">--duration-base</td><td class="tt-value">250ms</td><td class="tt-desc">Transiciones estándar de UI</td></tr>
+            <tr><td class="tt-name">--duration-slow</td><td class="tt-value">400ms</td><td class="tt-desc">Modales, panels, expansiones</td></tr>
+            <tr><td class="tt-name">--duration-slower</td><td class="tt-value">600ms</td><td class="tt-desc">Animaciones de página, reveals</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="ds-section" id="buttons">
+      <div class="ds-section-header">
+        <span class="ds-section-num">08</span>
+        <h2 class="ds-section-title">Botones</h2>
+      </div>
+      <p class="ds-section-desc">Los botones CTA usan <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--brand-cta)">--brand-cta</code> (verde). Los botones de acción secundaria usan <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--brand-primary)">--brand-primary</code> (cyan). Todo botón debe tener estado hover, focus-visible y active.</p>
+
+      <div class="ds-subsection">
+        <div class="ds-subsection-title">Variantes</div>
+        <div class="component-preview">
+          <div class="preview-canvas">
+            <button class="btn btn-primary">Haz la tuya aquí</button>
+            <button class="btn btn-brand">Ver planes</button>
+            <button class="btn btn-dark">Agendar llamada</button>
+            <button class="btn btn-outline">Ver portafolio</button>
+            <button class="btn btn-ghost">Leer más →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection mt-6">
+        <div class="ds-subsection-title">Tamaños</div>
+        <div class="component-preview">
+          <div class="preview-canvas" style="align-items:center;">
+            <button class="btn btn-primary btn-sm">Small</button>
+            <button class="btn btn-primary">Default</button>
+            <button class="btn btn-primary btn-lg">Large</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection mt-6">
+        <div class="ds-subsection-title">Sobre fondos oscuros</div>
+        <div class="component-preview">
+          <div class="preview-canvas dark">
+            <button class="btn btn-primary">Haz la tuya aquí</button>
+            <button class="btn btn-brand">Ver planes</button>
+            <button class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,0.3);">Outline</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="ds-section" id="badges">
+      <div class="ds-section-header">
+        <span class="ds-section-num">09</span>
+        <h2 class="ds-section-title">Badges</h2>
+      </div>
+      <p class="ds-section-desc">Etiquetas para categorías, estados y destacados. El dot pulsante se usa para indicar estado activo o novedad.</p>
+
+      <div class="component-preview">
+        <div class="preview-canvas" style="flex-wrap:wrap; gap:var(--space-3);">
+          <span class="badge badge-primary">Primario</span>
+          <span class="badge badge-green">
+            <span class="badge-dot"></span> Online Store
+          </span>
+          <span class="badge badge-orange">E-commerce</span>
+          <span class="badge badge-gray">Landing Page</span>
+          <span class="badge badge-dark">Most Popular</span>
+          <span class="badge badge-primary">
+            <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--brand-primary); animation:pulse 2s infinite;"></span>
+            En vivo
+          </span>
+        </div>
+      </div>
+      <style>
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(0.8); }
+        }
+      </style>
+    </section>
+
+    <!-- CARDS -->
+    <section class="ds-section" id="cards">
+      <div class="ds-section-header">
+        <span class="ds-section-num">10</span>
+        <h2 class="ds-section-title">Tarjetas</h2>
+      </div>
+      <p class="ds-section-desc">Las tarjetas son la unidad estructural más usada. Hover eleva la sombra y aplica un sutil translateY. Siempre usan <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--brand-primary)">--radius-2xl</code>.</p>
+
+      <div class="component-preview">
+        <div class="preview-canvas" style="background:var(--color-gray-100); align-items:stretch;">
+          <div class="card" style="flex:1; min-width:200px; max-width:260px;">
+            <div class="card-icon" style="background:var(--color-primary-100); color:var(--brand-primary);">⚡</div>
+            <div class="card-title">Velocidad Extrema</div>
+            <div class="card-body">Optimizamos imágenes y código para que tu sitio cargue casi instantáneamente.</div>
+          </div>
+          <div class="card" style="flex:1; min-width:200px; max-width:260px;">
+            <div class="card-icon" style="background:var(--color-secondary-100); color:var(--brand-cta);">🎯</div>
+            <div class="card-title">SEO Amigable</div>
+            <div class="card-body">Construido con la estructura semántica exacta que los buscadores demandan.</div>
+          </div>
+          <div class="card" style="flex:1; min-width:200px; max-width:260px;">
+            <div class="card-icon" style="background:var(--color-accent-100); color:var(--color-accent-600);">✏️</div>
+            <div class="card-title">Auto-gestionable</div>
+            <div class="card-body">Un dashboard súper simple. Cambia fotos o texto sin pagar extra.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INPUTS -->
+    <section class="ds-section" id="inputs">
+      <div class="ds-section-header">
+        <span class="ds-section-num">11</span>
+        <h2 class="ds-section-title">Inputs de Formulario</h2>
+      </div>
+      <p class="ds-section-desc">Inputs con focus ring en cyan, estados de error y éxito. Todos con label visible y hint text cuando aplica.</p>
+
+      <div class="component-preview">
+        <div class="preview-canvas" style="flex-direction:column; align-items:stretch; gap:var(--space-5); max-width:400px;">
+          <div class="input-group">
+            <label class="input-label">Nombre del negocio</label>
+            <input class="input" type="text" placeholder="Ej: Mi Empresa SA">
+            <span class="input-hint">El nombre que aparecerá en tu sitio web</span>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Email</label>
+            <input class="input success" type="email" value="hola@mibusiness.com">
+            <span class="input-hint" style="color:var(--color-success);">✓ Email válido</span>
+          </div>
+          <div class="input-group">
+            <label class="input-label">Teléfono</label>
+            <input class="input error" type="tel" value="12345">
+            <span class="input-hint error">Ingresa un número válido con código de área</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALERTS -->
+    <section class="ds-section" id="alerts">
+      <div class="ds-section-header">
+        <span class="ds-section-num">12</span>
+        <h2 class="ds-section-title">Alertas</h2>
+      </div>
+      <p class="ds-section-desc">Cuatro variantes de alerta basadas en los colores semánticos de feedback. Siempre incluir un título y mensaje descriptivo.</p>
+
+      <div style="display:flex; flex-direction:column; gap:var(--space-3);">
+        <div class="alert alert-info">
+          <span class="alert-icon">ℹ️</span>
+          <div class="alert-content">
+            <div class="alert-title">Tu sitio está siendo revisado</div>
+            <div class="alert-body">Recibirás confirmación por email en las próximas 24 horas.</div>
+          </div>
+        </div>
+        <div class="alert alert-success">
+          <span class="alert-icon">✅</span>
+          <div class="alert-content">
+            <div class="alert-title">¡Pago confirmado!</div>
+            <div class="alert-body">Tu proyecto ha sido iniciado. El equipo te contactará pronto.</div>
+          </div>
+        </div>
+        <div class="alert alert-warning">
+          <span class="alert-icon">⚠️</span>
+          <div class="alert-content">
+            <div class="alert-title">Acción requerida</div>
+            <div class="alert-body">Tu dominio vence en 7 días. Renuévalo para evitar interrupciones.</div>
+          </div>
+        </div>
+        <div class="alert alert-error">
+          <span class="alert-icon">❌</span>
+          <div class="alert-content">
+            <div class="alert-title">Error al enviar formulario</div>
+            <div class="alert-body">Revisa los campos marcados e inténtalo de nuevo.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ICONS -->
+    <section class="ds-section" id="icons">
+      <div class="ds-section-header">
+        <span class="ds-section-num">13</span>
+        <h2 class="ds-section-title">Iconos</h2>
+      </div>
+      <p class="ds-section-desc">Set de 6 iconos personalizados de la marca. Se usan para ilustrar beneficios y features. Siempre en tamaño mínimo de 40×40px para mantener la legibilidad.</p>
+
+      <div class="icon-grid">
+        <div class="icon-item">
+          <img src="../brand_assets/icons/icono-01.webp" alt="Icono 01">
+          <span>icono-01</span>
+        </div>
+        <div class="icon-item">
+          <img src="../brand_assets/icons/icono-02.webp" alt="Icono 02">
+          <span>icono-02</span>
+        </div>
+        <div class="icon-item">
+          <img src="../brand_assets/icons/icono-03.webp" alt="Icono 03">
+          <span>icono-03</span>
+        </div>
+        <div class="icon-item">
+          <img src="../brand_assets/icons/icono-04.webp" alt="Icono 04">
+          <span>icono-04</span>
+        </div>
+        <div class="icon-item">
+          <img src="../brand_assets/icons/icono-05.webp" alt="Icono 05">
+          <span>icono-05</span>
+        </div>
+        <div class="icon-item">
+          <img src="../brand_assets/icons/icono-06.webp" alt="Icono 06">
+          <span>icono-06</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKEN REFERENCE -->
+    <section class="ds-section" id="tokens">
+      <div class="ds-section-header">
+        <span class="ds-section-num">14</span>
+        <h2 class="ds-section-title">Token Reference</h2>
+      </div>
+      <p class="ds-section-desc">Referencia completa de todos los tokens CSS. Copia el bloque de variables y agrégalo al <code style="font-family:var(--font-mono);font-size:0.85em">:root</code> de cualquier archivo para heredar el sistema.</p>
+
+      <div style="background:var(--color-gray-900); border-radius:var(--radius-xl); padding:var(--space-6); overflow-x:auto;">
+        <pre style="font-family:var(--font-mono); font-size:0.72rem; line-height:1.9; color:var(--color-gray-300);"><span style="color:#6b7280">/* === EASYWEB DESIGN TOKENS v1.0 === */</span>
+<span style="color:#21D2F2">:root</span> {
+  <span style="color:#6b7280">/* Brand Colors */</span>
+  --brand-primary:        <span style="color:#02C000">#21D2F2</span>;
+  --brand-primary-dark:   <span style="color:#02C000">#0891b2</span>;
+  --brand-primary-light:  <span style="color:#02C000">#cffafe</span>;
+  --brand-cta:            <span style="color:#02C000">#02C000</span>;
+  --brand-cta-hover:      <span style="color:#02C000">#16a34a</span>;
+
+  <span style="color:#6b7280">/* Text */</span>
+  --text-primary:         <span style="color:#02C000">#333333</span>;
+  --text-secondary:       <span style="color:#02C000">#4b5563</span>;
+  --text-muted:           <span style="color:#02C000">#9ca3af</span>;
+  --text-on-dark:         <span style="color:#02C000">#ffffff</span>;
+
+  <span style="color:#6b7280">/* Surfaces */</span>
+  --surface-base:         <span style="color:#02C000">#ffffff</span>;
+  --surface-subtle:       <span style="color:#02C000">#f9fafb</span>;
+  --surface-muted:        <span style="color:#02C000">#f3f4f6</span>;
+  --surface-dark:         <span style="color:#02C000">#333333</span>;
+
+  <span style="color:#6b7280">/* Typography */</span>
+  --font-display:         <span style="color:#e9c46a">'Work Sans', sans-serif</span>;
+  --font-body:            <span style="color:#e9c46a">'Work Sans', sans-serif</span>;
+  --font-mono:            <span style="color:#e9c46a">'JetBrains Mono', monospace</span>;
+
+  <span style="color:#6b7280">/* Type Scale */</span>
+  --text-3xl:   <span style="color:#fb923c">6rem</span>;
+  --text-2xl:   <span style="color:#fb923c">4.5rem</span>;
+  --text-xl:    <span style="color:#fb923c">4rem</span>;
+  --text-lg:    <span style="color:#fb923c">3.25rem</span>;
+  --text-md:    <span style="color:#fb923c">2.25rem</span>;
+  --text-sm:    <span style="color:#fb923c">2rem</span>;
+  --text-lead:  <span style="color:#fb923c">2rem</span>;
+  --text-summary: <span style="color:#fb923c">1.5rem</span>;
+  --text-body:  <span style="color:#fb923c">1.125rem</span>;
+
+  <span style="color:#6b7280">/* Spacing */</span>
+  --space-1: <span style="color:#fb923c">0.25rem</span>;  --space-2: <span style="color:#fb923c">0.5rem</span>;   --space-3: <span style="color:#fb923c">0.75rem</span>;
+  --space-4: <span style="color:#fb923c">1rem</span>;     --space-6: <span style="color:#fb923c">1.5rem</span>;   --space-8: <span style="color:#fb923c">2rem</span>;
+  --space-10: <span style="color:#fb923c">2.5rem</span>;  --space-12: <span style="color:#fb923c">3rem</span>;   --space-16: <span style="color:#fb923c">4rem</span>;
+  --space-24: <span style="color:#fb923c">6rem</span>;    --space-32: <span style="color:#fb923c">8rem</span>;
+
+  <span style="color:#6b7280">/* Border Radius */</span>
+  --radius-sm: <span style="color:#fb923c">0.25rem</span>;  --radius-md: <span style="color:#fb923c">0.5rem</span>;   --radius-lg: <span style="color:#fb923c">0.75rem</span>;
+  --radius-xl: <span style="color:#fb923c">1rem</span>;    --radius-2xl: <span style="color:#fb923c">1.5rem</span>; --radius-3xl: <span style="color:#fb923c">2rem</span>;
+  --radius-full: <span style="color:#fb923c">9999px</span>;
+
+  <span style="color:#6b7280">/* Shadows */</span>
+  --shadow-xs:  <span style="color:#e9c46a">0 1px 2px 0 rgba(0,0,0,.05)</span>;
+  --shadow-sm:  <span style="color:#e9c46a">0 2px 8px -1px rgba(0,0,0,.08)</span>;
+  --shadow-md:  <span style="color:#e9c46a">0 4px 20px -2px rgba(0,0,0,.10)</span>;
+  --shadow-lg:  <span style="color:#e9c46a">0 8px 32px -4px rgba(0,0,0,.14)</span>;
+  --shadow-glow-cyan:  <span style="color:#e9c46a">0 0 24px rgba(33,210,242,.35)</span>;
+  --shadow-glow-green: <span style="color:#e9c46a">0 0 24px rgba(2,192,0,.30)</span>;
+
+  <span style="color:#6b7280">/* Motion */</span>
+  --ease-spring: <span style="color:#e9c46a">cubic-bezier(0.34, 1.56, 0.64, 1)</span>;
+  --ease-smooth: <span style="color:#e9c46a">cubic-bezier(0.4, 0, 0.2, 1)</span>;
+  --ease-out:    <span style="color:#e9c46a">cubic-bezier(0, 0, 0.2, 1)</span>;
+  --duration-fast:   <span style="color:#fb923c">150ms</span>;
+  --duration-base:   <span style="color:#fb923c">250ms</span>;
+  --duration-slow:   <span style="color:#fb923c">400ms</span>;
+  --duration-slower: <span style="color:#fb923c">600ms</span>;
+}</pre>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Active nav on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.ds-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

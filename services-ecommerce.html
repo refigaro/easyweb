@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom E-commerce development. Sell more online with a fast, secure, and conversion-optimized online store built by Easyweb.">
+    <title>E-commerce Web Development | Easyweb</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="easyweb-home.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="easyweb-home.html#como-funciona" class="hover:text-primary-600 transition-colors">How it works</a>
+                <a href="easyweb-portfolio.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="easyweb-contact-en.html" class="hover:text-primary-600 transition-colors">Contact</a>
+            </div>
+
+            <a href="easyweb-contact-en.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Book a Call <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24">
+        <!-- Hero Service -->
+        <section class="max-w-7xl mx-auto px-6 text-center mb-20">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-accent-50 text-accent-600 text-sm font-bold mb-6 border border-accent-100 reveal active">
+                E-commerce Development
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-dark mb-6 tracking-tight reveal active">Your online store, <br class="hidden md:block"/><span class="text-accent-500">optimized for sales.</span></h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto reveal active mb-10">We design and build fast, secure, and easy-to-manage e-commerce platforms that provide a seamless shopping experience for your customers 24/7.</p>
+            <div class="reveal active flex justify-center gap-4">
+                <a href="easyweb-contact-en.html" class="inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:-translate-y-1">
+                    Start Selling Online
+                </a>
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-24 reveal">
+            <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-100 text-center">
+                <div class="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mx-auto mb-4">
+                    <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-lg font-bold text-dark mb-2">Frictionless Checkout</h3>
+                <p class="text-slate-600 text-sm">We reduce cart abandonment with streamlined, secure checkout processes.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-100 text-center">
+                <div class="w-14 h-14 bg-accent-50 rounded-full flex items-center justify-center text-accent-500 mx-auto mb-4">
+                    <i data-lucide="credit-card" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-lg font-bold text-dark mb-2">Payment Integrations</h3>
+                <p class="text-slate-600 text-sm">Accept major credit cards, PayPal, Stripe, and local payment methods seamlessly.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-100 text-center">
+                <div class="w-14 h-14 bg-slate-100 rounded-full flex items-center justify-center text-slate-700 mx-auto mb-4">
+                    <i data-lucide="package" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-lg font-bold text-dark mb-2">Easy Management</h3>
+                <p class="text-slate-600 text-sm">Manage inventory, process orders, and track sales through an intuitive dashboard.</p>
+            </div>
+        </section>
+
+        <!-- Deep Dive -->
+        <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center mb-24 reveal">
+            <div class="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-2xl bg-slate-100 aspect-video">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="E-commerce Store Design" class="w-full h-full object-cover">
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-extrabold text-dark mb-6">Built on powerful technology.</h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">We utilize robust platforms like WooCommerce combined with custom frontend architectures (Bricks Builder) to ensure your store doesn't just look good, but performs exceptionally under heavy traffic.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="text-primary-500"></i> Dynamic product filtering and search.</li>
+                    <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="text-primary-500"></i> Automated email receipts and abandoned cart recovery.</li>
+                    <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="text-primary-500"></i> Variable pricing models for B2C and B2B setups.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="max-w-4xl mx-auto px-6 text-center reveal">
+            <div class="bg-dark p-10 rounded-3xl shadow-xl">
+                <h3 class="text-2xl font-bold text-white mb-4">Ready to launch your online store?</h3>
+                <p class="text-slate-400 mb-8">E-commerce packages start at $1,499. Get a fully functional, sales-ready platform in just weeks.</p>
+                <a href="easyweb-contact-en.html" class="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg">
+                    Request an Estimate
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 px-6 text-center">
+        <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that perform.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
