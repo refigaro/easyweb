@@ -1,0 +1,276 @@
+/* =============================================
+     DESIGN TOKENS — Easyweb Design System v1.0
+  ============================================= */
+:root {
+  /* --- COLOR PRIMITIVES --- */
+
+  /* Primary — Cyan (from color-swatches.svg) */
+  --color-primary-50: #caffff;
+  --color-primary-100: #72ffff;
+  --color-primary-200: #54efff;
+  --color-primary-300: #30d8f8;
+  --color-primary-400: #21d2f2; /* Brand Cyan ★ */
+  --color-primary-500: #00c2e2;
+  --color-primary-600: #00accb;
+  --color-primary-700: #007a99;
+  --color-primary-900: #004e62;
+
+  /* Secondary — Green (from color-swatches.svg) */
+  --color-secondary-50: #bfffb1;
+  --color-secondary-100: #81ff66;
+  --color-secondary-200: #67fa4f;
+  --color-secondary-300: #4be337;
+  --color-secondary-400: #27cc1a;
+  --color-secondary-500: #00b500; /* Brand Green ★ */
+  --color-secondary-600: #008500;
+  --color-secondary-900: #004a00;
+
+  /* Auxiliary — Teal (from color-swatches.svg) */
+  --color-aux-50: #defff7;
+  --color-aux-100: #bcffef;
+  --color-aux-200: #a5ead9;
+  --color-aux-300: #8fd4c2;
+  --color-aux-400: #87cbba; /* Brand Teal ★ */
+  --color-aux-500: #7abdad;
+  --color-aux-600: #64a797;
+  --color-aux-700: #00856c;
+  --color-aux-900: #004236;
+
+  /* Accent — Orange (from color-swatches.svg) */
+  --color-accent-50: #ffebae;
+  --color-accent-100: #ffd75b;
+  --color-accent-200: #ffc044;
+  --color-accent-300: #ffaa2c;
+  --color-accent-400: #ff9100; /* Brand Orange ★ */
+  --color-accent-500: #ff950a;
+  --color-accent-600: #ea8000;
+  --color-accent-700: #b05200;
+  --color-accent-900: #713500;
+
+  /* Grayscale (from color-swatches.svg) */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #eaeaea;
+  --color-gray-200: #bcbcbc;
+  --color-gray-300: #9b9b9b;
+  --color-gray-400: #7b7b7b;
+  --color-gray-500: #5a5a5a;
+  --color-gray-600: #3e3e3e;
+  --color-gray-700: #242424;
+  --color-gray-800: #444444; /* Brand text gray */
+  --color-gray-900: #333333; /* Brand text dark */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* --- SEMANTIC TOKENS --- */
+
+  /* Brand */
+  --brand-primary: var(--color-primary-400); /* #21d2f2 */
+  --brand-primary-dark: var(--color-primary-600); /* #00accb */
+  --brand-primary-light: var(--color-primary-50); /* #caffff */
+  --brand-cta: var(--color-secondary-500); /* #00b500 */
+  --brand-cta-hover: var(--color-secondary-600); /* #008500 */
+
+  /* Text */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-muted: var(--color-gray-400);
+  --text-on-dark: var(--color-white);
+  --text-on-brand: var(--color-white);
+
+  /* Surfaces */
+  --surface-base: var(--color-white);
+  --surface-subtle: var(--color-gray-50);
+  --surface-muted: var(--color-gray-100);
+  --surface-dark: var(--color-gray-900);
+  --surface-brand: var(--brand-primary);
+
+  /* Borders */
+  --border-light: var(--color-gray-200);
+  --border-medium: var(--color-gray-300);
+  --border-dark: var(--color-gray-700);
+
+  /* Feedback */
+  --color-success: var(--color-secondary-500);
+  --color-warning: var(--color-accent-500);
+  --color-error: #ef4444;
+  --color-error-light: #fef2f2;
+  --color-error-dark: #991b1b;
+  --color-error-darker: #7f1d1d;
+  --color-info: var(--color-primary-500);
+
+  /* --- TYPOGRAPHY --- */
+  --font-display: "Work Sans", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  /* Type Scale — fluid clamp(640px → 1920px)
+ Formula: clamp(min, calc(intercept + slope·vw), max)
+ slope = (max_px − min_px) / 1280 × 100
+    */
+  --text-3xl: clamp(
+    4rem,
+    calc(3rem + 2.5vw),
+    6rem
+  ); /* 64→96px  / 110% lh / 1% ls  */
+  --text-2xl: clamp(
+    3rem,
+    calc(2.25rem + 1.875vw),
+    4.5rem
+  ); /* 48→72px  / 110% lh / -4% ls */
+  --text-xl: clamp(
+    2.5rem,
+    calc(1.75rem + 1.875vw),
+    4rem
+  ); /* 40→64px  / 110% lh / -4% ls */
+  --text-lg: clamp(
+    2.25rem,
+    calc(1.75rem + 1.25vw),
+    3.25rem
+  ); /* 36→52px  / 110% lh / -4% ls */
+  --text-md: clamp(
+    1.75rem,
+    calc(1.5rem + 0.625vw),
+    2.25rem
+  ); /* 28→36px  / 110% lh / -4% ls */
+  --text-sm: clamp(
+    1.5rem,
+    calc(1.25rem + 0.625vw),
+    2rem
+  ); /* 24→32px  / 110% lh / -4% ls */
+  --text-lead: clamp(
+    1.5rem,
+    calc(1.25rem + 0.625vw),
+    2rem
+  ); /* 24→32px  / 120% lh / 0 ls   */
+  --text-summary: clamp(
+    1.25rem,
+    calc(1.125rem + 0.3125vw),
+    1.5rem
+  ); /* 20→24px  / 135% lh / 0 ls   */
+  --text-body: clamp(
+    1rem,
+    calc(0.9375rem + 0.15625vw),
+    1.125rem
+  ); /* 16→18px / 135% lh / 0 ls */
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* --- SPACING SCALE --- */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+  --space-32: 8rem; /* 128px */
+
+  /* --- BORDER RADIUS --- */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-3xl: 2rem; /* 32px */
+  --radius-full: 9999px;
+
+  /* --- SHADOWS --- */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px -4px rgba(0, 0, 0, 0.14);
+  --shadow-xl: 0 16px 48px -8px rgba(0, 0, 0, 0.18);
+  --shadow-glow-cyan: 0 0 24px rgba(33, 210, 242, 0.35);
+  --shadow-glow-green: 0 0 24px rgba(2, 192, 0, 0.3);
+
+  /* --- MOTION --- */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+
+  /* --- LAYOUT --- */
+  --sidebar-width: 260px;
+  --content-max: 900px;
+
+  /* Container behavior */
+  --container-width: 95vw;
+  --container-limit-breakpoint: 1920px;
+  --container-max-width: 1600px;
+
+  /* --- LINE HEIGHTS --- */
+  --lh-none: 1;
+  --lh-tight: 1.1;
+  --lh-lead: 1.2;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.7;
+  --lh-loose: 1.8;
+  --lh-looser: 1.9;
+
+  /* --- LETTER SPACING --- */
+  --ls-tightest: -0.04em;
+  --ls-tight: -0.03em;
+  --ls-normal: 0.01em;
+  --ls-medium: 0.08em;
+  --ls-wide: 0.1em;
+  --ls-wider: 0.12em;
+
+  /* --- EXTENDED TYPE SCALE --- */
+  /* Floor: 0.8rem — no UI text goes below this */
+  --text-xs: 0.8rem; /* fixed floor — labels, captions, mono metadata, badges, tags, table headers */
+  --text-small: 0.875rem; /* fixed — nav links, card body, alerts, hints */
+  --text-base-sm: clamp(
+    0.8rem,
+    calc(0.75rem + 0.125vw),
+    0.9rem
+  ); /* input labels, table body, small buttons, motion names */
+  --text-base: clamp(
+    0.9rem,
+    calc(0.85rem + 0.125vw),
+    1rem
+  ); /* buttons, inputs */
+  --text-card-title: clamp(
+    0.95rem,
+    calc(0.875rem + 0.1875vw),
+    1.1rem
+  ); /* card headings */
+  --text-icon: clamp(
+    1.2rem,
+    calc(1.1rem + 0.25vw),
+    1.4rem
+  ); /* card/alert icons */
+  --text-btn-lg: clamp(
+    0.95rem,
+    calc(0.9rem + 0.125vw),
+    1.05rem
+  ); /* large button */
+
+  /* --- COMPONENT PADDING --- */
+  --btn-pad: 14px 28px;
+  --btn-pad-outline: 12px 26px;
+  --btn-pad-ghost: 12px 20px;
+  --btn-pad-sm: 8px 18px;
+  --btn-pad-lg: 18px 36px;
+  --badge-pad: 4px 12px;
+  --badge-pad-sm: 2px 8px;
+  --input-pad: 10px 14px;
+
+  /* --- OPACITY --- */
+  --opacity-muted: 0.85;
+}
