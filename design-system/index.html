@@ -94,299 +94,94 @@
             cyan que referencia la paleta primaria de la marca.
           </p>
 
-          <div class="ds-subsection">
-            <div class="ds-subsection-title">Logo — 4 Variantes oficiales</div>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-4);
-              "
-            >
+          <h3 class="ds-table-heading">Logo — 4 Variantes oficiales</h3>
+            <div class="logo-grid">
               <!-- Horizontal default -->
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: var(--space-2);
-                "
-              >
+              <div class="logo-col">
                 <div class="logo-card white-bg">
                   <img
                     src="../brand_assets/logotipo.svg"
-                    style="height: 100px"
+                    class="logo-img"
                     alt="Logo horizontal"
                   />
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0 var(--space-1);
-                  "
-                >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-weight: var(--fw-bold);
-                      color: var(--text-primary);
-                    "
-                    >Horizontal</span
-                  >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-family: var(--font-mono);
-                      color: var(--text-muted);
-                    "
-                    >logotipo.svg</span
-                  >
+                <div class="logo-caption">
+                  <span class="logo-caption-name">Horizontal</span>
+                  <span class="logo-caption-file">logotipo.svg</span>
                 </div>
               </div>
 
               <!-- Vertical -->
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: var(--space-2);
-                "
-              >
+              <div class="logo-col">
                 <div class="logo-card white-bg">
                   <img
                     src="../brand_assets/logo-vertical.svg"
-                    style="height: 100px"
+                    class="logo-img"
                     alt="Logo vertical"
                   />
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0 var(--space-1);
-                  "
-                >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-weight: var(--fw-bold);
-                      color: var(--text-primary);
-                    "
-                    >Vertical</span
-                  >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-family: var(--font-mono);
-                      color: var(--text-muted);
-                    "
-                    >logo-vertical.svg</span
-                  >
+                <div class="logo-caption">
+                  <span class="logo-caption-name">Vertical</span>
+                  <span class="logo-caption-file">logo-vertical.svg</span>
                 </div>
               </div>
 
               <!-- Negativo (oscuro) -->
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: var(--space-2);
-                "
-              >
-                <div
-                  class="logo-card dark-bg"
-                  style="background: var(--color-gray-600)"
-                >
+              <div class="logo-col">
+                <div class="logo-card dark-bg">
                   <img
                     src="../brand_assets/logotipo-invertido.svg"
-                    style="height: 100px"
+                    class="logo-img"
                     alt="Logo negativo"
                   />
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0 var(--space-1);
-                  "
-                >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-weight: var(--fw-bold);
-                      color: var(--text-primary);
-                    "
-                    >Negativo</span
-                  >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-family: var(--font-mono);
-                      color: var(--text-muted);
-                    "
-                    >logotipo-invertido.svg</span
-                  >
+                <div class="logo-caption">
+                  <span class="logo-caption-name">Negativo</span>
+                  <span class="logo-caption-file">logotipo-invertido.svg</span>
                 </div>
               </div>
 
               <!-- Sobre color primario -->
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: var(--space-2);
-                "
-              >
-                <div class="logo-card" style="background: var(--brand-primary)">
+              <div class="logo-col">
+                <div class="logo-card cyan-bg">
                   <img
                     src="../brand_assets/logotipo-sobre-primario.svg"
-                    style="height: 100px"
+                    class="logo-img"
                     alt="Logo sobre primario"
                   />
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0 var(--space-1);
-                  "
-                >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-weight: var(--fw-bold);
-                      color: var(--text-primary);
-                    "
-                    >Sobre Color Primario</span
-                  >
-                  <span
-                    style="
-                      font-size: var(--text-xs);
-                      font-family: var(--font-mono);
-                      color: var(--text-muted);
-                    "
-                    >logotipo-sobre-primario.svg</span
-                  >
+                <div class="logo-caption">
+                  <span class="logo-caption-name">Sobre Color Primario</span>
+                  <span class="logo-caption-file">logotipo-sobre-primario.svg</span>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="ds-subsection mt-8">
-            <div class="ds-subsection-title">Clearspace & Uso incorrecto</div>
-            <div
-              style="
-                background: var(--surface-base);
-                box-shadow: var(--shadow-sm);
-                border-radius: var(--radius-xl);
-                padding: var(--space-6);
-              "
-            >
-              <ul
-                style="
-                  list-style: none;
-                  display: flex;
-                  flex-direction: column;
-                  gap: var(--space-2);
-                "
-              >
-                <li
-                  style="
-                    font-size: var(--text-small);
-                    color: var(--text-secondary);
-                    display: flex;
-                    gap: var(--space-3);
-                    align-items: center;
-                  "
-                >
-                  <span
-                    style="
-                      color: var(--color-error);
-                      font-size: var(--text-card-title);
-                    "
-                    >✗</span
-                  >
+          <h3 class="ds-table-heading mt-8">Clearspace & Uso incorrecto</h3>
+            <div class="ds-box">
+              <ul class="ds-list">
+                <li class="ds-list-item">
+                  <span class="ds-icon--error">✗</span>
                   No modificar colores del logotipo
                 </li>
-                <li
-                  style="
-                    font-size: var(--text-small);
-                    color: var(--text-secondary);
-                    display: flex;
-                    gap: var(--space-3);
-                    align-items: center;
-                  "
-                >
-                  <span
-                    style="
-                      color: var(--color-error);
-                      font-size: var(--text-card-title);
-                    "
-                    >✗</span
-                  >
+                <li class="ds-list-item">
+                  <span class="ds-icon--error">✗</span>
                   No usar sobre fondos con bajo contraste
                 </li>
-                <li
-                  style="
-                    font-size: var(--text-small);
-                    color: var(--text-secondary);
-                    display: flex;
-                    gap: var(--space-3);
-                    align-items: center;
-                  "
-                >
-                  <span
-                    style="
-                      color: var(--color-error);
-                      font-size: var(--text-card-title);
-                    "
-                    >✗</span
-                  >
+                <li class="ds-list-item">
+                  <span class="ds-icon--error">✗</span>
                   No distorsionar ni escalar de forma no proporcional
                 </li>
-                <li
-                  style="
-                    font-size: var(--text-small);
-                    color: var(--text-secondary);
-                    display: flex;
-                    gap: var(--space-3);
-                    align-items: center;
-                  "
-                >
-                  <span
-                    style="
-                      color: var(--color-success);
-                      font-size: var(--text-card-title);
-                    "
-                    >✓</span
-                  >
+                <li class="ds-list-item">
+                  <span class="ds-icon--success">✓</span>
                   Usar siempre el SVG original sin modificar
                 </li>
-                <li
-                  style="
-                    font-size: var(--text-small);
-                    color: var(--text-secondary);
-                    display: flex;
-                    gap: var(--space-3);
-                    align-items: center;
-                  "
-                >
-                  <span
-                    style="
-                      color: var(--color-success);
-                      font-size: var(--text-card-title);
-                    "
-                    >✓</span
-                  >
+                <li class="ds-list-item">
+                  <span class="ds-icon--success">✓</span>
                   Clearspace mínimo: igual al alto de la mascota en todos lados
                 </li>
               </ul>
             </div>
-          </div>
         </section>
 
         <!-- COLOR -->
@@ -401,19 +196,12 @@
             funcionales.
           </p>
 
-          <div class="ds-subsection">
-            <div class="ds-subsection-title">Paletas Primitivas</div>
+          <h3 class="ds-table-heading">Paletas Primitivas</h3>
             <div class="color-palette color-swatches-wrapper">
               <!-- Fuente: color-swatches.svg -->
               <div class="color-row">
                 <span class="color-row-name"
-                  >Primario<br /><small
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: var(--text-xs);
-                      color: var(--text-muted);
-                    "
-                    >Cyan</small
+                  >Primario<br /><small>Cyan</small
                   ></span
                 >
                 <div class="color-swatches">
@@ -501,13 +289,7 @@
 
               <div class="color-row">
                 <span class="color-row-name"
-                  >Secundario<br /><small
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: var(--text-xs);
-                      color: var(--text-muted);
-                    "
-                    >Green</small
+                  >Secundario<br /><small>Green</small
                   ></span
                 >
                 <div class="color-swatches">
@@ -587,13 +369,7 @@
 
               <div class="color-row">
                 <span class="color-row-name"
-                  >Auxiliar<br /><small
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: var(--text-xs);
-                      color: var(--text-muted);
-                    "
-                    >Teal</small
+                  >Auxiliar<br /><small>Teal</small
                   ></span
                 >
                 <div class="color-swatches">
@@ -681,13 +457,7 @@
 
               <div class="color-row">
                 <span class="color-row-name"
-                  >Acento<br /><small
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: var(--text-xs);
-                      color: var(--text-muted);
-                    "
-                    >Orange</small
+                  >Acento<br /><small>Orange</small
                   ></span
                 >
                 <div class="color-swatches">
@@ -775,13 +545,7 @@
 
               <div class="color-row">
                 <span class="color-row-name"
-                  >Grises<br /><small
-                    style="
-                      font-family: var(--font-mono);
-                      font-size: var(--text-xs);
-                      color: var(--text-muted);
-                    "
-                    >Gray</small
+                  >Grises<br /><small>Gray</small
                   ></span
                 >
                 <div class="color-swatches">
@@ -874,10 +638,8 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="ds-subsection mt-8">
-            <div class="ds-subsection-title">Tokens Semánticos</div>
+          <h3 class="ds-table-heading mt-8">Tokens Semánticos</h3>
             <div class="semantic-grid">
               <div class="semantic-card">
                 <div
@@ -928,7 +690,6 @@
                   class="semantic-swatch"
                   style="
                     background: var(--surface-base);
-                    border: 1px solid var(--border-light);
                   "
                 ></div>
                 <div class="semantic-info">
@@ -971,7 +732,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         <!-- TYPOGRAPHY -->
@@ -986,8 +746,7 @@
             grandes usan tracking negativo para mayor impacto visual.
           </p>
 
-          <div class="ds-subsection">
-            <div class="ds-subsection-title">Escala Tipográfica</div>
+          <h3 class="ds-table-heading">Escala Tipográfica</h3>
             <div class="type-specimen">
               <div class="type-table-header">
                 <span>Nombre · Specs · Token</span>
@@ -1116,12 +875,10 @@
                 </div>
               </div>
             </div>
-          </div>
 
           <!-- UI / COMPONENT SCALE -->
-          <div class="ds-subsection mt-8">
-            <div class="ds-subsection-title">Escala UI / Componentes</div>
-            <p class="ds-section-desc" style="margin-bottom: var(--space-4)">
+          <h3 class="ds-table-heading mt-8">Escala UI / Componentes</h3>
+          <p class="ds-section-desc--wide">
               Tamaños para elementos de interfaz: botones, inputs, tarjetas,
               badges, labels. Mínimo fijo en 0.8rem. Aplicados con
               <code class="mono-token-ref">clamp()</code> donde el rango es
@@ -1207,14 +964,10 @@
                 </div>
               </div>
             </div>
-          </div>
 
           <!-- SPACE MONO -->
-          <div class="ds-subsection mt-8">
-            <div class="ds-subsection-title">
-              Space Mono — Estilos de código y metadatos
-            </div>
-            <p class="ds-section-desc" style="margin-bottom: var(--space-4)">
+          <h3 class="ds-table-heading mt-8">Space Mono — Estilos de código y metadatos</h3>
+          <p class="ds-section-desc--wide">
               Space Mono se usa exclusivamente para tokens, valores técnicos,
               hex codes y metadatos del sistema. Nunca para cuerpo editorial.
               Pesos disponibles: 400 Regular, 700 Bold.
@@ -1276,82 +1029,64 @@
                 que Token Ref.
               </div>
             </div>
-          </div>
 
-          <div class="ds-subsection mt-8">
-            <div class="ds-subsection-title">Pesos disponibles</div>
-            <div style="display: flex; flex-wrap: wrap; gap: var(--space-6)">
-              <div style="text-align: center">
+          <h3 class="ds-table-heading mt-8">Pesos disponibles</h3>
+            <div class="fw-demo-grid">
+              <div class="fw-demo-item">
                 <div
-                  class="fw-demo-sample"
-                  style="
-                    font-weight: var(--fw-light);
-                    color: var(--text-secondary);
-                  "
+                  class="fw-demo-sample fw-demo--light"
                 >
                   Aa
                 </div>
                 <div class="fw-demo-label">300 Light</div>
               </div>
-              <div style="text-align: center">
+              <div class="fw-demo-item">
                 <div
-                  class="fw-demo-sample"
-                  style="
-                    font-weight: var(--fw-regular);
-                    color: var(--text-secondary);
-                  "
+                  class="fw-demo-sample fw-demo--regular"
                 >
                   Aa
                 </div>
                 <div class="fw-demo-label">400 Regular</div>
               </div>
-              <div style="text-align: center">
+              <div class="fw-demo-item">
                 <div
-                  class="fw-demo-sample"
-                  style="
-                    font-weight: var(--fw-medium);
-                    color: var(--text-secondary);
-                  "
+                  class="fw-demo-sample fw-demo--medium"
                 >
                   Aa
                 </div>
                 <div class="fw-demo-label">500 Medium</div>
               </div>
-              <div style="text-align: center">
+              <div class="fw-demo-item">
                 <div
-                  class="fw-demo-sample"
-                  style="font-weight: var(--fw-semibold)"
+                  class="fw-demo-sample fw-demo--semibold"
                 >
                   Aa
                 </div>
                 <div class="fw-demo-label">600 SemiBold</div>
               </div>
-              <div style="text-align: center">
-                <div class="fw-demo-sample" style="font-weight: var(--fw-bold)">
+              <div class="fw-demo-item">
+                <div class="fw-demo-sample fw-demo--bold">
                   Aa
                 </div>
                 <div class="fw-demo-label">700 Bold</div>
               </div>
-              <div style="text-align: center">
+              <div class="fw-demo-item">
                 <div
-                  class="fw-demo-sample"
-                  style="font-weight: var(--fw-extrabold)"
+                  class="fw-demo-sample fw-demo--extrabold"
                 >
                   Aa
                 </div>
                 <div class="fw-demo-label">800 ExtraBold</div>
               </div>
-              <div style="text-align: center">
+              <div class="fw-demo-item">
                 <div
-                  class="fw-demo-sample"
-                  style="font-weight: var(--fw-black)"
+                  class="fw-demo-sample fw-demo--black"
                 >
                   Aa
                 </div>
                 <div class="fw-demo-label">900 Black</div>
               </div>
             </div>
-          </div>
         </section>
 
         <!-- SPACING -->
@@ -1371,140 +1106,100 @@
               <span class="spacing-label">--space-1</span>
               <span class="spacing-value">4px / 0.25rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 4px"></div>
+                <div class="spacing-bar" style="width: var(--space-1)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-2</span>
               <span class="spacing-value">8px / 0.5rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 8px"></div>
+                <div class="spacing-bar" style="width: var(--space-2)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-3</span>
               <span class="spacing-value">12px / 0.75rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 12px"></div>
+                <div class="spacing-bar" style="width: var(--space-3)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-4</span>
               <span class="spacing-value">16px / 1rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 16px"></div>
+                <div class="spacing-bar" style="width: var(--space-4)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-6</span>
               <span class="spacing-value">24px / 1.5rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 24px"></div>
+                <div class="spacing-bar" style="width: var(--space-6)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-8</span>
               <span class="spacing-value">32px / 2rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 32px"></div>
+                <div class="spacing-bar" style="width: var(--space-8)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-10</span>
               <span class="spacing-value">40px / 2.5rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 40px"></div>
+                <div class="spacing-bar" style="width: var(--space-10)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-12</span>
               <span class="spacing-value">48px / 3rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 48px"></div>
+                <div class="spacing-bar" style="width: var(--space-12)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-16</span>
               <span class="spacing-value">64px / 4rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 64px"></div>
+                <div class="spacing-bar" style="width: var(--space-16)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-24</span>
               <span class="spacing-value">96px / 6rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 96px"></div>
+                <div class="spacing-bar" style="width: var(--space-24)"></div>
               </div>
             </div>
             <div class="spacing-row">
               <span class="spacing-label">--space-32</span>
               <span class="spacing-value">128px / 8rem</span>
               <div class="spacing-bar-track">
-                <div class="spacing-bar" style="width: 128px"></div>
+                <div class="spacing-bar" style="width: var(--space-32)"></div>
               </div>
             </div>
           </div>
 
-          <div class="ds-subsection" id="containers">
-            <div class="ds-subsection-title">Container Component</div>
-            <p
-              class="ds-section-desc"
-              style="margin-bottom: var(--space-6); max-width: 760px"
-            >
+          <h3 class="ds-table-heading" id="containers">Container Component</h3>
+          <p class="ds-section-desc--wide">
               Este sistema define un componente CSS reutilizable
-              <code
-                style="
-                  font-family: var(--font-mono);
-                  font-size: 0.85em;
-                  color: var(--brand-primary);
-                "
-                >.container</code
+              <code class="ds-code">.container</code
               >. Su comportamiento base es
-              <code
-                style="
-                  font-family: var(--font-mono);
-                  font-size: 0.85em;
-                  color: var(--brand-primary);
-                "
-                >width: 95vw</code
+              <code class="ds-code">width: 95vw</code
               >
               y desde
-              <code
-                style="
-                  font-family: var(--font-mono);
-                  font-size: 0.85em;
-                  color: var(--brand-primary);
-                "
-                >min-width: 1920px</code
+              <code class="ds-code">min-width: 1920px</code
               >
               aplica
-              <code
-                style="
-                  font-family: var(--font-mono);
-                  font-size: 0.85em;
-                  color: var(--brand-primary);
-                "
-                >max-width: 1600px</code
+              <code class="ds-code">max-width: 1600px</code
               >.
               Los elementos
-              <code
-                style="
-                  font-family: var(--font-mono);
-                  font-size: 0.85em;
-                  color: var(--brand-primary);
-                "
-                >.section</code
+              <code class="ds-code">.section</code
               >
               usan padding vertical consistente y son siempre el parent directo
               de un
-              <code
-                style="
-                  font-family: var(--font-mono);
-                  font-size: 0.85em;
-                  color: var(--brand-primary);
-                "
-                >.container</code
+              <code class="ds-code">.container</code
               >.
             </p>
 
@@ -1533,9 +1228,9 @@
               </div>
             </div>
 
-            <div class="component-preview" style="margin-top: var(--space-6)">
+            <div class="component-preview mt-6">
               <div class="preview-code">
-                <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">.container {
+                <pre>.container {
   width: min(100%, var(--container-width));
   margin-inline: auto;
 }
@@ -1565,109 +1260,39 @@
               </div>
             </div>
 
-            <div class="ds-subsection" style="margin-top: var(--space-8)">
-              <div class="ds-subsection-title">Section Component</div>
-              <p
-                class="ds-section-desc"
-                style="margin-bottom: var(--space-6); max-width: 760px"
-              >
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >.section</code
+          <h3 class="ds-table-heading mt-8">Section Component</h3>
+          <p class="ds-section-desc--wide">
+                <code class="ds-code">.section</code
                 >
                 define el ritmo vertical del layout con
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >--space-24</code
+                <code class="ds-code">--space-24</code
                 >
                 arriba y abajo. Regla del sistema: cada
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >.section</code
+                <code class="ds-code">.section</code
                 >
                 debe envolver directamente un
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >.container</code
+                <code class="ds-code">.container</code
                 >. Variantes disponibles:
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >.section--tight</code
+                <code class="ds-code">.section--tight</code
                 >
                 (usa
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >--space-16</code
+                <code class="ds-code">--space-16</code
                 >) y
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >.section--hero</code
+                <code class="ds-code">.section--hero</code
                 >
                 (usa
-                <code
-                  style="
-                    font-family: var(--font-mono);
-                    font-size: 0.85em;
-                    color: var(--brand-primary);
-                  "
-                  >--space-32</code
+                <code class="ds-code">--space-32</code
                 >).
               </p>
 
               <div class="component-preview">
-                <div class="preview-canvas" style="align-items: stretch; width: 100%">
-                  <section
-                    class="section"
-                    style="
-                      width: 100%;
-                      background: var(--surface-base);
-                      border: 1px dashed var(--border-medium);
-                      border-radius: var(--radius-lg);
-                    "
-                  >
+                <div class="preview-canvas preview-canvas--full">
+                  <section class="section section-demo">
                     <div
-                      class="container"
-                      style="
-                        background: var(--color-primary-50);
-                        border: 1px solid var(--color-primary-200);
-                        border-radius: var(--radius-md);
-                        padding: var(--space-4);
-                      "
+                      class="container container-demo"
                     >
                       <div
-                        style="
-                          font-size: var(--text-small);
-                          font-weight: var(--fw-semibold);
-                          color: var(--color-primary-700);
-                        "
+                        class="container-demo-label"
                       >
                         Base: .container dentro de .section
                       </div>
@@ -1675,7 +1300,7 @@
                   </section>
                 </div>
                 <div class="preview-code">
-                  <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">.section {
+                  <pre>.section {
   padding-top: var(--space-24);
   padding-bottom: var(--space-24);
 }
@@ -1704,14 +1329,7 @@
               </div>
 
               <table
-                class="token-table"
-                style="
-                  margin-top: var(--space-6);
-                  background: var(--surface-base);
-                  box-shadow: var(--shadow-sm);
-                  border-radius: var(--radius-xl);
-                  overflow: hidden;
-                "
+                class="token-table token-table--card mt-6"
               >
                 <thead>
                   <tr>
@@ -1754,8 +1372,6 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
         </section>
 
         <!-- BORDER RADIUS -->
@@ -1767,13 +1383,7 @@
           <p class="ds-section-desc">
             El sistema usa radios generosos que refuerzan la personalidad
             amigable y moderna de Easyweb. Los botones principales usan
-            <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--brand-primary);
-              "
-              >--radius-full</code
+            <code class="ds-code">--radius-full</code
             >.
           </p>
 
@@ -1910,30 +1520,13 @@
           </div>
           <p class="ds-section-desc">
             Animar solo
-            <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--brand-primary);
-              "
-              >transform</code
+            <code class="ds-code">transform</code
             >
             y
-            <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--brand-primary);
-              "
-              >opacity</code
+            <code class="ds-code">opacity</code
             >. Nunca
             <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--color-error);
-              "
-              >transition-all</code
+              class="ds-code--error">transition-all</code
             >. Pasa el cursor sobre las tarjetas para ver cada easing en acción.
           </p>
 
@@ -1946,8 +1539,7 @@
             </div>
             <div class="motion-card">
               <div
-                class="motion-demo motion-demo-smooth"
-                style="background: var(--brand-cta)"
+                class="motion-demo motion-demo-smooth motion-demo--cta"
               ></div>
               <div class="motion-name">Smooth</div>
               <div class="motion-token">--ease-smooth</div>
@@ -1955,8 +1547,7 @@
             </div>
             <div class="motion-card">
               <div
-                class="motion-demo motion-demo-out"
-                style="background: var(--color-aux-500)"
+                class="motion-demo motion-demo-out motion-demo--aux"
               ></div>
               <div class="motion-name">Ease Out</div>
               <div class="motion-token">--ease-out</div>
@@ -1964,16 +1555,9 @@
             </div>
           </div>
 
-          <div class="mt-8">
-            <div class="ds-subsection-title">Duraciones</div>
+          <h3 class="ds-table-heading mt-8">Duraciones</h3>
             <table
-              class="token-table"
-              style="
-                background: var(--surface-base);
-                box-shadow: var(--shadow-sm);
-                border-radius: var(--radius-xl);
-                overflow: hidden;
-              "
+              class="token-table token-table--card"
             >
               <thead>
                 <tr>
@@ -2005,7 +1589,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
         </section>
 
         <!-- TABLES -->
@@ -2016,19 +1599,19 @@
           </div>
           <p class="ds-section-desc">
             El sistema incluye dos tipos de tablas según el caso de uso:
-            <strong>tablas de especímenes</strong> (con <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--brand-primary);">&lt;div&gt;</code> + CSS Grid) para documentación visual, y
-            <strong>tablas de datos</strong> (con <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--brand-primary);">&lt;table&gt;</code> semántica) para datos tabulares reales.
+            <strong>tablas de especímenes</strong> (con <code class="ds-code">&lt;div&gt;</code> + CSS Grid) para documentación visual, y
+            <strong>tablas de datos</strong> (con <code class="ds-code">&lt;table&gt;</code> semántica) para datos tabulares reales.
           </p>
 
           <!-- Tabla de especímenes -->
-          <h3 style="margin-top: var(--space-8); margin-bottom: var(--space-2); font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--text-primary);">Tabla de especímenes</h3>
-          <p class="ds-section-desc" style="margin-bottom: var(--space-6);">
+          <h3 class="ds-table-heading mt-8">Tabla de especímenes</h3>
+          <p class="ds-section-desc--wide">
             <strong>Cuándo usar:</strong> documentación de design tokens, especímenes tipográficos, o cualquier layout que requiera metadata apilada (label + specs + token) y control preciso del diseño. No son datos tabulares, son especímenes visuales.
           </p>
 
           <div class="component-preview">
-            <div class="preview-canvas" style="align-items: stretch">
-              <div class="table-specimen" style="width: 100%">
+            <div class="preview-canvas preview-canvas--full">
+              <div class="table-specimen">
                 <div class="table-specimen-header">
                   <span>Nombre · Specs · Token</span>
                   <span>Muestra</span>
@@ -2065,7 +1648,7 @@
               </div>
             </div>
             <div class="preview-code">
-              <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;div class="table-specimen"&gt;
+              <pre>&lt;div class="table-specimen"&gt;
   &lt;div class="table-specimen-header"&gt;
     &lt;span&gt;Nombre · Specs · Token&lt;/span&gt;
     &lt;span&gt;Muestra&lt;/span&gt;
@@ -2086,14 +1669,14 @@
           </div>
 
           <!-- Tabla de datos -->
-          <h3 style="margin-top: var(--space-10); margin-bottom: var(--space-2); font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--text-primary);">Tabla de datos</h3>
-          <p class="ds-section-desc" style="margin-bottom: var(--space-6);">
-            <strong>Cuándo usar:</strong> datos tabulares reales con relaciones fila/columna — comparativas de planes, pricing, listados de features, etc. Usa elementos HTML semánticos (<code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--brand-primary);">&lt;table&gt;</code>, <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--brand-primary);">&lt;thead&gt;</code>, <code style="font-family: var(--font-mono); font-size: 0.85em; color: var(--brand-primary);">&lt;tbody&gt;</code>) para accesibilidad y semántica correcta.
+          <h3 class="ds-table-heading mt-10">Tabla de datos</h3>
+          <p class="ds-section-desc--wide">
+            <strong>Cuándo usar:</strong> datos tabulares reales con relaciones fila/columna — comparativas de planes, pricing, listados de features, etc. Usa elementos HTML semánticos (<code class="ds-code">&lt;table&gt;</code>, <code class="ds-code">&lt;thead&gt;</code>, <code class="ds-code">&lt;tbody&gt;</code>) para accesibilidad y semántica correcta.
           </p>
 
           <div class="component-preview">
-            <div class="preview-canvas" style="align-items: stretch">
-              <table class="data-table" style="width: 100%">
+            <div class="preview-canvas preview-canvas--full">
+              <table class="data-table">
                 <thead>
                   <tr>
                     <th>Plan</th>
@@ -2125,7 +1708,7 @@
               </table>
             </div>
             <div class="preview-code">
-              <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;table class="data-table"&gt;
+              <pre>&lt;table class="data-table"&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Plan&lt;/th&gt;
@@ -2156,27 +1739,15 @@
           <p class="ds-section-desc">
             Los botones CTA usan
             <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--brand-cta);
-              "
-              >--brand-cta</code
+              class="ds-code--cta">--brand-cta</code
             >
             (verde). Los botones de acción secundaria usan
-            <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--brand-primary);
-              "
-              >--brand-primary</code
+            <code class="ds-code">--brand-primary</code
             >
             (cyan). Todo botón debe tener estado hover, focus-visible y active.
           </p>
 
-          <div class="ds-subsection">
-            <div class="ds-subsection-title">Variantes</div>
+          <h3 class="ds-table-heading">Variantes</h3>
             <div class="component-preview">
               <div class="preview-canvas">
                 <button class="btn btn-primary">Haz la tuya aquí</button>
@@ -2186,56 +1757,45 @@
                 <button class="btn btn-ghost">Leer más →</button>
               </div>
               <div class="preview-code">
-                <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;button class="btn btn-primary"&gt;Haz la tuya aquí&lt;/button&gt;
+                <pre>&lt;button class="btn btn-primary"&gt;Haz la tuya aquí&lt;/button&gt;
 &lt;button class="btn btn-brand"&gt;Ver planes&lt;/button&gt;
 &lt;button class="btn btn-dark"&gt;Agendar llamada&lt;/button&gt;
 &lt;button class="btn btn-outline"&gt;Ver portafolio&lt;/button&gt;
 &lt;button class="btn btn-ghost"&gt;Leer más →&lt;/button&gt;</pre>
               </div>
             </div>
-          </div>
 
-          <div class="ds-subsection mt-6">
-            <div class="ds-subsection-title">Tamaños</div>
+          <h3 class="ds-table-heading mt-6">Tamaños</h3>
             <div class="component-preview">
-              <div class="preview-canvas" style="align-items: center">
+              <div class="preview-canvas preview-canvas--full">
                 <button class="btn btn-primary btn-sm">Small</button>
                 <button class="btn btn-primary">Default</button>
                 <button class="btn btn-primary btn-lg">Large</button>
               </div>
               <div class="preview-code">
-                <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+                <pre>&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
 &lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
 &lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;</pre>
               </div>
             </div>
-          </div>
 
-          <div class="ds-subsection mt-6">
-            <div class="ds-subsection-title">Sobre fondos oscuros</div>
+          <h3 class="ds-table-heading mt-6">Sobre fondos oscuros</h3>
             <div class="component-preview">
               <div class="preview-canvas dark">
                 <button class="btn btn-primary">Haz la tuya aquí</button>
                 <button class="btn btn-brand">Ver planes</button>
                 <button
-                  class="btn btn-outline"
-                  style="color: white; border-color: rgba(255, 255, 255, 0.3)"
+                  class="btn btn-outline btn-outline--on-dark"
                 >
                   Outline
                 </button>
               </div>
               <div class="preview-code">
-                <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;button class="btn btn-primary"&gt;Haz la tuya aquí&lt;/button&gt;
+                <pre>&lt;button class="btn btn-primary"&gt;Haz la tuya aquí&lt;/button&gt;
 &lt;button class="btn btn-brand"&gt;Ver planes&lt;/button&gt;
-&lt;button
-  class="btn btn-outline"
-  style="color: white; border-color: rgba(255, 255, 255, 0.3)"
-&gt;
-  Outline
-&lt;/button&gt;</pre>
+&lt;button class="btn btn-outline btn-outline--on-dark"&gt;Outline&lt;/button&gt;</pre>
               </div>
             </div>
-          </div>
         </section>
 
         <!-- BADGES -->
@@ -2251,8 +1811,7 @@
 
           <div class="component-preview">
             <div
-              class="preview-canvas"
-              style="flex-wrap: wrap; gap: var(--space-3)"
+              class="preview-canvas preview-canvas--compact"
             >
               <span class="badge badge-primary">Primario</span>
               <span class="badge badge-green">
@@ -2262,21 +1821,12 @@
               <span class="badge badge-gray">Landing Page</span>
               <span class="badge badge-dark">Most Popular</span>
               <span class="badge badge-primary">
-                <span
-                  style="
-                    display: inline-block;
-                    width: 6px;
-                    height: 6px;
-                    border-radius: 50%;
-                    background: var(--brand-primary);
-                    animation: pulse 2s infinite;
-                  "
-                ></span>
+                <span class="badge-dot badge-dot--pulse"></span>
                 En vivo
               </span>
             </div>
             <div class="preview-code">
-              <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;span class="badge badge-primary"&gt;Primario&lt;/span&gt;
+              <pre>&lt;span class="badge badge-primary"&gt;Primario&lt;/span&gt;
 &lt;span class="badge badge-green"&gt;
   &lt;span class="badge-dot"&gt;&lt;/span&gt; Online Store
 &lt;/span&gt;
@@ -2284,7 +1834,7 @@
 &lt;span class="badge badge-gray"&gt;Landing Page&lt;/span&gt;
 &lt;span class="badge badge-dark"&gt;Most Popular&lt;/span&gt;
 &lt;span class="badge badge-primary"&gt;
-  &lt;span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--brand-primary); animation:pulse 2s infinite;"&gt;&lt;/span&gt;
+  &lt;span class="badge-dot badge-dot--pulse"&gt;&lt;/span&gt;
   En vivo
 &lt;/span&gt;</pre>
             </div>
@@ -2300,31 +1850,19 @@
           <p class="ds-section-desc">
             Las tarjetas son la unidad estructural más usada. Hover eleva la
             sombra y aplica un sutil translateY. Siempre usan
-            <code
-              style="
-                font-family: var(--font-mono);
-                font-size: 0.85em;
-                color: var(--brand-primary);
-              "
-              >--radius-md</code
+            <code class="ds-code">--radius-md</code
             >.
           </p>
 
           <div class="component-preview">
             <div
-              class="preview-canvas"
-              style="background: var(--color-gray-100); align-items: stretch"
+              class="preview-canvas preview-canvas--cards"
             >
               <div
-                class="card"
-                style="flex: 1; min-width: 200px; max-width: 260px"
+                class="card card--preview"
               >
                 <div
-                  class="card-icon"
-                  style="
-                    background: var(--color-primary-100);
-                    color: var(--brand-primary);
-                  "
+                  class="card-icon card-icon--primary"
                 >
                   ⚡
                 </div>
@@ -2335,15 +1873,10 @@
                 </div>
               </div>
               <div
-                class="card"
-                style="flex: 1; min-width: 200px; max-width: 260px"
+                class="card card--preview"
               >
                 <div
-                  class="card-icon"
-                  style="
-                    background: var(--color-secondary-100);
-                    color: var(--brand-cta);
-                  "
+                  class="card-icon card-icon--secondary"
                 >
                   🎯
                 </div>
@@ -2354,15 +1887,10 @@
                 </div>
               </div>
               <div
-                class="card"
-                style="flex: 1; min-width: 200px; max-width: 260px"
+                class="card card--preview"
               >
                 <div
-                  class="card-icon"
-                  style="
-                    background: var(--color-accent-100);
-                    color: var(--color-accent-600);
-                  "
+                  class="card-icon card-icon--accent"
                 >
                   ✏️
                 </div>
@@ -2374,20 +1902,20 @@
               </div>
             </div>
             <div class="preview-code">
-              <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;div class="card" style="flex:1; min-width:200px; max-width:260px"&gt;
-  &lt;div class="card-icon" style="background:var(--color-primary-100); color:var(--brand-primary);"&gt;⚡&lt;/div&gt;
+              <pre>&lt;div class="card card--preview"&gt;
+  &lt;div class="card-icon card-icon--primary"&gt;⚡&lt;/div&gt;
   &lt;div class="card-title"&gt;Velocidad Extrema&lt;/div&gt;
   &lt;div class="card-body"&gt;Optimizamos imágenes y código para que tu sitio cargue casi instantáneamente.&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="card" style="flex:1; min-width:200px; max-width:260px"&gt;
-  &lt;div class="card-icon" style="background:var(--color-secondary-100); color:var(--brand-cta);"&gt;🎯&lt;/div&gt;
+&lt;div class="card card--preview"&gt;
+  &lt;div class="card-icon card-icon--secondary"&gt;🎯&lt;/div&gt;
   &lt;div class="card-title"&gt;SEO Amigable&lt;/div&gt;
   &lt;div class="card-body"&gt;Construido con la estructura semántica exacta que los buscadores demandan.&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="card" style="flex:1; min-width:200px; max-width:260px"&gt;
-  &lt;div class="card-icon" style="background:var(--color-accent-100); color:var(--color-accent-600);"&gt;✏️&lt;/div&gt;
+&lt;div class="card card--preview"&gt;
+  &lt;div class="card-icon card-icon--accent"&gt;✏️&lt;/div&gt;
   &lt;div class="card-title"&gt;Auto-gestionable&lt;/div&gt;
   &lt;div class="card-body"&gt;Un dashboard súper simple. Cambia fotos o texto sin pagar extra.&lt;/div&gt;
 &lt;/div&gt;</pre>
@@ -2408,13 +1936,7 @@
 
           <div class="component-preview">
             <div
-              class="preview-canvas"
-              style="
-                flex-direction: column;
-                align-items: stretch;
-                gap: var(--space-5);
-                max-width: 400px;
-              "
+              class="preview-canvas preview-canvas--inputs"
             >
               <div class="input-group">
                 <label class="input-label">Nombre del negocio</label>
@@ -2434,7 +1956,7 @@
                   type="email"
                   value="hola@mibusiness.com"
                 />
-                <span class="input-hint" style="color: var(--color-success)"
+                <span class="input-hint success"
                   >✓ Email válido</span
                 >
               </div>
@@ -2447,7 +1969,7 @@
               </div>
             </div>
             <div class="preview-code">
-              <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;div class="input-group"&gt;
+              <pre>&lt;div class="input-group"&gt;
   &lt;label class="input-label"&gt;Nombre del negocio&lt;/label&gt;
   &lt;input class="input" type="text" placeholder="Ej: Mi Empresa SA" /&gt;
   &lt;span class="input-hint"&gt;El nombre que aparecerá en tu sitio web&lt;/span&gt;
@@ -2456,7 +1978,7 @@
 &lt;div class="input-group"&gt;
   &lt;label class="input-label"&gt;Email&lt;/label&gt;
   &lt;input class="input success" type="email" value="hola@mibusiness.com" /&gt;
-  &lt;span class="input-hint" style="color: var(--color-success)"&gt;✓ Email válido&lt;/span&gt;
+  &lt;span class="input-hint success"&gt;✓ Email válido&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;div class="input-group"&gt;
@@ -2481,8 +2003,7 @@
 
           <div class="component-preview">
             <div
-              class="preview-canvas"
-              style="flex-direction: column; align-items: stretch; gap: var(--space-3)"
+              class="preview-canvas preview-canvas--stack"
             >
               <div class="alert alert-info">
                 <i class="alert-icon fa-solid fa-circle-info"></i>
@@ -2524,7 +2045,7 @@
             </div>
 
             <div class="preview-code">
-              <pre style="margin: 0; font-family: inherit; font-size: inherit; color: inherit">&lt;div class="alert alert-info"&gt;
+              <pre>&lt;div class="alert alert-info"&gt;
   &lt;i class="alert-icon fa-solid fa-circle-info"&gt;&lt;/i&gt;
   &lt;div class="alert-content"&gt;
     &lt;div class="alert-title"&gt;Tu sitio está siendo revisado&lt;/div&gt;
@@ -2608,28 +2129,13 @@
           <p class="ds-section-desc">
             Referencia completa de todos los tokens CSS. Copia el bloque de
             variables y agrégalo al
-            <code style="font-family: var(--font-mono); font-size: 0.85em"
-              >:root</code
+            <code class="ds-code--mono">:root</code
             >
             de cualquier archivo para heredar el sistema.
           </p>
 
-          <div
-            style="
-              background: var(--color-gray-900);
-              border-radius: var(--radius-xl);
-              padding: var(--space-6);
-              overflow-x: auto;
-            "
-          >
-            <pre
-              style="
-                font-family: var(--font-mono);
-                font-size: var(--text-xs);
-                line-height: var(--lh-looser);
-                color: var(--color-gray-300);
-              "
-            ><span style="color:#6b7280">/* === EASYWEB DESIGN TOKENS v1.0 === */</span>
+          <div class="token-ref-block">
+            <pre class="token-ref-pre"><span style="color:#6b7280">/* === EASYWEB DESIGN TOKENS v1.0 === */</span>
 <span style="color:#21D2F2">:root</span> {
   <span style="color:#6b7280">/* Brand Colors */</span>
   --brand-primary:        <span style="color:#02C000">#21D2F2</span>;

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the Easyweb case study on Frikko HVAC. See how a custom e-commerce redesign and speed optimization increased checkouts by 70% and engagement by 97%.">
+    <title>Frikko E-commerce Redesign Case Study | Easyweb</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        #progress-bar {
+            transform-origin: 0% 50%;
+            transform: scaleX(0);
+            transition: transform 0.2s ease-out;
+        }
+
+        /* Subtle background pattern */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white relative">
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-200 z-[60]">
+        <div id="progress-bar" class="h-full bg-primary-600 w-full"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300 top-1">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="../our-work.html" class="flex items-center gap-2 hover:text-primary-600 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Portfolio
+                </a>
+            </div>
+
+            <a href="../index.html#contacto" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2 px-5 rounded-full transition-transform hover:scale-105">
+                Start your project
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    E-commerce Redesign
+                </div>
+                
+                <h1 class="reveal active text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6 tracking-tight">
+                    Frikko HVAC: High-Performance <br class="hidden md:block"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">UX & Sales Optimization.</span>
+                </h1>
+                
+                <p class="reveal active text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    A deep UX redesign and custom WordPress development for a leading air conditioning brand. Focused on frictionless conversions, extreme load speeds (Core Web Vitals), and scalable data architecture.
+                </p>
+
+                <!-- Project Metadata -->
+                <div class="reveal active grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-t border-slate-200 text-left bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Our Role</p>
+                        <p class="font-bold text-dark">UI/UX & Web Dev</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Launch Date</p>
+                        <p class="font-bold text-dark">June 2025</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Industry</p>
+                        <p class="font-bold text-dark">B2C Retail / HVAC</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Tech Stack</p>
+                        <p class="font-bold text-dark">WordPress / Bricks</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- The Challenge (SEO H2) -->
+        <section class="py-20 px-6 bg-slate-50">
+            <div class="max-w-4xl mx-auto reveal">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The Challenge: Simplifying a Complex Buying Journey</h2>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    Frikko possessed an extensive product catalog with highly complex technical specifications that easily overwhelmed the average consumer. The main challenge was to <strong>reduce cognitive friction</strong> when users searched for the right air conditioning unit. 
+                </p>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    We needed to modernize the user interface (UI) and engineer a robust, self-manageable backend for their marketing team—without sacrificing crucial page load times (WPO).
+                </p>
+            </div>
+        </section>
+
+        <!-- The Impact (Real Analytics Data) - Authority Section -->
+        <section class="py-12 px-6">
+            <div class="max-w-5xl mx-auto reveal">
+                <div class="bg-dark rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-800">
+                    <!-- Glow effect -->
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent-500 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+                    
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-accent-500/20 rounded-lg"><i data-lucide="trending-up" class="w-6 h-6 text-accent-400"></i></div>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-white">Business Impact & ROI</h2>
+                    </div>
+                    
+                    <p class="text-slate-400 mb-10 max-w-3xl text-sm leading-relaxed border-b border-slate-700 pb-8">
+                        Data extracted directly from Google Analytics, comparing the previous annual period (2024) against the launch year (2025). The new website was strategically deployed in <strong>June 2025</strong>, right in time to capitalize on the high-demand summer season, resulting in exponential growth in retention and direct sales.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <p class="text-4xl md:text-5xl font-black text-accent-400 mb-2">+61.5%</p>
+                            <p class="text-sm text-slate-300 font-medium">"Add to Cart" Events</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl md:text-5xl font-black text-accent-400 mb-2">+97.8%</p>
+                            <p class="text-sm text-slate-300 font-medium">Avg. Engagement Time</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl md:text-5xl font-black text-white mb-2">-11.6%</p>
+                            <p class="text-sm text-slate-300 font-medium">Decrease in Bounce Rate</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl md:text-5xl font-black text-white mb-2">+70.2%</p>
+                            <p class="text-sm text-slate-300 font-medium">Checkout Initiations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Image Mockup -->
+        <section class="px-6 pb-20">
+            <div class="max-w-6xl mx-auto reveal">
+                <div class="aspect-[21/9] rounded-3xl overflow-hidden bg-slate-200 shadow-xl border border-slate-100 relative group">
+                    <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-bold text-dark shadow-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                        Live Interface (2025)
+                    </div>
+                    <!-- Placeholder for actual Frikko Mockup -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000" alt="Responsive mockup of Frikko's e-commerce website showing UX/UI design" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <!-- Process & Methodology -->
+        <section class="py-24 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-16 text-center">Development Methodology & UX Strategy</h2>
+
+                <div class="space-y-16">
+                    
+                    <!-- Step 1 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1 pt-1 hidden md:block">
+                            <div class="w-12 h-12 rounded-full bg-primary-50 text-primary-600 font-black text-xl flex items-center justify-center border border-primary-100">1</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
+                                <span class="md:hidden w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-black text-sm flex items-center justify-center border border-primary-100">1</span>
+                                UX & Information Architecture
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                We initiated the project with a competitive benchmark in the HVAC sector. We identified a systemic failure among competitors: the inability to present heavy technical data in a digestible format for B2C consumers. We wireframed a new catalog logic and implemented advanced filtering to drastically reduce friction in the purchasing journey.
+                            </p>
+                            <div class="rounded-2xl overflow-hidden shadow-soft border border-slate-100 aspect-[21/9]">
+                                <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1200" alt="Wireframing and UX planning for E-commerce" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Step 2 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1 pt-1 hidden md:block">
+                            <div class="w-12 h-12 rounded-full bg-primary-50 text-primary-600 font-black text-xl flex items-center justify-center border border-primary-100">2</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
+                                <span class="md:hidden w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-black text-sm flex items-center justify-center border border-primary-100">2</span>
+                                UI Design & Scalable System
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                According to the Aesthetic-Usability Effect, users perceive aesthetically pleasing interfaces as easier to use. We built a scalable Design System in Figma, prototyping high-fidelity, modular components to ensure visual consistency and prepare a structured handoff for the development phase.
+                            </p>
+                            <div class="rounded-2xl overflow-hidden shadow-soft border border-slate-100 aspect-[21/9]">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200" alt="Figma UI Design System" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Step 3 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1 pt-1 hidden md:block">
+                            <div class="w-12 h-12 rounded-full bg-primary-50 text-primary-600 font-black text-xl flex items-center justify-center border border-primary-100">3</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
+                                <span class="md:hidden w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-black text-sm flex items-center justify-center border border-primary-100">3</span>
+                                Advanced WordPress Engineering
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <ul class="space-y-4 text-slate-600">
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="database" class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"></i>
+                                        <span><strong>Data Architecture (ACF Pro):</strong> Implemented custom fields to dynamically manage comparison tables, BTU metrics, and technical PDF downloads.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="layout-template" class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"></i>
+                                        <span><strong>Modular Development:</strong> Created dynamic single-product templates using clean, semantic builders (Bricks) to avoid DOM bloat.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="gauge" class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"></i>
+                                        <span><strong>WPO & Speed:</strong> Aggressive image optimization (WebP), lazy loading, and caching to dominate Google PageSpeed Insights.</span>
+                                    </li>
+                                </ul>
+                                <div class="rounded-2xl overflow-hidden shadow-soft bg-dark p-6">
+                                     <pre class="text-xs text-accent-400 font-mono w-full overflow-x-auto"><code>
+&lt;?php
+  // Optimized ACF query for performance
+  $specs = get_field('technical_data');
+  $efficiency = $specs['seer_rating'] ?? null;
+  
+  if($efficiency): ?&gt;
+    &lt;div class="tech-badge wpo-ready"&gt;
+      SEER Rating: &lt;?php echo esc_html($efficiency); ?&gt;
+    &lt;/div&gt;
+&lt;?php endif; ?&gt;
+                                     </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonial -->
+        <section class="py-24 px-6 bg-primary-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto reveal relative z-10 text-center">
+                <i data-lucide="quote" class="w-12 h-12 text-primary-400 opacity-50 mx-auto mb-8"></i>
+                
+                <p class="text-2xl md:text-3xl leading-relaxed font-medium mb-12">
+                    "Easyweb didn't just deliver a visually appealing design; they rebuilt the way we sell online. The new structure eliminated our customers' technical doubts and the site is incredibly fast. The impact on our checkout and conversion metrics has been outstanding."
+                </p>
+                
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80" alt="Client Avatar" class="w-16 h-16 rounded-full object-cover border-2 border-primary-400">
+                    <div>
+                        <p class="font-bold text-lg">Marketing Director</p>
+                        <p class="text-sm text-primary-300">Frikko HVAC</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-24 px-6 bg-slate-50 text-center border-b border-slate-200">
+            <div class="max-w-3xl mx-auto reveal">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-dark mb-6">Does your e-commerce need these results?</h2>
+                <p class="text-slate-600 mb-10 text-lg md:text-xl">
+                    Stop losing sales to a slow or confusing website. Let's talk about how a scalable web architecture and strategic UX design can skyrocket your metrics.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="../index.html#contacto" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        Book a Strategy Call
+                    </a>
+                    <a href="../our-work.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
+                        View more case studies
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 px-6 text-center">
+        <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that perform.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Reading Progress Bar Logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height);
+            document.getElementById('progress-bar').style.transform = `scaleX(${scrolled})`;
+        });
+
+        // Reveal Animations Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
+    </script>
+</body>
+</html>

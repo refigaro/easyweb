@@ -283,6 +283,11 @@
   background: currentColor;
 }
 
+.badge-dot--pulse {
+  background: var(--brand-primary);
+  animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -384,6 +389,10 @@
 
 .input-hint.error {
   color: var(--color-error);
+}
+
+.input-hint.success {
+  color: var(--color-success);
 }
 
 /* ALERTS */

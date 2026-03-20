@@ -273,4 +273,16 @@
 
   /* --- OPACITY --- */
   --opacity-muted: 0.85;
+
+  /* --- INLINE CODE --- */
+  --text-code-inline: 0.85em; /* relative to parent — for inline <code> in running text */
+
+  /* --- DOCS LAYOUT --- */
+  --content-max-wide: 760px;
+  --preview-max-inputs: 400px;
+  --card-preview-min: 200px;
+  --card-preview-max: 260px;
+
+  /* --- DARK SURFACE BORDERS --- */
+  --border-on-dark: rgba(255, 255, 255, 0.3);
 }
