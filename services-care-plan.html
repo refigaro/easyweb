@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monthly website care plan for US small businesses — $99/month. Hosting, backups, security updates, uptime monitoring, and up to 12 hours of content changes. Cancel anytime.">
+    <title>Monthly Website Care Plan for Small Businesses — $99/mo | Easyweb</title>
+    <meta property="og:title" content="Monthly Website Care Plan for Small Businesses | Easyweb">
+    <meta property="og:description" content="$99/month. Hosting, daily backups, security updates, uptime monitoring, and 12 hrs of content changes. Cancel anytime.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://easyweb.monster/services/care-plan">
+    <!-- Schema: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Monthly Website Care Plan",
+      "description": "Ongoing website maintenance, hosting, backups, security updates, uptime monitoring, and content changes for US small businesses.",
+      "provider": { "@type": "Organization", "name": "Easyweb", "url": "https://easyweb.monster" },
+      "offers": {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "USD",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "unitText": "month" }
+      },
+      "areaServed": "US"
+    }
+    </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://easyweb.monster" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://easyweb.monster/services" },
+        { "@type": "ListItem", "position": 3, "name": "Monthly Care Plan", "item": "https://easyweb.monster/services/care-plan" }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(99,102,241,0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(99,102,241,0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- NAV -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 text-primary-600 font-bold py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 bg-primary-50 text-primary-600 font-bold transition-colors border-t border-slate-100 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
+            </div>
+            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ============================================================ -->
+        <!-- HERO                                                          -->
+        <!-- Problem-first. H1 = keyword target.                         -->
+        <!-- ============================================================ -->
+        <header class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="absolute top-0 right-0 w-[30rem] h-[30rem] bg-primary-50 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
+                <div class="reveal active flex flex-wrap items-center gap-3 mb-6">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold border border-primary-100">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i> Monthly Care Plan
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-500/10 text-accent-600 text-sm font-bold">
+                        $99 / month
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 text-sm text-slate-400 font-medium">
+                        <i data-lucide="x-circle" class="w-4 h-4"></i> Cancel anytime
+                    </span>
+                </div>
+
+                <h1 class="reveal active text-4xl lg:text-5xl xl:text-6xl font-extrabold text-dark leading-tight mb-5 tracking-tight">
+                    Monthly Website Care Plan<br class="hidden lg:block"/>
+                    <span class="text-primary-600">for Small Businesses.</span>
+                </h1>
+
+                <p class="reveal active text-xl text-slate-500 leading-relaxed mb-8 max-w-2xl">
+                    Your site launched. Most agencies disappear after that. We check your site every day — and fix things before you notice them.
+                </p>
+
+                <!-- Trust signals -->
+                <div class="reveal active flex flex-wrap gap-3 mb-8 text-sm">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Hosting + domain included</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Same-day response</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> 12 hrs content changes/mo</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> US-registered LLC</span>
+                </div>
+
+                <div class="reveal active flex flex-col sm:flex-row gap-3">
+                    <a href="#get-started" class="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-0.5 shadow-glow text-sm">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i> Add the Care Plan — $99/mo
+                    </a>
+                    <a href="#whats-included" class="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 hover:border-slate-300 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors text-sm">
+                        See what's included <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <p class="reveal active text-slate-400 text-xs mt-5">
+                    Already have a site built by someone else?
+                    <a href="#for-existing-sites" class="text-primary-500 font-semibold hover:underline">The Care Plan works for any WordPress site →</a>
+                </p>
+            </div>
+        </header>
+
+        <!-- ============================================================ -->
+        <!-- THE PROBLEM — Handoff Cliff                                  -->
+        <!-- Frame the pain before introducing the solution.              -->
+        <!-- ============================================================ -->
+        <section class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">The problem</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">What happens to your site<br/>when no one's watching it</h2>
+                    <p class="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed">
+                        A business website isn't a one-time project. It's infrastructure. And infrastructure breaks when it's not maintained.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
+                        <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-4">
+                            <i data-lucide="wifi-off" class="w-5 h-5 text-red-500"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">It goes down</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">Hosting expires, a plugin update breaks something, a server restarts. Without monitoring, you find out when a customer tells you.</p>
+                    </div>
+
+                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft" style="transition-delay:75ms">
+                        <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mb-4">
+                            <i data-lucide="shield-off" class="w-5 h-5 text-orange-500"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">It gets hacked</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">Outdated plugins are the #1 attack vector for WordPress sites. A hacked site loses Google rankings — sometimes permanently.</p>
+                    </div>
+
+                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft" style="transition-delay:150ms">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center mb-4">
+                            <i data-lucide="clock" class="w-5 h-5 text-amber-500"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">You can't change it</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">New service to add. Price change. Team member update. Without a developer on call, small things pile up for months.</p>
+                    </div>
+
+                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft" style="transition-delay:225ms">
+                        <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center mb-4">
+                            <i data-lucide="trending-down" class="w-5 h-5 text-slate-500"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">It slows down</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">No cache optimization, no image compression, no performance review. Six months later your fast site is slow — and you're losing SEO.</p>
+                    </div>
+
+                </div>
+
+                <!-- Transition line -->
+                <div class="reveal mt-10 text-center">
+                    <p class="text-slate-500 text-base">The Care Plan handles all of this. So you never have to think about it.</p>
+                    <div class="flex justify-center mt-4">
+                        <i data-lucide="arrow-down" class="w-5 h-5 text-primary-400 animate-bounce"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- WHAT'S INCLUDED                                               -->
+        <!-- Grouped by pillar: infrastructure, security, support.        -->
+        <!-- ============================================================ -->
+        <section id="whats-included" class="py-20 px-6 bg-white border-b border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary-600 mb-3"><i data-lucide="layers" class="w-3.5 h-3.5"></i> What's included</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">Everything your site needs.<br/>None of what you don't.</h2>
+                    <p class="text-slate-500 text-lg max-w-xl mx-auto">$99/month. One invoice. No surprises.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-6 mb-8">
+
+                    <!-- Pillar 1: Infrastructure -->
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="server" class="w-5 h-5 text-primary-600"></i>
+                            </div>
+                            <h3 class="font-extrabold text-dark text-lg">Infrastructure</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Managed hosting</strong> — Enterprise Hostinger, same infrastructure we use for all our sites</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Domain registration + renewal</strong> — never lose your domain because you forgot to renew it</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">SSL certificate</strong> — HTTPS always active, always renewed</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">DNS management</strong> — email records, redirects, subdomains, all handled</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Cloudflare CDN</strong> — global content delivery for faster load times everywhere</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 2: Security -->
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200" style="transition-delay:100ms">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 rounded-xl bg-accent-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-accent-600"></i>
+                            </div>
+                            <h3 class="font-extrabold text-dark text-lg">Security & Stability</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Daily automated backups</strong> — 30-day retention, one-click restore if anything breaks</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Uptime monitoring 24/7</strong> — we're alerted the moment your site goes down, not you</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">WordPress core updates</strong> — applied and tested in staging before going live</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Plugin security updates</strong> — patched before vulnerabilities are exploited</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-600">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-dark">Malware scanning</strong> — weekly scans, immediate action if anything is found</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 3: Support -->
+                    <div class="reveal bg-primary-900 rounded-2xl p-6 border border-primary-700 relative overflow-hidden" style="transition-delay:200ms">
+                        <div class="absolute -bottom-6 -right-6 w-28 h-28 bg-primary-700 rounded-full blur-[30px] opacity-50 pointer-events-none"></div>
+                        <div class="flex items-center gap-3 mb-5 relative z-10">
+                            <div class="w-10 h-10 rounded-xl bg-primary-700 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="headphones" class="w-5 h-5 text-accent-400"></i>
+                            </div>
+                            <h3 class="font-extrabold text-white text-lg">Ongoing Support</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm relative z-10">
+                            <li class="flex items-start gap-3 text-primary-200">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-white">Up to 12 hrs content changes/month</strong> — text, photos, pricing, team bios, new services, blog posts</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-primary-200">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-white">Same business day response</strong> — priority queue, not general support</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-primary-200">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-white">Monthly performance report</strong> — traffic, speed score, uptime %, issues resolved</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-primary-200">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-white">Slack or email communication</strong> — same channel as your project, no new systems to learn</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-primary-200">
+                                <i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i>
+                                <span><strong class="text-white">Emergency support</strong> — site down? We respond within 2 hours, any day</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- "What counts as content changes" callout -->
+                <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="info" class="w-4 h-4 text-primary-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-dark mb-1">What counts as a "content change"?</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">Updating text, swapping photos, adding or removing services, changing prices, adding a team member, publishing a blog post you've written, updating business hours, fixing a broken link. <strong class="text-slate-700">Most clients use 0–2 hours/month.</strong> The 12-hour ceiling is there for busy months, not as a target. Structural redesigns or new page additions are scoped and quoted separately.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PRICING                                                       -->
+        <!-- Care Plan vs Hosting-only comparison                         -->
+        <!-- ============================================================ -->
+        <section id="pricing" class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-dark mb-3">Simple, honest pricing</h2>
+                    <p class="text-slate-500 text-lg">One plan for full management. One option if you just need hosting.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+                    <!-- Hosting only -->
+                    <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 shadow-soft">
+                        <div class="mb-6">
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Managed Hosting + Domain</span>
+                            <div class="flex items-baseline gap-2 mb-1">
+                                <span class="text-5xl font-extrabold text-dark">$85</span>
+                                <span class="text-slate-500 font-medium">/ year</span>
+                            </div>
+                            <p class="text-slate-400 text-xs">~$7/month, billed annually</p>
+                        </div>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">For businesses that want us to handle hosting and the domain, but prefer to manage everything else themselves or through their own developer.</p>
+                        <ul class="space-y-2.5 text-sm mb-6">
+                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Enterprise Hostinger hosting</li>
+                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Domain registration + annual renewal</li>
+                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> SSL certificate always active</li>
+                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> DNS management</li>
+                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Daily backups + restore to any previous point</li>
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="x" class="w-4 h-4 flex-shrink-0"></i> <span class="text-slate-400">No monitoring, updates, or support</span></li>
+                        </ul>
+                        <a href="contact.html" class="w-full block text-center bg-slate-800 hover:bg-dark text-white font-bold py-3.5 rounded-full transition-colors text-sm">
+                            Get Managed Hosting
+                        </a>
+                    </div>
+
+                    <!-- Care Plan — featured -->
+                    <div class="reveal bg-primary-900 rounded-2xl p-8 border border-primary-700 relative overflow-hidden" style="transition-delay:100ms">
+                        <div class="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Best value</div>
+                        <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-primary-600 rounded-full blur-[40px] opacity-40 pointer-events-none"></div>
+                        <div class="mb-6 relative z-10">
+                            <span class="text-xs font-bold uppercase tracking-widest text-primary-300 mb-2 block">Monthly Care Plan</span>
+                            <div class="flex items-baseline gap-2 mb-1">
+                                <span class="text-5xl font-extrabold text-white">$99</span>
+                                <span class="text-primary-300 font-medium">/ month</span>
+                            </div>
+                            <p class="text-primary-400 text-xs">Includes the $85/yr Hosting + Domain ($7/mo value)</p>
+                        </div>
+                        <p class="text-primary-200 text-sm leading-relaxed mb-6 relative z-10">Full site management — infrastructure, security, and ongoing support. Most months your site runs itself. When something needs attention, it's handled the same day.</p>
+                        <ul class="space-y-2.5 text-sm mb-6 relative z-10">
+                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Everything in Hosting + Domain</li>
+                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Daily backups + uptime monitoring</li>
+                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> WordPress + plugin security updates</li>
+                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Up to 12 hrs content changes/month</li>
+                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Same business day response</li>
+                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Monthly performance report</li>
+                        </ul>
+                        <a href="#get-started" class="w-full block text-center bg-white hover:bg-slate-100 text-dark font-bold py-3.5 rounded-full transition-colors text-sm relative z-10">
+                            Add the Care Plan
+                        </a>
+                        <p class="text-primary-400 text-xs text-center mt-2 relative z-10">Month-to-month. Cancel anytime with 30 days notice.</p>
+                    </div>
+
+                </div>
+
+                <!-- Full comparison table -->
+                <div class="reveal overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200">
+                                <th class="text-left px-6 py-4 font-bold text-slate-700 w-1/2"></th>
+                                <th class="text-center px-4 py-4 font-bold text-slate-600">Hosting<br><span class="text-dark font-extrabold">$85/yr</span></th>
+                                <th class="text-center px-4 py-4 font-bold text-primary-600 bg-primary-50">Care Plan<br><span class="text-dark font-extrabold">$99/mo</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr><td class="px-6 py-3 text-slate-600">Managed hosting (Hostinger enterprise)</td><td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Domain registration + renewal</td><td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">SSL certificate</td><td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Daily backups + restore to previous point</td><td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Uptime monitoring 24/7</td><td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">WordPress + plugin security updates</td><td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Malware scanning</td><td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Up to 12 hrs content changes/month</td><td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Same business day response</td><td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                            <tr><td class="px-6 py-3 text-slate-600">Monthly performance report</td><td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td><td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- WHO IT'S FOR                                                  -->
+        <!-- Qualify the audience. 3 scenarios = 3 buyer types.          -->
+        <!-- ============================================================ -->
+        <section id="for-existing-sites" class="py-20 px-6 bg-white border-b border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-dark mb-3">Who the Care Plan is for</h2>
+                    <p class="text-slate-500 text-lg">Three situations where this pays for itself in the first month.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
+                            <i data-lucide="rocket" class="w-5 h-5 text-primary-600"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">Just launched with Easyweb</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">Your site is live. The Care Plan is the natural continuation — same team, same communication, no handoff cliff. Add it to your project and nothing changes except that your site is actively managed.</p>
+                        <a href="services-corporate.html" class="inline-flex items-center gap-1 text-xs font-bold text-primary-600 hover:underline mt-3 transition-colors">See what we build <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                    </div>
+
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200" style="transition-delay:100ms">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center mb-4">
+                            <i data-lucide="user-x" class="w-5 h-5 text-amber-600"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">Your last agency disappeared</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">You have a WordPress site and no one maintaining it. Plugins haven't been updated in months. You can't make changes. This is exactly what the Care Plan fixes — even if we didn't build your site.</p>
+                        <!-- Internal link to blog post about Handoff Cliff -->
+                        <a href="blog/post.html" class="inline-flex items-center gap-1 text-xs font-bold text-primary-600 hover:underline mt-3 transition-colors">Why agencies disappear after launch <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                    </div>
+
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200" style="transition-delay:200ms">
+                        <div class="w-10 h-10 rounded-xl bg-accent-500/10 flex items-center justify-center mb-4">
+                            <i data-lucide="building-2" class="w-5 h-5 text-accent-600"></i>
+                        </div>
+                        <h3 class="font-extrabold text-dark mb-2">You need changes regularly</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">New services, seasonal offers, team updates, price changes. Instead of emailing a freelancer and waiting days — submit a request and it's done by end of day. 12 hours/month covers most businesses comfortably.</p>
+                        <a href="pricing.html#care-plan" class="inline-flex items-center gap-1 text-xs font-bold text-primary-600 hover:underline mt-3 transition-colors">Full pricing breakdown <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SOCIAL PROOF — Client mentions                               -->
+        <!-- ============================================================ -->
+        <section class="py-16 px-6 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">Clients on the Care Plan</p>
+                <div class="grid sm:grid-cols-2 gap-5">
+
+                    <a href="work/frikko-hvac.html" class="reveal group bg-white rounded-2xl p-5 border border-slate-200 shadow-soft hover:border-primary-200 hover:shadow-lg transition-all flex gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-bold text-dark text-sm mb-1 group-hover:text-primary-600 transition-colors">Frikko HVAC</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">E-commerce store. Monthly care keeps their WooCommerce checkout running without downtime — the same checkout that increased conversions by 70%.</p>
+                            <span class="inline-flex items-center gap-1 text-xs font-bold text-primary-500 mt-2">Read case study <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="work/imperial-cfs.html" class="reveal group bg-white rounded-2xl p-5 border border-slate-200 shadow-soft hover:border-primary-200 hover:shadow-lg transition-all flex gap-4" style="transition-delay:100ms">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="building-2" class="w-5 h-5 text-blue-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-bold text-dark text-sm mb-1 group-hover:text-primary-600 transition-colors">Imperial CFS</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">US client portal. The Care Plan handles updates and security so their team can focus on operations, not IT.</p>
+                            <span class="inline-flex items-center gap-1 text-xs font-bold text-primary-500 mt-2">Read case study <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- FAQ                                                           -->
+        <!-- ============================================================ -->
+        <section class="py-20 px-6 bg-white border-b border-slate-200">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-dark">Common questions</h2>
+                </div>
+                <div class="space-y-4">
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                            <span>Does the Care Plan work for sites Easyweb didn't build?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">Yes — as long as your site is on WordPress. We'll do a brief technical audit (free, 1 business day) to confirm the site is in good enough shape to maintain. If it needs cleanup before we can take it on, we'll quote that separately and be upfront about what it costs.</div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                            <span>What if I use more than 12 hours in a month?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">We'll let you know before going over. You can approve additional hours at our standard rate, or we can roll the work into the next month. We never go over budget without your explicit approval — and in practice, most clients use 2–4 hours per month.</div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                            <span>Can I cancel the Care Plan at any time?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">Yes. Month-to-month, cancel with 30 days notice. If you cancel, we'll help you migrate your site to a hosting provider of your choice and hand over all credentials and documentation. You own the site — we're just managing it.</div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                            <span>Is this different from just paying a freelancer for updates?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">Significantly. A freelancer handles requests when you send them — they're not watching your site. The Care Plan includes proactive monitoring, daily backups, and security patching that happens whether you ask for it or not. And when something breaks at 11pm, there's someone to respond — not a freelancer you might not hear back from until tomorrow.</div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                            <span>Do I need to sign a long-term contract?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">No. Month-to-month, cancel anytime. We're confident enough in the service that we don't need to lock you in. A simple service agreement covers the scope and terms — same as a standard MSA, nothing unusual.</div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- FINAL CTA                                                     -->
+        <!-- ============================================================ -->
+        <section id="get-started" class="py-24 px-6 bg-dark relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+            <div class="absolute top-0 right-0 w-[30rem] h-[30rem] bg-primary-900 rounded-full blur-[100px] pointer-events-none opacity-60"></div>
+            <div class="max-w-3xl mx-auto reveal text-center relative z-10">
+                <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-accent-400 mb-5">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Monthly Care Plan
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+                    Your site is live.<br/>Let's keep it that way.
+                </h2>
+                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                    $99/month. Hosting, backups, security, content changes, and a team that responds the same day.
+                </p>
+                <p class="text-slate-500 text-sm mb-10">
+                    Already have a site we didn't build?
+                    <a href="contact.html" class="text-primary-400 hover:text-primary-300 font-semibold transition-colors">Tell us about it and we'll do a free technical audit →</a>
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-0.5 shadow-glow">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i> Add the Care Plan
+                    </a>
+                    <a href="pricing.html#care-plan" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white font-bold py-4 px-8 rounded-full transition-colors">
+                        See full pricing breakdown
+                    </a>
+                </div>
+                <p class="text-slate-500 text-xs mt-6">US-Registered LLC · Month-to-month · Cancel anytime · Protected under USMCA</p>
+            </div>
+        </section>
+
+        <!-- Related reading — blog internal link -->
+        <section class="py-10 px-6 bg-white border-t border-slate-100">
+            <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-slate-500">Want to understand this better before committing?</p>
+                <a href="blog/post.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary-600 hover:text-primary-800 transition-colors">
+                    Read: "Why Most Web Agencies Disappear After Launch (And What We Do Instead)"
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>

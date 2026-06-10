@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Easyweb Portfolio. Explore our high-performance web design, e-commerce, and conversion-optimized landing page projects.">
+    <meta name="description" content="Easyweb portfolio and case studies. Real projects, real results — documented with Google Analytics data. See what we've built for US small businesses.">
     <title>Our Work & Case Studies | Easyweb</title>
-    
-    <!-- Google Fonts -->
+    <meta property="og:title" content="Our Work & Case Studies | Easyweb">
+    <meta property="og:description" content="Real projects, real results. See how we've helped small businesses grow with professional websites.">
+    <meta property="og:url" content="https://easyweb.monster/work">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,154 +23,301 @@
                         accent: { 400: '#34d399', 500: '#10b981' },
                         dark: '#0f172a'
                     },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
-                    }
+                    boxShadow: { 'soft': '0 4px 20px -2px rgba(0,0,0,0.05)', 'glow': '0 0 20px rgba(99,102,241,0.4)' }
                 }
             }
         }
     </script>
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .bg-grid-pattern { background-image: radial-gradient(rgba(99,102,241,0.05) 1px, transparent 1px); background-size: 24px 24px; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2">
                 <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
                 <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
             </a>
-            
-            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
-                <a href="index.html#como-funciona" class="hover:text-primary-600 transition-colors">How it works</a>
-                <a href="our-work.html" class="text-primary-600 transition-colors">Our Work</a>
-                <a href="index.html#contacto" class="hover:text-primary-600 transition-colors">Contact</a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100  text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="our-work.html" class="text-primary-600 font-bold">Our Work</a>
+                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
             </div>
-
-            <a href="index.html#contacto" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
-                Start your project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
     </nav>
 
-    <main class="pt-32 pb-24">
-        <!-- Portfolio Header -->
-        <header class="max-w-7xl mx-auto px-6 text-center mb-16">
-            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
-                Featured Work
+    <main>
+        <!-- HEADER -->
+        <header class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i> Our Work
+                </div>
+                <h1 class="reveal active text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6 tracking-tight">
+                    Real projects.<br class="hidden md:block"/> Real results.
+                </h1>
+                <p class="reveal active text-xl text-slate-600 max-w-2xl mx-auto">
+                    Every result on this page comes from Google Analytics — not from design awards or client quotes we wrote ourselves. We let the numbers speak.
+                </p>
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-dark mb-6 tracking-tight">Websites that drive <br class="hidden md:block"/>real business results.</h1>
-            <p class="text-xl text-slate-600 max-w-2xl mx-auto">Explore how we've helped companies scale with blazing-fast, modern, and sales-ready platforms.</p>
         </header>
 
-        <!-- Filters -->
-        <div class="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap justify-center gap-4">
-            <button class="px-6 py-2 rounded-full bg-dark text-white font-bold text-sm shadow-md transition-all">All Projects</button>
-            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 font-bold text-sm hover:border-primary-500 hover:text-primary-600 transition-all">E-commerce</button>
-            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 font-bold text-sm hover:border-primary-500 hover:text-primary-600 transition-all">Landing Pages</button>
-            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 font-bold text-sm hover:border-primary-500 hover:text-primary-600 transition-all">Corporate</button>
-        </div>
+        <!-- FEATURED CASE STUDY — FRIKKO -->
+        <section class="py-16 px-6 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-8">
+                    <span class="text-xs font-bold text-primary-600 uppercase tracking-widest">Featured case study</span>
+                </div>
 
-        <!-- Project Grid -->
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Project 1 -->
-            <a href="#" class="group block rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-soft hover:shadow-xl transition-all hover:-translate-y-1">
-                <div class="relative h-64 overflow-hidden bg-slate-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Frikko E-commerce" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">HVAC Supply Co.</h3>
-                        <span class="text-xs font-bold bg-primary-50 text-primary-600 px-2 py-1 rounded">E-commerce</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mb-4">Complete catalog redesign and online store optimization, focusing on Core Web Vitals and load speed.</p>
-                    <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                        <span>WordPress</span> • <span>WooCommerce</span>
-                    </div>
-                </div>
-            </a>
+                <a href="work/frikko-hvac.html" class="reveal group block bg-dark rounded-3xl overflow-hidden border border-slate-800 hover:border-primary-500 transition-colors">
+                    <div class="grid md:grid-cols-2">
+                        <!-- Image -->
+                        <div class="relative h-64 md:h-auto overflow-hidden bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                                 alt="Frikko HVAC e-commerce redesign — product catalog interface"
+                                 class="w-full h-full object-cover opacity-60 transition-all duration-500 group-hover:opacity-80 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 inline-flex items-center gap-2 bg-dark/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full border border-slate-700">
+                                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> E-commerce Redesign
+                            </div>
+                        </div>
 
-            <!-- Project 2 -->
-            <a href="#" class="group block rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-soft hover:shadow-xl transition-all hover:-translate-y-1">
-                <div class="relative h-64 overflow-hidden bg-slate-100">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800" alt="TechNova Landing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">TechNova SaaS</h3>
-                        <span class="text-xs font-bold bg-accent-50 text-accent-600 px-2 py-1 rounded">Landing Page</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mb-4">B2B landing page 100% focused on lead conversion, A/B testing, and clear value propositions.</p>
-                    <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                        <span>HTML/CSS</span> • <span>Tailwind</span>
-                    </div>
-                </div>
-            </a>
+                        <!-- Content -->
+                        <div class="p-8 md:p-10 flex flex-col justify-between">
+                            <div>
+                                <h2 class="text-3xl font-extrabold text-white mb-3 group-hover:text-primary-400 transition-colors">Frikko HVAC</h2>
+                                <p class="text-slate-400 leading-relaxed mb-8">
+                                    A complete e-commerce redesign for a leading HVAC brand. We rebuilt their product catalog architecture, simplified the buying journey, and optimized the checkout flow. Launched June 2025, right before peak season.
+                                </p>
 
-            <!-- Project 3 -->
-            <a href="#" class="group block rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-soft hover:shadow-xl transition-all hover:-translate-y-1">
-                <div class="relative h-64 overflow-hidden bg-slate-100">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Consultora Global" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">Atlas Legal Firm</h3>
-                        <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded">Corporate</span>
-                    </div>
-                    <p class="text-slate-600 text-sm mb-4">Multilingual corporate website with an integrated legal blog for an international law firm.</p>
-                    <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                        <span>WordPress</span> • <span>Bricks Builder</span>
-                    </div>
-                </div>
-            </a>
+                                <!-- Metrics -->
+                                <div class="grid grid-cols-2 gap-4 mb-8">
+                                    <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                                        <p class="text-3xl font-black text-accent-400">+70.2%</p>
+                                        <p class="text-xs text-slate-400 mt-1">Checkout initiations</p>
+                                    </div>
+                                    <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                                        <p class="text-3xl font-black text-accent-400">+61.5%</p>
+                                        <p class="text-xs text-slate-400 mt-1">Add-to-cart events</p>
+                                    </div>
+                                    <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                                        <p class="text-3xl font-black text-white">+97.8%</p>
+                                        <p class="text-xs text-slate-400 mt-1">Avg. engagement time</p>
+                                    </div>
+                                    <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                                        <p class="text-3xl font-black text-white">-11.6%</p>
+                                        <p class="text-xs text-slate-400 mt-1">Bounce rate</p>
+                                    </div>
+                                </div>
 
-            <!-- Project 4 -->
-            <a href="#" class="group block rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-soft hover:shadow-xl transition-all hover:-translate-y-1">
-                <div class="relative h-64 overflow-hidden bg-slate-100">
-                    <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800" alt="B2B Wholesale" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">MegaSupply B2B</h3>
-                        <span class="text-xs font-bold bg-primary-50 text-primary-600 px-2 py-1 rounded">E-commerce</span>
+                                <p class="text-xs text-slate-500">Source: Google Analytics · Year-over-year comparison 2024 vs 2025</p>
+                            </div>
+
+                            <div class="mt-8 flex items-center gap-2 text-primary-400 font-bold group-hover:text-primary-300 transition-colors">
+                                Read the full case study <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-slate-600 text-sm mb-4">Wholesale sales portal featuring dynamic pricing based on user roles and purchase volume.</p>
-                    <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                        <span>WooCommerce</span> • <span>ACF Pro</span>
-                    </div>
+                </a>
+
+                <div class="reveal mt-4 flex flex-wrap gap-3 text-xs text-slate-500">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold">WordPress</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold">Elementor Pro</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold">ACF Pro</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold">WooCommerce</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold">Figma</span>
                 </div>
-            </a>
-            
-             <!-- Invite to start box -->
-             <div class="group block rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-center p-8 hover:border-primary-500 hover:bg-primary-50 transition-colors">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                    <i data-lucide="plus" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-bold text-dark mb-2">Your project here</h3>
-                <p class="text-slate-500 text-sm mb-6">We are ready to build the high-performing website your business needs.</p>
-                <a href="index.html#contacto" class="px-6 py-2 rounded-full bg-primary-600 text-white font-bold text-sm shadow-glow hover:bg-primary-500 transition-colors">Let's build it</a>
             </div>
+        </section>
 
-        </div>
+        <!-- OTHER PROJECTS GRID -->
+        <section class="py-16 px-6 bg-white border-b border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-10">
+                    <h2 class="text-2xl font-extrabold text-dark">More projects</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <!-- Imperial CFS -->
+                    <a href="work/imperial-cfs.html" class="reveal group block rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="relative h-52 overflow-hidden bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&q=80&w=800"
+                                 alt="Imperial CFS cargo portal redesign"
+                                 class="w-full h-full object-cover opacity-50 transition-all duration-500 group-hover:opacity-70 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-dark/80 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                                <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> UX Redesign · Portal
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">Imperial CFS</h3>
+                                <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Los Angeles, CA</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">Cargo tracking portal redesign for one of the leading container freight stations at the Port of Los Angeles. From table-heavy legacy UI to self-service in 4 clicks.</p>
+                            <div class="flex flex-wrap gap-2 text-xs text-slate-500 mb-4">
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">HTML / CSS / JS</span>
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">Bootstrap</span>
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">Figma</span>
+                            </div>
+                            <span class="text-primary-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Read case study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- El Poder de la Nuez -->
+                    <a href="work/poder-de-la-nuez.html" class="reveal group block rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="relative h-52 overflow-hidden bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3960d24?auto=format&fit=crop&q=80&w=800"
+                                 alt="El Poder de la Nuez — campaign website"
+                                 class="w-full h-full object-cover opacity-50 transition-all duration-500 group-hover:opacity-70 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-dark/80 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                                <i data-lucide="megaphone" class="w-3.5 h-3.5"></i> Campaign Website
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">El Poder de la Nuez</h3>
+                                <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded-full">APPB Campaign</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3 leading-relaxed">Digital platform for a national pecan promotion campaign backed by the American Pecan Promotion Board. Blog + recipe CMS, storytelling design, SEO.</p>
+                            <div class="flex flex-wrap gap-2 text-xs mb-3">
+                                <span class="px-2 py-1 rounded-full bg-accent-50 border border-accent-200 text-accent-700 font-bold">5.4M events</span>
+                                <span class="px-2 py-1 rounded-full bg-accent-50 border border-accent-200 text-accent-700 font-bold">25.9% stickiness</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 text-xs text-slate-500 mb-4">
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">WordPress</span>
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">Elementor Pro</span>
+                            </div>
+                            <span class="text-primary-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Read case study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- P+H Arquitectos -->
+                    <a href="work/pmas-arquitectos.html" class="reveal group block rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <div class="relative h-52 overflow-hidden bg-slate-800">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
+                                 alt="P+H Arquitectos website — grid-based architecture portfolio"
+                                 class="w-full h-full object-cover opacity-50 transition-all duration-500 group-hover:opacity-70 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-dark/80 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                                <i data-lucide="layout" class="w-3.5 h-3.5"></i> Business Website
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-dark group-hover:text-primary-600 transition-colors">P+H Arquitectos</h3>
+                                <span class="text-xs font-bold bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Architecture Firm</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">Grid-based website for a 20-year architecture firm — built from a wireframe drawn in Excel. Custom responsive design that preserves the architectural aesthetic on mobile.</p>
+                            <div class="flex flex-wrap gap-2 text-xs text-slate-500 mb-4">
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">WordPress</span>
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">Elementor Pro</span>
+                                <span class="px-2 py-1 rounded-full bg-white border border-slate-200 font-semibold">Figma</span>
+                            </div>
+                            <span class="text-primary-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Read case study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Your project here -->
+                    <div class="reveal group flex flex-col items-center justify-center text-center rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 p-10 hover:border-primary-400 hover:bg-primary-50 transition-colors cursor-pointer">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-soft mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="plus" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Your project here</h3>
+                        <p class="text-slate-500 text-sm mb-6 max-w-xs">We're taking on new clients. Let's build something worth adding to this page.</p>
+                        <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary-600 text-white font-bold text-sm shadow-glow hover:bg-primary-500 transition-colors">
+                            Get a free quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROOF STATEMENT -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-4xl mx-auto reveal text-center">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-dark mb-4">A note on how we document results</h2>
+                <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
+                    We only publish metrics we can verify. Every number on this page comes directly from Google Analytics or Google Search Console — compared year-over-year, not cherry-picked from a good week. No vanity metrics, no testimonials we wrote ourselves.
+                </p>
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white font-bold py-3 px-7 rounded-full transition-colors">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    Start your project
+                </a>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xs">e</div>
-                <span class="font-extrabold text-xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
-            </a>
-            <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that perform.</p>
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
+        function reveal() { document.querySelectorAll(".reveal").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); }
+        window.addEventListener("scroll", reveal); reveal();
     </script>
 </body>
 </html>

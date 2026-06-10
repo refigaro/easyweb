@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow"> <!-- Prevent Google from indexing generic legal pages -->
+    <meta name="robots" content="noindex, nofollow">
     <title>Privacy Policy & Terms of Service | Easyweb</title>
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,67 +19,174 @@
                         primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
                         accent: { 400: '#34d399', 500: '#10b981' },
                         dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(99,102,241,0.4)',
                     }
                 }
             }
         }
     </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-white text-slate-800 antialiased font-sans">
 
-    <!-- Minimalist Navigation -->
-    <nav class="w-full border-b border-slate-100 py-6">
-        <div class="max-w-4xl mx-auto px-6 flex justify-center md:justify-start">
-            <a href="index.html" class="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xs">e</div>
-                <span class="font-extrabold text-xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
             </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
+            </div>
+            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
     </nav>
 
-    <main class="py-16">
+    <main class="pt-24 pb-16">
         <article class="max-w-3xl mx-auto px-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-dark mb-4 tracking-tight">Privacy Policy & Terms of Service</h1>
-            <p class="text-slate-500 mb-12 text-sm border-b border-slate-100 pb-8">Last Updated: March 2026</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-dark mb-3 tracking-tight">Privacy Policy & Terms of Service</h1>
+            <p class="text-slate-400 mb-12 text-sm border-b border-slate-100 pb-8">Last updated: June 2026 · Easyweb LLC</p>
 
-            <!-- Legal Content Typography -->
-            <div class="prose prose-slate max-w-none text-slate-600">
-                <h2 class="text-xl font-bold text-dark mt-8 mb-4">1. Data Collection</h2>
-                <p class="mb-4 leading-relaxed">
-                    At Easyweb, we respect your privacy. We collect personal information (such as your name and email address) only when you voluntarily provide it through our contact forms or during the process of contracting our web design services.
-                </p>
+            <div class="space-y-10 text-slate-600 leading-relaxed">
 
-                <h2 class="text-xl font-bold text-dark mt-8 mb-4">2. Use of Information</h2>
-                <p class="mb-4 leading-relaxed">
-                    The collected data is used exclusively to:
-                </p>
-                <ul class="list-disc pl-5 mb-6 space-y-2">
-                    <li>Provide the requested web development services.</li>
-                    <li>Contact you regarding your project or proposal.</li>
-                    <li>Improve the user experience on our website.</li>
-                </ul>
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">1. Who we are</h2>
+                    <p>Easyweb is a Limited Liability Company (LLC) registered in the United States. We build WordPress websites and provide hosting, domain management, and maintenance services for US small businesses. For questions about this policy, reach us at hello@easyweb.monster at <a href="mailto:hello@easyweb.monster" class="text-primary-600 font-semibold hover:underline">hello@easyweb.monster</a>.</p>
+                </section>
 
-                <h2 class="text-xl font-bold text-dark mt-8 mb-4">3. Service Terms (Web Plans)</h2>
-                <p class="mb-4 leading-relaxed">
-                    By contracting any of our packages (Landing, Corporate, or E-commerce), the client agrees that the payment covers the initial design and development outlined in the proposal. The client is responsible for the annual renewal of their Hosting and Domain services, unless otherwise specified in an active maintenance agreement.
-                </p>
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">2. Data we collect</h2>
+                    <p class="mb-3">We collect personal information only when you voluntarily provide it — through our contact form, during project onboarding, or when contracting our services. This may include:</p>
+                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                        <li>Name and email address</li>
+                        <li>Business name and website URL</li>
+                        <li>Project details you share in messages</li>
+                        <li>Analytics data collected by Google Analytics 4 (anonymized, no personally identifiable information)</li>
+                    </ul>
+                    <p class="mt-3 text-sm">We do not sell, rent, or share your data with third parties for marketing purposes.</p>
+                </section>
 
-                <h2 class="text-xl font-bold text-dark mt-8 mb-4">4. Intellectual Property</h2>
-                <p class="mb-4 leading-relaxed">
-                    Once 100% of the payment for the website development has been cleared, the frontend source code, design, and usage rights of the website are fully transferred to the client. Easyweb reserves the right to display the final product in our portfolio to showcase our development work.
-                </p>
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">3. How we use your information</h2>
+                    <p class="mb-3">Collected data is used exclusively to:</p>
+                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                        <li>Deliver the web design or development services you contracted</li>
+                        <li>Communicate about your project, proposal, or ongoing support</li>
+                        <li>Send invoices and process payments</li>
+                        <li>Improve our website and services based on aggregate analytics</li>
+                    </ul>
+                </section>
 
-                <h2 class="text-xl font-bold text-dark mt-8 mb-4">5. Contact Us</h2>
-                <p class="mb-4 leading-relaxed">
-                    For any questions related to your data, our privacy practices, or the terms of service, you can write to us directly at <strong>legal@easyweb.com</strong>.
-                </p>
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">4. Service terms</h2>
+                    <p class="mb-3">By contracting any Easyweb service (Landing Page, Business Website, Online Store, Hosting + Domain, or Monthly Care Plan), the client agrees to the following:</p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm">
+                        <li><strong class="text-slate-700">Scope:</strong> The project scope, deliverables, price, and timeline are defined in a written proposal and Master Service Agreement (MSA) signed before work begins.</li>
+                        <li><strong class="text-slate-700">Payment:</strong> Project plans require a 50% deposit to start and 50% on launch. Hosting and Care Plan services are billed annually or monthly as specified.</li>
+                        <li><strong class="text-slate-700">Revisions:</strong> Each plan includes a defined number of design revision rounds before development begins. Revisions requested after development starts may incur additional charges.</li>
+                        <li><strong class="text-slate-700">Timeline:</strong> Delivery timelines assume the client reviews and provides feedback within 24 business hours at each checkpoint. Delays on the client's side extend the timeline accordingly.</li>
+                        <li><strong class="text-slate-700">Cancellation:</strong> The deposit is non-refundable once design work has started. Monthly Care Plan subscriptions may be cancelled with 30 days written notice.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">5. Intellectual property</h2>
+                    <p>Upon receipt of full payment, all intellectual property rights to the website — including frontend source code, design assets, and content — transfer entirely to the client. Easyweb retains the right to display the completed project in our portfolio and case studies unless the client requests otherwise in writing. Third-party components (plugins, fonts, stock photos) are subject to their respective licenses.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">6. Hosting and domain services</h2>
+                    <p>When you subscribe to Hosting + Domain ($85/year) or the Monthly Care Plan ($99/month), Easyweb manages your hosting environment on our enterprise Hostinger plan and your domain registration. You retain full ownership of your domain name. If you cancel, we transfer the domain and site files to a provider of your choice within 14 business days at no additional charge.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">7. Limitation of liability</h2>
+                    <p>Easyweb is not liable for revenue losses, data loss, or business interruptions arising from website downtime, third-party service failures (hosting providers, payment gateways, DNS), or cyberattacks beyond our reasonable control. We maintain backups for all hosted clients and restore them as quickly as possible in the event of an issue.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">8. Governing law</h2>
+                    <p>These terms are governed by the laws of the United States. Cross-border intellectual property protections are covered under the US-Mexico-Canada Agreement (USMCA), Chapters 19 and 20. Any disputes shall be resolved through written negotiation before pursuing legal action.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">9. Changes to this policy</h2>
+                    <p>We may update this policy periodically. The date at the top of this page reflects the most recent revision. Continued use of our services after changes are posted constitutes acceptance of the updated terms.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-dark mb-3">10. Contact</h2>
+                    <p>For questions about privacy, data, or these terms: <a href="mailto:hello@easyweb.monster" class="text-primary-600 font-semibold hover:underline">hello@easyweb.monster</a></p>
+                </section>
+
             </div>
-            
-            <div class="mt-16 pt-8 border-t border-slate-100 text-center">
-                <a href="index.html" class="text-primary-600 font-bold hover:text-primary-800 transition-colors">← Back to Home</a>
+
+            <div class="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <a href="index.html" class="text-primary-600 font-bold hover:underline text-sm">← Back to home</a>
+                <p class="text-slate-400 text-xs">© 2026 Easyweb LLC · hello@easyweb.monster</p>
             </div>
         </article>
     </main>
 
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>

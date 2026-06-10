@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read the Easyweb case study on Frikko HVAC. See how a custom e-commerce redesign and speed optimization increased checkouts by 70% and engagement by 97%.">
-    <title>Frikko E-commerce Redesign Case Study | Easyweb</title>
-    
+    <meta name="description" content="How a complete e-commerce redesign — focused on fixing a broken product catalog and reducing purchase friction — increased checkout initiations by 70% and add-to-cart events by 61.5% for an HVAC brand.">
+    <title>How We Increased an HVAC E-commerce Store's Checkouts by 70% With a Website Redesign | Easyweb</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,14 +36,11 @@
     <style>
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
         #progress-bar {
             transform-origin: 0% 50%;
             transform: scaleX(0);
             transition: transform 0.2s ease-out;
         }
-
-        /* Subtle background pattern */
         .bg-grid-pattern {
             background-image: radial-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px);
             background-size: 24px 24px;
@@ -64,45 +61,68 @@
                 <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
                 <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
             </a>
-            
-            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
-                <a href="../our-work.html" class="flex items-center gap-2 hover:text-primary-600 transition-colors">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Portfolio
-                </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="../services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="../services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="../services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="../services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="../pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="../our-work.html" class="text-primary-600 font-bold flex items-center gap-1.5"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Our Work</a>
+                <a href="../blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="../about.html" class="hover:text-primary-600 transition-colors">About</a>
             </div>
-
-            <a href="../index.html#contacto" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2 px-5 rounded-full transition-transform hover:scale-105">
-                Start your project
+            <a href="../contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+
+        <!-- Hero -->
         <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
             <div class="absolute inset-0 bg-grid-pattern z-0"></div>
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
 
-            <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
                 <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
                     <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                    E-commerce Redesign
+                    E-commerce Redesign · HVAC Industry
                 </div>
-                
-                <h1 class="reveal active text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6 tracking-tight">
-                    Frikko HVAC: High-Performance <br class="hidden md:block"/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">UX & Sales Optimization.</span>
+
+                <h1 class="reveal active text-4xl md:text-5xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl">
+                    How We Increased an HVAC E-commerce Store's Checkouts by 70% With a Website Redesign
                 </h1>
-                
-                <p class="reveal active text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-                    A deep UX redesign and custom WordPress development for a leading air conditioning brand. Focused on frictionless conversions, extreme load speeds (Core Web Vitals), and scalable data architecture.
+
+                <p class="reveal active text-xl text-slate-600 mb-6 leading-relaxed max-w-3xl">
+                    Frikko's online store had a problem that was costing them real sales: a product catalog so technically complex that customers couldn't figure out what to buy. Here's how I fixed the buying journey — and what happened to their numbers when I did.
                 </p>
 
-                <!-- Project Metadata -->
+                <!-- Quick answer box -->
+                <div class="reveal active bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10 max-w-3xl">
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">The short version</p>
+                    <p class="text-slate-700 leading-relaxed">I rebuilt their product catalog architecture, simplified the purchase path, and launched in June 2025 — right before the peak summer season. Google Analytics showed that checkout initiations increased 70.2% year-over-year, and add-to-cart events were up 61.5%. Engagement nearly doubled.</p>
+                </div>
+
+                <!-- Attribution note -->
+                <div class="reveal active mb-4 inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-800">
+                    <i data-lucide="user" class="w-4 h-4 flex-shrink-0"></i>
+                    <span>Designed and developed by <strong>Sergio Arcibar</strong> (Easyweb founder) · Executed at Plexiz Media</span>
+                </div>
+
+                <!-- Project metadata -->
                 <div class="reveal active grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-t border-slate-200 text-left bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
                     <div>
-                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Our Role</p>
-                        <p class="font-bold text-dark">UI/UX & Web Dev</p>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Designer & Developer</p>
+                        <p class="font-bold text-dark">Sergio Arcibar</p>
                     </div>
                     <div>
                         <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Launch Date</p>
@@ -110,89 +130,96 @@
                     </div>
                     <div>
                         <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Industry</p>
-                        <p class="font-bold text-dark">B2C Retail / HVAC</p>
+                        <p class="font-bold text-dark">HVAC / E-commerce</p>
                     </div>
                     <div>
                         <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Tech Stack</p>
-                        <p class="font-bold text-dark">WordPress / Bricks</p>
+                        <p class="font-bold text-dark">WordPress · Elementor Pro · ACF Pro</p>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- The Challenge (SEO H2) -->
-        <section class="py-20 px-6 bg-slate-50">
-            <div class="max-w-4xl mx-auto reveal">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The Challenge: Simplifying a Complex Buying Journey</h2>
-                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                    Frikko possessed an extensive product catalog with highly complex technical specifications that easily overwhelmed the average consumer. The main challenge was to <strong>reduce cognitive friction</strong> when users searched for the right air conditioning unit. 
-                </p>
-                <p class="text-slate-600 text-lg leading-relaxed">
-                    We needed to modernize the user interface (UI) and engineer a robust, self-manageable backend for their marketing team—without sacrificing crucial page load times (WPO).
-                </p>
-            </div>
-        </section>
-
-        <!-- The Impact (Real Analytics Data) - Authority Section -->
+        <!-- Results (above the fold, high on the page) -->
         <section class="py-12 px-6">
             <div class="max-w-5xl mx-auto reveal">
                 <div class="bg-dark rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-800">
-                    <!-- Glow effect -->
                     <div class="absolute -top-24 -right-24 w-64 h-64 bg-accent-500 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
-                    
-                    <div class="flex items-center gap-3 mb-6">
+
+                    <div class="flex items-center gap-3 mb-3">
                         <div class="p-2 bg-accent-500/20 rounded-lg"><i data-lucide="trending-up" class="w-6 h-6 text-accent-400"></i></div>
-                        <h2 class="text-2xl md:text-3xl font-extrabold text-white">Business Impact & ROI</h2>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-white">The results (from Google Analytics)</h2>
                     </div>
-                    
+
                     <p class="text-slate-400 mb-10 max-w-3xl text-sm leading-relaxed border-b border-slate-700 pb-8">
-                        Data extracted directly from Google Analytics, comparing the previous annual period (2024) against the launch year (2025). The new website was strategically deployed in <strong>June 2025</strong>, right in time to capitalize on the high-demand summer season, resulting in exponential growth in retention and direct sales.
+                        Year-over-year comparison: January–December 2024 vs. January–December 2025. The site launched June 2025, right at the start of peak HVAC season.
                     </p>
-                    
+
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <p class="text-4xl md:text-5xl font-black text-accent-400 mb-2">+70.2%</p>
+                            <p class="text-sm text-slate-300 font-medium">Checkout Initiations</p>
+                        </div>
                         <div>
                             <p class="text-4xl md:text-5xl font-black text-accent-400 mb-2">+61.5%</p>
                             <p class="text-sm text-slate-300 font-medium">"Add to Cart" Events</p>
                         </div>
                         <div>
-                            <p class="text-4xl md:text-5xl font-black text-accent-400 mb-2">+97.8%</p>
+                            <p class="text-4xl md:text-5xl font-black text-white mb-2">+97.8%</p>
                             <p class="text-sm text-slate-300 font-medium">Avg. Engagement Time</p>
                         </div>
                         <div>
                             <p class="text-4xl md:text-5xl font-black text-white mb-2">-11.6%</p>
-                            <p class="text-sm text-slate-300 font-medium">Decrease in Bounce Rate</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl md:text-5xl font-black text-white mb-2">+70.2%</p>
-                            <p class="text-sm text-slate-300 font-medium">Checkout Initiations</p>
+                            <p class="text-sm text-slate-300 font-medium">Bounce Rate</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Hero Image Mockup -->
-        <section class="px-6 pb-20">
+        <!-- Hero Image -->
+        <section class="px-6 pb-16">
             <div class="max-w-6xl mx-auto reveal">
                 <div class="aspect-[21/9] rounded-3xl overflow-hidden bg-slate-200 shadow-xl border border-slate-100 relative group">
                     <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-bold text-dark shadow-sm flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                        Live Interface (2025)
+                        Live site — launched June 2025
                     </div>
-                    <!-- Placeholder for actual Frikko Mockup -->
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000" alt="Responsive mockup of Frikko's e-commerce website showing UX/UI design" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000" alt="Frikko HVAC e-commerce website redesign — new product catalog interface" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-3">← Real screenshots coming soon. Placeholder image shown.</p>
+            </div>
+        </section>
+
+        <!-- The Business Problem -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The business problem: customers couldn't figure out what to buy</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Frikko sells air conditioning equipment — a category where the technical specs matter. BTU capacity, SEER ratings, compatible refrigerants, coverage area. A buyer who picks the wrong unit will have a bad experience and return it. A buyer who can't figure out which unit is right for them won't buy at all.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Their catalog had the information — buried in the wrong places. Product details lived in the frontend as static text, not in a structured backend. That made it nearly impossible to display specs consistently across hundreds of products. Comparison tables were broken or nonexistent. Filtering was limited. And the overall experience was overwhelming enough that customers were bouncing before they ever reached checkout.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        A slow, confusing product page isn't a UX problem — it's a revenue problem. Every abandoned session is a sale that didn't happen. Our job was to fix the buying journey from the inside out.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Process & Methodology -->
-        <section class="py-24 bg-white border-t border-slate-200">
+        <!-- The 3 Decisions -->
+        <section class="py-24 bg-slate-50 border-t border-slate-200">
             <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-16 text-center">Development Methodology & UX Strategy</h2>
+                <div class="reveal mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">The decisions we made — and why</h2>
+                    <p class="text-slate-600 text-lg">Three problems, three decisions. Each one had a direct line to the numbers.</p>
+                </div>
 
                 <div class="space-y-16">
-                    
-                    <!-- Step 1 -->
+
+                    <!-- Decision 1 -->
                     <article class="reveal grid md:grid-cols-12 gap-8 items-start">
                         <div class="md:col-span-1 pt-1 hidden md:block">
                             <div class="w-12 h-12 rounded-full bg-primary-50 text-primary-600 font-black text-xl flex items-center justify-center border border-primary-100">1</div>
@@ -200,18 +227,21 @@
                         <div class="md:col-span-11">
                             <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
                                 <span class="md:hidden w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-black text-sm flex items-center justify-center border border-primary-100">1</span>
-                                UX & Information Architecture
+                                Reorganize the catalog so customers can self-select
                             </h3>
-                            <p class="text-slate-600 leading-relaxed mb-6">
-                                We initiated the project with a competitive benchmark in the HVAC sector. We identified a systemic failure among competitors: the inability to present heavy technical data in a digestible format for B2C consumers. We wireframed a new catalog logic and implemented advanced filtering to drastically reduce friction in the purchasing journey.
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                We started by auditing competitor sites in the HVAC and home appliance sector. The consistent failure we found: everyone was presenting technical data in a format made for engineers, not for homeowners trying to cool their living room.
                             </p>
-                            <div class="rounded-2xl overflow-hidden shadow-soft border border-slate-100 aspect-[21/9]">
-                                <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1200" alt="Wireframing and UX planning for E-commerce" class="w-full h-full object-cover">
-                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                We wireframed a new catalog logic — one that led with the questions the buyer was actually asking ("How big is my space?", "What's my budget?") rather than leading with model numbers. Advanced filtering, clear hierarchy, and a simplified purchase path from category to product to cart.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                Before writing a line of code, we built a high-fidelity design system in Figma: design tokens, reusable components, and prototyped flows for every product type. That system is what made the next step possible.
+                            </p>
                         </div>
                     </article>
 
-                    <!-- Step 2 -->
+                    <!-- Decision 2 -->
                     <article class="reveal grid md:grid-cols-12 gap-8 items-start">
                         <div class="md:col-span-1 pt-1 hidden md:block">
                             <div class="w-12 h-12 rounded-full bg-primary-50 text-primary-600 font-black text-xl flex items-center justify-center border border-primary-100">2</div>
@@ -219,18 +249,33 @@
                         <div class="md:col-span-11">
                             <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
                                 <span class="md:hidden w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-black text-sm flex items-center justify-center border border-primary-100">2</span>
-                                UI Design & Scalable System
+                                Move all product data to the backend — the real fix nobody warned us about
                             </h3>
-                            <p class="text-slate-600 leading-relaxed mb-6">
-                                According to the Aesthetic-Usability Effect, users perceive aesthetically pleasing interfaces as easier to use. We built a scalable Design System in Figma, prototyping high-fidelity, modular components to ensure visual consistency and prepare a structured handoff for the development phase.
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Here's what I didn't expect when I started: the entire product catalog was managed in the frontend. Every spec table, every downloadable PDF, every comparison chart — hardcoded as static content. That meant you couldn't build a single product template that worked across all products. Every page was a custom job.
                             </p>
-                            <div class="rounded-2xl overflow-hidden shadow-soft border border-slate-100 aspect-[21/9]">
-                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200" alt="Figma UI Design System" class="w-full h-full object-cover">
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                The redesign couldn't happen without solving this first. We migrated the entire data structure to the backend using ACF Pro — custom fields for every product type, dynamic comparison tables, automated spec sheets, video galleries, and downloadable technical PDFs. One product template. Hundreds of products. All consistent.
+                            </p>
+                            <div class="bg-dark rounded-2xl p-6 text-sm font-mono text-accent-400 overflow-x-auto">
+                                <pre><code>&lt;?php
+  // Single template — works for every product
+  $specs = get_field('technical_data');
+  $btu   = $specs['btu_capacity']  ?? null;
+  $seer  = $specs['seer_rating']   ?? null;
+
+  if($btu): ?&gt;
+    &lt;div class="spec-badge"&gt;BTU: &lt;?php echo esc_html($btu); ?&gt;&lt;/div&gt;
+  &lt;?php endif; ?&gt;
+  if($seer): ?&gt;
+    &lt;div class="spec-badge"&gt;SEER: &lt;?php echo esc_html($seer); ?&gt;&lt;/div&gt;
+  &lt;?php endif; ?&gt;</code></pre>
                             </div>
+                            <p class="text-slate-500 text-sm mt-3">ACF Pro lets the product template show or hide specs dynamically — no manual editing per product.</p>
                         </div>
                     </article>
 
-                    <!-- Step 3 -->
+                    <!-- Decision 3 -->
                     <article class="reveal grid md:grid-cols-12 gap-8 items-start">
                         <div class="md:col-span-1 pt-1 hidden md:block">
                             <div class="w-12 h-12 rounded-full bg-primary-50 text-primary-600 font-black text-xl flex items-center justify-center border border-primary-100">3</div>
@@ -238,38 +283,17 @@
                         <div class="md:col-span-11">
                             <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-3">
                                 <span class="md:hidden w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-black text-sm flex items-center justify-center border border-primary-100">3</span>
-                                Advanced WordPress Engineering
+                                Optimize for speed without sacrificing functionality
                             </h3>
-                            <div class="grid md:grid-cols-2 gap-8 items-center">
-                                <ul class="space-y-4 text-slate-600">
-                                    <li class="flex items-start gap-3">
-                                        <i data-lucide="database" class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"></i>
-                                        <span><strong>Data Architecture (ACF Pro):</strong> Implemented custom fields to dynamically manage comparison tables, BTU metrics, and technical PDF downloads.</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <i data-lucide="layout-template" class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"></i>
-                                        <span><strong>Modular Development:</strong> Created dynamic single-product templates using clean, semantic builders (Bricks) to avoid DOM bloat.</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <i data-lucide="gauge" class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5"></i>
-                                        <span><strong>WPO & Speed:</strong> Aggressive image optimization (WebP), lazy loading, and caching to dominate Google PageSpeed Insights.</span>
-                                    </li>
-                                </ul>
-                                <div class="rounded-2xl overflow-hidden shadow-soft bg-dark p-6">
-                                     <pre class="text-xs text-accent-400 font-mono w-full overflow-x-auto"><code>
-&lt;?php
-  // Optimized ACF query for performance
-  $specs = get_field('technical_data');
-  $efficiency = $specs['seer_rating'] ?? null;
-  
-  if($efficiency): ?&gt;
-    &lt;div class="tech-badge wpo-ready"&gt;
-      SEER Rating: &lt;?php echo esc_html($efficiency); ?&gt;
-    &lt;/div&gt;
-&lt;?php endif; ?&gt;
-                                     </code></pre>
-                                </div>
-                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                A well-designed product page that loads in 5 seconds is a lost sale on mobile. We built custom CSS components instead of relying on Elementor's built-in elements — this avoided loading unnecessary scripts and cut DOM bloat significantly. Fluid typography with CSS <code class="bg-slate-100 px-1 rounded text-sm">clamp()</code> handled all responsive behavior without media query overload.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                All images were converted to WebP, lazy-loaded below the fold, and served at appropriate sizes per device. Caching and script loading were configured to maximize PageSpeed Insights scores on both mobile and desktop.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                The result: when Frikko's marketing team later ran a rebrand in 2026 — new visual identity, new design tokens — the architecture held. They updated the tokens, and the changes propagated across the entire site without touching individual pages or breaking any performance metrics.
+                            </p>
                         </div>
                     </article>
 
@@ -277,19 +301,32 @@
             </div>
         </section>
 
-        <!-- Client Testimonial -->
+        <!-- What this means -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto reveal">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">What the numbers actually tell you</h2>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    A +70% increase in checkout initiations doesn't come from making a site look prettier. It comes from removing the reasons people don't check out. In Frikko's case, those reasons were: couldn't find the right product, couldn't understand the specs, couldn't trust the information was accurate.
+                </p>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    The +97.8% increase in average engagement time tells you people were actually reading — exploring product specs, comparing options, making decisions. That's what a well-structured catalog does: it converts confusion into confidence.
+                </p>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    And because the site launched in June — right at the start of peak HVAC season — those improvements hit at the highest-traffic moment of the year. Timing is strategy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
         <section class="py-24 px-6 bg-primary-900 text-white relative overflow-hidden">
             <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
-            
             <div class="max-w-4xl mx-auto reveal relative z-10 text-center">
                 <i data-lucide="quote" class="w-12 h-12 text-primary-400 opacity-50 mx-auto mb-8"></i>
-                
                 <p class="text-2xl md:text-3xl leading-relaxed font-medium mb-12">
-                    "Easyweb didn't just deliver a visually appealing design; they rebuilt the way we sell online. The new structure eliminated our customers' technical doubts and the site is incredibly fast. The impact on our checkout and conversion metrics has been outstanding."
+                    "Easyweb didn't just deliver a visually appealing design — they rebuilt the way we sell online. The new structure eliminated our customers' technical doubts and the site is incredibly fast. The impact on our checkout and conversion metrics has been outstanding."
                 </p>
-                
                 <div class="flex flex-col items-center justify-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80" alt="Client Avatar" class="w-16 h-16 rounded-full object-cover border-2 border-primary-400">
+                    <div class="w-16 h-16 rounded-full bg-primary-700 border-2 border-primary-400 flex items-center justify-center text-2xl font-black text-primary-300">F</div>
                     <div>
                         <p class="font-bold text-lg">Marketing Director</p>
                         <p class="text-sm text-primary-300">Frikko HVAC</p>
@@ -298,59 +335,93 @@
             </div>
         </section>
 
-        <!-- Call to Action -->
-        <section class="py-24 px-6 bg-slate-50 text-center border-b border-slate-200">
-            <div class="max-w-3xl mx-auto reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-dark mb-6">Does your e-commerce need these results?</h2>
-                <p class="text-slate-600 mb-10 text-lg md:text-xl">
-                    Stop losing sales to a slow or confusing website. Let's talk about how a scalable web architecture and strategic UX design can skyrocket your metrics.
+        <!-- CTA -->
+        <section class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-3xl mx-auto reveal text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Does your online store have the same problem?</h2>
+                <p class="text-slate-600 mb-3 text-lg">
+                    If your customers can't find what they need — or don't trust what they find — they leave. A website redesign isn't cosmetic; it's the fix.
+                </p>
+                <p class="text-slate-500 text-base mb-10">
+                    We build e-commerce sites for small businesses starting at $1,500. US-registered LLC. English-speaking team. Real results, documented.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="../index.html#contacto" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
+                    <a href="../contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
                         <i data-lucide="calendar" class="w-5 h-5"></i>
-                        Book a Strategy Call
+                        Get a free site audit
                     </a>
-                    <a href="../our-work.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
-                        View more case studies
+                    <a href="../pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
+                        See exact pricing
                     </a>
                 </div>
+                <p class="text-slate-400 text-sm mt-6">We respond within 1 business day. No sales calls, no obligation.</p>
+                <p class="text-slate-400 text-sm mt-4">
+                    <span class="text-slate-500 font-medium">Frikko is now on our Monthly Care Plan</span> — ongoing backups, security updates, and priority support so their store keeps running without them thinking about it.
+                    <a href="../services-care-plan.html" class="text-primary-600 font-bold hover:underline ml-1">See what's included →</a>
+                </p>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white py-12 px-6 text-center">
-        <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that perform.</p>
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="../services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="../services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="../services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="../pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="../our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="../blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="../terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         lucide.createIcons();
 
-        // Reading Progress Bar Logic
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height);
-            document.getElementById('progress-bar').style.transform = `scaleX(${scrolled})`;
+            document.getElementById('progress-bar').style.transform = `scaleX(${winScroll / height})`;
         });
 
-        // Reveal Animations Logic
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
                 }
-            }
+            });
         }
-
         window.addEventListener("scroll", reveal);
-        reveal(); // Trigger once on load
+        reveal();
     </script>
 </body>
 </html>

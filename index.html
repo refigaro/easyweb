@@ -3,36 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Easyweb | Professional, fast, and hassle-free websites for your business. Custom design and guaranteed high performance.">
-    <title>Easyweb | Your professional website, fast and easy.</title>
-    
-    <!-- Google Fonts: Plus Jakarta Sans para un look muy SaaS/Startup -->
+    <meta name="description" content="Easyweb builds professional WordPress websites for US small businesses — starting at $499. US-registered LLC, English-speaking, delivered in 2 weeks. Local agency quality at nearshore prices.">
+    <title>Professional Websites for US Small Businesses | Starting at $499 | Easyweb</title>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Professional Websites for US Small Businesses | Easyweb">
+    <meta property="og:description" content="US-registered LLC. English-speaking team. Professional websites starting at $499 — delivered in 2 weeks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://easyweb.monster">
+    <!-- Schema: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Easyweb",
+      "description": "US-registered web agency specializing in WordPress websites for US small businesses.",
+      "url": "https://easyweb.monster",
+      "priceRange": "$499 - $1499",
+      "areaServed": "US",
+      "knowsLanguage": ["en", "es"],
+      "founder": { "@type": "Person", "name": "Sergio Arcibar" }
+    }
+    </script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
                     colors: {
-                        primary: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1', // Indigo (Tech)
-                            600: '#4f46e5',
-                            900: '#312e81',
-                        },
-                        accent: {
-                            400: '#34d399', // Mint green (Fácil/Rápido)
-                            500: '#10b981',
-                        },
-                        dark: '#0f172a' // Slate 900
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
                     },
                     boxShadow: {
                         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
@@ -42,442 +50,647 @@
             }
         }
     </script>
-
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Patrón de fondo sutil para el Hero */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .bg-grid-pattern {
-            background-image: radial-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px);
             background-size: 24px 24px;
         }
-
-        /* Estilos para el FAQ */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
 
-    <!-- Navegación -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo Easyweb -->
-            <a href="#" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">
-                    e
-                </div>
-                <span class="font-extrabold text-2xl tracking-tight text-dark">
-                    Easy<span class="text-primary-600">web</span>
-                </span>
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
             </a>
-            
-            <!-- Enlaces Desktop -->
-            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
-                <a href="#como-funciona" class="hover:text-primary-600 transition-colors">How it works</a>
-                <a href="#beneficios" class="hover:text-primary-600 transition-colors">Benefits</a>
-                <a href="#precios" class="hover:text-primary-600 transition-colors">Pricing</a>
-                <a href="#portafolio" class="hover:text-primary-600 transition-colors">Our Work</a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <!-- Services dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm">
+                            <i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites
+                        </a>
+                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm">
+                            <i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores
+                        </a>
+                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm">
+                            <i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages
+                        </a>
+                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm">
+                            <i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan
+                        </a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
             </div>
-
-            <!-- CTA Header -->
-            <a href="#contacto" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
-                Get Started
+            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-
-            <!-- Menu móvil -->
-            <button class="md:hidden text-dark">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+
+        <!-- ============================================================ -->
+        <!-- HERO                                                          -->
+        <!-- ============================================================ -->
         <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
-            <div class="absolute inset-0 bg-grid-pattern z-0 opacity-50"></div>
-            
-            <!-- Elemento de resplandor (Glow) de fondo -->
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
             <div class="absolute top-0 right-0 -mr-40 -mt-40 w-[30rem] h-[30rem] bg-primary-100 rounded-full blur-[100px] z-0"></div>
             <div class="absolute bottom-0 left-0 -ml-40 -mb-40 w-[20rem] h-[20rem] bg-accent-400/20 rounded-full blur-[80px] z-0"></div>
 
             <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                
+
                 <div class="reveal active inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-8 border border-slate-200 shadow-sm">
                     <span class="flex h-2 w-2 relative">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
                     </span>
-                    The fastest way to launch your business
-                </div>
-                
-                <h1 class="reveal active text-5xl md:text-7xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl mx-auto">
-                    Your professional website, <br class="hidden md:block"/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">zero hassle.</span>
-                </h1>
-                
-                <p class="reveal active text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-                    We handle the design, code, and servers. You focus on selling. Blazing-fast websites, optimized for Google, and ready in record time.
-                </p>
-                
-                <div class="reveal active flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#contacto" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-all shadow-glow hover:shadow-primary-500/50 hover:-translate-y-1">
-                        Get my website
-                        <i data-lucide="rocket" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#precios" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border-2 border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
-                        View plans & pricing
-                    </a>
+                    US-Registered LLC · English-speaking · CST time zone
                 </div>
 
-                <!-- Trust Badges (Prueba social) -->
-                <div class="reveal active mt-16 pt-8 border-t border-slate-100 flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
-                    <div class="flex items-center gap-2 font-bold text-slate-500"><i data-lucide="shield-check" class="w-5 h-5 text-accent-500"></i> Secure Code</div>
-                    <div class="flex items-center gap-2 font-bold text-slate-500"><i data-lucide="zap" class="w-5 h-5 text-yellow-500"></i> Lightning Fast</div>
-                    <div class="flex items-center gap-2 font-bold text-slate-500"><i data-lucide="smartphone" class="w-5 h-5 text-primary-500"></i> 100% Mobile Ready</div>
+                <h1 class="reveal active text-5xl md:text-7xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-5xl mx-auto">
+                    We build professional websites<br class="hidden md:block"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">for US small businesses.</span>
+                </h1>
+
+                <p class="reveal active text-xl text-slate-600 mb-4 leading-relaxed max-w-2xl mx-auto">
+                    Starting at $499. Delivered in 2 weeks. In English, during your business hours.
+                </p>
+                <p class="reveal active text-base text-slate-500 mb-10 max-w-xl mx-auto">
+                    Local agencies charge $5,000–$15,000 for the same result. We're a US-registered LLC with a lean team in Mexico — same quality, without the overhead. Building new or redesigning what you have — same price, same process.
+                </p>
+
+                <div class="reveal active flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-all shadow-glow hover:-translate-y-1">
+                        Get a free quote in 24 hours
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border-2 border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
+                        See exact pricing
+                    </a>
+                </div>
+                <p class="reveal active text-sm text-slate-400 mb-6">
+                    Already have a site that's slow or not converting? <a href="contact.html" class="text-primary-500 font-semibold hover:underline">Get a free site audit →</a>
+                </p>
+
+                <!-- Frikko proof badge -->
+                <div class="reveal active inline-flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-full text-sm font-semibold mb-14">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-accent-400"></i>
+                    <span>+70% more checkouts for Frikko HVAC after redesign —</span>
+                    <a href="work/frikko-hvac.html" class="text-accent-400 hover:text-accent-300 underline underline-offset-2 transition-colors">read the case study</a>
+                </div>
+
+                <!-- Trust badges -->
+                <div class="reveal active pt-8 border-t border-slate-100 flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                    <div class="flex items-center gap-2 font-bold text-slate-600 text-sm"><i data-lucide="building-2" class="w-5 h-5 text-primary-500"></i> US-Registered LLC</div>
+                    <div class="flex items-center gap-2 font-bold text-slate-600 text-sm"><i data-lucide="message-square" class="w-5 h-5 text-accent-500"></i> English-Speaking Team</div>
+                    <div class="flex items-center gap-2 font-bold text-slate-600 text-sm"><i data-lucide="clock" class="w-5 h-5 text-yellow-500"></i> 6–8 hrs US time overlap</div>
+                    <div class="flex items-center gap-2 font-bold text-slate-600 text-sm"><i data-lucide="shield-check" class="w-5 h-5 text-slate-500"></i> Design approved before we code</div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: Cómo funciona (El núcleo del concepto "Easy") -->
-        <section id="como-funciona" class="py-24 bg-slate-50 border-b border-slate-200">
+        <!-- ============================================================ -->
+        <!-- TWO AUDIENCES                                                 -->
+        <!-- ============================================================ -->
+        <section class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Starting from scratch, or replacing what you have?</h2>
+                    <p class="text-slate-600 text-lg">81% of small businesses already have a website. Most just aren't getting customers from it.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Redesign card first — 81% of prospects already have a site -->
+                    <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 shadow-soft ring-1 ring-accent-500/20">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-500 flex items-center justify-center">
+                                <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-bold text-accent-600 bg-accent-50 px-2.5 py-1 rounded-full">81% of our clients</span>
+                        </div>
+                        <h3 class="font-bold text-dark text-xl mb-3">My current site isn't working</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">Slow, outdated, or just not generating leads. We audit what's broken, keep what works, and rebuild the parts that are costing you customers. No starting from zero unless necessary.</p>
+                        <a href="contact.html" class="text-accent-600 font-bold text-sm hover:underline inline-flex items-center gap-1">Get a free site audit <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+
+                    <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 shadow-soft">
+                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+                            <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-xl mb-3">I need a website from scratch</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">You're starting fresh or your current site is so outdated it might as well not exist. We build from the ground up — design, development, and launch in 2–3 weeks.</p>
+                        <a href="services-corporate.html" class="text-primary-600 font-bold text-sm hover:underline inline-flex items-center gap-1">See business website plans <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- RESULTS / PROOF                                               -->
+        <!-- ============================================================ -->
+        <section class="py-20 bg-dark text-white border-t border-slate-800">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="reveal mb-10">
+                    <span class="inline-block text-xs font-bold text-accent-400 uppercase tracking-widest mb-3">Real results, from Google Analytics</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">What a redesign can do for your business</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl">We rebuilt Frikko HVAC's e-commerce catalog and simplified their buying process. This is what happened to their numbers year-over-year.</p>
+                </div>
+
+                <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-accent-400 mb-1">+70.2%</p>
+                        <p class="text-sm text-slate-400">Checkout initiations</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-accent-400 mb-1">+61.5%</p>
+                        <p class="text-sm text-slate-400">Add-to-cart events</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-white mb-1">+97.8%</p>
+                        <p class="text-sm text-slate-400">Avg. engagement time</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-white mb-1">-11.6%</p>
+                        <p class="text-sm text-slate-400">Bounce rate</p>
+                    </div>
+                </div>
+
+                <div class="reveal flex flex-col sm:flex-row items-center gap-4">
+                    <a href="work/frikko-hvac.html" class="inline-flex items-center gap-2 bg-white text-dark font-bold py-3 px-6 rounded-full hover:bg-slate-100 transition-colors text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Read the full case study
+                    </a>
+                    <a href="our-work.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white font-semibold text-sm transition-colors">
+                        See all projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- HOW IT WORKS                                                  -->
+        <!-- ============================================================ -->
+        <section id="how-it-works" class="py-24 bg-white border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="reveal text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Literally, it's that easy.</h2>
-                    <p class="text-lg text-slate-600">Forget endless meetings and confusing technical jargon.</p>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">How it works</h2>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto">Five steps, two to three weeks, one website you own 100%.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Paso 1 -->
-                    <div class="reveal bg-white p-8 rounded-2xl shadow-soft border border-slate-100 relative text-center">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-dark text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">1</div>
-                        <div class="mt-4 mb-6 inline-flex p-4 rounded-full bg-primary-50 text-primary-600">
-                            <i data-lucide="message-circle" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-3">Tell us your idea</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">We'll have a quick 20-minute call to understand your business, your brand, and your goals.</p>
+                <div class="grid md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+                    <div class="reveal text-center">
+                        <div class="w-12 h-12 rounded-full bg-dark text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">1</div>
+                        <h3 class="font-bold text-dark mb-2">Discovery call</h3>
+                        <p class="text-slate-500 text-sm">30 minutes. We learn about your business and goals.</p>
                     </div>
+                    <div class="reveal hidden md:flex items-center justify-center text-slate-300">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </div>
+                    <div class="reveal text-center" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 rounded-full bg-primary-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">2</div>
+                        <h3 class="font-bold text-dark mb-2">Design in Figma</h3>
+                        <p class="text-slate-500 text-sm">You approve the design. <strong>No code starts until you're happy.</strong></p>
+                    </div>
+                    <div class="reveal hidden md:flex items-center justify-center text-slate-300" style="transition-delay: 150ms;">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </div>
+                    <div class="reveal text-center" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">3</div>
+                        <h3 class="font-bold text-dark mb-2">Build + review</h3>
+                        <p class="text-slate-500 text-sm">Built on staging. You test it before it goes live.</p>
+                    </div>
+                </div>
 
-                    <!-- Paso 2 -->
-                    <div class="reveal bg-white p-8 rounded-2xl shadow-soft border border-slate-100 relative text-center" style="transition-delay: 100ms;">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">2</div>
-                        <div class="mt-4 mb-6 inline-flex p-4 rounded-full bg-accent-50 text-accent-500">
-                            <i data-lucide="layout" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-3">We design & build</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Our expert team creates your website using cutting-edge technology. You won't have to touch a single line of code.</p>
-                    </div>
-
-                    <!-- Paso 3 -->
-                    <div class="reveal bg-white p-8 rounded-2xl shadow-soft border border-slate-100 relative text-center" style="transition-delay: 200ms;">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-accent-500 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white">3</div>
-                        <div class="mt-4 mb-6 inline-flex p-4 rounded-full bg-green-50 text-green-600">
-                            <i data-lucide="rocket" class="w-8 h-8"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark mb-3">Launch</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">We review the details with you and publish it to the world. Optimized, fast, and ready to welcome customers.</p>
-                    </div>
+                <div class="reveal mt-8 text-center">
+                    <p class="text-slate-500 text-sm">Then: <span class="font-semibold text-slate-700">Launch</span> → <span class="font-semibold text-slate-700">Handoff</span> → you own it. Optional Monthly Care Plan if you'd rather not manage it yourself.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: Beneficios Técnicos explicados para mortales -->
-        <section id="beneficios" class="py-24 bg-white">
+        <!-- ============================================================ -->
+        <!-- WHY EASYWEB                                                   -->
+        <!-- ============================================================ -->
+        <section id="why-easyweb" class="py-24 bg-slate-50 border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
                     <div class="inline-block px-3 py-1 bg-primary-50 text-primary-600 font-bold rounded-full text-sm mb-4">Why Easyweb?</div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">Not just a pretty website, a sales engine.</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The same quality as a local agency — without paying for their overhead.</h2>
                     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        Many agencies deliver slow, clunky sites that look terrible on mobile. With Easyweb, premium performance comes standard.
+                        A full-stack developer in the US earns ~$147,000/year. The same developer in Mexico earns ~$28,000. Local agencies charge you the difference. We don't.
                     </p>
-                    
+
                     <ul class="space-y-6">
                         <li class="flex items-start gap-4">
-                            <div class="bg-primary-100 p-2 rounded-lg text-primary-600 mt-1"><i data-lucide="gauge" class="w-5 h-5"></i></div>
+                            <div class="bg-primary-100 p-2 rounded-lg text-primary-600 mt-1 flex-shrink-0"><i data-lucide="building-2" class="w-5 h-5"></i></div>
                             <div>
-                                <h4 class="font-bold text-dark text-lg">Extreme Speed (WPO)</h4>
-                                <p class="text-slate-600 text-sm">We optimize images and code so your site loads almost instantly, preventing your customers from bouncing.</p>
+                                <h4 class="font-bold text-dark text-lg">US-registered LLC — real accountability</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">You contract with an American company. Payments in USD. IP transfers to you on delivery, protected under USMCA. Signed MSA in English before we start.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <div class="bg-accent-100 p-2 rounded-lg text-accent-600 mt-1"><i data-lucide="search" class="w-5 h-5"></i></div>
+                            <div class="bg-accent-100 p-2 rounded-lg text-accent-500 mt-1 flex-shrink-0"><i data-lucide="clock" class="w-5 h-5"></i></div>
                             <div>
-                                <h4 class="font-bold text-dark text-lg">Google Friendly (SEO)</h4>
-                                <p class="text-slate-600 text-sm">Built with the exact semantic structure search engines demand, helping you show up when customers search for you.</p>
+                                <h4 class="font-bold text-dark text-lg">Available during your business hours</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">We work in CST — 6 to 8 hours of real-time overlap with US business hours. Available on Slack and Zoom. Same-day responses, no overnight delays.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <div class="bg-slate-100 p-2 rounded-lg text-slate-700 mt-1"><i data-lucide="edit-3" class="w-5 h-5"></i></div>
+                            <div class="bg-slate-100 p-2 rounded-lg text-slate-700 mt-1 flex-shrink-0"><i data-lucide="gauge" class="w-5 h-5"></i></div>
                             <div>
-                                <h4 class="font-bold text-dark text-lg">Self-Manageable</h4>
-                                <p class="text-slate-600 text-sm">We hand over a super simple dashboard. If you want to change a photo or text tomorrow, you can do it yourself without paying us extra.</p>
+                                <h4 class="font-bold text-dark text-lg">Fast, SEO-ready, and easy to manage</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">Every site scores 90+ on Google PageSpeed, is set up in Google Analytics from day one, and gives you a simple dashboard to update your own content — no developer needed.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
 
                 <div class="reveal relative">
-                    <!-- Decoración -->
-                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-500 to-accent-400 rounded-3xl transform rotate-3 opacity-20"></div>
-                    <!-- Imagen o mockup de una web de alto rendimiento -->
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Web Performance Dashboard" class="relative z-10 rounded-3xl shadow-2xl border border-slate-100 object-cover">
-                    
-                    <!-- Tarjeta flotante de rendimiento -->
-                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 z-20 flex items-center gap-4">
-                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">98</div>
-                        <div>
-                            <p class="font-bold text-dark text-sm">Speed Score</p>
-                            <p class="text-xs text-green-500 font-bold">Excellent</p>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-500 to-accent-400 rounded-3xl transform rotate-3 opacity-10"></div>
+                    <div class="relative z-10 bg-white rounded-3xl shadow-soft border border-slate-100 p-8">
+                        <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">The cost comparison</p>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                                <span class="text-slate-600 font-medium">US local agency</span>
+                                <span class="font-bold text-slate-400 line-through">$5,000–$15,000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-slate-100">
+                                <span class="text-slate-600 font-medium">India / offshore agency</span>
+                                <span class="font-bold text-slate-400">Cheap but unreliable</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 bg-primary-50 rounded-xl px-3">
+                                <span class="text-dark font-bold">Easyweb</span>
+                                <span class="font-extrabold text-primary-600">From $499</span>
+                            </div>
                         </div>
+                        <p class="text-xs text-slate-400 mt-4">Same English communication. Same deliverables. US-registered. No overnight delays.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN NUEVA: Precios (Pricing Transparente) -->
-        <section id="precios" class="py-24 bg-slate-50 border-t border-slate-200">
+        <!-- ============================================================ -->
+        <!-- PRICING                                                       -->
+        <!-- ============================================================ -->
+        <section id="pricing" class="py-24 bg-white border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="reveal text-center mb-16">
+                <div class="reveal text-center mb-4">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Clear plans. No surprises.</h2>
-                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose the package that fits your business stage. One-time payment, the website is 100% yours.</p>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">One-time payment. The website is 100% yours. US agencies charge $5,000–$15,000 for these same deliverables.</p>
+                </div>
+                <div class="reveal text-center mb-12">
+                    <a href="pricing.html" class="text-primary-600 font-semibold text-sm hover:underline inline-flex items-center gap-1">See full pricing details and what's included <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <!-- Plan Básico -->
-                    <div class="reveal bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col">
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                    <!-- Starter -->
+                    <div class="reveal bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col">
                         <div class="mb-6">
                             <h3 class="text-2xl font-bold text-dark mb-2">Starter</h3>
-                            <p class="text-slate-500 text-sm">Perfect for local businesses and services.</p>
+                            <p class="text-slate-500 text-sm">Single-page site for local businesses and services.</p>
                         </div>
                         <div class="mb-8">
                             <span class="text-4xl font-extrabold text-dark">$499</span>
-                            <span class="text-slate-500">/one-time payment</span>
+                            <span class="text-slate-500 text-sm"> / one-time</span>
                         </div>
-                        <ul class="space-y-4 mb-8 flex-1">
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Landing Page Design (1 page)</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> WhatsApp button integration</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Basic contact form</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> 100% Mobile responsive</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Delivery in 7 business days</li>
+                        <ul class="space-y-3 mb-8 flex-1 text-sm">
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> 1-page landing site</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Contact form with GA4 tracking</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> 100% mobile responsive</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> PageSpeed 90+</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Delivered in 7 business days</li>
                         </ul>
-                        <a href="#contacto" class="w-full block text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded-full transition-colors">Choose Plan</a>
+                        <a href="#contact" class="w-full block text-center bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 font-bold py-3 rounded-full transition-colors">Start with Starter</a>
                     </div>
 
-                    <!-- Plan Profesional (Destacado) -->
-                    <div class="reveal bg-dark rounded-3xl p-8 shadow-2xl border border-primary-500 relative flex flex-col transform md:-translate-y-4" style="transition-delay: 100ms;">
+                    <!-- Corporate (Featured) -->
+                    <div class="reveal bg-dark rounded-3xl p-8 border border-primary-500 relative flex flex-col transform md:-translate-y-4" style="transition-delay: 100ms;">
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-glow">
                             Most Popular
                         </div>
                         <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-white mb-2">Corporate</h3>
-                            <p class="text-slate-400 text-sm">For companies seeking absolute market authority.</p>
+                            <h3 class="text-2xl font-bold text-white mb-2">Business Website</h3>
+                            <p class="text-slate-400 text-sm">Full multi-page site. Most small businesses start here.</p>
                         </div>
                         <div class="mb-8">
                             <span class="text-4xl font-extrabold text-white">$899</span>
-                            <span class="text-slate-400">/one-time payment</span>
+                            <span class="text-slate-400 text-sm"> / one-time</span>
                         </div>
-                        <ul class="space-y-4 mb-8 flex-1">
-                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Multi-page site (Up to 5 pages)</li>
-                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> 100% Custom UI/UX design</li>
-                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Advanced SEO Optimization</li>
-                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Self-managed dashboard (WP)</li>
-                            <li class="flex items-center gap-3 text-slate-300 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-400"></i> Delivery in 14 business days</li>
+                        <ul class="space-y-3 mb-8 flex-1 text-sm">
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Up to 5 pages</li>
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Custom UI/UX design in Figma</li>
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> On-page SEO setup</li>
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Self-managed CMS dashboard</li>
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> GA4 + Search Console setup</li>
+                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Delivered in 14 business days</li>
                         </ul>
-                        <a href="#contacto" class="w-full block text-center bg-primary-600 hover:bg-primary-500 text-white font-bold py-3 rounded-full transition-colors shadow-glow">Choose Plan</a>
+                        <a href="#contact" class="w-full block text-center bg-primary-600 hover:bg-primary-500 text-white font-bold py-3 rounded-full transition-colors shadow-glow">Start with Business Website</a>
                     </div>
 
-                    <!-- Plan E-commerce -->
-                    <div class="reveal bg-white rounded-3xl p-8 shadow-soft border border-slate-100 flex flex-col" style="transition-delay: 200ms;">
+                    <!-- E-commerce -->
+                    <div class="reveal bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col" style="transition-delay: 200ms;">
                         <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-dark mb-2">E-commerce</h3>
-                            <p class="text-slate-500 text-sm">Sell your products online 24/7.</p>
+                            <h3 class="text-2xl font-bold text-dark mb-2">Online Store</h3>
+                            <p class="text-slate-500 text-sm">Full WooCommerce store with product management.</p>
                         </div>
                         <div class="mb-8">
                             <span class="text-4xl font-extrabold text-dark">$1,499</span>
-                            <span class="text-slate-500">/one-time payment</span>
+                            <span class="text-slate-500 text-sm"> / one-time</span>
                         </div>
-                        <ul class="space-y-4 mb-8 flex-1">
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Full Online Store (WooCommerce)</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Payment gateways configuration</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Up to 20 initial products loaded</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> 1-on-1 admin training session</li>
-                            <li class="flex items-center gap-3 text-slate-700 text-sm"><i data-lucide="check" class="w-5 h-5 text-accent-500"></i> Delivery in 21 business days</li>
+                        <ul class="space-y-3 mb-8 flex-1 text-sm">
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Full WooCommerce store</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Payment gateway setup</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Up to 20 products loaded</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Admin training session</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Delivered in 21 business days</li>
                         </ul>
-                        <a href="#contacto" class="w-full block text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded-full transition-colors">Choose Plan</a>
+                        <a href="#contact" class="w-full block text-center bg-white hover:bg-slate-100 text-slate-800 border border-slate-200 font-bold py-3 rounded-full transition-colors">Start with Online Store</a>
                     </div>
+                </div>
+
+                <!-- Add-ons -->
+                <div class="reveal max-w-6xl mx-auto grid md:grid-cols-2 gap-4 mt-4">
+
+                    <!-- Hosting + Domain -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col md:flex-row items-start justify-between gap-4">
+                        <div>
+                            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                                <i data-lucide="server" class="w-3.5 h-3.5"></i> Hosting + Domain — Optional add-on
+                            </div>
+                            <h3 class="font-extrabold text-dark text-xl mb-1">$85 / year</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Managed hosting on our enterprise Hostinger plan + domain registration and renewal. SSL included. We handle the technical setup — you focus on your business. No need to deal with hosting dashboards or domain renewals.</p>
+                        </div>
+                        <a href="#contact" class="flex-shrink-0 inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-bold py-2.5 px-5 rounded-full transition-colors text-sm whitespace-nowrap">
+                            Add hosting
+                        </a>
+                    </div>
+
+                    <!-- Monthly Care Plan -->
+                    <div class="bg-primary-50 border border-primary-100 rounded-2xl p-6 flex flex-col md:flex-row items-start justify-between gap-4">
+                        <div>
+                            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-primary-600 uppercase tracking-wider mb-2">
+                                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Monthly Care Plan — Optional add-on
+                            </div>
+                            <h3 class="font-extrabold text-dark text-xl mb-1">$99 / month</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Everything in Hosting + Domain, plus: backups, uptime monitoring, security updates, and up to 12 hours of content changes per month. Most months your site runs itself — when you need something changed, it's done that day.</p>
+                        </div>
+                        <a href="#contact" class="flex-shrink-0 inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-2.5 px-5 rounded-full transition-colors text-sm whitespace-nowrap">
+                            Add Care Plan
+                        </a>
+                    </div>
+                </div>
+
+                <p class="reveal text-center text-slate-400 text-sm mt-6">All plans include: signed MSA in English · milestone payments · IP transfer on delivery · design approved before code starts</p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TESTIMONIAL                                                    -->
+        <!-- ============================================================ -->
+        <section class="py-20 px-6 bg-primary-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600 rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto reveal relative z-10 text-center">
+                <i data-lucide="quote" class="w-12 h-12 text-primary-400 opacity-40 mx-auto mb-8"></i>
+                <p class="text-2xl md:text-3xl leading-relaxed font-medium mb-10">
+                    "Easyweb didn't just deliver a visually appealing design — they rebuilt the way we sell online. The new structure eliminated our customers' technical doubts and the site is incredibly fast. The impact on our checkout and conversion metrics has been outstanding."
+                </p>
+                <div>
+                    <p class="font-bold text-lg">Marketing Director</p>
+                    <p class="text-primary-300 text-sm">Frikko HVAC · +70% checkout increase after redesign</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: Portafolio / Proyectos -->
-        <section id="portafolio" class="py-24 bg-slate-900 text-white border-b border-slate-800">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="reveal mb-16 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <div class="max-w-2xl">
-                        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Don't just take our word for it.</h2>
-                        <p class="text-lg text-slate-400">Check out some of the recent projects we've built for businesses like yours.</p>
-                    </div>
-                </div>
-
-                <!-- Grid de Proyectos -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Proyecto 1 -->
-                    <a href="#" class="reveal group block rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-primary-500 transition-colors">
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" alt="E-commerce Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold text-white group-hover:text-primary-400 transition-colors">Frikko HVAC</h3>
-                                <span class="text-xs font-bold bg-primary-900 text-primary-300 px-2 py-1 rounded">Online Store</span>
-                            </div>
-                            <p class="text-slate-400 text-sm">Complete e-commerce and dynamic catalog redesign.</p>
-                        </div>
-                    </a>
-
-                    <!-- Proyecto 2 -->
-                    <a href="#" class="reveal group block rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-accent-500 transition-colors" style="transition-delay: 100ms;">
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=1000" alt="Landing Page Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold text-white group-hover:text-accent-400 transition-colors">TechNova SaaS</h3>
-                                <span class="text-xs font-bold bg-accent-900/50 text-accent-400 px-2 py-1 rounded">Landing Page</span>
-                            </div>
-                            <p class="text-slate-400 text-sm">Landing page optimized to capture high-quality leads.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN NUEVA: Preguntas Frecuentes (FAQ) -->
-        <section class="py-24 bg-white border-b border-slate-100">
+        <!-- ============================================================ -->
+        <!-- FAQ                                                            -->
+        <!-- ============================================================ -->
+        <section class="py-24 bg-white border-t border-slate-200">
             <div class="max-w-3xl mx-auto px-6">
                 <div class="reveal text-center mb-12">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">Got questions? We have answers.</h2>
-                    <p class="text-lg text-slate-600">We solve the most common questions so you can make the best decision.</p>
+                    <h2 class="text-3xl font-extrabold text-dark mb-4">Common questions</h2>
+                    <p class="text-slate-600">The things people ask before deciding to work with us.</p>
                 </div>
 
                 <div class="space-y-4">
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
                         <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
-                            <span>Do I have to pay a monthly fee for my website?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
-                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
-                            </span>
+                            <span>You're in Mexico — how does that affect my project?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
                         </summary>
                         <div class="text-slate-600 mt-4 leading-relaxed text-sm">
-                            Not for the website design. Our packages are a <strong>one-time payment</strong> and you own the site 100%. However, like any website, you will need yearly Hosting and a Domain (.com). We can guide you to get the best and most affordable ones.
+                            Easyweb is a <strong>US-registered LLC</strong>. The team is in Mexico, which is how we keep prices low. In practice, you won't notice a difference: we respond in English, we're on Slack and Zoom during your business hours (CST — 6 to 8 hours of overlap with US time zones), and your contract, payments, and IP transfer are all handled under US law. Intellectual property is protected under USMCA.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
                         <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
-                            <span>Can I edit texts and images myself later?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
-                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
-                            </span>
+                            <span>What if I don't like the design?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
                         </summary>
                         <div class="text-slate-600 mt-4 leading-relaxed text-sm">
-                            Absolutely! Our sites are built on WordPress with a super intuitive dashboard. We'll provide a short video tutorial so you can change texts, photos, or add products without needing to code.
+                            We don't write a single line of code until you approve the design. We work in Figma — you can see the full layout, colors, and typography before anything is built. Every plan includes revision rounds at the design stage so we get it right before development starts. This is the most common source of disputes with web agencies, and our process specifically eliminates it.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
                         <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
-                            <span>What if I don't like the initial design?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
-                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
-                            </span>
+                            <span>I already have a website. Can you redesign it instead of starting fresh?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
                         </summary>
                         <div class="text-slate-600 mt-4 leading-relaxed text-sm">
-                            We won't move to the coding stage until you are 100% happy. First, we present visual mockups for you to review. All our plans include 2 rounds of design revisions to refine colors, typography, and structure.
+                            Yes — and this is actually our most common project type. We audit your current site first: what's working, what's hurting your rankings or conversions, and what needs to change. Then we rebuild only what needs rebuilding. You don't lose your domain authority or existing content unless it should go.
                         </div>
                     </details>
-                    
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
                         <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
-                            <span>Do you include copywriting or photos?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm">
-                                <i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i>
-                            </span>
+                            <span>Do I pay monthly, or is it a one-time cost?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
                         </summary>
                         <div class="text-slate-600 mt-4 leading-relaxed text-sm">
-                            Ideally, you provide the text about your business (about us, services) and your own photos. If you don't have photos, we can include high-quality, royalty-free stock images at no extra cost.
+                            The design and build is a <strong>one-time payment</strong> — you own the site 100%. For the recurring part, you have two options: <strong>Hosting + Domain at $85/year</strong> (we host your site on our enterprise plan and manage your domain — SSL included, no dashboards to deal with), or the <strong>Monthly Care Plan at $99/month</strong>, which includes hosting plus backups, security monitoring, and up to 12 hours of content changes per month. You can also handle hosting yourself if you prefer — we'll point you to the right setup.
+                        </div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                            <span>Can I update the site myself after launch?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                            Yes. Every site is built with a CMS so you can update text, swap photos, and add content without touching code. We include a walkthrough session after launch so you're fully independent. If you'd rather not deal with it, that's what the Monthly Care Plan is for.
+                        </div>
+                    </details>
+
+                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                            <span>What happens after my site launches?</span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                        </summary>
+                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                            You keep my contact. If something breaks or needs a quick fix, I respond within 1 business day. The Monthly Care Plan formalizes ongoing support — but either way, you won't hit a wall the week after launch. That "they disappeared after launch" story is the most common complaint in web design. Our process is designed around making sure it doesn't happen.
                         </div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Final -->
-        <section id="contacto" class="py-32 px-6 max-w-4xl mx-auto text-center reveal">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-dark mb-6">Ready for a professional website?</h2>
-            <p class="text-xl text-slate-600 mb-10">Book a free 20-minute call today. No strings attached, let's just chat about how we can help your business grow.</p>
-            
-            <a href="#" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:-translate-y-1 duration-300 shadow-glow">
-                <i data-lucide="calendar" class="w-5 h-5"></i>
-                Book a Free Call
-            </a>
-            <p class="mt-4 text-sm text-slate-500 font-medium">We respond fast. Very fast.</p>
+        <!-- ============================================================ -->
+        <!-- CONTACT / CTA                                                 -->
+        <!-- ============================================================ -->
+        <section id="contact" class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Let's talk about your website</h2>
+                    <p class="text-slate-600 text-lg max-w-xl mx-auto">Tell us what you need. We'll get back to you within 1 business day with a clear next step — no pitch, no pressure.</p>
+                </div>
+
+                <div class="reveal grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Form -->
+                    <!-- NOTE: Replace action URL with your Formspree endpoint: https://formspree.io/f/YOUR_ID -->
+                    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4 bg-white rounded-2xl p-8 border border-slate-200 shadow-soft">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Your name</label>
+                                <input type="text" id="name" name="name" required placeholder="Jane Smith" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">Email address</label>
+                                <input type="email" id="email" name="email" required placeholder="jane@business.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-semibold text-slate-700 mb-1">What do you need?</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white">
+                                <option value="">Select an option</option>
+                                <option value="new-site">New website (from scratch)</option>
+                                <option value="redesign">Redesign an existing site</option>
+                                <option value="ecommerce">Online store / WooCommerce</option>
+                                <option value="landing">Landing page</option>
+                                <option value="care-plan">Monthly Care Plan</option>
+                                <option value="other">Something else</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-slate-700 mb-1">Tell us about your business</label>
+                            <textarea id="message" name="message" rows="4" placeholder="What does your business do? What's the goal for your website? Any deadline?" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 rounded-full transition-colors shadow-glow flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            Send message
+                        </button>
+                        <p class="text-xs text-slate-400 text-center">We respond within 1 business day.</p>
+                    </form>
+
+                    <!-- Contact info -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-4">Or book a call directly</h3>
+                            <a href="#" class="inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-full transition-colors text-sm">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                                Book a free 30-min call
+                            </a>
+                            <p class="text-slate-500 text-sm mt-3">Available Mon–Fri, 9am–6pm CST</p>
+                        </div>
+
+                        <div class="pt-6 border-t border-slate-200 space-y-4">
+                            <div class="flex items-center gap-3 text-slate-600 text-sm">
+                                <i data-lucide="mail" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
+                                <span>hello@easyweb.monster</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-600 text-sm">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
+                                <span>Response within 1 business day — guaranteed</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-600 text-sm">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
+                                <span>No obligation. No pitch. Just an honest conversation.</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-slate-200">
+                            <p class="text-sm font-semibold text-slate-700 mb-3">Easyweb is right for you if:</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i> You need a professional site, not a $20/mo DIY builder</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i> You want someone to handle the tech, not teach you how</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i> You've been burned by an agency that disappeared after launch</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i> Your budget is under $2,000 and you don't want to compromise</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-50 border-t border-slate-200 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            
-            <a href="#" class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xs">e</div>
-                <span class="font-extrabold text-xl tracking-tight text-dark">
-                    Easy<span class="text-primary-600">web</span>
-                </span>
-            </a>
-            
-            <p class="text-slate-500 text-sm">© 2026 Easyweb. We build websites that work.</p>
-            
-            <div class="flex items-center gap-4 text-slate-400">
-                <a href="#" class="hover:text-primary-500 transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                <a href="#" class="hover:text-primary-500 transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         lucide.createIcons();
-
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
                 }
-            }
+            });
         }
-
         window.addEventListener("scroll", reveal);
         reveal();
     </script>

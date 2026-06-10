@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How we redesigned Imperial CFS's cargo tracking portal — turning a table-heavy legacy interface into a self-service tool that lets clients track shipments and pay fees in 4 clicks or less. Port of Los Angeles, California.">
+    <title>Imperial CFS Portal Redesign — UX Case Study | Easyweb</title>
+    <meta property="og:title" content="Imperial CFS Portal Redesign | Easyweb">
+    <meta property="og:description" content="From 'call the office' to self-service in 4 clicks. How we redesigned a cargo tracking portal for a leading Container Freight Station at the Port of Los Angeles.">
+    <meta property="og:url" content="https://easyweb.monster/work/imperial-cfs">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: { 'soft': '0 4px 20px -2px rgba(0,0,0,0.05)', 'glow': '0 0 20px rgba(99,102,241,0.4)' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        #progress-bar { transform-origin: 0% 50%; transform: scaleX(0); transition: transform 0.2s ease-out; }
+        .bg-grid-pattern { background-image: radial-gradient(rgba(99,102,241,0.05) 1px, transparent 1px); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-200 z-[60]">
+        <div id="progress-bar" class="h-full bg-primary-600 w-full"></div>
+    </div>
+
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50 top-1">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="../services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="../services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="../services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="../services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="../pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="../our-work.html" class="text-primary-600 font-bold flex items-center gap-1.5"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Our Work</a>
+                <a href="../blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="../about.html" class="hover:text-primary-600 transition-colors">About</a>
+            </div>
+            <a href="../contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                    UX Redesign · Web Portal
+                </div>
+
+                <h1 class="reveal active text-4xl md:text-5xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl">
+                    From "call the office" to self-service in 4 clicks: the Imperial CFS portal redesign
+                </h1>
+
+                <p class="reveal active text-xl text-slate-600 mb-6 leading-relaxed max-w-3xl">
+                    Imperial CFS is one of the leading container freight stations at the Port of Los Angeles and Long Beach, California. Their clients — importers and logistics operators — needed to check cargo availability and pay storage fees. The problem: they had to call customer service to do it. We built the interface that made that call unnecessary.
+                </p>
+
+                <!-- Project metadata -->
+                <div class="reveal active grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-t border-slate-200 bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-soft">
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Designer & Developer</p>
+                        <p class="font-bold text-dark">Sergio Arcibar</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Client</p>
+                        <p class="font-bold text-dark">Imperial CFS Inc.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Location</p>
+                        <p class="font-bold text-dark">Port of Los Angeles, CA</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Stack</p>
+                        <p class="font-bold text-dark">HTML · CSS · JavaScript · Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO IMAGE -->
+        <section class="px-6 py-12">
+            <div class="max-w-6xl mx-auto reveal">
+                <div class="aspect-[21/9] rounded-3xl overflow-hidden bg-slate-200 shadow-xl border border-slate-100 relative group">
+                    <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-bold text-dark shadow-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                        Availability Dashboard — redesigned interface
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&q=80&w=2000"
+                         alt="Imperial CFS cargo tracking dashboard — redesigned interface"
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-3">← Real screenshots coming soon. Placeholder shown.</p>
+            </div>
+        </section>
+
+        <!-- THE BUSINESS PROBLEM -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The business problem: a $0 self-service tool that nobody was using</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Imperial CFS handles thousands of shipping containers moving through the Port of Los Angeles every month. Their clients — importers, freight forwarders, customs brokers — need to do three things constantly: check if their cargo has arrived and cleared customs, see outstanding storage fees, and pay those fees to release their shipment.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        The portal to do this existed. But the interface was a table-heavy legacy system that overwhelming users with raw data and no clear hierarchy. Rather than fight with it, clients picked up the phone and called customer service instead. The operational cost of that workaround — staff time, wait times, error rates — was the real problem we were hired to solve.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        The brief was direct: redesign the portal so clients can track cargo and process payments themselves, without calling anyone. Every design decision was measured against that goal.
+                    </p>
+                </div>
+
+                <!-- The outcome summary -->
+                <div class="reveal mt-10 bg-slate-900 text-white rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="mouse-pointer-click" class="w-6 h-6 text-accent-400"></i>
+                    </div>
+                    <div>
+                        <p class="font-extrabold text-white text-lg mb-1">Complex tasks completed in 4 clicks or less</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">The redesigned availability dashboard handles cargo lookup, status review (Paid / Pending / Holds), and payment initiation — all without leaving the page or calling support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE PROCESS -->
+        <section class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">How we approached it</h2>
+                    <p class="text-slate-600 text-lg">The work started with research, not wireframes. Skipping that step is why most portal redesigns fail.</p>
+                </div>
+
+                <div class="space-y-14">
+
+                    <!-- Step 1 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">1</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">User research and pain point mapping</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Using AI-assisted analysis alongside direct research, we mapped the typical user journeys of freight forwarders and importers interacting with cargo systems. The patterns were consistent: users arrived with a specific task in mind (check one container, pay one invoice), but the interface presented them with unfiltered data tables and forced them to scan through dozens of rows to find what they needed.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                We built user personas representing the two primary user types — the importer checking their own cargo and the customs broker managing multiple client shipments. Their workflows and priorities differed significantly, and the original interface served neither well.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Step 2 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">2</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">UX flows and cognitive load reduction</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                We mapped revised user journeys focused on minimizing steps and eliminating decisions the system should be making for the user. The core principle: a user who arrives knowing their container number should never have to think about what to do next — the interface should surface their specific cargo immediately and show them exactly what action is available.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                Status states were a key design decision. "Available", "Pending", "Holds", "Paid" — each needed to be visually distinct and immediately scannable, especially for brokers managing 20+ containers at once. We used color, iconography, and information hierarchy to make status legible at a glance without requiring the user to read each row.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Step 3 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">3</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Figma prototypes — designed and defended in English</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Every design decision was validated through high-fidelity Figma prototypes presented directly to the Imperial CFS team in Los Angeles. Working in English, across time zones, we walked through UX rationale, negotiated priorities when business requirements conflicted with UX best practices, and reached clear implementation agreements before any code was written.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                This is the part that most offshore projects skip — the direct, substantive conversation with the client about why specific design choices were made, and what the tradeoffs are. It's also what makes the difference between a project that ships and a project that stalls in revision rounds.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Step 4 -->
+                    <article class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">4</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Frontend development and handoff</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Production-ready code built in HTML, CSS, and Vanilla JavaScript with Bootstrap as the component foundation. The stack was chosen to match the existing backend infrastructure and ensure the development team could integrate the new interface without a framework migration.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                The availability dashboard was the most technically complex deliverable — it uses drawers, accordion panels, and contextual checkboxes to present dense logistics data without overwhelming the user. The payment flow was rebuilt as a single-page multi-step experience, eliminating the page reloads that were breaking user context during checkout.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-3 text-xs">
+                                <span class="px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold text-slate-600">HTML / CSS</span>
+                                <span class="px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold text-slate-600">Vanilla JavaScript</span>
+                                <span class="px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold text-slate-600">Bootstrap</span>
+                                <span class="px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold text-slate-600">Figma</span>
+                                <span class="px-3 py-1.5 rounded-full bg-white border border-slate-200 font-semibold text-slate-600">GitHub (developer handoff)</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- THE THREE DELIVERABLES -->
+        <section class="py-24 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-dark mb-4">What we delivered</h2>
+                    <p class="text-slate-600">Three interfaces, each solving a specific breakdown in the original user experience.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+
+                    <div class="reveal bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+                        <div class="h-40 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+                                 alt="Homepage redesign" class="w-full h-full object-cover opacity-60">
+                            <div class="absolute inset-0 flex items-end p-4">
+                                <span class="bg-dark/80 text-white text-xs font-bold px-3 py-1 rounded-full">01</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-dark text-lg mb-2">Homepage</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Redesigned to surface the three most critical actions immediately: check cargo availability, track ground transportation, and pay storage fees. SEO structure applied from the ground up.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-slate-50 rounded-2xl overflow-hidden border border-slate-200" style="transition-delay: 100ms;">
+                        <div class="h-40 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
+                                 alt="Availability Dashboard" class="w-full h-full object-cover opacity-60">
+                            <div class="absolute inset-0 flex items-end p-4">
+                                <span class="bg-dark/80 text-white text-xs font-bold px-3 py-1 rounded-full">02</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-dark text-lg mb-2">Availability Dashboard</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">The biggest headache. Transformed from a table-heavy legacy interface into a visually scannable tool with clear status states (Paid, Pending, Holds). Complex tasks done in 4 clicks. Drawers, accordions, contextual checkboxes.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-slate-50 rounded-2xl overflow-hidden border border-slate-200" style="transition-delay: 200ms;">
+                        <div class="h-40 bg-slate-200 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=600"
+                                 alt="Payment flow" class="w-full h-full object-cover opacity-60">
+                            <div class="absolute inset-0 flex items-end p-4">
+                                <span class="bg-dark/80 text-white text-xs font-bold px-3 py-1 rounded-full">03</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-dark text-lg mb-2">Payment Flow</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Rebuilt as a single-page multi-step experience. Instead of page reloads breaking user context, the entire payment process — invoice review, amount confirmation, payment submission — happens in one flow with guided steps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEY INSIGHT -->
+        <section class="py-20 px-6 bg-primary-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600 rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto reveal relative z-10">
+                <h2 class="text-3xl font-extrabold text-white mb-6">What this project demonstrates for US clients</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-primary-800/50 rounded-2xl p-6 border border-primary-700">
+                        <div class="w-9 h-9 rounded-lg bg-accent-500/20 flex items-center justify-center mb-4">
+                            <i data-lucide="globe" class="w-5 h-5 text-accent-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">US client, US standards</h3>
+                        <p class="text-primary-200 text-sm leading-relaxed">Imperial CFS is based in Los Angeles. All communication — presentations, UX rationale, negotiations, agreements — happened in English, in real time, across time zones. This is exactly what working with Easyweb looks like.</p>
+                    </div>
+                    <div class="bg-primary-800/50 rounded-2xl p-6 border border-primary-700">
+                        <div class="w-9 h-9 rounded-lg bg-accent-500/20 flex items-center justify-center mb-4">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-accent-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Design decisions, explained and defended</h3>
+                        <p class="text-primary-200 text-sm leading-relaxed">Every UX choice in this project was presented, challenged, and agreed on with the client. Not handed over as a deliverable for someone else to interpret — walked through directly, with the rationale on the table.</p>
+                    </div>
+                    <div class="bg-primary-800/50 rounded-2xl p-6 border border-primary-700">
+                        <div class="w-9 h-9 rounded-lg bg-accent-500/20 flex items-center justify-center mb-4">
+                            <i data-lucide="trending-down" class="w-5 h-5 text-accent-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Business outcome over feature list</h3>
+                        <p class="text-primary-200 text-sm leading-relaxed">The goal was never "redesign the dashboard." The goal was to reduce operational load on the customer service team. Every design decision traced back to that. That's how we approach every project.</p>
+                    </div>
+                    <div class="bg-primary-800/50 rounded-2xl p-6 border border-primary-700">
+                        <div class="w-9 h-9 rounded-lg bg-accent-500/20 flex items-center justify-center mb-4">
+                            <i data-lucide="code" class="w-5 h-5 text-accent-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white mb-2">Research → design → code, in one team</h3>
+                        <p class="text-primary-200 text-sm leading-relaxed">UX research, UI design, and frontend development were handled by the same person. No translation layer between design and code. What was designed is what was built.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://github.com/refigaro/cfsproject" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 text-primary-300 hover:text-white font-semibold text-sm transition-colors">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        View code on GitHub — github.com/refigaro/cfsproject
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 px-6 bg-slate-50">
+            <div class="max-w-3xl mx-auto reveal text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Does your business have an interface problem?</h2>
+                <p class="text-slate-600 text-lg mb-3">Whether it's a customer portal, a business website, or an e-commerce store — if your interface is making customers call you instead of helping themselves, we can fix it.</p>
+                <p class="text-slate-500 text-sm mb-10">US-Registered LLC · English-speaking · Starting at $499 · Free 30-min audit</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="../contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        Get a free site audit
+                    </a>
+                    <a href="../pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
+                        See exact pricing
+                    </a>
+                </div>
+                <p class="text-slate-400 text-sm mt-6">
+                    <span class="text-slate-500 font-medium">Imperial CFS is now on our Monthly Care Plan</span> — the portal stays updated, secure, and monitored without any effort on their end.
+                    <a href="../services-care-plan.html" class="text-primary-600 font-bold hover:underline ml-1">See what's included →</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="../services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="../services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="../services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="../pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="../our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="../blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="../terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress-bar').style.transform = `scaleX(${winScroll / height})`;
+        });
+        function reveal() { document.querySelectorAll(".reveal").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); }
+        window.addEventListener("scroll", reveal); reveal();
+    </script>
+</body>
+</html>

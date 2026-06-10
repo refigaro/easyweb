@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How Sergio Arcibar built the digital platform behind El Poder de la Nuez — a national pecan promotion campaign backed by the American Pecan Promotion Board. WordPress site with blog, recipe CMS, SEO, and storytelling design. Real GA metrics: 5.4M events, 25.9% stickiness.">
+    <title>El Poder de la Nuez — Campaign Website Case Study | Easyweb</title>
+    <meta property="og:title" content="El Poder de la Nuez — Campaign Website | Easyweb">
+    <meta property="og:description" content="We built the website behind a national pecan campaign backed by the American Pecan Promotion Board. 5.4M user events. 25.9% weekly stickiness. 18.3% CTR to campaign content.">
+    <meta property="og:url" content="https://easyweb.monster/work/poder-de-la-nuez">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: { 'soft': '0 4px 20px -2px rgba(0,0,0,0.05)', 'glow': '0 0 20px rgba(99,102,241,0.4)' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        #progress-bar { transform-origin: 0% 50%; transform: scaleX(0); transition: transform 0.2s ease-out; }
+        .bg-grid-pattern { background-image: radial-gradient(rgba(99,102,241,0.05) 1px, transparent 1px); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-200 z-[60]">
+        <div id="progress-bar" class="h-full bg-primary-600 w-full"></div>
+    </div>
+
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50 top-1">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="../services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="../services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="../services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="../services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="../pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="../our-work.html" class="text-primary-600 font-bold flex items-center gap-1.5"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Our Work</a>
+                <a href="../blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="../about.html" class="hover:text-primary-600 transition-colors">About</a>
+            </div>
+            <a href="../contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+                    <i data-lucide="megaphone" class="w-4 h-4"></i>
+                    Campaign Website · WordPress · Blog + Recipe CMS
+                </div>
+
+                <h1 class="reveal active text-4xl md:text-5xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl">
+                    El Poder de la Nuez: building the digital platform a national campaign needed to actually work
+                </h1>
+
+                <p class="reveal active text-xl text-slate-600 mb-6 leading-relaxed max-w-3xl">
+                    When a campaign invests in TV spots, in-store activations, and social media — people search for more. They look for a website. If the website fails to deliver, the entire media investment is wasted. This is the story of building the site that made sure that didn't happen for a national pecan promotion campaign backed by the American Pecan Promotion Board.
+                </p>
+
+                <!-- Metrics above fold -->
+                <div class="reveal active grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-dark text-white rounded-2xl p-4 text-center">
+                        <p class="text-3xl font-black text-accent-400">5.4M</p>
+                        <p class="text-xs text-slate-400 mt-1">User events</p>
+                    </div>
+                    <div class="bg-dark text-white rounded-2xl p-4 text-center">
+                        <p class="text-3xl font-black text-accent-400">25.9%</p>
+                        <p class="text-xs text-slate-400 mt-1">Weekly stickiness</p>
+                    </div>
+                    <div class="bg-dark text-white rounded-2xl p-4 text-center">
+                        <p class="text-3xl font-black text-white">48.4%</p>
+                        <p class="text-xs text-slate-400 mt-1">Bounce rate</p>
+                    </div>
+                    <div class="bg-dark text-white rounded-2xl p-4 text-center">
+                        <p class="text-3xl font-black text-white">18.3%</p>
+                        <p class="text-xs text-slate-400 mt-1">CTR to campaign content</p>
+                    </div>
+                </div>
+
+                <!-- Attribution note -->
+                <div class="mb-4 inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-800">
+                    <i data-lucide="user" class="w-4 h-4 flex-shrink-0"></i>
+                    <span>Designed and developed by <strong>Sergio Arcibar</strong> (Easyweb founder) · Executed at Plexiz Media</span>
+                </div>
+
+                <div class="reveal active grid grid-cols-2 md:grid-cols-4 gap-5 bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-soft border border-slate-200">
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Designer & Developer</p>
+                        <p class="font-bold text-dark">Sergio Arcibar</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Backed by</p>
+                        <p class="font-bold text-dark">American Pecan Promotion Board</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Type</p>
+                        <p class="font-bold text-dark">Campaign site + Content CMS</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Stack</p>
+                        <p class="font-bold text-dark">WordPress · Elementor Pro</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO IMAGE -->
+        <section class="px-6 py-12">
+            <div class="max-w-6xl mx-auto reveal">
+                <div class="aspect-[21/9] rounded-3xl overflow-hidden bg-slate-900 shadow-xl border border-slate-800 relative group">
+                    <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-bold text-dark shadow-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                        Live site — <a href="https://nuezpecana.org" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">nuezpecana.org</a>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600565193348-f74bd3960d24?auto=format&fit=crop&q=80&w=2000"
+                         alt="El Poder de la Nuez campaign website — fullscreen storytelling design"
+                         class="w-full h-full object-cover opacity-60 transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-3">← Real screenshot pending. Visit <a href="https://nuezpecana.org" target="_blank" class="text-primary-600 hover:underline">nuezpecana.org</a> to see the live site.</p>
+            </div>
+        </section>
+
+        <!-- THE PROBLEM -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The problem: a campaign without a solid digital landing point loses half its investment</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        The American Pecan Promotion Board runs a national campaign in Mexico to increase pecan consumption — TV spots, in-store activations at Soriana and HEB, social media content, influencer partnerships. When any of those touchpoints works, the interested consumer goes looking for more information online.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        If they land on a slow site, a confusing layout, or a page that doesn't match the campaign's energy — they bounce. The media buy that drove them there is wasted. The activation that caught their attention in the supermarket aisle delivers nothing.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        The brief was to build a website that could hold the user's attention long enough to deliver the campaign's message — benefits, recipes, educational content — and convert passive curiosity into genuine engagement with pecans as a food choice.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- METRICS DETAIL -->
+        <section class="py-16 px-6 bg-dark text-white border-t border-slate-800">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-8">
+                    <span class="text-xs font-bold text-accent-400 uppercase tracking-widest">From Google Analytics</span>
+                    <h2 class="text-2xl font-extrabold text-white mt-2">What the numbers tell you about the user experience</h2>
+                </div>
+                <div class="reveal grid md:grid-cols-2 gap-5">
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-accent-400 mb-2">5.4M</p>
+                        <p class="font-bold text-white mb-2">User events</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">The average visitor performs more than 3 actions per session — clicks, scrolls, searches, recipe views. This level of engagement doesn't happen on a site people are trying to leave.</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-accent-400 mb-2">25.9%</p>
+                        <p class="font-bold text-white mb-2">Weekly stickiness</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">More than 1 in 4 users return to the site within the same week. For a content site about a food ingredient, that's exceptional — it means the recipes and blog are genuinely useful, not just decoration.</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-white mb-2">48.4%</p>
+                        <p class="font-bold text-white mb-2">Bounce rate</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Below 50% for a content/campaign site is a strong signal that users are finding what they came for. When a well-designed 404 page was added after launch, the bounce rate for error traffic dropped to under 2% within 30 days.</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <p class="text-4xl font-black text-white mb-2">18.3%</p>
+                        <p class="font-bold text-white mb-2">Homepage → content CTR</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Nearly 1 in 5 homepage visitors navigate to a recipe or blog post — the primary goal of the campaign. The homepage isn't just a landing page; it's an active funnel into the content that drives the campaign's objective.</p>
+                    </div>
+                </div>
+                <p class="reveal text-slate-500 text-xs mt-6">All metrics from Google Analytics. Campaign backed by the American Pecan Promotion Board.</p>
+            </div>
+        </section>
+
+        <!-- THE APPROACH -->
+        <section class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-14">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">How I built it</h2>
+                </div>
+
+                <div class="space-y-12">
+
+                    <div class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">1</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Storytelling design — immersion over information dump</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">Campaign websites fail when they treat the homepage as a brochure. A list of benefits and a logo. This site was designed as a narrative — each section builds on the previous one, pulling the user deeper into the pecan story rather than presenting facts to skim.</p>
+                            <p class="text-slate-600 leading-relaxed">Full-screen campaign graphics from the existing visual assets were integrated at key points to create immersion. The visual language mirrors what the user has already seen in the campaign — on TV, in the store, on social — which creates continuity instead of a jarring mismatch between offline and online experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">2</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Blog + recipe CMS — content the client manages independently</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">The campaign's value lives in its content: recipes, nutritional information, usage ideas. If publishing a new recipe required a developer, the content would slow down and the site would go stale. WordPress with a structured recipe CMS means the client's team publishes new recipes directly — no technical knowledge required, no tickets to file.</p>
+                            <p class="text-slate-600 leading-relaxed">Each recipe and blog post was SEO-optimized individually — keyword-targeted titles, meta descriptions, schema markup for recipes (which helps them appear in Google's recipe results). The 18.3% CTR from homepage to content reflects that the content architecture works: users find what they came for.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center">3</div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Inclusive design and performance optimization</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">A national campaign reaches users on cheap Android phones with 3G connections. The site needed to work for all of them — not just users on laptops with fiber internet. Inclusive design principles guided decisions about color contrast, touch target sizes, and font legibility. Images were optimized aggressively to reduce load times without sacrificing the campaign's visual quality.</p>
+                            <p class="text-slate-600 leading-relaxed">The result is a site that doesn't require a high-end device to use — which matters when the campaign's goal is mass-market adoption of pecans as a food choice.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal grid md:grid-cols-12 gap-8 items-start">
+                        <div class="md:col-span-1">
+                            <div class="w-10 h-10 rounded-full bg-accent-500 text-white font-black text-sm flex items-center justify-center">
+                                <i data-lucide="trending-down" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        <div class="md:col-span-11">
+                            <h3 class="text-2xl font-bold text-dark mb-4">Data-driven iteration: the 404 page that changed everything</h3>
+                            <p class="text-slate-600 leading-relaxed mb-4">After launch, analytics revealed a meaningful volume of users hitting broken URLs — and bouncing. The original site had no custom 404 page: broken links sent users to a generic server error, and they left.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">I designed and deployed a custom 404 page — on-brand, with navigation shortcuts to the most popular content sections. Within 30 days of the deployment, bounce rate for error traffic dropped to under 2%. One small page, one major improvement to user retention. This is what post-launch iteration actually looks like when you're reading the data.</p>
+
+                            <div class="mt-5 flex items-center gap-4 bg-accent-500/10 border border-accent-500/20 rounded-xl p-4">
+                                <i data-lucide="trending-down" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <p class="text-slate-700 text-sm"><strong>One custom 404 page → bounce rate for error traffic dropped from ~100% to under 2% within 30 days of implementation.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SITE STRUCTURE -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-dark mb-4">What the site does</h2>
+                </div>
+                <div class="grid md:grid-cols-4 gap-5">
+                    <div class="reveal bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                        <i data-lucide="home" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2 text-sm">Homepage</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Storytelling entry point. Fullscreen visuals, campaign narrative, links to the three main content destinations: Beneficios, Recetas, Blog.</p>
+                    </div>
+                    <div class="reveal bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                        <i data-lucide="heart" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2 text-sm">Beneficios</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Nutritional benefits section — the "why eat pecans" content that converts casual curiosity into genuine interest. Designed to be scannable and shareable.</p>
+                    </div>
+                    <div class="reveal bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                        <i data-lucide="utensils" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2 text-sm">Recetas</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Full recipe CMS. SEO-optimized per recipe, with schema markup for Google recipe results. Client-managed — new recipes published without developer intervention.</p>
+                    </div>
+                    <div class="reveal bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                        <i data-lucide="file-text" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2 text-sm">Blog</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">Editorial content about pecan culture, health research, and campaign updates. Drives weekly return visits (25.9% stickiness) by giving users a reason to come back.</p>
+                    </div>
+                </div>
+
+                <div class="reveal mt-6 bg-primary-50 border border-primary-100 rounded-2xl p-5 flex items-start gap-4">
+                    <i data-lucide="refresh-cw" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
+                    <p class="text-slate-700 text-sm leading-relaxed"><strong>The campaign was renewed for 2025.</strong> A chatbot is currently being integrated into the site. When a campaign performs well enough to get renewed — and the client asks for the website to keep growing — that's the most honest measure of whether the digital platform worked.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT THIS DEMONSTRATES -->
+        <section class="py-20 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto reveal">
+                <h2 class="text-3xl font-extrabold text-dark mb-8">What this shows about building for campaigns</h2>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
+                        <i data-lucide="link" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2">The website is where campaigns land — or die</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Any campaign that drives people to a URL needs that URL to work. Ads, activations, influencer posts, QR codes — they all end at the website. If the website fails, the entire upstream investment is wasted.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2">Analytics drive decisions, not assumptions</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">The 404 improvement wasn't a guess — it came from reading the data after launch and acting on what it showed. This is how good websites improve over time rather than staying static after launch day.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
+                        <i data-lucide="edit-3" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2">Content independence keeps campaigns alive</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">A website that requires a developer to publish a new recipe is a website that will go stale. The CMS setup here means the client's team adds content on their own timeline — no bottlenecks, no dependency on technical support for routine updates.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
+                        <i data-lucide="smartphone" class="w-5 h-5 text-primary-600 mb-3"></i>
+                        <h3 class="font-bold text-dark mb-2">Mass-market campaigns need mass-market performance</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">A campaign targeting national grocery shoppers reaches people on low-end devices and slow connections. Inclusive design and performance optimization aren't optional for a campaign at this scale — they're the baseline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 px-6 bg-primary-900 text-white">
+            <div class="max-w-3xl mx-auto reveal text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Running a campaign that needs a solid digital landing point?</h2>
+                <p class="text-primary-200 text-lg mb-3">Whether it's a product launch, a seasonal promotion, or a brand campaign — the website either makes the media investment worth it or it doesn't. We build the version that does.</p>
+                <p class="text-primary-400 text-sm mb-10">Business websites from $899 · US-Registered LLC · Delivered in 14 business days</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="../contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-slate-100 text-dark font-bold py-4 px-8 rounded-full transition-colors">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Get a free quote
+                    </a>
+                    <a href="../our-work.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 border border-primary-600 hover:border-primary-400 text-primary-200 hover:text-white font-bold py-4 px-8 rounded-full transition-colors">
+                        See all our work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="../services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="../services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="../services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="../pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="../our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="../blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="../terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress-bar').style.transform = `scaleX(${winScroll / height})`;
+        });
+        function reveal() { document.querySelectorAll(".reveal").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); }
+        window.addEventListener("scroll", reveal); reveal();
+    </script>
+</body>
+</html>

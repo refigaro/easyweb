@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Everything you need to know before buying a small business website — costs, timelines, what to ask. Practical guides from the Easyweb team.">
+    <title>Buying a Website — Small Business Guides | Easyweb Blog</title>
+    <meta property="og:title" content="Buying a Website — Small Business Guides | Easyweb Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://easyweb.monster/blog/buying-a-website">
+    <!-- Schema: CollectionPage for category archives -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Buying a Website — Easyweb Blog",
+      "description": "Guides for US small business owners buying their first or next website.",
+      "url": "https://easyweb.monster/blog/buying-a-website",
+      "publisher": { "@type": "Organization", "name": "Easyweb", "url": "https://easyweb.monster" }
+    }
+    </script>
+    <!-- BreadcrumbList schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://easyweb.monster" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://easyweb.monster/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Buying a Website", "item": "https://easyweb.monster/blog/buying-a-website" }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(99,102,241,0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(99,102,241,0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .cat-tab.active {
+            background-color: #0f172a;
+            color: #fff;
+            border-color: #0f172a;
+        }
+        .post-card:hover .post-title { color: #4f46e5; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="../services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="../services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="../services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="../services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="../pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="../our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="index.html" class="text-primary-600 font-bold">Blog</a>
+                <a href="../blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="../about.html" class="hover:text-primary-600 transition-colors">About</a>
+            </div>
+            <a href="../contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <main class="pt-24">
+
+        <!-- ============================================================ -->
+        <!-- BREADCRUMB                                                    -->
+        <!-- ============================================================ -->
+        <div class="max-w-7xl mx-auto px-6 pt-6 pb-2">
+            <nav class="flex items-center gap-2 text-sm text-slate-400" aria-label="Breadcrumb">
+                <a href="../index.html" class="hover:text-primary-600 transition-colors">Home</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <a href="index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                <span class="text-slate-600 font-medium">Buying a Website</span>
+            </nav>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CATEGORY HEADER                                               -->
+        <!-- H1 = keyword target for this category                        -->
+        <!-- ============================================================ -->
+        <section class="bg-white border-b border-slate-100 py-12 relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="max-w-2xl">
+                    <!-- Category icon + pill -->
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-primary-100 flex items-center justify-center">
+                            <i data-lucide="book" class="w-4 h-4 text-primary-600"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary-600">Category</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-4xl font-extrabold text-dark leading-tight mb-3">
+                        Buying a Website
+                    </h1>
+                    <p class="text-lg text-slate-500 leading-relaxed mb-1">
+                        Real costs, honest timelines, and what to ask before you sign anything. For business owners who don't want to become web experts — just make a good decision.
+                    </p>
+                    <p class="text-sm text-slate-400">
+                        <!-- WIREFRAME NOTE: Dynamic post count from WordPress API -->
+                        14 articles · Part of the <a href="post.html" class="text-primary-600 font-semibold hover:underline">Small Business Website Design: The Complete Guide</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CATEGORY TABS — All categories visible, current highlighted  -->
+        <!-- Enables lateral navigation without going back to index       -->
+        <!-- Max 2 clicks to any category from here                       -->
+        <!-- ============================================================ -->
+        <section class="bg-white border-b border-slate-200 sticky top-[73px] z-40">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
+                    <a href="index.html" class="cat-tab flex-shrink-0 px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark transition-colors">All Posts</a>
+                    <a href="category.html" class="cat-tab active flex-shrink-0 px-4 py-2 rounded-full border text-sm font-semibold transition-colors">Buying a Website</a>
+                    <!-- WIREFRAME NOTE: Each category links to its own category.html with correct slug -->
+                    <a href="category.html" class="cat-tab flex-shrink-0 px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark transition-colors">Website Redesign</a>
+                    <a href="category.html" class="cat-tab flex-shrink-0 px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark transition-colors">Affordable Web Design</a>
+                    <a href="category.html" class="cat-tab flex-shrink-0 px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark transition-colors">Behind the Build</a>
+                    <a href="category.html" class="cat-tab flex-shrink-0 px-4 py-2 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark transition-colors">After Launch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PILLAR PAGE BANNER                                            -->
+        <!-- Each category promotes its corresponding pillar guide        -->
+        <!-- This is the #1 SEO asset for the cluster                     -->
+        <!-- ============================================================ -->
+        <section class="max-w-7xl mx-auto px-6 py-8">
+            <a href="post.html" class="group block bg-gradient-to-r from-primary-600 to-primary-900 rounded-2xl p-6 lg:p-8 text-white relative overflow-hidden hover:scale-[1.01] transition-transform">
+                <div class="absolute right-0 top-0 bottom-0 flex items-center pr-8 opacity-10">
+                    <i data-lucide="book-open" class="w-40 h-40"></i>
+                </div>
+                <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-6">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                📖 The Complete Guide
+                            </span>
+                        </div>
+                        <h2 class="text-xl lg:text-2xl font-extrabold leading-tight mb-2">
+                            Small Business Website Design: The Complete Guide
+                        </h2>
+                        <p class="text-primary-200 text-sm leading-relaxed">
+                            Everything you need to know about buying, building, and launching a business website — from first quote to post-launch. Start here if you're new to this.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <span class="inline-flex items-center gap-2 bg-white text-primary-700 font-bold text-sm px-5 py-2.5 rounded-full group-hover:bg-primary-50 transition-colors">
+                            Read the guide <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CLUSTER POSTS GRID — All posts in this category              -->
+        <!-- Order: most-strategic post first (not just chronological)    -->
+        <!-- WIREFRAME NOTE: In Astro, rendered from WordPress REST API   -->
+        <!-- filtered by category slug                                    -->
+        <!-- ============================================================ -->
+        <section class="max-w-7xl mx-auto px-6 pb-8">
+
+            <div class="flex items-center justify-between mb-6">
+                <p class="text-sm text-slate-500"><span class="font-bold text-dark">14</span> posts in this category</p>
+                <!-- WIREFRAME NOTE: Sort options if needed in production -->
+                <select class="text-sm border border-slate-200 rounded-lg px-3 py-2 bg-white text-slate-600 focus:outline-none focus:border-primary-400">
+                    <option>Most relevant</option>
+                    <option>Most recent</option>
+                    <option>Most popular</option>
+                </select>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="category-posts">
+
+                <!-- Post 1 — Featured (most strategic, highest-value) -->
+                <article class="post-card md:col-span-2 lg:col-span-1 bg-white rounded-2xl border border-slate-200 shadow-soft overflow-hidden hover:shadow-lg transition-shadow flex flex-col border-primary-200 ring-1 ring-primary-100">
+                    <div class="bg-gradient-to-br from-primary-100 to-indigo-50 h-44 flex items-center justify-center relative">
+                        <i data-lucide="dollar-sign" class="w-12 h-12 text-primary-400"></i>
+                        <div class="absolute top-3 left-3 bg-primary-500 text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <i data-lucide="star" class="w-3 h-3"></i> Start here
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-bold">Buying a Website</span>
+                            <span class="text-slate-400 text-xs flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 8 min</span>
+                        </div>
+                        <h3 class="post-title text-lg font-extrabold text-dark leading-snug mb-2 transition-colors flex-1">
+                            <a href="post.html">How Much Does a Small Business Website Cost in 2026? (Honest Breakdown)</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">US agencies charge $5k–$15k. DIY costs $0 upfront but more in lost customers. Here's what each option actually includes.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">Jun 5, 2026</span>
+                            <a href="post.html" class="text-xs font-bold text-primary-600 hover:text-primary-800 flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card bg-white rounded-2xl border border-slate-200 shadow-soft overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 h-44 flex items-center justify-center">
+                        <i data-lucide="git-compare" class="w-12 h-12 text-primary-300"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-bold">Buying a Website</span>
+                            <span class="text-slate-400 text-xs flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 6 min</span>
+                        </div>
+                        <h3 class="post-title text-lg font-extrabold text-dark leading-snug mb-2 transition-colors flex-1">
+                            <a href="post.html">Web Design Agency vs. Freelancer vs. DIY: What's Right for Your Business?</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Three paths, three tradeoffs. How to pick the one that matches your budget, timeline, and how much control you want.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">Jun 12, 2026</span>
+                            <a href="post.html" class="text-xs font-bold text-primary-600 hover:text-primary-800 flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card bg-white rounded-2xl border border-slate-200 shadow-soft overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    <div class="bg-gradient-to-br from-rose-50 to-pink-50 h-44 flex items-center justify-center">
+                        <i data-lucide="file-check" class="w-12 h-12 text-rose-300"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-bold">Buying a Website</span>
+                            <span class="text-slate-400 text-xs flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 4 min</span>
+                        </div>
+                        <h3 class="post-title text-lg font-extrabold text-dark leading-snug mb-2 transition-colors flex-1">
+                            <a href="post.html">What to Ask a Web Agency Before You Sign Anything</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">10 questions that separate professional agencies from the ones who disappear after launch.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">Jul 3, 2026</span>
+                            <a href="post.html" class="text-xs font-bold text-primary-600 hover:text-primary-800 flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="post-card bg-white rounded-2xl border border-slate-200 shadow-soft overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    <div class="bg-gradient-to-br from-teal-50 to-cyan-50 h-44 flex items-center justify-center">
+                        <i data-lucide="timer" class="w-12 h-12 text-teal-300"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-bold">Buying a Website</span>
+                            <span class="text-slate-400 text-xs flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 5 min</span>
+                        </div>
+                        <h3 class="post-title text-lg font-extrabold text-dark leading-snug mb-2 transition-colors flex-1">
+                            <a href="post.html">How Long Does It Take to Build a Business Website? (Real Timelines)</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">2–12 weeks depending on scope. Here's the breakdown by project type and what slows things down.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">Jul 10, 2026</span>
+                            <a href="post.html" class="text-xs font-bold text-primary-600 hover:text-primary-800 flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="post-card bg-white rounded-2xl border border-slate-200 shadow-soft overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    <div class="bg-gradient-to-br from-amber-50 to-yellow-50 h-44 flex items-center justify-center">
+                        <i data-lucide="help-circle" class="w-12 h-12 text-amber-300"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-bold">Buying a Website</span>
+                            <span class="text-slate-400 text-xs flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 4 min</span>
+                        </div>
+                        <h3 class="post-title text-lg font-extrabold text-dark leading-snug mb-2 transition-colors flex-1">
+                            <a href="post.html">Do I Really Need a Website for My Small Business in 2026?</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Social media, Yelp, and Google My Business exist. Here's when a website is non-negotiable and when it can wait.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">Jul 17, 2026</span>
+                            <a href="post.html" class="text-xs font-bold text-primary-600 hover:text-primary-800 flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="post-card bg-white rounded-2xl border border-slate-200 shadow-soft overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                    <div class="bg-gradient-to-br from-violet-50 to-purple-50 h-44 flex items-center justify-center">
+                        <i data-lucide="user-check" class="w-12 h-12 text-violet-300"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-primary-50 text-primary-600 text-xs font-bold">Buying a Website</span>
+                            <span class="text-slate-400 text-xs flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 5 min</span>
+                        </div>
+                        <h3 class="post-title text-lg font-extrabold text-dark leading-snug mb-2 transition-colors flex-1">
+                            <a href="post.html">How to Choose a Web Design Agency: The Non-Technical Guide</a>
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">You don't need to understand code to hire the right team. You just need to know these 5 things.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">Jul 24, 2026</span>
+                            <a href="post.html" class="text-xs font-bold text-primary-600 hover:text-primary-800 flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex items-center justify-center gap-2 mt-10">
+                <button disabled class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-300 cursor-not-allowed">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <button class="w-9 h-9 rounded-full bg-dark text-white text-sm font-bold flex items-center justify-center">1</button>
+                <button class="w-9 h-9 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark hover:bg-white flex items-center justify-center transition-colors">2</button>
+                <button class="w-9 h-9 rounded-full border border-slate-200 text-sm font-semibold text-slate-600 hover:border-dark hover:bg-white flex items-center justify-center transition-colors">3</button>
+                <button class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:border-dark transition-colors">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- OTHER CATEGORIES — Lateral navigation                        -->
+        <!-- Keeps user on the site; prevents dead-ends                   -->
+        <!-- ============================================================ -->
+        <section class="bg-white border-t border-slate-100 py-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-5">More from the blog</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                    <a href="category.html" class="group flex items-center gap-4 bg-slate-50 hover:bg-primary-50 rounded-xl p-4 border border-slate-200 hover:border-primary-200 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-200 transition-colors">
+                            <i data-lucide="refresh-cw" class="w-5 h-5 text-emerald-600"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-dark group-hover:text-primary-600 transition-colors">Website Redesign</p>
+                            <p class="text-xs text-slate-400">8 articles</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 ml-auto group-hover:text-primary-500 transition-colors"></i>
+                    </a>
+
+                    <a href="category.html" class="group flex items-center gap-4 bg-slate-50 hover:bg-primary-50 rounded-xl p-4 border border-slate-200 hover:border-primary-200 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-200 transition-colors">
+                            <i data-lucide="piggy-bank" class="w-5 h-5 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-dark group-hover:text-primary-600 transition-colors">Affordable Web Design</p>
+                            <p class="text-xs text-slate-400">6 articles</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 ml-auto group-hover:text-primary-500 transition-colors"></i>
+                    </a>
+
+                    <a href="category.html" class="group flex items-center gap-4 bg-slate-50 hover:bg-primary-50 rounded-xl p-4 border border-slate-200 hover:border-primary-200 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-200 transition-colors">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-amber-600"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-dark group-hover:text-primary-600 transition-colors">Behind the Build</p>
+                            <p class="text-xs text-slate-400">4 articles</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 ml-auto group-hover:text-primary-500 transition-colors"></i>
+                    </a>
+
+                    <!-- After Launch — Pilar 2, CTA to /services/care-plan -->
+                    <a href="category.html" class="group flex items-center gap-4 bg-slate-50 hover:bg-teal-50 rounded-xl p-4 border border-slate-200 hover:border-teal-200 transition-colors">
+                        <div class="w-10 h-10 rounded-xl bg-teal-100 flex items-center justify-center flex-shrink-0 group-hover:bg-teal-200 transition-colors">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-teal-600"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-dark group-hover:text-teal-700 transition-colors">After Launch</p>
+                            <p class="text-xs text-slate-400">5 articles</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 ml-auto group-hover:text-teal-500 transition-colors"></i>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- BOTTOM CTA                                                    -->
+        <!-- ============================================================ -->
+        <section class="max-w-7xl mx-auto px-6 py-12">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white rounded-2xl border border-slate-200 shadow-soft p-8">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Done researching?</p>
+                    <h3 class="text-xl font-extrabold text-dark">See what your project would actually cost.</h3>
+                </div>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <a href="../our-work.html" class="text-sm font-bold text-slate-600 hover:text-dark transition-colors px-4 py-2.5 border border-slate-200 rounded-full">See our work</a>
+                    <a href="../pricing.html" class="inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                        See pricing <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="../services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="../services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="../services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="../pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="../our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="../blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="../terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

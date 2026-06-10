@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Easyweb is a US-registered LLC run by Sergio Arcibar, a WordPress developer based in Mexico. We build websites for US small businesses — English-speaking, US time zones, real results.">
+    <title>About Easyweb — A Nearshore Web Agency Built for US Small Businesses</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Easyweb — Who builds your website and why it matters">
+    <meta property="og:description" content="I'm Sergio. I design, build, and maintain WordPress websites for US small businesses — from Mexico, in English, during your business hours.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://easyweb.monster/about">
+
+    <!-- Schema: Person + Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Easyweb",
+      "url": "https://easyweb.monster",
+      "founder": {
+        "@type": "Person",
+        "name": "Sergio Arcibar",
+        "jobTitle": "WordPress Developer & Founder",
+        "knowsLanguage": ["en", "es"]
+      },
+      "areaServed": "US",
+      "description": "US-registered nearshore web agency specializing in WordPress for US small businesses."
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        accent: { 400: '#34d399', 500: '#10b981' },
+                        dark: '#0f172a'
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
+                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
+                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
+                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
+                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100  text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
+                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
+                    </div>
+                </div>
+                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
+                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
+                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
+                <a href="about.html" class="text-primary-600 font-bold">About</a>
+            </div>
+            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
+                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <header class="relative pt-32 pb-20 lg:pt-44 lg:pb-24 overflow-hidden bg-white border-b border-slate-200">
+            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    About Easyweb
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="reveal active text-4xl md:text-5xl font-extrabold text-dark leading-tight mb-6 tracking-tight">
+                            I'm Sergio.<br>I build websites<br>for US businesses<br class="hidden md:block"/> — from Mexico.
+                        </h1>
+                        <p class="reveal active text-xl text-slate-600 leading-relaxed mb-8">
+                            Easyweb is a US-registered LLC. I'm based in Mexico. I design and build every website myself — in English, during US business hours, with results you can measure in Google Analytics.
+                        </p>
+                        <div class="reveal active flex flex-wrap gap-3">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-accent-500"></i>
+                                US-Registered LLC
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold">
+                                <i data-lucide="clock" class="w-4 h-4 text-accent-500"></i>
+                                CST — 6–8 hrs US overlap
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold">
+                                <i data-lucide="message-circle" class="w-4 h-4 text-accent-500"></i>
+                                English-first
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Photo placeholder -->
+                    <div class="reveal active">
+                        <div class="relative rounded-3xl overflow-hidden bg-slate-200 shadow-soft border border-slate-100 aspect-[4/5]">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 gap-3">
+                                <i data-lucide="camera" class="w-10 h-10"></i>
+                                <p class="text-sm font-medium text-center px-6">Real photo of Sergio at work — coming soon</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 text-center mt-3">No stock photos here. That's the whole point.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- The honest explanation -->
+        <section class="py-20 px-6 bg-slate-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The honest version of the "nearshore" pitch</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        You've probably seen other agencies with teams "somewhere in Latin America" that are hard to reach, slow to respond, and disappear the week after launch. That's not a geography problem — it's an operations problem. Plenty of bad agencies are in New York too.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Here's what's actually different about Easyweb: I work during your business hours. A full-stack developer in Mexico earns roughly $28,000/year. The same person in the US earns around $147,000. That's the gap that makes a local agency charge you $8,000 for a site we deliver at $1,500. The savings aren't because the quality drops — they're because the overhead doesn't exist.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        Easyweb is registered as an LLC in the United States. Your contract is with an American company. Intellectual property transfers to you on delivery, protected under the US-Mexico-Canada Agreement (USMCA). There's legal accountability — the same kind you'd have with any US agency.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why one person is an advantage -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Why working with one person is actually an advantage</h2>
+                    <p class="text-slate-600 text-lg">Most agencies have a communication problem built into their structure. You talk to an account manager. The account manager writes a brief. The brief goes to a designer. The designer hands off to a developer. Something gets lost at every step.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+                            <i data-lucide="user-check" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-lg mb-2">One point of contact</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">The person on your Slack channel is the person who writes the code. No account managers, no translation layer, no "I'll check with the team."</p>
+                    </div>
+
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+                            <i data-lucide="zap" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-lg mb-2">Decisions happen fast</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">When you ask for a change, it gets done — not queued for the next sprint. Small adjustments don't require a project manager ticket.</p>
+                    </div>
+
+                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+                            <i data-lucide="handshake" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-lg mb-2">You don't disappear after launch</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">The most common complaint about web agencies is that they vanish once the site is live. I don't. Monthly Care Plans keep us working together after launch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sergio's background -->
+        <section class="py-20 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="reveal">
+                        <h2 class="text-3xl font-extrabold text-dark mb-6">Background</h2>
+                        <p class="text-slate-600 leading-relaxed mb-5">
+                            I'm a WordPress developer with over 9 years of experience building sites for businesses across Mexico and the United States. I have an MBA background — which means I approach every project as a business problem first, a technical one second.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-5">
+                            I've built e-commerce stores, corporate sites, and lead-gen pages for HVAC companies, consultants, service businesses, and B2B brands. I know what a site needs to do to actually generate customers — not just look good in a screenshot.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            I started Easyweb because I saw a gap: US small businesses were paying $8,000+ for work that could be done better, faster, and cheaper — if you knew where to find the right person. I'm that person.
+                        </p>
+                    </div>
+
+                    <div class="reveal space-y-4">
+                        <h3 class="font-bold text-dark text-lg mb-4">What I work with</h3>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <span class="text-slate-700 font-medium">WordPress · Elementor Pro · Bricks Builder</span>
+                            </div>
+                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <span class="text-slate-700 font-medium">WooCommerce · ACF Pro · WP Engine</span>
+                            </div>
+                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <span class="text-slate-700 font-medium">Figma-to-code · HTML · CSS · JavaScript</span>
+                            </div>
+                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <span class="text-slate-700 font-medium">Technical SEO · Google Analytics 4 · Search Console</span>
+                            </div>
+                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <span class="text-slate-700 font-medium">Bilingual — English (native fluency) · Spanish</span>
+                            </div>
+                            <div class="flex items-center gap-3 py-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
+                                <span class="text-slate-700 font-medium">Available on Slack · Zoom · Email</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust signals / Legal -->
+        <section class="py-20 px-6 bg-dark text-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">The accountability part</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl">The most common concern about working with someone outside the US is: "What happens if something goes wrong?" Here's the short answer.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
+                                <i data-lucide="building-2" class="w-6 h-6 text-accent-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg mb-2">US-Registered LLC</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">Easyweb operates as a Limited Liability Company registered in the United States. You're contracting with an American company — not a freelancer with a PayPal account.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
+                                <i data-lucide="file-text" class="w-6 h-6 text-accent-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg mb-2">USMCA Protection</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">All intellectual property — code, design, content — transfers to you upon delivery. This is protected under Chapters 19 and 20 of the US-Mexico-Canada Agreement. Enforceable under North American law.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
+                                <i data-lucide="scale" class="w-6 h-6 text-accent-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg mb-2">Contracts in English</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">Every project starts with a signed Master Service Agreement in English — scope, deliverables, payment milestones, IP transfer, and dispute resolution. No ambiguity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
+                                <i data-lucide="credit-card" class="w-6 h-6 text-accent-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg mb-2">Milestone payments</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">You don't pay the full amount upfront. Payments are tied to project milestones — design approved, development complete, launch. You keep control of the money until work is delivered.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal mt-8 bg-slate-800/50 rounded-2xl p-6 border border-slate-700 border-dashed">
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="text-white font-semibold">REPSE compliance:</span> Freelancers and contractors working on your project are engaged under Mexico's REPSE framework (Registro de Prestadoras de Servicios Especializados), which legally governs subcontracting in Mexico. This isn't fine print — it means you're not dealing with an informal operation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How we work -->
+        <section class="py-20 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">How a project actually works</h2>
+                    <p class="text-slate-600 text-lg">No surprises. Here's the process from first message to launched site.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="reveal flex gap-6 items-start">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">1</div>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-1">Free site audit or discovery call (30 min)</h3>
+                            <p class="text-slate-600">We talk about your business, your goals, and what's not working with your current site (or why you need one). I'll tell you honestly if Easyweb is the right fit or not.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal flex gap-6 items-start">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">2</div>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-1">Proposal + contract</h3>
+                            <p class="text-slate-600">I send a written proposal with scope, timeline, and exact price. No vague estimates. You sign an MSA in English before anything starts.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal flex gap-6 items-start">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">3</div>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-1">Design — you approve before code starts</h3>
+                            <p class="text-slate-600">I design in Figma and share it with you for review. We refine until you're happy. <strong>No code is written until the design is approved.</strong> This eliminates the most common source of project disputes.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal flex gap-6 items-start">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">4</div>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-1">Development on a staging site</h3>
+                            <p class="text-slate-600">The site is built on a staging environment — you can see the real thing in the browser and request changes before it goes live.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal flex gap-6 items-start">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">5</div>
+                        <div>
+                            <h3 class="font-bold text-dark text-lg mb-1">Launch + handoff</h3>
+                            <p class="text-slate-600">We go live. I walk you through how to manage your own content — or that's what the Monthly Care Plan is for, if you'd rather not deal with it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Availability + CTA -->
+        <section class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-3xl mx-auto reveal text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-500/10 text-accent-500 text-sm font-bold mb-6 border border-accent-500/20">
+                    <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                    Currently taking new clients
+                </div>
+
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Let's talk about your site</h2>
+                <p class="text-slate-600 text-lg mb-3">
+                    I respond within 1 business day. The first conversation is free — no commitment, no sales pressure.
+                </p>
+                <p class="text-slate-500 text-base mb-10">
+                    Available on Slack, Zoom, and email during US business hours (CST — 6 to 8 hours of real-time overlap with EST/PST).
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        Book a free 30-min call
+                    </a>
+                    <a href="pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
+                        See exact pricing
+                    </a>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-slate-200 grid grid-cols-4 gap-6 text-center">
+                    <div>
+                        <p class="text-2xl font-black text-dark">9+</p>
+                        <p class="text-sm text-slate-500">Years building WordPress sites</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-dark">5</p>
+                        <p class="text-sm text-slate-500">Documented client projects</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-dark">+70%</p>
+                        <p class="text-sm text-slate-500">Checkout increase — Frikko HVAC</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-black text-dark">1 day</p>
+                        <p class="text-sm text-slate-500">Guaranteed response time</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
+                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Services</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
+                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
+                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
+                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm mb-3">Company</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
+                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
+                <p>© 2026 Easyweb LLC. All rights reserved.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
