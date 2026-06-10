@@ -23,6 +23,9 @@ build/
 .idea/
 .vscode/
 
+# Photos
+photos/
+
 # Playwright
 .playwright-mcp/
 playwright-report/
