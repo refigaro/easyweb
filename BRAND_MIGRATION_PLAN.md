@@ -133,16 +133,21 @@ names/paths — this is a path-mapping exercise, not a re-acquisition one.
 - New 6 line icons (`icon--*.svg`) used? — check; if `Marketing Site.html`
   references them, copy into `brand_assets/icons/`.
 
-### Step 2 — Promote `colors_and_type.css` into `design-system/`
-- Diff `colors_and_type.css` (bundle) against `design-system/01tokens.css` +
-  `04components.css`.
-- `colors_and_type.css` is the newer/more complete version — likely becomes
-  the new `01tokens.css` (or a new consolidated file), bringing in: Rethink
-  Sans, `.btn-primary`/`.btn-secondary`/`.btn-ghost`, `.reveal`/`.reveal-right`
-  + `prefers-reduced-motion`, section/card classes (`.stat-card`,
-  `.pricing-card`, `.cost-card`, `.faq-grid`, etc.)
-- Update `design-system/index.html` (Design System tab / docs) to reflect the
-  consolidated tokens — check `05docs.css` for anything that needs updating.
+### Step 2 — DEFERRED (decided 2026-06-12)
+`design-system/` is a standalone docs page (`index.html`, "DS v1.1") that no
+production page references. Its `01tokens.css`/`04components.css`/`05docs.css`
+(~2,040 lines) use an incompatible naming convention and value scale from
+`colors_and_type.css` (`--color-primary-400` vs `--primario-400`, different
+`--space-*`/`--text-*` scales, Work Sans + Font Awesome vs Rethink Sans), plus
+~160 references to the old token names across those files.
+
+"Promoting" `colors_and_type.css` into `01tokens.css` would mean a full
+refactor of `design-system/`, not a file swap — and nothing in production
+depends on it. **Decision: leave `design-system/` as-is (legacy/v1.1).**
+`colors_and_type.css` (root) + the inline styles in `index.html` are the
+source of truth for the new brand going forward. Revisit `design-system/`
+only when Phase 2 (Astro migration) rebuilds the DS as real components —
+doing it now risks throwing the work away.
 
 ### Step 3 — Propagate new nav + footer to remaining 16 pages
 - New nav adds: "Blog" link, "Monthly Care Plan" in the Services dropdown,
