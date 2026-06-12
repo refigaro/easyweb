@@ -26,6 +26,9 @@ build/
 # Photos
 photos/
 
+# Design handoff bundle (temporary working copy)
+_handoff/
+
 # Playwright
 .playwright-mcp/
 playwright-report/
