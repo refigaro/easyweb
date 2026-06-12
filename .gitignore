@@ -24,7 +24,7 @@ build/
 .vscode/
 
 # Photos
-photos/
+photos/collages/editables/
 
 # Design handoff bundle (temporary working copy)
 _handoff/
