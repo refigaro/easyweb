@@ -30,26 +30,21 @@
     }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- DS: Rethink Sans + color/type tokens -->
+    <link rel="stylesheet" href="colors_and_type.css">
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind (DS palette override) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: { sans: ['"Rethink Sans"', 'sans-serif'] },
                     colors: {
-                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
-                        accent: { 400: '#34d399', 500: '#10b981' },
-                        dark: '#0f172a'
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                        brand:   { 50:'#e0faff',100:'#c2f6ff',200:'#82ecff',300:'#24dcff',400:'#21d2f2',500:'#00c2e2',600:'#00accb',700:'#007a99',800:'#004e62' },
+                        ew:      { green:'#4be337', orange:'#ff9100', ink:'#242424', teal:'#8fd4c2' },
+                        ink:     '#242424',
+                        neutral: { 50:'#eaeaea',100:'#bcbcbc',200:'#9b9b9b',300:'#7b7b7b',400:'#5a5a5a',500:'#3e3e3e',600:'#242424' }
                     }
                 }
             }
@@ -58,79 +53,155 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .bg-grid-pattern {
-            background-image: radial-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-            background-size: 24px 24px;
+        /* ── Page base ── */
+        body { color: var(--fg-1); }
+
+        .text-muted   { color: var(--fg-2); }
+        .text-ink     { color: var(--fg-1); }
+        /* max-width Tailwind override → centralizado en colors_and_type.css */
+
+
+
+        /* ── Nav ── */
+
+        #navbar             { background: transparent; }
+        #nav-logo           { width: 221px; height: 65px; object-fit: contain; transition: width .3s ease, height .3s ease; }
+        #navbar-inner       { transition: border-radius 200ms ease, margin 200ms ease, background 200ms ease, box-shadow 200ms ease; }
+        #navbar.scrolled #navbar-inner {
+            border-radius: var(--radius-pill); margin: .5rem auto; width: 95vw; max-width: 1680px;
+            background: rgba(255,255,255,.80); backdrop-filter: blur(14px);
+            box-shadow: var(--shadow-md);
         }
+        #navbar.scrolled #navbar-inner #nav-content { padding-left: 2.5rem; padding-right: 2.5rem; }
+        @media (max-width: 768px) {
+            #navbar.scrolled #navbar-inner {
+                border-radius: 0; margin: 0; width: 100%; max-width: none;
+                background: rgba(255,255,255,.95); backdrop-filter: blur(10px);
+            }
+            #navbar.scrolled #navbar-inner #nav-content { padding-left: 1.5rem; padding-right: 1.5rem; }
+        }
+
+        /* ── Footer ── */
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-7); margin-bottom: 80px;
+        }
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+            .footer-grid > div:first-child { grid-column: 1 / -1; }
+        }
+        @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
+        footer a.footer-link {
+            color: var(--fg-on-dark-muted); text-decoration: none; display: inline;
+            padding-bottom: 8px; border-bottom: 2px solid transparent;
+            transition: color .15s, border-color .15s;
+        }
+        footer a.footer-link:hover { color: #fff; border-bottom-color: var(--secundario-300); }
+        footer a.social-icon {
+            color: var(--fg-1); display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: var(--radius-pill); background: var(--white);
+            transition: color .15s, background .15s;
+        }
+        footer a.social-icon:hover { background: var(--primario-500); color: var(--fg-1); }
+
+        /* ── Dark-section cards ── */
+        .dark-card {
+            background: var(--gray-500); border-radius: var(--radius-lg); padding: var(--card-padding-compact) var(--space-6);
+            border: 1px solid var(--gray-400);
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: .7; transform: scale(1.3); }
+        }
+
+        /* Background section — 3-col on desktop, stacked on mobile */
+        @media (max-width: 768px) {
+            .bg-about-grid { grid-template-columns: 1fr !important; }
+        }
+
+        /* Timeline: steps above the line, slower reveal */
+        #timeline-steps > .reveal {
+            position: relative; z-index: 1;
+            transition: opacity 1.1s ease, transform 1.1s ease;
+        }
+        #timeline-track, #timeline-progress { z-index: 0; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+<body class="bg-white font-sans antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
-                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
-            </a>
-            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
-                <div class="relative group">
-                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
-                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
-                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
-                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100  text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
-                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
-                    </div>
-                </div>
-                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
-                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
-                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
-                <a href="about.html" class="text-primary-600 font-bold">About</a>
+    <!-- ════ NAV ════ -->
+    <nav id="navbar" class="fixed w-full z-50">
+      <div id="navbar-inner" class="w-full">
+        <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="index.html" class="flex items-center">
+            <img id="nav-logo" src="brand_assets/logotipo.svg" alt="Easyweb">
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <div class="relative group">
+              <button class="nav-link flex items-center gap-1">
+                Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+              </button>
+              <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl border border-neutral-50 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 overflow-hidden">
+                <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Business Websites</a>
+                <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Online Stores</a>
+                <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Landing Pages</a>
+                <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t-2 border-neutral-50"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Monthly Care Plan</a>
+              </div>
             </div>
-            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
-                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="our-work.html" class="nav-link">Our Work</a>
+            <a href="blog/index.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link nav-link-active">About</a>
+          </div>
+          <a href="contact.html" class="btn-primary btn-sm hidden md:inline-flex">
+            Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden text-ink"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
+        <div id="mobile-menu" class="md:hidden hidden flex-col gap-0 bg-white border-t px-6 py-4" style="border-color:var(--border-1)">
+          <a href="pricing.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Pricing</a>
+          <a href="our-work.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Our Work</a>
+          <a href="blog/index.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Blog</a>
+          <a href="about.html" class="nav-link nav-link-active py-3 block" style="border-bottom:1px solid var(--border-1)">About</a>
+          <a href="services-corporate.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Business Websites</a>
+          <a href="services-ecommerce.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Online Stores</a>
+          <a href="services-speed-optimization.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Landing Pages</a>
+          <a href="services-care-plan.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Monthly Care Plan</a>
+          <a href="contact.html" class="btn-primary mt-4 justify-center">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
     </nav>
 
     <main>
 
-        <!-- Hero -->
-        <header class="relative pt-32 pb-20 lg:pt-44 lg:pb-24 overflow-hidden bg-white border-b border-slate-200">
-            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
-
-            <div class="max-w-5xl mx-auto px-6 relative z-10">
-                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
-                    <i data-lucide="user" class="w-4 h-4"></i>
-                    About Easyweb
-                </div>
-
+        <!-- ════ HERO ════ -->
+        <header class="bg-white" style="min-height:97vh;display:flex;align-items:center;padding-top:80px;padding-bottom:48px;box-sizing:border-box;">
+            <div class="max-w-5xl mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h1 class="reveal active text-4xl md:text-5xl font-extrabold text-dark leading-tight mb-6 tracking-tight">
-                            I'm Sergio.<br>I build websites<br>for US businesses<br class="hidden md:block"/> — from Mexico.
+                        <div class="reveal active">
+                            <p class="eyebrow mb-1" style="display:inline-flex;align-items:center;gap:6px;">
+                                <i data-lucide="user" style="width:13px;height:13px;color:var(--primario-700)"></i>
+                                About Easyweb
+                            </p>
+                        </div>
+                        <h1 class="reveal active ew-display text-ink mb-6">
+                            I'm Sergio.<br>I build websites<br>for US businesses<br class="hidden md:block"> — from Mexico.
                         </h1>
-                        <p class="reveal active text-xl text-slate-600 leading-relaxed mb-8">
+                        <p class="reveal active ew-summary mb-8" style="max-width:480px">
                             Easyweb is a US-registered LLC. I'm based in Mexico. I design and build every website myself — in English, during US business hours, with results you can measure in Google Analytics.
                         </p>
                         <div class="reveal active flex flex-wrap gap-3">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold">
-                                <i data-lucide="shield-check" class="w-4 h-4 text-accent-500"></i>
+                            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-pill);background:var(--secundario-50);color:var(--fg-1);font-size:var(--btn-sm-fs);font-weight:var(--w-semibold)">
+                                <i data-lucide="shield-check" style="width:15px;height:15px;color:var(--secundario-500)"></i>
                                 US-Registered LLC
                             </span>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold">
-                                <i data-lucide="clock" class="w-4 h-4 text-accent-500"></i>
+                            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-pill);background:var(--secundario-50);color:var(--fg-1);font-size:var(--btn-sm-fs);font-weight:var(--w-semibold)">
+                                <i data-lucide="clock" style="width:15px;height:15px;color:var(--secundario-500)"></i>
                                 CST — 6–8 hrs US overlap
                             </span>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold">
-                                <i data-lucide="message-circle" class="w-4 h-4 text-accent-500"></i>
+                            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius-pill);background:var(--secundario-50);color:var(--fg-1);font-size:var(--btn-sm-fs);font-weight:var(--w-semibold)">
+                                <i data-lucide="message-circle" style="width:15px;height:15px;color:var(--secundario-500)"></i>
                                 English-first
                             </span>
                         </div>
@@ -138,283 +209,310 @@
 
                     <!-- Photo placeholder -->
                     <div class="reveal active">
-                        <div class="relative rounded-3xl overflow-hidden bg-slate-200 shadow-soft border border-slate-100 aspect-[4/5]">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 gap-3">
-                                <i data-lucide="camera" class="w-10 h-10"></i>
-                                <p class="text-sm font-medium text-center px-6">Real photo of Sergio at work — coming soon</p>
+                        <div style="position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-1);height:calc((97vh - 128px) * 0.8);width:100%;background:repeating-linear-gradient(135deg,var(--bg-2) 0px,var(--bg-2) 10px,var(--primario-50) 10px,var(--primario-50) 20px)">
+                            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--fg-2)">
+                                <i data-lucide="camera" style="width:40px;height:40px"></i>
+                                <p style="font-size:var(--btn-sm-fs);font-weight:500;text-align:center;padding:0 32px;font-family:monospace">Real photo of Sergio at work — coming soon</p>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-400 text-center mt-3">No stock photos here. That's the whole point.</p>
+                        <p style="font-size:var(--caption);color:var(--fg-2);text-align:center;margin-top:12px">No stock photos here. That's the whole point.</p>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- The honest explanation -->
-        <section class="py-20 px-6 bg-slate-50">
+        <!-- ════ HONEST EXPLANATION ════ -->
+        <section class="py-32 px-6 bg-white">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">The honest version of the "nearshore" pitch</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                        You've probably seen other agencies with teams "somewhere in Latin America" that are hard to reach, slow to respond, and disappear the week after launch. That's not a geography problem — it's an operations problem. Plenty of bad agencies are in New York too.
+                    <p class="eyebrow mb-1">The honest version</p>
+                    <h2 class="ew-h2 text-ink mb-6">The honest version of the "nearshore" pitch</h2>
+                    <p class="ew-body-muted mb-6" style="max-width:680px">
+                        You've probably seen other agencies with teams "somewhere in Latin America" that are <strong style="color:var(--primario-700)">hard to reach, slow to respond, and disappear the week after launch.</strong> That's not a geography problem — it's an operations problem. Plenty of bad agencies are in New York too.
                     </p>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                        Here's what's actually different about Easyweb: I work during your business hours. A full-stack developer in Mexico earns roughly $28,000/year. The same person in the US earns around $147,000. That's the gap that makes a local agency charge you $8,000 for a site we deliver at $1,500. The savings aren't because the quality drops — they're because the overhead doesn't exist.
+                    <p class="ew-body-muted mb-6" style="max-width:680px">
+                        Here's what's actually different about Easyweb: <strong style="color:var(--primario-700)">I work during your business hours.</strong> A full-stack developer in Mexico earns roughly $28,000/year. The same person in the US earns around $147,000. That's the gap that makes a local agency charge you <strong style="color:var(--primario-700)">$8,000 for a site we deliver at $1,500.</strong> The savings aren't because the quality drops — they're because the overhead doesn't exist.
                     </p>
-                    <p class="text-slate-600 text-lg leading-relaxed">
-                        Easyweb is registered as an LLC in the United States. Your contract is with an American company. Intellectual property transfers to you on delivery, protected under the US-Mexico-Canada Agreement (USMCA). There's legal accountability — the same kind you'd have with any US agency.
+                    <p class="ew-body-muted" style="max-width:680px">
+                        <strong style="color:var(--primario-700)">Easyweb is registered as an LLC in the United States.</strong> Your contract is with an American company. <strong style="color:var(--primario-700)">Intellectual property transfers to you on delivery,</strong> protected under the US-Mexico-Canada Agreement (USMCA). There's legal accountability — the same kind you'd have with any US agency.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Why one person is an advantage -->
-        <section class="py-20 px-6 bg-white border-t border-slate-200">
+        <!-- ════ WHY ONE PERSON ════ -->
+        <section class="py-32 px-6 bg-white">
             <div class="max-w-5xl mx-auto">
-                <div class="reveal mb-12">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Why working with one person is actually an advantage</h2>
-                    <p class="text-slate-600 text-lg">Most agencies have a communication problem built into their structure. You talk to an account manager. The account manager writes a brief. The brief goes to a designer. The designer hands off to a developer. Something gets lost at every step.</p>
+                <div class="reveal mb-8">
+                    <p class="eyebrow mb-1">The structure advantage</p>
+                    <h2 class="ew-h2 text-ink mb-6">Why working with one person is actually an advantage</h2>
+                    <p class="ew-summary" style="max-width:860px;color:var(--fg-2)">Most agencies have a communication problem built into their structure. You talk to an account manager. The account manager writes a brief. The brief goes to a designer. The designer hands off to a developer. <strong style="color:var(--primario-700)">Something gets lost at every step.</strong></p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
-                            <i data-lucide="user-check" class="w-5 h-5"></i>
+                    <div class="reveal" style="background:var(--bg-card-rest);border-radius:var(--radius-lg);padding:var(--card-padding);border:1px solid var(--border-1)">
+                        <div style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--bg-card-cyan);color:var(--primario-700);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4)">
+                            <i data-lucide="user-check" style="width:20px;height:20px"></i>
                         </div>
-                        <h3 class="font-bold text-dark text-lg mb-2">One point of contact</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">The person on your Slack channel is the person who writes the code. No account managers, no translation layer, no "I'll check with the team."</p>
+                        <h3 class="ew-h4 font-bold text-ink mb-3">One point of contact</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">The person on your Slack channel is the person who writes the code. No account managers, no translation layer, no "I'll check with the team."</p>
                     </div>
 
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
-                            <i data-lucide="zap" class="w-5 h-5"></i>
+                    <div class="reveal" style="background:var(--bg-card-rest);border-radius:var(--radius-lg);padding:var(--card-padding);border:1px solid var(--border-1)">
+                        <div style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--bg-card-cyan);color:var(--primario-700);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4)">
+                            <i data-lucide="zap" style="width:20px;height:20px"></i>
                         </div>
-                        <h3 class="font-bold text-dark text-lg mb-2">Decisions happen fast</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">When you ask for a change, it gets done — not queued for the next sprint. Small adjustments don't require a project manager ticket.</p>
+                        <h3 class="ew-h4 font-bold text-ink mb-3">Decisions happen fast</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">When you ask for a change, it gets done — not queued for the next sprint. Small adjustments don't require a project manager ticket.</p>
                     </div>
 
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
-                            <i data-lucide="handshake" class="w-5 h-5"></i>
+                    <div class="reveal" style="background:var(--bg-card-rest);border-radius:var(--radius-lg);padding:var(--card-padding);border:1px solid var(--border-1)">
+                        <div style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--bg-card-cyan);color:var(--primario-700);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4)">
+                            <i data-lucide="handshake" style="width:20px;height:20px"></i>
                         </div>
-                        <h3 class="font-bold text-dark text-lg mb-2">You don't disappear after launch</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">The most common complaint about web agencies is that they vanish once the site is live. I don't. Monthly Care Plans keep us working together after launch.</p>
+                        <h3 class="ew-h4 font-bold text-ink mb-3">You don't disappear after launch</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">The most common complaint about web agencies is that they vanish once the site is live. I don't. Monthly Care Plans keep us working together after launch.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sergio's background -->
-        <section class="py-20 px-6 bg-slate-50 border-t border-slate-200">
-            <div class="max-w-5xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-16 items-start">
-                    <div class="reveal">
-                        <h2 class="text-3xl font-extrabold text-dark mb-6">Background</h2>
-                        <p class="text-slate-600 leading-relaxed mb-5">
-                            I'm a WordPress developer with over 9 years of experience building sites for businesses across Mexico and the United States. I have an MBA background — which means I approach every project as a business problem first, a technical one second.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed mb-5">
-                            I've built e-commerce stores, corporate sites, and lead-gen pages for HVAC companies, consultants, service businesses, and B2B brands. I know what a site needs to do to actually generate customers — not just look good in a screenshot.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            I started Easyweb because I saw a gap: US small businesses were paying $8,000+ for work that could be done better, faster, and cheaper — if you knew where to find the right person. I'm that person.
-                        </p>
+        <!-- ════ BACKGROUND ════ -->
+        <section class="py-32 px-6" style="background:var(--bg-2)">
+            <div class="max-w-5xl mx-auto" style="display:flex;flex-direction:column;gap:var(--space-7)">
+
+                <!-- Foto + Bio -->
+                <div class="reveal bg-about-grid" style="display:grid;grid-template-columns:33% 66%;gap:var(--space-7);align-items:start">
+
+                    <!-- Foto -->
+                    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+                        <div style="width:100%;aspect-ratio:9/10;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-1);position:relative;background:repeating-linear-gradient(135deg,var(--bg-1) 0px,var(--bg-1) 10px,var(--primario-50) 10px,var(--primario-50) 20px)">
+                            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--fg-2)">
+                                <i data-lucide="camera" style="width:32px;height:32px"></i>
+                                <p style="font-size:var(--caption);font-weight:500;text-align:center;padding:0 24px;font-family:monospace">Photo of Sergio — coming soon</p>
+                            </div>
+                        </div>
+                        <p style="font-size:var(--caption);color:var(--fg-2);text-align:center;line-height:var(--caption-lh)">Sergio — Founder, Easyweb</p>
                     </div>
 
-                    <div class="reveal space-y-4">
-                        <h3 class="font-bold text-dark text-lg mb-4">What I work with</h3>
+                    <!-- Bio -->
+                    <div>
+                        <p class="eyebrow mb-1">About Sergio</p>
+                        <h2 class="ew-h2 text-ink mb-6">Background</h2>
+                        <p class="ew-summary" style="margin-bottom:var(--space-5)">
+                            I'm a WordPress developer with <strong style="color:var(--primario-700)">over 9 years of experience</strong> building sites for businesses across Mexico and the United States. I have an MBA background — which means I approach every project as <strong style="color:var(--primario-700)">a business problem first, a technical one second.</strong>
+                        </p>
+                        <p class="ew-summary" style="margin-bottom:var(--space-5)">
+                            I've built e-commerce stores, corporate sites, and lead-gen pages for HVAC companies, consultants, service businesses, and B2B brands. I know what a site needs to do to <strong style="color:var(--primario-700)">actually generate customers — not just look good in a screenshot.</strong>
+                        </p>
+                        <p class="ew-summary">
+                            I started Easyweb because I saw a gap: <strong style="color:var(--primario-700)">US small businesses were paying $8,000+ for work that could be done better, faster, and cheaper</strong> — if you knew where to find the right person. I'm that person.
+                        </p>
+                    </div>
+                </div>
 
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
-                                <span class="text-slate-700 font-medium">WordPress · Elementor Pro · Bricks Builder</span>
-                            </div>
-                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
-                                <span class="text-slate-700 font-medium">WooCommerce · ACF Pro · WP Engine</span>
-                            </div>
-                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
-                                <span class="text-slate-700 font-medium">Figma-to-code · HTML · CSS · JavaScript</span>
-                            </div>
-                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
-                                <span class="text-slate-700 font-medium">Technical SEO · Google Analytics 4 · Search Console</span>
-                            </div>
-                            <div class="flex items-center gap-3 py-3 border-b border-slate-200">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
-                                <span class="text-slate-700 font-medium">Bilingual — English (native fluency) · Spanish</span>
-                            </div>
-                            <div class="flex items-center gap-3 py-3">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-accent-500 flex-shrink-0"></i>
-                                <span class="text-slate-700 font-medium">Available on Slack · Zoom · Email</span>
-                            </div>
+                <!-- What I work with — 3×2, row borders -->
+                <div class="reveal">
+                    <h3 class="ew-h4 font-bold text-ink mb-6">What I work with</h3>
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);column-gap:var(--space-6);row-gap:0">
+                        <div style="display:flex;align-items:center;gap:12px;padding:var(--space-4) 0;border-top:1px solid var(--border-1)">
+                            <i data-lucide="check-circle" style="width:16px;height:16px;color:var(--secundario-300);flex-shrink:0"></i>
+                            <span style="color:var(--fg-1);font-weight:500;font-size:var(--body)">WordPress · Elementor Pro · Bricks</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;padding:var(--space-4) 0;border-top:1px solid var(--border-1)">
+                            <i data-lucide="check-circle" style="width:16px;height:16px;color:var(--secundario-300);flex-shrink:0"></i>
+                            <span style="color:var(--fg-1);font-weight:500;font-size:var(--body)">WooCommerce · ACF Pro · WP Engine</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;padding:var(--space-4) 0;border-top:1px solid var(--border-1)">
+                            <i data-lucide="check-circle" style="width:16px;height:16px;color:var(--secundario-300);flex-shrink:0"></i>
+                            <span style="color:var(--fg-1);font-weight:500;font-size:var(--body)">Figma-to-code · HTML · CSS · JS</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;padding:var(--space-4) 0;border-top:1px solid var(--border-1);border-bottom:1px solid var(--border-1)">
+                            <i data-lucide="check-circle" style="width:16px;height:16px;color:var(--secundario-300);flex-shrink:0"></i>
+                            <span style="color:var(--fg-1);font-weight:500;font-size:var(--body)">Technical SEO · GA4 · Search Console</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;padding:var(--space-4) 0;border-top:1px solid var(--border-1);border-bottom:1px solid var(--border-1)">
+                            <i data-lucide="check-circle" style="width:16px;height:16px;color:var(--secundario-300);flex-shrink:0"></i>
+                            <span style="color:var(--fg-1);font-weight:500;font-size:var(--body)">Bilingual — English · Spanish</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;padding:var(--space-4) 0;border-top:1px solid var(--border-1);border-bottom:1px solid var(--border-1)">
+                            <i data-lucide="check-circle" style="width:16px;height:16px;color:var(--secundario-300);flex-shrink:0"></i>
+                            <span style="color:var(--fg-1);font-weight:500;font-size:var(--body)">Available on Slack · Zoom · Email</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Trust signals / Legal -->
-        <section class="py-20 px-6 bg-dark text-white">
+        <!-- ════ ACCOUNTABILITY ════ -->
+        <section class="py-32 px-6" style="background:var(--primario-800)">
             <div class="max-w-5xl mx-auto">
-                <div class="reveal mb-12">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">The accountability part</h2>
-                    <p class="text-slate-400 text-lg max-w-2xl">The most common concern about working with someone outside the US is: "What happens if something goes wrong?" Here's the short answer.</p>
+                <div class="reveal mb-8 text-center">
+                    <p class="eyebrow-on-dark mb-1">Legal & accountability</p>
+                    <h2 class="ew-h2 mb-6" style="color:var(--fg-on-dark)">The accountability part</h2>
+                    <p class="ew-summary" style="color:var(--fg-on-dark-muted);max-width:800px;margin-left:auto;margin-right:auto">The most common concern about working with someone outside the US is: "What happens if something goes wrong?" Here's the short answer.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
-                        <div class="flex items-start gap-4">
-                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
-                                <i data-lucide="building-2" class="w-6 h-6 text-accent-400"></i>
+                <div style="display:grid;grid-template-columns:66% 33%;gap:var(--space-9);align-items:center">
+                <div style="border-top:1px solid var(--gray-500)">
+
+                    <div class="reveal grid md:grid-cols-2" style="gap:var(--space-7);padding:var(--space-5) 0;border-bottom:1px solid var(--gray-500);align-items:start">
+                        <div style="display:flex;align-items:center;gap:var(--space-3)">
+                            <div style="padding:10px;background:var(--bg-success-subtle);border-radius:var(--radius-md);flex-shrink:0">
+                                <i data-lucide="building-2" style="width:22px;height:22px;color:var(--secundario-300)"></i>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-2">US-Registered LLC</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed">Easyweb operates as a Limited Liability Company registered in the United States. You're contracting with an American company — not a freelancer with a PayPal account.</p>
-                            </div>
+                            <h3 class="ew-h4" style="color:var(--fg-on-dark)">US-Registered LLC</h3>
                         </div>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body);line-height:var(--body-lh)">Easyweb operates as a Limited Liability Company registered in the United States. You're contracting with an American company — not a freelancer with a PayPal account.</p>
                     </div>
 
-                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
-                        <div class="flex items-start gap-4">
-                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
-                                <i data-lucide="file-text" class="w-6 h-6 text-accent-400"></i>
+                    <div class="reveal grid md:grid-cols-2" style="gap:var(--space-7);padding:var(--space-5) 0;border-bottom:1px solid var(--gray-500);align-items:start">
+                        <div style="display:flex;align-items:center;gap:var(--space-3)">
+                            <div style="padding:10px;background:var(--bg-success-subtle);border-radius:var(--radius-md);flex-shrink:0">
+                                <i data-lucide="file-text" style="width:22px;height:22px;color:var(--secundario-300)"></i>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-2">USMCA Protection</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed">All intellectual property — code, design, content — transfers to you upon delivery. This is protected under Chapters 19 and 20 of the US-Mexico-Canada Agreement. Enforceable under North American law.</p>
-                            </div>
+                            <h3 class="ew-h4" style="color:var(--fg-on-dark)">USMCA Protection</h3>
                         </div>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body);line-height:var(--body-lh)">All intellectual property — code, design, content — transfers to you upon delivery. This is protected under Chapters 19 and 20 of the US-Mexico-Canada Agreement. Enforceable under North American law.</p>
                     </div>
 
-                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
-                        <div class="flex items-start gap-4">
-                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
-                                <i data-lucide="scale" class="w-6 h-6 text-accent-400"></i>
+                    <div class="reveal grid md:grid-cols-2" style="gap:var(--space-7);padding:var(--space-5) 0;border-bottom:1px solid var(--gray-500);align-items:start">
+                        <div style="display:flex;align-items:center;gap:var(--space-3)">
+                            <div style="padding:10px;background:var(--bg-success-subtle);border-radius:var(--radius-md);flex-shrink:0">
+                                <i data-lucide="scale" style="width:22px;height:22px;color:var(--secundario-300)"></i>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-2">Contracts in English</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed">Every project starts with a signed Master Service Agreement in English — scope, deliverables, payment milestones, IP transfer, and dispute resolution. No ambiguity.</p>
-                            </div>
+                            <h3 class="ew-h4" style="color:var(--fg-on-dark)">Contracts in English</h3>
                         </div>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body);line-height:var(--body-lh)">Every project starts with a signed Master Service Agreement in English — scope, deliverables, payment milestones, IP transfer, and dispute resolution. No ambiguity.</p>
                     </div>
 
-                    <div class="reveal bg-slate-800 rounded-2xl p-6 border border-slate-700">
-                        <div class="flex items-start gap-4">
-                            <div class="p-2 bg-accent-500/20 rounded-lg flex-shrink-0">
-                                <i data-lucide="credit-card" class="w-6 h-6 text-accent-400"></i>
+                    <div class="reveal grid md:grid-cols-2" style="gap:var(--space-7);padding:var(--space-5) 0;border-bottom:1px solid var(--gray-500);align-items:start">
+                        <div style="display:flex;align-items:center;gap:var(--space-3)">
+                            <div style="padding:10px;background:var(--bg-success-subtle);border-radius:var(--radius-md);flex-shrink:0">
+                                <i data-lucide="credit-card" style="width:22px;height:22px;color:var(--secundario-300)"></i>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-2">Milestone payments</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed">You don't pay the full amount upfront. Payments are tied to project milestones — design approved, development complete, launch. You keep control of the money until work is delivered.</p>
-                            </div>
+                            <h3 class="ew-h4" style="color:var(--fg-on-dark)">Milestone payments</h3>
                         </div>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body);line-height:var(--body-lh)">You don't pay the full amount upfront. Payments are tied to project milestones — design approved, development complete, launch. You keep control of the money until work is delivered.</p>
                     </div>
+
+                </div>
+                <img src="brand_assets/mascot/webie-thumbs-up@3x.webp" alt="Webie" style="height:260px;display:block;margin:0 auto">
                 </div>
 
-                <div class="reveal mt-8 bg-slate-800/50 rounded-2xl p-6 border border-slate-700 border-dashed">
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        <span class="text-white font-semibold">REPSE compliance:</span> Freelancers and contractors working on your project are engaged under Mexico's REPSE framework (Registro de Prestadoras de Servicios Especializados), which legally governs subcontracting in Mexico. This isn't fine print — it means you're not dealing with an informal operation.
+                <div class="reveal" style="margin-top:var(--space-6);padding-left:var(--space-5);border-left:2px solid var(--primario-700)">
+                    <p style="color:var(--fg-on-dark-muted);font-size:var(--body);line-height:var(--body-lh)">
+                        <span style="color:var(--fg-on-dark);font-weight:var(--w-semibold)">REPSE compliance:</span> Freelancers and contractors working on your project are engaged under Mexico's REPSE framework (Registro de Prestadoras de Servicios Especializados), which legally governs subcontracting in Mexico. <strong style="color:#fff">This isn't fine print — it means you're not dealing with an informal operation.</strong>
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- How we work -->
-        <section class="py-20 px-6 bg-white border-t border-slate-200">
+        <!-- ════ HOW A PROJECT WORKS ════ -->
+        <section class="py-32 px-6 bg-white">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal mb-12">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">How a project actually works</h2>
-                    <p class="text-slate-600 text-lg">No surprises. Here's the process from first message to launched site.</p>
+                <div class="reveal mb-8" style="text-align:center">
+                    <p class="eyebrow mb-1">The process</p>
+                    <h2 class="ew-h2 text-ink mb-6">How a project actually works</h2>
+                    <p class="ew-summary">No surprises. Here's the process from first message to launched site.</p>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="reveal flex gap-6 items-start">
-                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">1</div>
+                <div id="timeline-steps" style="display:flex;flex-direction:column;gap:32px;position:relative">
+                    <!-- track (fondo gris) -->
+                    <div id="timeline-track" style="position:absolute;left:17px;top:22px;width:2px;background:var(--border-1);border-radius:2px;pointer-events:none"></div>
+                    <!-- progreso animado -->
+                    <div id="timeline-progress" style="position:absolute;left:17px;top:22px;width:2px;height:0;background:var(--primario-500);border-radius:2px;pointer-events:none;transition:height 1.3s cubic-bezier(0.4,0,1,1)"></div>
+                    <div class="reveal" data-tl="1" style="display:flex;gap:24px;align-items:flex-start">
+                        <div class="step" style="width:36px;height:36px;margin-top:4px">1</div>
                         <div>
-                            <h3 class="font-bold text-dark text-lg mb-1">Free site audit or discovery call (30 min)</h3>
-                            <p class="text-slate-600">We talk about your business, your goals, and what's not working with your current site (or why you need one). I'll tell you honestly if Easyweb is the right fit or not.</p>
+                            <h3 class="ew-h4 font-bold text-ink mb-2">Free site audit or discovery call (30 min)</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">We talk about your business, your goals, and what's not working with your current site (or why you need one). I'll tell you honestly if Easyweb is the right fit or not.</p>
                         </div>
                     </div>
 
-                    <div class="reveal flex gap-6 items-start">
-                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">2</div>
+                    <div class="reveal" data-tl="2" style="display:flex;gap:24px;align-items:flex-start">
+                        <div class="step" style="width:36px;height:36px;margin-top:4px">2</div>
                         <div>
-                            <h3 class="font-bold text-dark text-lg mb-1">Proposal + contract</h3>
-                            <p class="text-slate-600">I send a written proposal with scope, timeline, and exact price. No vague estimates. You sign an MSA in English before anything starts.</p>
+                            <h3 class="ew-h4 font-bold text-ink mb-2">Proposal + contract</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">I send a written proposal with scope, timeline, and exact price. No vague estimates. You sign an MSA in English before anything starts.</p>
                         </div>
                     </div>
 
-                    <div class="reveal flex gap-6 items-start">
-                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">3</div>
+                    <div class="reveal" data-tl="3" style="display:flex;gap:24px;align-items:flex-start">
+                        <div class="step" style="width:36px;height:36px;margin-top:4px">3</div>
                         <div>
-                            <h3 class="font-bold text-dark text-lg mb-1">Design — you approve before code starts</h3>
-                            <p class="text-slate-600">I design in Figma and share it with you for review. We refine until you're happy. <strong>No code is written until the design is approved.</strong> This eliminates the most common source of project disputes.</p>
+                            <h3 class="ew-h4 font-bold text-ink mb-2">Design — you approve before code starts</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">I design in Figma and share it with you for review. We refine until you're happy. <strong style="color:var(--primario-700)">No code is written until the design is approved.</strong> This eliminates the most common source of project disputes.</p>
                         </div>
                     </div>
 
-                    <div class="reveal flex gap-6 items-start">
-                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">4</div>
+                    <div class="reveal" data-tl="4" style="display:flex;gap:24px;align-items:flex-start">
+                        <div class="step" style="width:36px;height:36px;margin-top:4px">4</div>
                         <div>
-                            <h3 class="font-bold text-dark text-lg mb-1">Development on a staging site</h3>
-                            <p class="text-slate-600">The site is built on a staging environment — you can see the real thing in the browser and request changes before it goes live.</p>
+                            <h3 class="ew-h4 font-bold text-ink mb-2">Development on a staging site</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">The site is built on a staging environment — you can see the real thing in the browser and request changes before it goes live.</p>
                         </div>
                     </div>
 
-                    <div class="reveal flex gap-6 items-start">
-                        <div class="w-8 h-8 rounded-full bg-primary-600 text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-1">5</div>
+                    <div class="reveal" data-tl="5" style="display:flex;gap:24px;align-items:flex-start">
+                        <div class="step" style="width:36px;height:36px;margin-top:4px">5</div>
                         <div>
-                            <h3 class="font-bold text-dark text-lg mb-1">Launch + handoff</h3>
-                            <p class="text-slate-600">We go live. I walk you through how to manage your own content — or that's what the Monthly Care Plan is for, if you'd rather not deal with it.</p>
+                            <h3 class="ew-h4 font-bold text-ink mb-2">Launch + handoff</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body);line-height:1.65">We go live. I walk you through how to manage your own content — or that's what the Monthly Care Plan is for, if you'd rather not deal with it.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Availability + CTA -->
-        <section class="py-24 px-6 bg-slate-50 border-t border-slate-200">
-            <div class="max-w-3xl mx-auto reveal text-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-500/10 text-accent-500 text-sm font-bold mb-6 border border-accent-500/20">
-                    <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
-                    Currently taking new clients
+        <!-- ════ CTA ════ -->
+        <section class="py-32 px-6" style="background:var(--primario-500)">
+            <div class="max-w-4xl mx-auto reveal">
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-9);align-items:center;margin-bottom:var(--space-8)">
+                    <img src="brand_assets/mascot/webie-contacto-inverso@3x.webp" alt="Webie" style="height:200px">
+                    <div>
+                        <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:var(--radius-pill);background:var(--primario-800);border:1px solid var(--primario-700);color:var(--fg-on-dark);font-size:var(--caption);font-weight:var(--w-bold);margin-bottom:24px">
+                            <span style="width:8px;height:8px;border-radius:var(--radius-pill);background:var(--secundario-300);animation:pulse 2s infinite"></span>
+                            Currently taking new clients
+                        </div>
+
+                        <h2 class="ew-h2 text-ink mb-6">Let's talk about your site</h2>
+                        <p class="ew-body mb-3" style="color:rgb(36,36,36)">
+                            I respond within 1 business day. <strong style="color:rgb(36,36,36)">The first conversation is free — no commitment, no sales pressure.</strong>
+                        </p>
+                        <p style="color:var(--fg-on-brand);font-size:var(--body);margin-bottom:var(--space-6)">
+                            Available on Slack, Zoom, and email during US business hours (CST — <strong style="color:#fff"><span style="color:#242424">6 to 8 hours of real-time overlap</span></strong> with EST/PST).
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="contact.html" class="btn-primary w-full sm:w-auto justify-center">
+                                Book a free 30-min call
+                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                            </a>
+                            <a href="pricing.html" class="btn-secondary btn-ghost w-full sm:w-auto justify-center">
+                                See exact pricing
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Let's talk about your site</h2>
-                <p class="text-slate-600 text-lg mb-3">
-                    I respond within 1 business day. The first conversation is free — no commitment, no sales pressure.
-                </p>
-                <p class="text-slate-500 text-base mb-10">
-                    Available on Slack, Zoom, and email during US business hours (CST — 6 to 8 hours of real-time overlap with EST/PST).
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
-                        <i data-lucide="calendar" class="w-5 h-5"></i>
-                        Book a free 30-min call
-                    </a>
-                    <a href="pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
-                        See exact pricing
-                    </a>
-                </div>
-
-                <div class="mt-12 pt-8 border-t border-slate-200 grid grid-cols-4 gap-6 text-center">
+                <div style="border-top:1px solid rgba(0,78,98,.30);padding-top:var(--space-7);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center">
                     <div>
-                        <p class="text-2xl font-black text-dark">9+</p>
-                        <p class="text-sm text-slate-500">Years building WordPress sites</p>
+                        <p style="font-size:var(--stat);font-weight:var(--w-extra);color:var(--fg-1);letter-spacing:var(--stat-ls)">9+</p>
+                        <p style="font-size:var(--caption);color:var(--fg-on-brand);line-height:var(--caption-lh);margin-top:var(--space-1)">Years building WordPress sites</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-black text-dark">5</p>
-                        <p class="text-sm text-slate-500">Documented client projects</p>
+                        <p style="font-size:var(--stat);font-weight:var(--w-extra);color:var(--fg-1);letter-spacing:var(--stat-ls)">5</p>
+                        <p style="font-size:var(--caption);color:var(--fg-on-brand);line-height:var(--caption-lh);margin-top:var(--space-1)">Documented client projects</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-black text-dark">+70%</p>
-                        <p class="text-sm text-slate-500">Checkout increase — Frikko HVAC</p>
+                        <p style="font-size:var(--stat);font-weight:var(--w-extra);color:var(--fg-1);letter-spacing:var(--stat-ls)">+70%</p>
+                        <p style="font-size:var(--caption);color:var(--fg-on-brand);line-height:var(--caption-lh);margin-top:var(--space-1)">Checkout increase — Frikko HVAC</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-black text-dark">1 day</p>
-                        <p class="text-sm text-slate-500">Guaranteed response time</p>
+                        <p style="font-size:var(--stat);font-weight:var(--w-extra);color:var(--fg-1);letter-spacing:var(--stat-ls)">1 day</p>
+                        <p style="font-size:var(--caption);color:var(--fg-on-brand);line-height:var(--caption-lh);margin-top:var(--space-1)">Guaranteed response time</p>
                     </div>
                 </div>
             </div>
@@ -422,57 +520,161 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-3">
-                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
-                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
-                    </a>
-                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
-                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Services</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
-                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
-                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
-                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
-                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Company</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
-                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
-                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-                <p>© 2026 Easyweb LLC. All rights reserved.</p>
-                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
-            </div>
+    <!-- ════ FOOTER ════ -->
+    <footer class="pt-32" style="background:var(--bg-dark)">
+      <div class="footer-grid max-w-7xl mx-auto px-6">
+        <div style="margin-right:32px">
+          <img src="brand_assets/logotipo-invertido.svg" alt="Easyweb" class="object-contain object-left" style="width:324px;height:96px;margin:-2rem 0 48px">
+          <p class="text-sm leading-relaxed max-w-xs" style="color:var(--fg-on-dark)">
+            US-registered LLC building professional websites for small businesses across America. Starting at $499.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
         </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Services</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="services-corporate.html" class="footer-link">Business Websites</a>
+            <a href="services-ecommerce.html" class="footer-link">Online Stores</a>
+            <a href="services-speed-optimization.html" class="footer-link">Landing Pages</a>
+            <a href="services-care-plan.html" class="footer-link">Monthly Care Plan</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Company</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="about.html" class="footer-link">About</a>
+            <a href="our-work.html" class="footer-link">Our Work</a>
+            <a href="pricing.html" class="footer-link">Pricing</a>
+            <a href="blog/index.html" class="footer-link">Blog</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Contact</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start;color:var(--fg-on-dark-muted);font-size:var(--body)">
+            <a href="mailto:hello@easyweb.monster" class="footer-link">hello@easyweb.monster</a>
+            <span>CST time zone</span>
+            <a href="contact.html" class="btn-primary btn-sm" style="margin-top:24px">Get a free quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-top:1px solid var(--gray-500);padding-top:32px;padding-bottom:32px">
+        <p class="text-sm text-white" style="font-size:var(--body)">© 2026 Easyweb LLC. All rights reserved.</p>
+        <div class="flex gap-6 text-white" style="font-size:var(--body)">
+          <a href="terms-privacy.html" class="footer-link">Privacy</a>
+          <a href="terms-privacy.html" class="footer-link">Terms</a>
+        </div>
+      </div>
     </footer>
 
     <script>
         lucide.createIcons();
-        function reveal() {
-            document.querySelectorAll(".reveal").forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-                    el.classList.add("active");
-                }
+
+        // Scroll reveal — IntersectionObserver (DS pattern)
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting && !e.target.dataset.tl) e.target.classList.add('active'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Timeline — cadena secuencial
+        (function() {
+            const container = document.getElementById('timeline-steps');
+            const line      = document.getElementById('timeline-progress');
+            const track     = document.getElementById('timeline-track');
+            if (!container || !line) return;
+
+            const steps    = Array.from(container.querySelectorAll(':scope > [data-tl]'));
+            const startY   = 22;    // centro del primer círculo desde el top del container
+            const LINE_DUR = 1300;  // debe coincidir con la transition del CSS
+            const STEP_GAP = 0;    // ms tras llegar la línea antes de que aparezca el siguiente paso
+
+            // Ajustar altura del track al layout real
+            requestAnimationFrame(() => {
+                const last = steps[steps.length - 1];
+                const lc   = last && last.querySelector('.step');
+                if (lc && track)
+                    track.style.height = (last.offsetTop + lc.offsetTop + lc.offsetHeight / 2 - startY) + 'px';
             });
-        }
-        window.addEventListener("scroll", reveal);
-        reveal();
+
+            // Crecer la línea hasta el centro del círculo del paso indicado
+            function growLineTo(el) {
+                const c = el.querySelector('.step');
+                if (!c) return;
+                const target = el.offsetTop + c.offsetTop + c.offsetHeight / 2 - startY;
+                if (target > (parseFloat(line.style.height) || 0))
+                    line.style.height = target + 'px';
+            }
+
+            // Activar paso i, luego encadenar el siguiente
+            function activateStep(i) {
+                if (i >= steps.length) return;
+                steps[i].classList.add('active');
+
+                const next = steps[i + 1];
+                if (!next) return; // último paso
+
+                // La línea empieza a crecer hacia el siguiente paso enseguida
+                setTimeout(() => growLineTo(next), 30);
+
+                // El siguiente paso aparece justo cuando la línea llega
+                setTimeout(() => activateStep(i + 1), LINE_DUR + STEP_GAP);
+            }
+
+            // Arrancar la cadena cuando el primer paso entra al viewport
+            const kickObs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    kickObs.unobserve(e.target);
+                    setTimeout(() => activateStep(0), 450);
+                });
+            }, { threshold: 0.65, rootMargin: '0px 0px -60px 0px' });
+
+            if (steps[0]) kickObs.observe(steps[0]);
+        })();
+
+        // Mobile menu toggle
+        (function () {
+            const btn  = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+            btn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden', isOpen);
+                menu.classList.toggle('flex', !isOpen);
+                icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+                lucide.createIcons();
+            });
+            menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }));
+        })();
+
+        // Pill nav + logo shrink on scroll
+        (function () {
+            const navbar  = document.getElementById('navbar');
+            const navLogo = document.getElementById('nav-logo');
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY > 20;
+                navbar.classList.toggle('scrolled', scrolled);
+                navLogo.style.width  = scrolled ? '160px' : '221px';
+                navLogo.style.height = scrolled ? '48px'  : '65px';
+            });
+        })();
     </script>
 </body>
 </html>

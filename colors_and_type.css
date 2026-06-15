@@ -14,6 +14,13 @@
       L6  section vertical padding (py)              : 128px   (sp-10)
       → Sections always py-32 (128px). Repeat patterns for uniformity.
 
+   3. BODY TEXT HIGHLIGHTS — bold + primario-700 (#007a99):
+      2+ consecutive paragraphs : max 2 highlights per paragraph
+      1 very dense paragraph    : max 1 highlight (bold + primario-700)
+      On colored/dark bg        : bold uses the SAME color as surrounding text
+                                  (black text → bold black; white text → bold white)
+      → Never highlight isolated paragraphs without density justification.
+
    2. COLOR CONTRAST — WCAG AA min · AAA for body/≤20px text:
       All text             : AA  (4.5:1) minimum
       Body / ≤20px text    : AAA (7:1)
@@ -104,6 +111,7 @@
   --fg-3:             var(--gray-200);           /* muted/captions — #9b9b9b */
   --fg-on-dark:       var(--white);              /* primary text on dark surface */
   --fg-on-dark-muted: rgba(255, 255, 255, 0.90); /* secondary text on dark */
+  --fg-on-dark-faint: rgba(255, 255, 255, 0.50); /* attribution / footnotes on dark  */
   --fg-on-brand:      var(--gray-600);           /* text on brand-400 (cyan) bg */
 
   /* ── Backgrounds / surfaces ────────────────────────────────────────── */
@@ -114,6 +122,18 @@
   --bg-contact:    var(--primario-500);      /* CTA/contact section — #00c2e2 */
   --bg-card-cyan:  var(--primario-50);       /* info card — #e0faff */
   --bg-card-green: var(--secundario-50);     /* alt card — #bfffb1 */
+
+  /* ── Overlays ─────────────────────────────────────────────────────── */
+  --overlay-deep: rgba(0, 78, 98, .85);      /* brand-tinted photo overlay (primario-800 @ 85%) */
+
+  /* ── Photo backdrops ─────────────────────────────────────────────── */
+  /* Dark base colors behind card images — chosen to complement photo mood */
+  --photo-bg-navy:   #0f1f2e;   /* tech / industrial / HVAC photography     */
+  --photo-bg-forest: #1a2e1a;   /* food / nature / agriculture photography  */
+  --photo-bg-slate:  #1a1a14;   /* architecture / interior photography      */
+
+  /* ── Success subtle tint ─────────────────────────────────────────── */
+  --bg-success-subtle: rgba(75, 227, 55, .12); /* icon bg — success / positive context    */
 
   /* ── Borders ───────────────────────────────────────────────────────── */
   --border-1:      var(--gray-50);           /* subtle — #eaeaea */
@@ -172,6 +192,11 @@
   --caption-lh:1.4;                          /* @kind font */
   --caption-ls:0.08em;                       /* @kind font */
 
+  /* Stat / counter display (fixed — not responsive) */
+  --stat:    28px;                             /* @kind font */
+  --stat-lh: 1.0;                              /* @kind font */
+  --stat-ls: -0.03em;                          /* @kind font */
+
   /* Weights available in Rethink Sans */
   --w-regular: 400; /* @kind font */
   --w-medium:  500; /* @kind font */
@@ -197,6 +222,20 @@
   --space-5:  24px;  --space-6:  32px;  --space-7:  48px;  --space-8:  64px;
   --space-9:  96px;  --space-10: 128px; --space-11: 192px;
 
+  /* ── Card hover recipe ──────────────────────────────────────────── */
+  /* Canonical hover for all project/content cards:                        */
+  /*   transform: translateY(-4px)                                         */
+  /*   box-shadow: var(--shadow-card-hover)                                */
+  /*   transition: transform .2s, box-shadow .2s                           */
+  /* Featured cards: also border-color → var(--border-brand) (.15s)       */
+  --shadow-card-hover: 0 12px 32px rgba(36,36,36,.10);
+
+  /* ── Card surface levels ──────────────────────────────────────────── */
+  /* Rest : #f5fbfd (bg-2, subtle cyan-washed white)                       */
+  /* Hover: #ffffff (pure white) — transition: background .2s             */
+  --bg-card-rest:  var(--bg-2);   /* #f5fbfd */
+  --bg-card-hover: var(--white);  /* #ffffff */
+
   /* ── Card padding levels (L5 rule) ───────────────────────────────────── */
   --card-padding:         var(--space-7);   /* 48px — primary marketing panels   */
   --card-padding-compact: var(--space-5);   /* 24px — compact data widget cards   */
@@ -205,6 +244,13 @@
   /* Default (md): 14/32px · Small (sm): 9/22px                             */
   --btn-md-py: 14px;  --btn-md-px: 32px;  --btn-md-fs: 15px;
   --btn-sm-py:  9px;  --btn-sm-px: 22px;  --btn-sm-fs: 14px;
+
+  /* ── Button icon rule ─────────────────────────────────────────────────── */
+  /* Icons in buttons ALWAYS go on the RIGHT (after the label text).         */
+  /* The hover animation slides the last icon/svg to translateX(+8px),      */
+  /* which only looks correct when the icon trails the label.                */
+  /* ✅  <button class="btn-primary">Get a quote <i data-lucide="arrow-right"></i></button>  */
+  /* ❌  <button class="btn-primary"><i data-lucide="arrow-right"></i> Get a quote</button>  */
 }
 
 /* ==========================================================================
@@ -265,7 +311,9 @@
 /* Body text */
 .ew-lead    { font-family: var(--font-sans); font-size: var(--lead);    line-height: var(--lead-lh);    letter-spacing: var(--lead-ls);    font-weight: var(--w-regular); color: var(--fg-2); margin: 0; }
 .ew-summary { font-family: var(--font-sans); font-size: var(--summary); line-height: var(--summary-lh); letter-spacing: var(--summary-ls); font-weight: var(--w-regular); color: var(--fg-2); margin: 0; }
-.ew-body    { font-family: var(--font-sans); font-size: var(--body);    line-height: var(--body-lh);    letter-spacing: var(--body-ls);    font-weight: var(--w-regular); color: var(--fg-1); margin: 0; }
+.ew-body      { font-family: var(--font-sans); font-size: var(--body); line-height: var(--body-lh); letter-spacing: var(--body-ls); font-weight: var(--w-regular); color: var(--fg-1); margin: 0; }
+/* Muted variant — secondary / supporting body copy on light surfaces */
+.ew-body-muted { font-family: var(--font-sans); font-size: var(--body); line-height: var(--body-lh); letter-spacing: var(--body-ls); font-weight: var(--w-regular); color: var(--fg-2); margin: 0; }
 
 /* ── Section H2 universal rule ──────────────────────────────────────────── */
 /* Prevents the 72px implicit line-box at max font-size caused by inheriting
@@ -336,4 +384,131 @@ section h2 {
     transform: none;
     transition: none;
   }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES— shared across all pages. Tokenized versions of the
+   semantic helpers first defined in Marketing Site.html.
+   ========================================================================== */
+
+/* ── Tailwind max-width override ─────────────────────────────────────
+   Overrides Tailwind's max-w-* constraints to match the DS's
+   site-wide 1680px canvas. Centralised here — do NOT redeclare per page. */
+.max-w-7xl, .max-w-6xl, .max-w-5xl { max-width: min(95vw, 1680px) !important; width: 95vw; }
+
+/* ── Text color ────────────────────────────────────────────────────── */
+.text-ink       { color: var(--fg-1); }
+.text-muted     { color: var(--fg-2); }
+.text-secondary { color: var(--gray-500); }        /* #3e3e3e */
+.text-dim       { color: var(--gray-100); }         /* #bcbcbc — muted on dark */
+.text-link      { color: var(--primario-700); }    /* #007a99 */
+.text-cyan-accent  { color: var(--primario-400); } /* #21d2f2 — on dark bgs */
+.text-green-accent { color: var(--secundario-300); } /* #4be337 — on dark bgs */
+
+/* ── Section backgrounds ─────────────────────────────────────────── */
+.bg-surface    { background: var(--bg-2); }           /* #f5fbfd — tinted section */
+.bg-deep       { background: var(--primario-800); }   /* #004e62 — brand dark panel */
+.bg-dark       { background: var(--bg-dark); }        /* #242424 — dark section */
+.bg-contact    { background: var(--bg-contact); }     /* #00c2e2 — CTA section */
+.bg-card-cyan  { background: var(--bg-card-cyan); }   /* #e0faff — info card / brand tint */
+.bg-card-green { background: var(--bg-card-green); }  /* #bfffb1 — alt card / green tint */
+
+/* ── Component utilities ──────────────────────────────────────────── */
+/* Checkmark icon accent — #008500: 5.5:1 on white (non-text 3:1 ok) */
+.check       { color: var(--secundario-600); flex-shrink: 0; }
+
+/* Marquee / ticker items */
+.trust-badge { color: var(--primario-700); }
+
+/* Process step circles — use with explicit width/height inline */
+.step {
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-pill); flex-shrink: 0;
+  font-weight: var(--w-extra); font-size: var(--btn-sm-fs);
+  background: var(--primario-400); color: var(--fg-on-brand);
+}
+.step-1 { background: var(--primario-500); color: var(--fg-on-brand); } /* #00c2e2 */
+.step-2 { background: var(--primario-400); color: var(--fg-on-brand); } /* #21d2f2 */
+.step-3 { background: var(--primario-700); color: var(--fg-on-dark); }  /* #007a99 */
+
+/* ==========================================================================
+   BUTTON COMPONENTS
+   Canonical definitions — do NOT redefine locally per-page.
+   Icon rule: icons always go AFTER the label text (right side).
+   ========================================================================== */
+
+.btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--btn-primary-bg); color: var(--btn-primary-fg); font-weight: var(--w-bold);
+    padding: var(--btn-md-py) var(--btn-md-px); border-radius: var(--radius-pill); border: none; cursor: pointer;
+    transition: background .15s, transform .15s; text-decoration: none; white-space: nowrap;
+}
+.btn-primary:hover  { background: var(--btn-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-brand); }
+.btn-primary:hover svg:last-child, .btn-primary:hover i:last-child { transform: translateX(8px); }
+.btn-primary:active { background: var(--btn-primary-pressed); transform: none; }
+
+.btn-sm { padding: var(--btn-sm-py) var(--btn-sm-px); font-size: var(--btn-sm-fs); }
+
+.btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--btn-outline-bg); color: var(--fg-1); font-weight: var(--w-bold);
+    padding: var(--btn-md-py) var(--btn-md-px); border-radius: var(--radius-pill); border: 2px solid var(--border-strong);
+    cursor: pointer; transition: all .15s; text-decoration: none; white-space: nowrap;
+}
+.btn-secondary:hover { background: var(--btn-outline-hover-bg); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary:hover svg:last-child, .btn-secondary:hover i:last-child { transform: translateX(8px); }
+
+/* Ghost modifiers — apply on top of .btn-secondary */
+.btn-ghost      { border-color: transparent !important; }
+.btn-ghost:hover { transform: none !important; box-shadow: none !important; background: var(--btn-outline-hover-bg) !important; }
+
+/* Dark-surface ghost — use on dark/brand section backgrounds */
+.btn-ghost-dark       { border-color: var(--white) !important; color: var(--fg-on-dark) !important; background: transparent !important; }
+.btn-ghost-dark:hover { background: rgba(255,255,255,.12) !important; transform: none !important; box-shadow: none !important; color: var(--fg-on-dark) !important; }
+
+/* Icon transition shared by both button types */
+.btn-primary svg, .btn-primary i,
+.btn-secondary svg, .btn-secondary i { transition: transform .2s ease; }
+
+/* ==========================================================================
+   NAV LINK
+   Canonical definition — horizontal nav bar anchors with underline indicator.
+   ========================================================================== */
+
+.nav-link {
+    font-weight: var(--w-regular); color: var(--fg-1); text-decoration: none;
+    padding-bottom: 8px; padding-top: 8px; border-bottom: 2px solid transparent;
+    transition: border-color .15s; font-size: var(--body);
+}
+.nav-link:hover    { border-bottom-color: var(--nav-underline); }
+.nav-link-active   { border-bottom-color: var(--nav-underline) !important; }
+
+/* ==========================================================================
+   CARD VARIANTS
+   ========================================================================== */
+
+/* ── .ew-card — interactive card hover recipe ──────────────────────────── */
+/* ⚠️  ONLY use on cards that are <a> tags or have an onClick handler.      */
+/* NEVER apply to static/presentational cards — hover implies interactivity. */
+.ew-card {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.ew-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  background: var(--bg-card-hover) !important;
+}
+
+/* ── .eyebrow-on-dark — eyebrow label for use on dark/brand surfaces ────── */
+/* Use instead of .eyebrow when the section background is --bg-dark or      */
+/* any dark surface. Avoids needing a per-instance color override inline.   */
+.eyebrow-on-dark {
+  font-family: var(--font-sans);
+  font-size: var(--caption);
+  line-height: var(--caption-lh);
+  letter-spacing: var(--caption-ls);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  color: var(--primario-300);   /* #24dcff — 11:1 on --bg-dark */
+  margin: 0;
 }
