@@ -245,6 +245,20 @@
   --btn-md-py: 14px;  --btn-md-px: 32px;  --btn-md-fs: 15px;
   --btn-sm-py:  9px;  --btn-sm-px: 22px;  --btn-sm-fs: 14px;
 
+  /* ── Layout widths ─────────────────────────────────────────────────── */
+  --content-max:  900px;   /* narrow content / lead-magnet containers     */
+  --content-wide: 1680px;  /* full site canvas (matches .max-w-7xl)        */
+
+  /* ── Motion ─────────────────────────────────────────────────────────── */
+  --duration-fast: 150ms;  /* @kind other — micro-interactions, hover states   */
+  --duration-base: 250ms;  /* @kind other — card lifts, panel transitions       */
+
+  /* ── Extended letter-spacing ─────────────────────────────────────────── */
+  --ls-wide: 0.1em;         /* eyebrow / all-caps label tracking                */
+
+  /* ── Extended line-heights ───────────────────────────────────────────── */
+  --lh-normal: 1.6;         /* relaxed reading text (dark-section body copy)    */
+
   /* ── Button icon rule ─────────────────────────────────────────────────── */
   /* Icons in buttons ALWAYS go on the RIGHT (after the label text).         */
   /* The hover animation slides the last icon/svg to translateX(+8px),      */
