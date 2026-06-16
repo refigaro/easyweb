@@ -1,0 +1,264 @@
+/* ==========================================================================
+   EASYWEB — Site Production Layer
+   All component and utility classes from the marketing site.
+   Loaded last in the cascade (after 04components.css) so these definitions
+   take precedence over DS-internal components where names collide.
+
+   Source of truth: colors_and_type.css (June 2026)
+   ========================================================================== */
+
+/* ==========================================================================
+   TAILWIND OVERRIDE
+   ========================================================================== */
+
+/* Matches the DS's 1680px site canvas. Centralized here — don't redeclare per page. */
+.max-w-7xl, .max-w-6xl, .max-w-5xl { max-width: min(95vw, 1680px) !important; width: 95vw; }
+
+
+/* ==========================================================================
+   SEMANTIC TYPE CLASSES
+   ========================================================================== */
+
+.ew-hero, .ew-display,
+.ew-h1, .ew-h2, .ew-h3, .ew-h4 {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* Hero — ultra-large editorial headline (weight 400, very tight) */
+.ew-hero {
+  font-size: var(--text-3xl);
+  font-weight: var(--w-regular);
+  line-height: var(--text-3xl-lh);
+  letter-spacing: var(--text-3xl-ls);
+}
+
+/* Display — large marketing headline (weight 800) */
+.ew-display {
+  font-size: var(--text-2xl);
+  font-weight: var(--w-extra);
+  line-height: var(--text-2xl-lh);
+  letter-spacing: var(--text-2xl-ls);
+}
+
+/* Section headings */
+.ew-h1 {
+  font-size: var(--text-xl);
+  font-weight: var(--w-extra);
+  line-height: var(--text-xl-lh);
+  letter-spacing: var(--text-xl-ls);
+}
+.ew-h2 {
+  font-size: var(--text-lg);
+  font-weight: var(--w-semibold);
+  line-height: var(--text-lg-lh);
+  letter-spacing: var(--text-lg-ls);
+}
+.ew-h3 {
+  font-size: var(--text-md);
+  font-weight: var(--w-bold);
+  line-height: var(--text-md-lh);
+  letter-spacing: var(--text-md-ls);
+}
+.ew-h4 {
+  font-size: var(--text-sm);
+  font-weight: var(--w-bold);
+  line-height: var(--text-sm-lh);
+  letter-spacing: var(--text-sm-ls);
+}
+
+/* Body text */
+.ew-lead    { font-family: var(--font-sans); font-size: var(--lead);    line-height: var(--lead-lh);    letter-spacing: var(--lead-ls);    font-weight: var(--w-regular); color: var(--fg-2); margin: 0; }
+.ew-summary { font-family: var(--font-sans); font-size: var(--summary); line-height: var(--summary-lh); letter-spacing: var(--summary-ls); font-weight: var(--w-regular); color: var(--fg-2); margin: 0; }
+.ew-body      { font-family: var(--font-sans); font-size: var(--body); line-height: var(--body-lh); letter-spacing: var(--body-ls); font-weight: var(--w-regular); color: var(--fg-1); margin: 0; }
+.ew-body-muted { font-family: var(--font-sans); font-size: var(--body); line-height: var(--body-lh); letter-spacing: var(--body-ls); font-weight: var(--w-regular); color: var(--fg-2); margin: 0; }
+
+/* Section H2 universal rule — prevents 72px implicit line-box at max font-size.
+   L1: margin-top 4px = sp-1 (sibling gap from eyebrow)
+   L3: margin-bottom 24px = sp-5 (gap to lead paragraph below) */
+section h2 {
+  line-height:   1.1;
+  margin-top:    4px;
+  margin-bottom: 24px;
+}
+
+/* Eyebrow — small-caps label above headings */
+.ew-eyebrow, .eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--caption);
+  line-height: var(--caption-lh);
+  letter-spacing: var(--caption-ls);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   SCROLL REVEAL
+   Usage: add class to element, wire up IntersectionObserver in JS.
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px) rotate(3deg);
+  transition: opacity .65s cubic-bezier(.22, 1, .36, 1),
+              transform .65s cubic-bezier(.22, 1, .36, 1);
+}
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* ==========================================================================
+   UTILITY CLASSES — text color
+   ========================================================================== */
+
+.text-ink       { color: var(--fg-1); }
+.text-muted     { color: var(--fg-2); }
+.text-secondary { color: var(--gray-500); }
+.text-dim       { color: var(--gray-100); }
+.text-link      { color: var(--primario-700); }
+.text-cyan-accent  { color: var(--primario-400); }
+.text-green-accent { color: var(--secundario-300); }
+
+
+/* ==========================================================================
+   UTILITY CLASSES — section backgrounds
+   ========================================================================== */
+
+.bg-surface    { background: var(--bg-2); }
+.bg-deep       { background: var(--primario-800); }
+.bg-dark       { background: var(--bg-dark); }
+.bg-contact    { background: var(--bg-contact); }
+.bg-card-cyan  { background: var(--bg-card-cyan); }
+.bg-card-green { background: var(--bg-card-green); }
+
+
+/* ==========================================================================
+   COMPONENT UTILITIES
+   ========================================================================== */
+
+/* Checkmark icon accent */
+.check       { color: var(--secundario-600); flex-shrink: 0; }
+
+/* Marquee / ticker items */
+.trust-badge { color: var(--primario-700); }
+
+/* Process step circles */
+.step {
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-pill); flex-shrink: 0;
+  font-weight: var(--w-extra); font-size: var(--btn-sm-fs);
+  background: var(--primario-400); color: var(--fg-on-brand);
+}
+.step-1 { background: var(--primario-500); color: var(--fg-on-brand); }
+.step-2 { background: var(--primario-400); color: var(--fg-on-brand); }
+.step-3 { background: var(--primario-700); color: var(--fg-on-dark); }
+
+
+/* ==========================================================================
+   BUTTON COMPONENTS
+   Canonical production definitions — override DS 04components.css versions.
+   Icon rule: icons always go AFTER the label text (right side).
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--btn-primary-bg); color: var(--btn-primary-fg); font-weight: var(--w-bold);
+  padding: var(--btn-md-py) var(--btn-md-px); border-radius: var(--radius-pill); border: none; cursor: pointer;
+  transition: background .15s, transform .15s; text-decoration: none; white-space: nowrap;
+}
+.btn-primary:hover  { background: var(--btn-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-brand); }
+.btn-primary:hover svg:last-child, .btn-primary:hover i:last-child { transform: translateX(8px); }
+.btn-primary:active { background: var(--btn-primary-pressed); transform: none; }
+
+.btn-sm { padding: var(--btn-sm-py) var(--btn-sm-px); font-size: var(--btn-sm-fs); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--btn-outline-bg); color: var(--fg-1); font-weight: var(--w-bold);
+  padding: var(--btn-md-py) var(--btn-md-px); border-radius: var(--radius-pill); border: 2px solid var(--border-strong);
+  cursor: pointer; transition: all .15s; text-decoration: none; white-space: nowrap;
+}
+.btn-secondary:hover { background: var(--btn-outline-hover-bg); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary:hover svg:last-child, .btn-secondary:hover i:last-child { transform: translateX(8px); }
+
+/* Ghost modifiers — apply on top of .btn-secondary */
+.btn-ghost      { border-color: transparent !important; }
+.btn-ghost:hover { transform: none !important; box-shadow: none !important; background: var(--btn-outline-hover-bg) !important; }
+
+/* Dark-surface ghost */
+.btn-ghost-dark       { border-color: var(--white) !important; color: var(--fg-on-dark) !important; background: transparent !important; }
+.btn-ghost-dark:hover { background: rgba(255,255,255,.12) !important; transform: none !important; box-shadow: none !important; color: var(--fg-on-dark) !important; }
+
+/* Icon transition shared by both button types */
+.btn-primary svg, .btn-primary i,
+.btn-secondary svg, .btn-secondary i { transition: transform .2s ease; }
+
+
+/* ==========================================================================
+   NAV LINK
+   ========================================================================== */
+
+.nav-link {
+  font-weight: var(--w-regular); color: var(--fg-1); text-decoration: none;
+  padding-bottom: 8px; padding-top: 8px; border-bottom: 2px solid transparent;
+  transition: border-color .15s; font-size: var(--body);
+}
+.nav-link:hover    { border-bottom-color: var(--nav-underline); }
+.nav-link-active   { border-bottom-color: var(--nav-underline) !important; }
+
+
+/* ==========================================================================
+   CARD VARIANTS
+   ========================================================================== */
+
+/* .ew-card — interactive hover recipe. ONLY for clickable cards (<a> or onClick). */
+.ew-card {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.ew-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  background: var(--bg-card-hover) !important;
+}
+
+
+/* ==========================================================================
+   EYEBROW ON DARK
+   ========================================================================== */
+
+.eyebrow-on-dark {
+  font-family: var(--font-sans);
+  font-size: var(--caption);
+  line-height: var(--caption-lh);
+  letter-spacing: var(--caption-ls);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  color: var(--primario-300);   /* #24dcff — 11:1 on --bg-dark */
+  margin: 0;
+}

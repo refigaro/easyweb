@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Easyweb — Site Entry Point
+   Single <link> for all production pages.
+
+   Usage:
+     Root pages  : <link rel="stylesheet" href="styles.css">
+     blog/, lp/, work/ : <link rel="stylesheet" href="../styles.css">
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import './design-system/01tokens.css';
+@import './design-system/02base.css';
+@import './design-system/03layout.css';
+@import './design-system/04components.css';
+@import './design-system/05site.css';
