@@ -174,50 +174,7 @@
 <!-- ════════════════════════════════════════════════════════
      NAV
      ════════════════════════════════════════════════════════ -->
-<nav id="navbar" class="fixed w-full z-50">
-  <div id="navbar-inner" class="w-full">
-    <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center">
-        <img id="nav-logo" src="brand_assets/logotipo.svg" alt="Easyweb">
-      </a>
-      <!-- Links -->
-      <div class="hidden md:flex items-center gap-8">
-        <div class="relative group">
-          <button class="nav-link flex items-center gap-1">
-            Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-          </button>
-          <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl border border-neutral-50 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 overflow-hidden">
-            <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Business Websites</a>
-            <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Online Stores</a>
-            <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Landing Pages</a>
-            <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t-2 border-neutral-50"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Monthly Care Plan</a>
-          </div>
-        </div>
-        <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="our-work.html" class="nav-link">Our Work</a>
-        <a href="blog/index.html" class="nav-link">Blog</a>
-        <a href="about.html" class="nav-link">About</a>
-      </div>
-      <!-- CTA -->
-      <a href="#contact" class="btn-primary btn-sm hidden md:inline-flex">
-        Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </a>
-      <button id="mobile-menu-btn" class="md:hidden text-ink"><i data-lucide="menu" class="w-6 h-6"></i></button>
-    </div>
-    <!-- Mobile menu drawer -->
-    <div id="mobile-menu" class="md:hidden hidden flex-col gap-0 bg-white border-t border-neutral-100 px-6 py-4">
-      <a href="#pricing" class="nav-link py-3 border-b border-neutral-50 block">Pricing</a>
-      <a href="our-work.html" class="nav-link py-3 border-b border-neutral-50 block">Our Work</a>
-      <a href="blog/index.html" class="nav-link py-3 border-b border-neutral-50 block">Blog</a>
-      <a href="about.html" class="nav-link py-3 border-b border-neutral-50 block">About</a>
-      <a href="services-corporate.html" class="nav-link py-3 border-b border-neutral-50 block">Business Websites</a>
-      <a href="services-ecommerce.html" class="nav-link py-3 border-b border-neutral-50 block">Online Stores</a>
-      <a href="services-speed-optimization.html" class="nav-link py-3 border-b border-neutral-50 block">Landing Pages</a>
-      <a href="#contact" class="btn-primary mt-4 justify-center">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-    </div>
-  </div>
-</nav>
+<script src="js/navbar.js"></script>
 
 <main>
 
@@ -234,7 +191,7 @@
         <div class="reveal active inline-flex items-center gap-2 text-sm font-extrabold mb-1 uppercase text-secondary" style="letter-spacing: 0.3px">
           US-Registered LLC · English-speaking · CST time zone
         </div>
-        <h1 class="ew-display reveal active mb-6 text-hero-gray" style="letter-spacing: -2.9px">We build professional websites for <strong class="text-secondary font-extrabold" style="letter-spacing: -2px">US small businesses.</strong></h1>
+        <h1 class="ew-display reveal active mb-6 text-hero-gray">We build professional websites for <strong class="text-secondary font-extrabold">US small businesses.</strong></h1>
         <p class="reveal active w-full font-bold my-3 text-secondary" style="line-height: 1.06; font-size: var(--body)">In English, during your business hours.</p>
         <div class="reveal active flex flex-col sm:flex-row flex-wrap gap-4 my-12">
           <a href="#contact" class="btn-primary w-full sm:w-auto justify-center">Get a free quote in 24 hours <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
@@ -774,36 +731,6 @@ without paying for their overhead.</h2>
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal, .reveal-right').forEach(el => observer.observe(el));
 
-  // Navbar shadow on scroll
-  // Mobile menu toggle
-  const mobileBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = mobileBtn.querySelector('i');
-  mobileBtn.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden', isOpen);
-    mobileMenu.classList.toggle('flex', !isOpen);
-    menuIcon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
-    lucide.createIcons();
-  });
-  // Close on link click
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-      menuIcon.setAttribute('data-lucide', 'menu');
-      lucide.createIcons();
-    });
-  });
-
-  const navbar = document.getElementById('navbar');
-  const navLogo = document.getElementById('nav-logo');
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY > 20;
-    navbar.classList.toggle('scrolled', scrolled);
-    navLogo.style.width  = scrolled ? '160px' : '221px';
-    navLogo.style.height = scrolled ? '48px'  : '65px';
-  });
 </script>
 </body>
 </html>

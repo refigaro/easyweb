@@ -1,3 +1,7 @@
+/* ── Navbar base ── */
+#navbar     { background: transparent; }
+#nav-logo   { width: 221px; height: 65px; object-fit: contain; transition: width .3s ease, height .3s ease; }
+
 /* ── Navbar pill effect on scroll ── */
 #navbar-inner {
   transition: border-radius 200ms ease, margin 200ms ease,
@@ -16,7 +20,7 @@
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   #navbar.scrolled #navbar-inner {
     border-radius: 0;
     margin: 0;
@@ -28,6 +32,26 @@
   #navbar.scrolled #navbar-inner #nav-content {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+/* ── Hero: remove constraints on Tablet + Mobile ── */
+@media (max-width: 1023px) {
+  .hero-img-col img {
+    max-width: 550px;
+  }
+  .hero-section .max-w-\[655px\] {
+    max-width: none;
+  }
+}
+
+/* ── CTA button: group with hamburger on mobile/tablet ── */
+@media (max-width: 1023px) {
+  /* Pushes CTA to the right so it sits adjacent to the hamburger */
+  #nav-content > a.btn-primary,
+  #nav-content > a[class*="bg-dark"] {
+    margin-left: auto;
+    margin-right: 2rem;
   }
 }
 

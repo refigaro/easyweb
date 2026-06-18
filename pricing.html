@@ -48,47 +48,7 @@
 <body class="bg-white font-sans antialiased">
 
     <!-- ════ NAV ════ -->
-    <nav id="navbar" class="fixed w-full z-50">
-      <div id="navbar-inner" class="w-full">
-        <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="index.html" class="flex items-center">
-            <img id="nav-logo" src="brand_assets/logotipo.svg" alt="Easyweb">
-          </a>
-          <div class="hidden md:flex items-center gap-8">
-            <div class="relative group">
-              <button class="nav-link flex items-center gap-1">
-                Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-              </button>
-              <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl border border-neutral-50 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 overflow-hidden">
-                <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Business Websites</a>
-                <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Online Stores</a>
-                <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Landing Pages</a>
-                <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t-2 border-neutral-50"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Monthly Care Plan</a>
-              </div>
-            </div>
-            <a href="pricing.html" class="nav-link nav-link-active">Pricing</a>
-            <a href="our-work.html" class="nav-link">Our Work</a>
-            <a href="blog/index.html" class="nav-link">Blog</a>
-            <a href="about.html" class="nav-link">About</a>
-          </div>
-          <a href="contact.html" class="btn-primary btn-sm hidden md:inline-flex">
-            Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-          <button id="mobile-menu-btn" class="md:hidden text-ink"><i data-lucide="menu" class="w-6 h-6"></i></button>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden flex-col gap-0 bg-white border-t px-6 py-4" style="border-color:var(--border-1)">
-          <a href="pricing.html" class="nav-link nav-link-active py-3 block" style="border-bottom:1px solid var(--border-1)">Pricing</a>
-          <a href="our-work.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Our Work</a>
-          <a href="blog/index.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Blog</a>
-          <a href="about.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">About</a>
-          <a href="services-corporate.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Business Websites</a>
-          <a href="services-ecommerce.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Online Stores</a>
-          <a href="services-speed-optimization.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Landing Pages</a>
-          <a href="services-care-plan.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Monthly Care Plan</a>
-          <a href="contact.html" class="btn-primary mt-4 justify-center">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        </div>
-      </div>
-    </nav>
+    <script src="js/navbar.js"></script>
 
     <main>
 
@@ -630,37 +590,6 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // Mobile menu toggle
-        (function () {
-            const btn  = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const icon = btn.querySelector('i');
-            btn.addEventListener('click', () => {
-                const isOpen = !menu.classList.contains('hidden');
-                menu.classList.toggle('hidden', isOpen);
-                menu.classList.toggle('flex', !isOpen);
-                icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
-                lucide.createIcons();
-            });
-            menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                menu.classList.remove('flex');
-                icon.setAttribute('data-lucide', 'menu');
-                lucide.createIcons();
-            }));
-        })();
-
-        // Pill nav + logo shrink on scroll
-        (function () {
-            const navbar  = document.getElementById('navbar');
-            const navLogo = document.getElementById('nav-logo');
-            window.addEventListener('scroll', () => {
-                const scrolled = window.scrollY > 20;
-                navbar.classList.toggle('scrolled', scrolled);
-                navLogo.style.width  = scrolled ? '160px' : '221px';
-                navLogo.style.height = scrolled ? '48px'  : '65px';
-            });
-        })();
-    </script>
+</script>
 </body>
 </html>

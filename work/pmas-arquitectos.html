@@ -53,51 +53,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50" style="top:3px">
-        <div id="navbar-inner" class="w-full">
-            <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="../index.html">
-                    <img id="nav-logo" src="../brand_assets/logotipo.svg" alt="Easyweb">
-                </a>
-                <div class="hidden md:flex items-center gap-6 font-semibold text-sm" style="color:var(--fg-2)">
-                    <div class="dropdown relative">
-                        <button class="nav-link flex items-center gap-1">
-                            Services <i data-lucide="chevron-down" class="dropdown-chevron w-3.5 h-3.5"></i>
-                        </button>
-                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl border shadow-lg z-50" style="border-color:var(--border-1)">
-                            <a href="../services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 rounded-t-2xl text-sm transition-colors hover:bg-brand-50" style="color:var(--fg-2)"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
-                            <a href="../services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 text-sm transition-colors hover:bg-brand-50" style="border-top:1px solid var(--border-1);color:var(--fg-2)"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
-                            <a href="../services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 text-sm transition-colors hover:bg-brand-50" style="border-top:1px solid var(--border-1);color:var(--fg-2)"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
-                            <a href="../services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 rounded-b-2xl text-sm transition-colors hover:bg-brand-50" style="border-top:2px solid var(--border-1);color:var(--fg-2)"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
-                        </div>
-                    </div>
-                    <a href="../pricing.html" class="nav-link">Pricing</a>
-                    <a href="../our-work.html" class="flex items-center gap-1.5 font-bold" style="color:var(--primario-600)">
-                        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Our Work
-                    </a>
-                    <a href="../blog/index.html" class="nav-link">Blog</a>
-                    <a href="../about.html" class="nav-link">About</a>
-                </div>
-                <a href="../contact.html" class="btn-primary btn-sm hidden md:inline-flex">
-                    Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-                <button id="mobile-menu-btn" class="md:hidden" style="color:var(--fg-1)">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 gap-3 text-sm font-semibold" style="color:var(--fg-2)">
-                <a href="../services-corporate.html" class="py-2 nav-link">Business Websites</a>
-                <a href="../services-ecommerce.html" class="py-2 nav-link">Online Stores</a>
-                <a href="../services-speed-optimization.html" class="py-2 nav-link">Landing Pages</a>
-                <a href="../services-care-plan.html" class="py-2 nav-link">Monthly Care Plan</a>
-                <a href="../pricing.html" class="py-2 nav-link">Pricing</a>
-                <a href="../our-work.html" class="py-2 font-bold" style="color:var(--primario-600)">← Our Work</a>
-                <a href="../blog/index.html" class="py-2 nav-link">Blog</a>
-                <a href="../about.html" class="py-2 nav-link">About</a>
-                <a href="../contact.html" class="btn-primary btn-sm mt-2 text-center">Get a free quote →</a>
-            </div>
-        </div>
-    </nav>
+    <script src="../js/navbar.js" data-back-label="Our Work" data-back-href="../our-work.html"></script>
 
     <main>
 
@@ -378,16 +334,6 @@
 
         function reveal() { document.querySelectorAll(".reveal").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); }
         window.addEventListener("scroll", reveal); reveal();
-
-        (function () {
-            const btn = document.getElementById('mobile-menu-btn'), menu = document.getElementById('mobile-menu'), icon = btn.querySelector('i');
-            btn.addEventListener('click', () => { const isOpen = !menu.classList.contains('hidden'); menu.classList.toggle('hidden', isOpen); menu.classList.toggle('flex', !isOpen); icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x'); lucide.createIcons(); });
-        })();
-
-        (function () {
-            const navbar = document.getElementById('navbar'), navLogo = document.getElementById('nav-logo');
-            window.addEventListener('scroll', () => { const s = window.scrollY > 20; navbar.classList.toggle('scrolled', s); navLogo.style.width = s ? '140px' : '160px'; navLogo.style.height = s ? '42px' : '48px'; });
-        })();
-    </script>
+</script>
 </body>
 </html>
