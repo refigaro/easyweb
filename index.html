@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design-system/responsive-overrides.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -166,68 +167,6 @@
     .faq-grid { display: grid; grid-template-columns: minmax(0,560px) minmax(0,400px); gap: 48px; align-items: stretch; justify-content: center; }
 
     /* WCAG: using semantic classes (.text-muted etc.) instead of [style*=] overrides */
-
-    /* Footer responsive grid */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 80px;
-    }
-    @media (max-width: 1024px) {
-      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
-      .footer-grid > div:first-child { grid-column: 1 / -1; }
-    }
-    @media (max-width: 640px) {
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-    footer a.footer-link {
-      color: rgba(255,255,255,0.90); text-decoration: none; display: inline;
-      padding-bottom: 8px; border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
-    }
-    footer a.footer-link:hover { color: #fff; border-bottom-color: #4be337; }
-    footer a.social-icon {
-      color: #242424; display: flex; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 999px;
-      background: #ffffff;
-      transition: color .15s, background .15s;
-    }
-    footer a.social-icon:hover { background: #00c2e2; color: #242424; }
-    /* Scroll reveal — classes live in colors_and_type.css (DS) */
-
-    /* Navbar pill effect on scroll */
-    #navbar-inner {
-      transition: border-radius 200ms ease, margin 200ms ease, background 200ms ease, box-shadow 200ms ease;
-    }
-    #navbar.scrolled #navbar-inner {
-      border-radius: 999px;
-      margin: 0.5rem auto;
-      width: 95vw;
-      max-width: 1680px;
-      background: rgba(255, 255, 255, 0.80);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 4px 12px rgba(36,36,36,.08), 0 2px 4px rgba(36,36,36,.05);
-    }
-    #navbar.scrolled #navbar-inner #nav-content {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-    }
-    /* Mobile: no pill effect */
-    @media (max-width: 768px) {
-      #navbar.scrolled #navbar-inner {
-        border-radius: 0;
-        margin: 0;
-        width: 100%;
-        max-width: none;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-      }
-      #navbar.scrolled #navbar-inner #nav-content {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-    }
   </style>
 </head>
 <body class="bg-white font-sans antialiased">

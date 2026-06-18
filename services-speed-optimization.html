@@ -9,270 +9,278 @@
     <meta property="og:description" content="Professional landing page starting at $499. Custom design, contact form, GA4 tracking. Delivered in 7 business days. US-registered LLC.">
     <meta property="og:url" content="https://easyweb.monster/services/landing-page">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design-system/responsive-overrides.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: { sans: ['"Rethink Sans"', 'sans-serif'] },
                     colors: {
-                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
-                        accent: { 400: '#34d399', 500: '#10b981' },
-                        dark: '#0f172a'
-                    },
-                    boxShadow: { 'soft': '0 4px 20px -2px rgba(0,0,0,0.05)', 'glow': '0 0 20px rgba(99,102,241,0.4)' }
+                        brand:   { 50:'#e0faff',100:'#c2f6ff',200:'#82ecff',300:'#24dcff',400:'#21d2f2',500:'#00c2e2',600:'#00accb',700:'#007a99',800:'#004e62' },
+                        ew:      { green:'#4be337', orange:'#ff9100', ink:'#242424', teal:'#8fd4c2' },
+                        ink:     '#242424',
+                        neutral: { 50:'#eaeaea',100:'#bcbcbc',200:'#9b9b9b',300:'#7b7b7b',400:'#5a5a5a',500:'#3e3e3e',600:'#242424' }
+                    }
                 }
             }
         }
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        body { color: var(--fg-1); }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .bg-grid-pattern { background-image: radial-gradient(rgba(99,102,241,0.05) 1px, transparent 1px); background-size: 24px 24px; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        #navbar { background: transparent; }
+        #nav-logo { width: 221px; height: 65px; object-fit: contain; transition: width .3s ease, height .3s ease; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+<body class="bg-white font-sans antialiased">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
-                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
-            </a>
-            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
-                <div class="relative group">
-                    <button class="flex items-center gap-1 text-primary-600 font-bold py-1">
-                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
-                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
-                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 bg-primary-50 text-primary-600 font-bold transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
-                    </div>
-                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
-                </div>
-                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
-                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
-                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
-                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
+    <nav id="navbar" class="fixed w-full z-50">
+      <div id="navbar-inner" class="w-full">
+        <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="index.html"><img id="nav-logo" src="brand_assets/logotipo.svg" alt="Easyweb"></a>
+          <div class="hidden md:flex items-center gap-8">
+            <div class="relative group">
+              <button class="nav-link flex items-center gap-1">Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i></button>
+              <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl border border-neutral-50 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 overflow-hidden">
+                <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Business Websites</a>
+                <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Online Stores</a>
+                <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 bg-brand-50 text-brand-700 font-bold text-sm border-t border-neutral-50"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Landing Pages</a>
+                <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t-2 border-neutral-50"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Monthly Care Plan</a>
+              </div>
             </div>
-            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
-                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="our-work.html" class="nav-link">Our Work</a>
+            <a href="blog/index.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+          </div>
+          <a href="contact.html" class="btn-primary btn-sm hidden md:inline-flex">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <button id="mobile-menu-btn" class="md:hidden text-ink"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
+        <div id="mobile-menu" class="md:hidden hidden flex-col gap-0 bg-white border-t px-6 py-4" style="border-color:var(--border-1)">
+          <a href="services-speed-optimization.html" class="nav-link nav-link-active py-3 block" style="border-bottom:1px solid var(--border-1)">Landing Pages</a>
+          <a href="services-corporate.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Business Websites</a>
+          <a href="services-ecommerce.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Online Stores</a>
+          <a href="services-care-plan.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Monthly Care Plan</a>
+          <a href="pricing.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Pricing</a>
+          <a href="our-work.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Our Work</a>
+          <a href="blog/index.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Blog</a>
+          <a href="about.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">About</a>
+          <a href="contact.html" class="btn-primary mt-4 justify-center">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
     </nav>
 
     <main>
         <!-- HERO -->
-        <header class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
-            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
-            <div class="absolute top-0 right-0 w-[30rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
-            <div class="max-w-5xl mx-auto px-6 relative z-10">
-                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+        <header class="pt-32 pb-16 lg:pt-44 lg:pb-20 bg-white border-b" style="border-color:var(--border-1)">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-bold mb-6 border border-brand-100">
                     <i data-lucide="zap" class="w-4 h-4"></i> Landing Pages
                 </div>
-                <h1 class="reveal active text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl">
-                    Landing page design service for small businesses
-                </h1>
-                <p class="reveal active text-xl text-slate-600 mb-6 leading-relaxed max-w-2xl">
-                    Sometimes you don't need a full website — you need one focused page that tells visitors who you are, what you do, and how to contact you. Done right, a single well-designed page outperforms a bloated five-pager built on a cheap template.
-                </p>
+                <h1 class="reveal active ew-display text-ink mb-6 max-w-4xl">Landing page design service for small businesses</h1>
+                <p class="reveal active ew-summary mb-6 max-w-2xl">Sometimes you don't need a full website — you need one focused page that tells visitors who you are, what you do, and how to contact you. Done right, a single well-designed page outperforms a bloated five-pager built on a cheap template.</p>
                 <div class="reveal active flex flex-col sm:flex-row gap-4 mb-8">
-                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-all shadow-glow hover:-translate-y-1">
-                        Get a free quote — $499
-                    </a>
-                    <a href="pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
-                        See full pricing details
-                    </a>
+                    <a href="contact.html" class="btn-primary w-full sm:w-auto justify-center">Get a free quote — $499</a>
+                    <a href="pricing.html" class="btn-secondary btn-ghost w-full sm:w-auto justify-center">See full pricing details</a>
                 </div>
-                <div class="reveal active flex flex-wrap gap-3 text-sm">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Starting at $499</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Delivered in 7 business days</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Custom design — not a template</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> US-Registered LLC</span>
+                <div class="reveal active flex flex-wrap gap-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> Starting at $499</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> Delivered in 7 business days</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> Custom design — not a template</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> US-Registered LLC</span>
                 </div>
             </div>
         </header>
 
         <!-- WHO THIS IS FOR -->
-        <section class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+        <section class="py-20 px-6 border-b" style="background:var(--bg-2);border-color:var(--border-1)">
             <div class="max-w-5xl mx-auto">
-                <div class="reveal mb-10">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">When a landing page is the right call</h2>
-                </div>
+                <div class="reveal mb-10"><h2 class="ew-h2 text-ink mb-4">When a landing page is the right call</h2></div>
                 <div class="grid md:grid-cols-2 gap-5">
-                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
-                        <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-4"><i data-lucide="rocket" class="w-5 h-5"></i></div>
-                        <h3 class="font-bold text-dark mb-2">You're launching something and need it live fast</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">New business, new service, new market. You need a professional web presence in under two weeks — not a three-month project.</p>
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="rocket" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">You're launching something and need it live fast</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">New business, new service, new market. You need a professional web presence in under two weeks — not a three-month project.</p>
                     </div>
-                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
-                        <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-4"><i data-lucide="target" class="w-5 h-5"></i></div>
-                        <h3 class="font-bold text-dark mb-2">You're running ads and need a dedicated page</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Sending ad traffic to your homepage is the most common reason campaigns underperform. A focused landing page — designed for one action — converts significantly better.</p>
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="target" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">You're running ads and need a dedicated page</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Sending ad traffic to your homepage is the most common reason campaigns underperform. A focused landing page — designed for one action — converts significantly better.</p>
                     </div>
-                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
-                        <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-4"><i data-lucide="user" class="w-5 h-5"></i></div>
-                        <h3 class="font-bold text-dark mb-2">You're a freelancer or consultant who needs a credible web presence</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">A single professional page with your services, a bit about you, and a contact form is all most consultants need to close clients. A $20/mo DIY builder won't cut it.</p>
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="user" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">You're a freelancer or consultant who needs a credible web presence</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">A single professional page with your services, a bit about you, and a contact form is all most consultants need to close clients. A $20/mo DIY builder won't cut it.</p>
                     </div>
-                    <div class="reveal bg-white rounded-2xl p-6 border border-slate-200 shadow-soft">
-                        <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-4"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
-                        <h3 class="font-bold text-dark mb-2">You want to start small and upgrade later</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Start with a Starter landing page, validate that it generates leads, then upgrade to a full Business Website when the time is right. The design system carries over.</p>
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="arrow-up-right" class="w-5 h-5"></i></div>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">You want to start small and upgrade later</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Start with a Starter landing page, validate that it generates leads, then upgrade to a full Business Website when the time is right. The design system carries over.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- WHAT'S INCLUDED -->
-        <section class="py-24 px-6 bg-white border-b border-slate-200">
+        <section class="py-24 px-6 border-b" style="background:var(--bg-1);border-color:var(--border-1)">
             <div class="max-w-5xl mx-auto">
                 <div class="reveal text-center mb-12">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">What's included at $499</h2>
-                    <p class="text-slate-600">One page. Everything it needs to convert a visitor into a lead.</p>
+                    <h2 class="ew-h2 text-ink mb-4">What's included at $499</h2>
+                    <p class="ew-body-muted">One page. Everything it needs to convert a visitor into a lead.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-5">
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <i data-lucide="figma" class="w-6 h-6 text-primary-600 mb-3"></i>
-                        <h3 class="font-bold text-dark mb-2">Custom Figma design</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Designed from scratch around your brand. You approve the full layout before development starts. 2 revision rounds included.</p>
+                    <div class="reveal rounded-2xl p-6 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <i data-lucide="figma" style="width:24px;height:24px;color:var(--primario-600);margin-bottom:12px"></i>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">Custom Figma design</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Designed from scratch around your brand. You approve the full layout before development starts. 2 revision rounds included.</p>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <i data-lucide="layout" class="w-6 h-6 text-primary-600 mb-3"></i>
-                        <h3 class="font-bold text-dark mb-2">Scroll-section structure</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Hero, services/offer, about, social proof, and contact — all on one page, in the order that converts. No clutter, no distraction.</p>
+                    <div class="reveal rounded-2xl p-6 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <i data-lucide="layout" style="width:24px;height:24px;color:var(--primario-600);margin-bottom:12px"></i>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">Scroll-section structure</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Hero, services/offer, about, social proof, and contact — all on one page, in the order that converts. No clutter, no distraction.</p>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <i data-lucide="mail" class="w-6 h-6 text-primary-600 mb-3"></i>
-                        <h3 class="font-bold text-dark mb-2">Contact form with GA4 tracking</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Form submissions tracked as conversions from day one. You know exactly how many leads your page generates.</p>
+                    <div class="reveal rounded-2xl p-6 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <i data-lucide="mail" style="width:24px;height:24px;color:var(--primario-600);margin-bottom:12px"></i>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">Contact form with GA4 tracking</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Form submissions tracked as conversions from day one. You know exactly how many leads your page generates.</p>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <i data-lucide="smartphone" class="w-6 h-6 text-primary-600 mb-3"></i>
-                        <h3 class="font-bold text-dark mb-2">100% mobile responsive</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Most of your visitors arrive on a phone. The design is built mobile-first so it works perfectly on every screen size.</p>
+                    <div class="reveal rounded-2xl p-6 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <i data-lucide="smartphone" style="width:24px;height:24px;color:var(--primario-600);margin-bottom:12px"></i>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">100% mobile responsive</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Most of your visitors arrive on a phone. The design is built mobile-first so it works perfectly on every screen size.</p>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <i data-lucide="gauge" class="w-6 h-6 text-primary-600 mb-3"></i>
-                        <h3 class="font-bold text-dark mb-2">PageSpeed 90+ score</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Fast pages rank better and convert better. Every Easyweb page passes Google's Core Web Vitals on both mobile and desktop.</p>
+                    <div class="reveal rounded-2xl p-6 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <i data-lucide="gauge" style="width:24px;height:24px;color:var(--primario-600);margin-bottom:12px"></i>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">PageSpeed 90+ score</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Fast pages rank better and convert better. Every Easyweb page passes Google's Core Web Vitals on both mobile and desktop.</p>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                        <i data-lucide="search" class="w-6 h-6 text-primary-600 mb-3"></i>
-                        <h3 class="font-bold text-dark mb-2">Basic SEO setup</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Keyword-targeted title and meta description, OG tags for social sharing, schema markup, and Google Analytics connected.</p>
+                    <div class="reveal rounded-2xl p-6 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <i data-lucide="search" style="width:24px;height:24px;color:var(--primario-600);margin-bottom:12px"></i>
+                        <h3 class="font-bold text-ink mb-2" style="font-size:var(--body)">Basic SEO setup</h3>
+                        <p style="color:var(--fg-2);font-size:var(--body)">Keyword-targeted title and meta description, OG tags for social sharing, schema markup, and Google Analytics connected.</p>
                     </div>
                 </div>
-                <div class="reveal mt-6 bg-primary-50 border border-primary-100 rounded-2xl p-5 flex items-start gap-4">
-                    <i data-lucide="info" class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"></i>
-                    <p class="text-slate-700 text-sm leading-relaxed"><strong>Upgrading later is easy.</strong> If you start with a Starter landing page and decide you need more pages down the road, we upgrade your existing site — you don't start over. The design system built for your landing page carries forward to the full Business Website.</p>
+                <div class="reveal mt-6 rounded-2xl p-5 flex items-start gap-4 border" style="background:var(--primario-50);border-color:var(--primario-100)">
+                    <i data-lucide="info" style="width:20px;height:20px;color:var(--primario-600);flex-shrink:0;margin-top:2px"></i>
+                    <p style="color:var(--fg-1);font-size:var(--body)"><strong>Upgrading later is easy.</strong> If you start with a Starter landing page and decide you need more pages down the road, we upgrade your existing site — you don't start over. The design system built for your landing page carries forward to the full Business Website.</p>
                 </div>
             </div>
         </section>
 
-        <!-- WHAT IF / OBJECTIONS -->
-        <section class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+        <!-- OBJECTIONS -->
+        <section class="py-20 px-6 border-b" style="background:var(--bg-2);border-color:var(--border-1)">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal mb-10">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">Common questions</h2>
-                </div>
+                <div class="reveal mb-10"><h2 class="ew-h2 text-ink mb-4">Common questions</h2></div>
                 <div class="space-y-4">
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Is one page really enough to get customers?</span>
-                            <span class="transition group-open:rotate-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">For many service businesses, yes. If someone finds you through Google, a referral, or a social ad and your page answers three questions — "What do they do?", "Can I trust them?", "How do I contact them?" — they'll reach out. A single focused page that answers those questions clearly outperforms a bloated five-page site that buries the point.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">For many service businesses, yes. If someone finds you through Google, a referral, or a social ad and your page answers three questions — "What do they do?", "Can I trust them?", "How do I contact them?" — they'll reach out. A single focused page that answers those questions clearly outperforms a bloated five-page site that buries the point.</div>
                     </details>
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Can I use this as a Google Ads landing page?</span>
-                            <span class="transition group-open:rotate-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">Yes — and if that's the purpose, tell us upfront. A conversion-focused landing page for ads is built differently than a general landing page: no navigation links to distract visitors, a single clear CTA, and a structure designed to match the ad's message. We'll design it accordingly.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">Yes — and if that's the purpose, tell us upfront. A conversion-focused landing page for ads is built differently than a general landing page: no navigation links to distract visitors, a single clear CTA, and a structure designed to match the ad's message. We'll design it accordingly.</div>
                     </details>
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>What's the difference between this and a DIY builder like Wix or Squarespace?</span>
-                            <span class="transition group-open:explore-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">Three main differences: (1) Custom design — yours is built from scratch, not picked from a template library shared by thousands of other businesses. (2) Performance — DIY builder pages are typically slower and harder to optimize for PageSpeed. (3) You own it — there's no platform dependency. If Wix shuts down a plan, your site goes with it. WordPress sites are yours regardless of what any platform does.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">Three main differences: (1) Custom design — yours is built from scratch, not picked from a template library shared by thousands of other businesses. (2) Performance — DIY builder pages are typically slower and harder to optimize for PageSpeed. (3) You own it — there's no platform dependency. If Wix shuts down a plan, your site goes with it. WordPress sites are yours regardless of what any platform does.</div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- PRICING SUMMARY + CTA -->
-        <section class="py-24 px-6 bg-primary-900 text-white">
-            <div class="max-w-4xl mx-auto reveal text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Landing Page — $499</h2>
-                <p class="text-primary-200 text-lg mb-8 max-w-xl mx-auto">One-time payment. Custom design. Contact form with GA4 tracking. PageSpeed 90+. Delivered in 7 business days.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-slate-100 text-dark font-bold py-4 px-8 rounded-full transition-colors">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        Get a free quote
-                    </a>
-                    <a href="pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 border border-primary-600 hover:border-primary-400 text-primary-200 hover:text-white font-bold py-4 px-8 rounded-full transition-colors">
-                        See full pricing breakdown
-                    </a>
+        <!-- CTA -->
+        <section class="py-24 px-6" style="background:var(--primario-500)">
+            <div class="max-w-4xl mx-auto reveal">
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-9);align-items:center">
+                    <img src="brand_assets/mascot/mascota-webie-coding@3x.webp" alt="Webie" class="hidden md:block" style="height:200px">
+                    <div class="text-center md:text-left">
+                        <h2 class="ew-h2 text-ink mb-4">Landing Page — $499</h2>
+                        <p class="ew-summary mb-8" style="color:rgb(36,36,36)">One-time payment. Custom design. Contact form with GA4 tracking. PageSpeed 90+. Delivered in 7 business days.</p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                            <a href="contact.html" class="btn-primary w-full sm:w-auto justify-center"><i data-lucide="send" class="w-5 h-5"></i> Get a free quote</a>
+                            <a href="pricing.html" class="btn-secondary btn-ghost w-full sm:w-auto justify-center">See full pricing breakdown</a>
+                        </div>
+                        <p class="mt-6" style="font-size:var(--caption);color:var(--fg-on-brand)">Need more pages? <a href="services-corporate.html" class="underline hover:text-ink">Business Website ($899)</a> · <a href="services-ecommerce.html" class="underline hover:text-ink">Online Store ($1,499)</a></p>
+                        <p class="mt-3" style="font-size:var(--caption);color:var(--fg-on-brand);border-top:1px solid rgba(36,36,36,.2);padding-top:16px">Need ongoing support? Our <a href="services-care-plan.html" class="font-bold text-ink hover:underline">Monthly Care Plan ($99/mo)</a> handles hosting, security, and changes.</p>
+                    </div>
                 </div>
-                <p class="text-primary-400 text-sm mt-6">Need more pages? <a href="services-corporate.html" class="underline hover:text-white">Business Website ($899)</a> · <a href="services-ecommerce.html" class="underline hover:text-white">Online Store ($1,499)</a></p>
-                <p class="text-primary-400 text-sm mt-4 border-t border-primary-800 pt-4">Need ongoing support after launch? Our <a href="services-care-plan.html" class="text-white font-bold hover:underline">Monthly Care Plan ($99/mo)</a> handles hosting, security, and changes — so your landing page keeps converting without extra effort.</p>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-3">
-                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
-                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
-                    </a>
-                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
-                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Services</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
-                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
-                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
-                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
-                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Company</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
-                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
-                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-                <p>© 2026 Easyweb LLC. All rights reserved.</p>
-                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
-            </div>
+    <footer class="pt-32" style="background:var(--bg-dark)">
+      <div class="footer-grid max-w-7xl mx-auto px-6">
+        <div style="margin-right:32px">
+          <img src="brand_assets/logotipo-invertido.svg" alt="Easyweb" class="object-contain object-left" style="width:324px;height:96px;margin:-2rem 0 48px">
+          <p class="text-sm leading-relaxed max-w-xs" style="color:var(--fg-on-dark)">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
         </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Services</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="services-corporate.html" class="footer-link">Business Websites</a>
+            <a href="services-ecommerce.html" class="footer-link">Online Stores</a>
+            <a href="services-speed-optimization.html" class="footer-link">Landing Pages</a>
+            <a href="services-care-plan.html" class="footer-link">Monthly Care Plan</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Company</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="about.html" class="footer-link">About</a>
+            <a href="our-work.html" class="footer-link">Our Work</a>
+            <a href="pricing.html" class="footer-link">Pricing</a>
+            <a href="blog/index.html" class="footer-link">Blog</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Contact</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start;color:var(--fg-on-dark-muted);font-size:var(--body)">
+            <a href="mailto:hello@easyweb.monster" class="footer-link">hello@easyweb.monster</a>
+            <span>CST time zone</span>
+            <a href="contact.html" class="btn-primary btn-sm" style="margin-top:24px">Get a free quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-top:1px solid var(--gray-500);padding-top:32px;padding-bottom:32px">
+        <p style="font-size:var(--body);color:#fff">© 2026 Easyweb LLC. All rights reserved.</p>
+        <div class="flex gap-6" style="font-size:var(--body)">
+          <a href="terms-privacy.html" class="footer-link">Privacy</a>
+          <a href="terms-privacy.html" class="footer-link">Terms</a>
+        </div>
+      </div>
     </footer>
 
     <script>
         lucide.createIcons();
         function reveal() { document.querySelectorAll(".reveal").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); }
         window.addEventListener("scroll", reveal); reveal();
+        (function () {
+            const btn = document.getElementById('mobile-menu-btn'), menu = document.getElementById('mobile-menu'), icon = btn.querySelector('i');
+            btn.addEventListener('click', () => { const isOpen = !menu.classList.contains('hidden'); menu.classList.toggle('hidden', isOpen); menu.classList.toggle('flex', !isOpen); icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x'); lucide.createIcons(); });
+        })();
+        (function () {
+            const navbar = document.getElementById('navbar'), navLogo = document.getElementById('nav-logo');
+            window.addEventListener('scroll', () => { const s = window.scrollY > 20; navbar.classList.toggle('scrolled', s); navLogo.style.width = s ? '160px' : '221px'; navLogo.style.height = s ? '48px' : '65px'; });
+        })();
     </script>
 </body>
 </html>

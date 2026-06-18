@@ -9,333 +9,319 @@
     <meta property="og:description" content="WooCommerce store starting at $1,499. Custom design, payment gateway, optimized checkout. US-registered LLC. See real results: +70% more checkouts.">
     <meta property="og:url" content="https://easyweb.monster/services/ecommerce">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design-system/responsive-overrides.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: { sans: ['"Rethink Sans"', 'sans-serif'] },
                     colors: {
-                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
-                        accent: { 400: '#34d399', 500: '#10b981' },
-                        dark: '#0f172a'
-                    },
-                    boxShadow: { 'soft': '0 4px 20px -2px rgba(0,0,0,0.05)', 'glow': '0 0 20px rgba(99,102,241,0.4)' }
+                        brand:   { 50:'#e0faff',100:'#c2f6ff',200:'#82ecff',300:'#24dcff',400:'#21d2f2',500:'#00c2e2',600:'#00accb',700:'#007a99',800:'#004e62' },
+                        ew:      { green:'#4be337', orange:'#ff9100', ink:'#242424', teal:'#8fd4c2' },
+                        ink:     '#242424',
+                        neutral: { 50:'#eaeaea',100:'#bcbcbc',200:'#9b9b9b',300:'#7b7b7b',400:'#5a5a5a',500:'#3e3e3e',600:'#242424' }
+                    }
                 }
             }
         }
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        body { color: var(--fg-1); }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .bg-grid-pattern { background-image: radial-gradient(rgba(99,102,241,0.05) 1px, transparent 1px); background-size: 24px 24px; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+
+        #navbar { background: transparent; }
+        #nav-logo { width: 221px; height: 65px; object-fit: contain; transition: width .3s ease, height .3s ease; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+<body class="bg-white font-sans antialiased">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
-                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
-            </a>
-            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
-                <div class="relative group">
-                    <button class="flex items-center gap-1 text-primary-600 font-bold py-1">
-                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
-                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 bg-primary-50 text-primary-600 font-bold transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
-                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
-                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
-                    </div>
-                </div>
-                <a href="pricing.html" class="hover:text-primary-600 transition-colors">Pricing</a>
-                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
-                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
-                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
+    <nav id="navbar" class="fixed w-full z-50">
+      <div id="navbar-inner" class="w-full">
+        <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="index.html"><img id="nav-logo" src="brand_assets/logotipo.svg" alt="Easyweb"></a>
+          <div class="hidden md:flex items-center gap-8">
+            <div class="relative group">
+              <button class="nav-link flex items-center gap-1">
+                Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+              </button>
+              <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl border border-neutral-50 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 overflow-hidden">
+                <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Business Websites</a>
+                <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 bg-brand-50 text-brand-700 font-bold text-sm border-t border-neutral-50"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Online Stores</a>
+                <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Landing Pages</a>
+                <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t-2 border-neutral-50"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Monthly Care Plan</a>
+              </div>
             </div>
-            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
-                Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="our-work.html" class="nav-link">Our Work</a>
+            <a href="blog/index.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+          </div>
+          <a href="contact.html" class="btn-primary btn-sm hidden md:inline-flex">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <button id="mobile-menu-btn" class="md:hidden text-ink"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
+        <div id="mobile-menu" class="md:hidden hidden flex-col gap-0 bg-white border-t px-6 py-4" style="border-color:var(--border-1)">
+          <a href="services-ecommerce.html" class="nav-link nav-link-active py-3 block" style="border-bottom:1px solid var(--border-1)">Online Stores</a>
+          <a href="services-corporate.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Business Websites</a>
+          <a href="services-speed-optimization.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Landing Pages</a>
+          <a href="services-care-plan.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Monthly Care Plan</a>
+          <a href="pricing.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Pricing</a>
+          <a href="our-work.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Our Work</a>
+          <a href="blog/index.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Blog</a>
+          <a href="about.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">About</a>
+          <a href="contact.html" class="btn-primary mt-4 justify-center">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
     </nav>
 
     <main>
         <!-- HERO -->
-        <header class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
-            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
-            <div class="absolute top-0 right-0 w-[30rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
-            <div class="max-w-5xl mx-auto px-6 relative z-10">
-                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+        <header class="pt-32 pb-16 lg:pt-44 lg:pb-20 bg-white border-b" style="border-color:var(--border-1)">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 text-sm font-bold mb-6 border border-brand-100">
                     <i data-lucide="shopping-bag" class="w-4 h-4"></i> Online Stores
                 </div>
-                <h1 class="reveal active text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6 tracking-tight max-w-4xl">
+                <h1 class="reveal active ew-display text-ink mb-6 max-w-4xl">
                     E-commerce website design for small businesses
                 </h1>
-                <p class="reveal active text-xl text-slate-600 mb-6 leading-relaxed max-w-2xl">
+                <p class="reveal active ew-summary mb-6 max-w-2xl">
                     An online store that's confusing, slow, or hard to navigate loses sales every hour it's live. We build WooCommerce stores designed around the way your customers actually shop — with a checkout flow that doesn't get in the way.
                 </p>
-                <!-- Proof within first 200 words -->
-                <div class="reveal active bg-dark text-white rounded-2xl px-5 py-4 inline-flex items-center gap-3 mb-6 text-sm font-semibold">
-                    <i data-lucide="trending-up" class="w-4 h-4 text-accent-400"></i>
-                    <span>Frikko HVAC: +70% more checkouts after redesign —</span>
-                    <a href="work/frikko-hvac.html" class="text-accent-400 hover:text-accent-300 underline">read the case study</a>
+                <div class="reveal active rounded-2xl px-5 py-4 inline-flex items-center gap-3 mb-6" style="background:var(--bg-dark)">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-ew-green"></i>
+                    <span class="text-white font-semibold text-sm">Frikko HVAC: +70% more checkouts after redesign —</span>
+                    <a href="work/frikko-hvac.html" class="text-ew-green hover:text-brand-300 underline text-sm">read the case study</a>
                 </div>
                 <div class="reveal active flex flex-col sm:flex-row gap-4 mb-8">
-                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-all shadow-glow hover:-translate-y-1">
-                        Get a free quote — $1,499
-                    </a>
-                    <a href="pricing.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
-                        See full pricing details
-                    </a>
+                    <a href="contact.html" class="btn-primary w-full sm:w-auto justify-center">Get a free quote — $1,499</a>
+                    <a href="pricing.html" class="btn-secondary btn-ghost w-full sm:w-auto justify-center">See full pricing details</a>
                 </div>
-                <div class="reveal active flex flex-wrap gap-3 text-sm">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Starting at $1,499</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Delivered in 21 business days</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> WooCommerce — you own the store</span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> US-Registered LLC</span>
+                <div class="reveal active flex flex-wrap gap-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> Starting at $1,499</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> Delivered in 21 business days</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> WooCommerce — you own the store</span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)"><i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> US-Registered LLC</span>
                 </div>
             </div>
         </header>
 
         <!-- THE PROBLEM -->
-        <section class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+        <section class="py-20 px-6 border-b" style="background:var(--bg-2);border-color:var(--border-1)">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
-                    <h2 class="text-3xl font-extrabold text-dark mb-6">Why most small business e-commerce stores underperform</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-5">
-                        The most common problem we see isn't the design — it's the buying journey. Customers can't find what they're looking for. The product page doesn't give them enough information to feel confident buying. The checkout has too many steps, or asks for too much before they've committed. Each one of those friction points is a sale that didn't happen.
-                    </p>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-5">
-                        The second most common problem is speed. A store that loads slowly on mobile loses customers before they even see your products. And since Google ranks slow sites lower, you're also paying the price in search visibility.
-                    </p>
-                    <p class="text-slate-600 text-lg leading-relaxed">
-                        We've seen it firsthand. When we rebuilt Frikko HVAC's e-commerce store — fixing the catalog structure, simplifying navigation, and optimizing the checkout — checkout initiations increased 70.2% year-over-year. The products didn't change. The price didn't change. The buying experience did.
-                    </p>
+                    <h2 class="ew-h2 text-ink mb-6">Why most small business e-commerce stores underperform</h2>
+                    <p class="ew-body-muted mb-5">The most common problem we see isn't the design — it's the buying journey. Customers can't find what they're looking for. The product page doesn't give them enough information to feel confident buying. The checkout has too many steps, or asks for too much before they've committed. Each one of those friction points is a sale that didn't happen.</p>
+                    <p class="ew-body-muted mb-5">The second most common problem is speed. A store that loads slowly on mobile loses customers before they even see your products. And since Google ranks slow sites lower, you're also paying the price in search visibility.</p>
+                    <p class="ew-body-muted">We've seen it firsthand. When we rebuilt Frikko HVAC's e-commerce store — fixing the catalog structure, simplifying navigation, and optimizing the checkout — checkout initiations increased 70.2% year-over-year. The products didn't change. The price didn't change. The buying experience did.</p>
                 </div>
             </div>
         </section>
 
         <!-- RESULTS PROOF -->
-        <section class="py-12 px-6 bg-dark text-white">
+        <section class="py-12 px-6" style="background:var(--bg-dark)">
             <div class="max-w-5xl mx-auto reveal">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="text-center">
-                        <p class="text-4xl font-black text-accent-400 mb-1">+70.2%</p>
-                        <p class="text-sm text-slate-400">Checkout initiations</p>
+                        <p class="font-black text-ew-green mb-1" style="font-size:var(--stat)">+70.2%</p>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body)">Checkout initiations</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-4xl font-black text-accent-400 mb-1">+61.5%</p>
-                        <p class="text-sm text-slate-400">Add-to-cart events</p>
+                        <p class="font-black text-ew-green mb-1" style="font-size:var(--stat)">+61.5%</p>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body)">Add-to-cart events</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-4xl font-black text-white mb-1">+97.8%</p>
-                        <p class="text-sm text-slate-400">Avg. engagement time</p>
+                        <p class="font-black text-white mb-1" style="font-size:var(--stat)">+97.8%</p>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body)">Avg. engagement time</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-4xl font-black text-white mb-1">-11.6%</p>
-                        <p class="text-sm text-slate-400">Bounce rate</p>
+                        <p class="font-black text-white mb-1" style="font-size:var(--stat)">-11.6%</p>
+                        <p style="color:var(--fg-on-dark-muted);font-size:var(--body)">Bounce rate</p>
                     </div>
                 </div>
-                <p class="text-center text-slate-500 text-sm mt-6">Frikko HVAC e-commerce redesign — Google Analytics, year-over-year comparison. <a href="work/frikko-hvac.html" class="text-accent-400 hover:underline">Full case study →</a></p>
+                <p class="text-center mt-6" style="color:var(--fg-on-dark-muted);font-size:var(--caption)">Frikko HVAC e-commerce redesign — Google Analytics, year-over-year comparison. <a href="work/frikko-hvac.html" class="text-ew-green hover:underline">Full case study →</a></p>
             </div>
         </section>
 
         <!-- WHAT'S INCLUDED -->
-        <section class="py-24 px-6 bg-white border-b border-slate-200">
+        <section class="py-24 px-6 border-b" style="background:var(--bg-1);border-color:var(--border-1)">
             <div class="max-w-5xl mx-auto">
                 <div class="reveal text-center mb-12">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">What you get</h2>
-                    <p class="text-slate-600">A complete store — not just a theme installed on WooCommerce.</p>
+                    <h2 class="ew-h2 text-ink mb-4">What you get</h2>
+                    <p class="ew-body-muted">A complete store — not just a theme installed on WooCommerce.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-5">
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="figma" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">Custom store design in Figma</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">Your brand, not a theme. Full design approved before development — including product pages, category pages, cart, and checkout flow.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="figma" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">Custom store design in Figma</h3><p style="color:var(--fg-2);font-size:var(--body)">Your brand, not a theme. Full design approved before development — including product pages, category pages, cart, and checkout flow.</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="shopping-cart" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">Optimized checkout flow</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">Fewer steps, less friction, more completed purchases. We design the checkout to remove every unnecessary barrier between "add to cart" and "order confirmed."</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="shopping-cart" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">Optimized checkout flow</h3><p style="color:var(--fg-2);font-size:var(--body)">Fewer steps, less friction, more completed purchases. We design the checkout to remove every unnecessary barrier between "add to cart" and "order confirmed."</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="credit-card" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">Payment gateway setup</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">Stripe, PayPal, or your preferred processor — configured, tested, and live before launch. Shipping and tax rules configured for your market.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="credit-card" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">Payment gateway setup</h3><p style="color:var(--fg-2);font-size:var(--body)">Stripe, PayPal, or your preferred processor — configured, tested, and live before launch. Shipping and tax rules configured for your market.</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="package" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">Up to 20 products loaded</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">We load your initial catalog with descriptions, images, categories, and attributes. You can add more products yourself after launch through the admin panel.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="package" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">Up to 20 products loaded</h3><p style="color:var(--fg-2);font-size:var(--body)">We load your initial catalog with descriptions, images, categories, and attributes. You can add more products yourself after launch through the admin panel.</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="filter" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">Product filtering + category structure</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">Customers find what they're looking for without scrolling through everything you sell. Smart filtering and category architecture based on how your buyers actually search.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="filter" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">Product filtering + category structure</h3><p style="color:var(--fg-2);font-size:var(--body)">Customers find what they're looking for without scrolling through everything you sell. Smart filtering and category architecture based on how your buyers actually search.</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="bar-chart-2" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">E-commerce tracking in GA4</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">Add-to-cart events, checkout initiations, and completed purchases tracked from day one. You know exactly what's working — and what's causing drop-offs.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="bar-chart-2" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">E-commerce tracking in GA4</h3><p style="color:var(--fg-2);font-size:var(--body)">Add-to-cart events, checkout initiations, and completed purchases tracked from day one. You know exactly what's working — and what's causing drop-offs.</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="gauge" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">PageSpeed 90+ on mobile</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">E-commerce stores are notoriously slow. We optimize every image, minimize scripts, and configure caching so your store loads fast — the way Google and your customers expect.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="gauge" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">PageSpeed 90+ on mobile</h3><p style="color:var(--fg-2);font-size:var(--body)">E-commerce stores are notoriously slow. We optimize every image, minimize scripts, and configure caching so your store loads fast — the way Google and your customers expect.</p></div>
                         </div>
                     </div>
-                    <div class="reveal bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="reveal bg-white rounded-2xl p-6 border" style="border-color:var(--border-1)">
                         <div class="flex items-start gap-4">
-                            <div class="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
-                            <div>
-                                <h3 class="font-bold text-dark mb-1">60-min admin training session</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed">After launch, we walk you through managing orders, adding products, running promotions, and updating content — so you're fully independent from day one.</p>
-                            </div>
+                            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--primario-50);color:var(--primario-600)"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
+                            <div><h3 class="font-bold text-ink mb-1" style="font-size:var(--body)">60-min admin training session</h3><p style="color:var(--fg-2);font-size:var(--body)">After launch, we walk you through managing orders, adding products, running promotions, and updating content — so you're fully independent from day one.</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- WHAT IF / OBJECTIONS -->
-        <section class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+        <!-- OBJECTIONS -->
+        <section class="py-20 px-6 border-b" style="background:var(--bg-2);border-color:var(--border-1)">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal mb-10">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">Common concerns</h2>
-                </div>
+                <div class="reveal mb-10"><h2 class="ew-h2 text-ink mb-4">Common concerns</h2></div>
                 <div class="space-y-4">
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>I'm on Shopify — can you migrate me to WooCommerce?</span>
-                            <span class="transition group-open:rotate-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">Yes. Shopify-to-WooCommerce migrations include product data, customer data, and order history transfer. We scope migrations separately — the price depends on catalog size and complexity. Contact us for a custom quote. Most migrations for small stores (under 500 products) fall in the $1,500–$2,500 range.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">Yes. Shopify-to-WooCommerce migrations include product data, customer data, and order history transfer. We scope migrations separately — the price depends on catalog size and complexity. Contact us for a custom quote. Most migrations for small stores (under 500 products) fall in the $1,500–$2,500 range.</div>
                     </details>
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>What if I have more than 20 products?</span>
-                            <span class="transition group-open:rotate-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">We load the first 20 as part of the plan. Additional products can be loaded at $3 each (with images, descriptions, and attributes), or you can upload them yourself through the admin panel after launch using a CSV import — we'll show you how during the training session.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">We load the first 20 as part of the plan. Additional products can be loaded at $3 each (with images, descriptions, and attributes), or you can upload them yourself through the admin panel after launch using a CSV import — we'll show you how during the training session.</div>
                     </details>
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Do I need technical knowledge to manage the store after launch?</span>
-                            <span class="transition group-open:rotate-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">No. WooCommerce's admin panel is designed to be manageable by non-technical users. Adding products, processing orders, running a discount, updating a description — all of that is done through a visual interface. The training session covers exactly what you'll need day-to-day.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">No. WooCommerce's admin panel is designed to be manageable by non-technical users. Adding products, processing orders, running a discount, updating a description — all of that is done through a visual interface. The training session covers exactly what you'll need day-to-day.</div>
                     </details>
-                    <details class="reveal group bg-white rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-dark">
+                    <details class="reveal group bg-white rounded-2xl border p-6" style="border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Why WooCommerce and not Shopify?</span>
-                            <span class="transition group-open:rotate-180 bg-slate-50 p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">WooCommerce runs on WordPress, which means you own the platform, the data, and the store — no monthly platform fees, no transaction fees on top of payment processing, and no limits on customization. Shopify is a good hosted solution for stores that want simplicity at the cost of ownership. WooCommerce is better for stores that want control and lower long-term costs. If Shopify is genuinely the better fit for your situation, we'll tell you.</div>
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body)">WooCommerce runs on WordPress, which means you own the platform, the data, and the store — no monthly platform fees, no transaction fees on top of payment processing, and no limits on customization. Shopify is a good hosted solution for stores that want simplicity at the cost of ownership. WooCommerce is better for stores that want control and lower long-term costs. If Shopify is genuinely the better fit for your situation, we'll tell you.</div>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- PRICING SUMMARY + CTA -->
-        <section class="py-24 px-6 bg-primary-900 text-white">
-            <div class="max-w-4xl mx-auto reveal text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Online Store — $1,499</h2>
-                <p class="text-primary-200 text-lg mb-8 max-w-xl mx-auto">One-time payment. Full WooCommerce store. Custom design. 20 products loaded. Admin training. Delivered in 21 business days.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white hover:bg-slate-100 text-dark font-bold py-4 px-8 rounded-full transition-colors">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        Get a free quote
-                    </a>
-                    <a href="work/frikko-hvac.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 border border-primary-600 hover:border-primary-400 text-primary-200 hover:text-white font-bold py-4 px-8 rounded-full transition-colors">
-                        See the Frikko case study
-                    </a>
+        <!-- CTA -->
+        <section class="py-24 px-6" style="background:var(--primario-500)">
+            <div class="max-w-4xl mx-auto reveal">
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-9);align-items:center">
+                    <img src="brand_assets/mascot/mascota-webie-coding@3x.webp" alt="Webie" class="hidden md:block" style="height:200px">
+                    <div class="text-center md:text-left">
+                        <h2 class="ew-h2 text-ink mb-4">Online Store — $1,499</h2>
+                        <p class="ew-summary mb-8" style="color:rgb(36,36,36)">One-time payment. Full WooCommerce store. Custom design. 20 products loaded. Admin training. Delivered in 21 business days.</p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                            <a href="contact.html" class="btn-primary w-full sm:w-auto justify-center"><i data-lucide="send" class="w-5 h-5"></i> Get a free quote</a>
+                            <a href="work/frikko-hvac.html" class="btn-secondary btn-ghost w-full sm:w-auto justify-center">See the Frikko case study</a>
+                        </div>
+                        <p class="mt-6" style="font-size:var(--caption);color:var(--fg-on-brand)">Also available: <a href="services-corporate.html" class="underline hover:text-ink">Business Website ($899)</a> · <a href="services-speed-optimization.html" class="underline hover:text-ink">Landing Page ($499)</a></p>
+                        <p class="mt-3" style="font-size:var(--caption);color:var(--fg-on-brand)">Need ongoing support? Our <a href="services-care-plan.html" class="font-bold text-ink hover:underline">Monthly Care Plan ($99/mo)</a> keeps your store secure and backed up.</p>
+                    </div>
                 </div>
-                <p class="text-primary-400 text-sm mt-6">Also available: <a href="services-corporate.html" class="underline hover:text-white">Business Website ($899)</a> · <a href="services-speed-optimization.html" class="underline hover:text-white">Landing Page ($499)</a></p>
-                <p class="text-primary-400 text-sm mt-4 border-t border-primary-800 pt-4">Need ongoing support after launch? Our <a href="services-care-plan.html" class="text-white font-bold hover:underline">Monthly Care Plan ($99/mo)</a> keeps your store secure, updated, and backed up — so you can focus on sales, not maintenance.</p>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-3">
-                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
-                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
-                    </a>
-                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
-                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Services</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
-                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
-                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
-                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
-                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Company</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
-                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
-                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-                <p>© 2026 Easyweb LLC. All rights reserved.</p>
-                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
-            </div>
+    <footer class="pt-32" style="background:var(--bg-dark)">
+      <div class="footer-grid max-w-7xl mx-auto px-6">
+        <div style="margin-right:32px">
+          <img src="brand_assets/logotipo-invertido.svg" alt="Easyweb" class="object-contain object-left" style="width:324px;height:96px;margin:-2rem 0 48px">
+          <p class="text-sm leading-relaxed max-w-xs" style="color:var(--fg-on-dark)">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
         </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Services</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="services-corporate.html" class="footer-link">Business Websites</a>
+            <a href="services-ecommerce.html" class="footer-link">Online Stores</a>
+            <a href="services-speed-optimization.html" class="footer-link">Landing Pages</a>
+            <a href="services-care-plan.html" class="footer-link">Monthly Care Plan</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Company</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="about.html" class="footer-link">About</a>
+            <a href="our-work.html" class="footer-link">Our Work</a>
+            <a href="pricing.html" class="footer-link">Pricing</a>
+            <a href="blog/index.html" class="footer-link">Blog</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Contact</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start;color:var(--fg-on-dark-muted);font-size:var(--body)">
+            <a href="mailto:hello@easyweb.monster" class="footer-link">hello@easyweb.monster</a>
+            <span>CST time zone</span>
+            <a href="contact.html" class="btn-primary btn-sm" style="margin-top:24px">Get a free quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-top:1px solid var(--gray-500);padding-top:32px;padding-bottom:32px">
+        <p style="font-size:var(--body);color:#fff">© 2026 Easyweb LLC. All rights reserved.</p>
+        <div class="flex gap-6" style="font-size:var(--body)">
+          <a href="terms-privacy.html" class="footer-link">Privacy</a>
+          <a href="terms-privacy.html" class="footer-link">Terms</a>
+        </div>
+      </div>
     </footer>
 
     <script>
         lucide.createIcons();
         function reveal() { document.querySelectorAll(".reveal").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); }); }
         window.addEventListener("scroll", reveal); reveal();
+        (function () {
+            const btn = document.getElementById('mobile-menu-btn'), menu = document.getElementById('mobile-menu'), icon = btn.querySelector('i');
+            btn.addEventListener('click', () => { const isOpen = !menu.classList.contains('hidden'); menu.classList.toggle('hidden', isOpen); menu.classList.toggle('flex', !isOpen); icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x'); lucide.createIcons(); });
+        })();
+        (function () {
+            const navbar = document.getElementById('navbar'), navLogo = document.getElementById('nav-logo');
+            window.addEventListener('scroll', () => { const s = window.scrollY > 20; navbar.classList.toggle('scrolled', s); navLogo.style.width = s ? '160px' : '221px'; navLogo.style.height = s ? '48px' : '65px'; });
+        })();
     </script>
 </body>
 </html>

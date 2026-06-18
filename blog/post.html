@@ -40,6 +40,7 @@
 
     <!-- DS: Rethink Sans + color/type tokens -->
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../design-system/responsive-overrides.css">
 
     <!-- Tailwind (DS palette override) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -67,21 +68,6 @@
         /* ── Nav ── */
         #navbar             { background: transparent; }
         #nav-logo           { width: 221px; height: 65px; object-fit: contain; transition: width .3s ease, height .3s ease; }
-        #navbar-inner       { transition: border-radius 200ms ease, margin 200ms ease, background 200ms ease, box-shadow 200ms ease; }
-        #navbar.scrolled #navbar-inner {
-            border-radius: var(--radius-pill); margin: .5rem auto; width: 95vw; max-width: 1680px;
-            background: rgba(255,255,255,.80); backdrop-filter: blur(14px);
-            box-shadow: var(--shadow-md);
-        }
-        #navbar.scrolled #navbar-inner #nav-content { padding-left: 2.5rem; padding-right: 2.5rem; }
-        @media (max-width: 768px) {
-            #navbar.scrolled #navbar-inner {
-                border-radius: 0; margin: 0; width: 100%; max-width: none;
-                background: rgba(255,255,255,.95); backdrop-filter: blur(10px);
-            }
-            #navbar.scrolled #navbar-inner #nav-content { padding-left: 1.5rem; padding-right: 1.5rem; }
-        }
-
         /* ── Sticky TOC sidebar ── */
         .toc-sidebar { position: sticky; top: 100px; }
 
@@ -115,28 +101,6 @@
         .toc-link { transition: color var(--duration-fast), border-color var(--duration-fast); }
         .toc-link.active { color: var(--primario-700) !important; font-weight: var(--w-bold); border-left-color: var(--primario-400) !important; }
 
-        /* ── Footer ── */
-        .footer-grid {
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: var(--space-7); margin-bottom: 80px;
-        }
-        @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
-            .footer-grid > div:first-child { grid-column: 1 / -1; }
-        }
-        @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
-        footer a.footer-link {
-            color: var(--fg-on-dark-muted); text-decoration: none; display: inline;
-            padding-bottom: 8px; border-bottom: 2px solid transparent;
-            transition: color var(--duration-fast), border-color var(--duration-fast);
-        }
-        footer a.footer-link:hover { color: #fff; border-bottom-color: var(--secundario-300); }
-        footer a.social-icon {
-            color: var(--fg-1); display: flex; align-items: center; justify-content: center;
-            width: 36px; height: 36px; border-radius: var(--radius-pill); background: var(--white);
-            transition: color var(--duration-fast), background var(--duration-fast);
-        }
-        footer a.social-icon:hover { background: var(--primario-500); color: var(--fg-1); }
     </style>
 </head>
 <body class="bg-white font-sans antialiased">

@@ -5,33 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Easyweb web design pricing for US small businesses. Professional websites starting at $499. One-time payment, no hidden fees. See exactly what's included in every plan.">
     <title>Web Design Pricing for Small Businesses | Starting at $499 | Easyweb</title>
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Web Design Pricing for Small Businesses | Easyweb">
     <meta property="og:description" content="Professional websites starting at $499. One-time payment. US-registered LLC. See exactly what's included — no surprises.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://easyweb.monster/pricing">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- DS: Rethink Sans + color/type tokens -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design-system/responsive-overrides.css">
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind (DS palette override) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: { sans: ['"Rethink Sans"', 'sans-serif'] },
                     colors: {
-                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
-                        accent: { 400: '#34d399', 500: '#10b981' },
-                        dark: '#0f172a'
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-                        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
+                        brand:   { 50:'#e0faff',100:'#c2f6ff',200:'#82ecff',300:'#24dcff',400:'#21d2f2',500:'#00c2e2',600:'#00accb',700:'#007a99',800:'#004e62' },
+                        ew:      { green:'#4be337', orange:'#ff9100', ink:'#242424', teal:'#8fd4c2' },
+                        ink:     '#242424',
+                        neutral: { 50:'#eaeaea',100:'#bcbcbc',200:'#9b9b9b',300:'#7b7b7b',400:'#5a5a5a',500:'#3e3e3e',600:'#242424' }
                     }
                 }
             }
@@ -40,158 +34,163 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+        body { color: var(--fg-1); }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .bg-grid-pattern {
-            background-image: radial-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+
+        /* ── Nav ── */
+        #navbar             { background: transparent; }
+        #nav-logo           { width: 221px; height: 65px; object-fit: contain; transition: width .3s ease, height .3s ease; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-500 selection:text-white">
+<body class="bg-white font-sans antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-lg border-b border-slate-200 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-glow">e</div>
-                <span class="font-extrabold text-2xl tracking-tight text-dark">Easy<span class="text-primary-600">web</span></span>
-            </a>
-            <div class="hidden md:flex items-center gap-6 font-semibold text-sm text-slate-600">
-                <div class="relative group">
-                    <button class="flex items-center gap-1 hover:text-primary-600 transition-colors py-1">
-                        Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl border border-slate-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                        <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors rounded-t-xl text-sm"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0"></i> Business Websites</a>
-                        <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0"></i> Online Stores</a>
-                        <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t border-slate-100 text-sm"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0"></i> Landing Pages</a>
-                        <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-slate-50 text-slate-700 hover:text-primary-600 transition-colors border-t-2 border-slate-200 rounded-b-xl text-sm"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0"></i> Monthly Care Plan</a>
-                    </div>
-                </div>
-                <a href="pricing.html" class="text-primary-600 font-bold">Pricing</a>
-                <a href="our-work.html" class="hover:text-primary-600 transition-colors">Our Work</a>
-                <a href="blog/index.html" class="hover:text-primary-600 transition-colors">Blog</a>
-                <a href="about.html" class="hover:text-primary-600 transition-colors">About</a>
+    <!-- ════ NAV ════ -->
+    <nav id="navbar" class="fixed w-full z-50">
+      <div id="navbar-inner" class="w-full">
+        <div id="nav-content" class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="index.html" class="flex items-center">
+            <img id="nav-logo" src="brand_assets/logotipo.svg" alt="Easyweb">
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <div class="relative group">
+              <button class="nav-link flex items-center gap-1">
+                Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"></i>
+              </button>
+              <div class="absolute top-full left-0 mt-3 w-52 bg-white rounded-2xl border border-neutral-50 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 overflow-hidden">
+                <a href="services-corporate.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors"><i data-lucide="layout" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Business Websites</a>
+                <a href="services-ecommerce.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="shopping-bag" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Online Stores</a>
+                <a href="services-speed-optimization.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t border-neutral-50"><i data-lucide="zap" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Landing Pages</a>
+                <a href="services-care-plan.html" class="flex items-center gap-2.5 px-4 py-3 hover:bg-brand-50 text-ink text-sm font-medium transition-colors border-t-2 border-neutral-50"><i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0 text-brand-600"></i> Monthly Care Plan</a>
+              </div>
             </div>
-            <a href="contact.html" class="hidden md:inline-flex items-center gap-2 bg-dark hover:bg-slate-800 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105">
-                Get a free quote
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <button class="md:hidden text-dark"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            <a href="pricing.html" class="nav-link nav-link-active">Pricing</a>
+            <a href="our-work.html" class="nav-link">Our Work</a>
+            <a href="blog/index.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+          </div>
+          <a href="contact.html" class="btn-primary btn-sm hidden md:inline-flex">
+            Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden text-ink"><i data-lucide="menu" class="w-6 h-6"></i></button>
         </div>
+        <div id="mobile-menu" class="md:hidden hidden flex-col gap-0 bg-white border-t px-6 py-4" style="border-color:var(--border-1)">
+          <a href="pricing.html" class="nav-link nav-link-active py-3 block" style="border-bottom:1px solid var(--border-1)">Pricing</a>
+          <a href="our-work.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Our Work</a>
+          <a href="blog/index.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Blog</a>
+          <a href="about.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">About</a>
+          <a href="services-corporate.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Business Websites</a>
+          <a href="services-ecommerce.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Online Stores</a>
+          <a href="services-speed-optimization.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Landing Pages</a>
+          <a href="services-care-plan.html" class="nav-link py-3 block" style="border-bottom:1px solid var(--border-1)">Monthly Care Plan</a>
+          <a href="contact.html" class="btn-primary mt-4 justify-center">Get a free quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
     </nav>
 
     <main>
 
-        <!-- ============================================================ -->
-        <!-- HERO                                                          -->
-        <!-- ============================================================ -->
-        <header class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden bg-white border-b border-slate-200">
-            <div class="absolute inset-0 bg-grid-pattern z-0"></div>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-primary-50 rounded-full blur-[100px] z-0 pointer-events-none"></div>
-
-            <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-bold mb-6 border border-primary-100">
+        <!-- ════ HERO ════ -->
+        <header class="pt-32 pb-16 lg:pt-44 lg:pb-20 bg-white border-b" style="border-color:var(--border-1)">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="reveal active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-sm font-bold mb-6">
                     <i data-lucide="tag" class="w-4 h-4"></i>
                     Web Design Pricing
                 </div>
 
-                <h1 class="reveal active text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6 tracking-tight">
+                <h1 class="reveal active ew-display text-ink mb-6">
                     What does a professional<br class="hidden md:block"/> website actually cost?
                 </h1>
 
-                <p class="reveal active text-xl text-slate-600 mb-6 leading-relaxed max-w-2xl mx-auto">
+                <p class="reveal active ew-summary mb-6 max-w-2xl mx-auto">
                     US agencies charge $5,000–$15,000 for what we deliver starting at $499. Here's exactly why — and exactly what you get.
                 </p>
 
-                <div class="reveal active flex flex-wrap justify-center gap-4 text-sm">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> One-time payment
+                <div class="reveal active flex flex-wrap justify-center gap-3">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> One-time payment
                     </span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> You own it 100%
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> You own it 100%
                     </span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> No hidden fees
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> No hidden fees
                     </span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 font-semibold">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-accent-500"></i> Design approved before we code
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-semibold" style="background:var(--bg-2);color:var(--fg-1);font-size:var(--body)">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-ew-green"></i> Design approved before we code
                     </span>
                 </div>
             </div>
         </header>
 
-        <!-- ============================================================ -->
-        <!-- WHY THE PRICE IS WHAT IT IS                                  -->
-        <!-- ============================================================ -->
-        <section class="py-20 px-6 bg-slate-50 border-b border-slate-200">
+        <!-- ════ WHY THE PRICE IS WHAT IT IS ════ -->
+        <section class="py-20 px-6 border-b" style="background:var(--bg-2);border-color:var(--border-1)">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
-                    <h2 class="text-3xl font-extrabold text-dark mb-6">Why our prices are lower — and why that's not a warning sign</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    <h2 class="ew-h2 text-ink mb-6">Why our prices are lower — and why that's not a warning sign</h2>
+                    <p class="ew-body-muted mb-6" style="max-width:720px">
                         A full-stack web developer in the US earns around $147,000/year. The same developer in Mexico earns around $28,000/year. When you hire a local agency, you're paying for that gap — plus their downtown office, their account manager, their project manager, and their sales team.
                     </p>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    <p class="ew-body-muted" style="max-width:720px">
                         Easyweb eliminates that overhead without cutting corners on the work. You're billed by an American LLC, you communicate in English during your business hours, and your contract is governed by US law. The savings come from structure — not from cheaper materials or junior developers.
                     </p>
                 </div>
 
                 <!-- Comparison table -->
-                <div class="reveal overflow-hidden rounded-2xl border border-slate-200 mt-8">
+                <div class="reveal overflow-hidden rounded-2xl border mt-8 bg-white" style="border-color:var(--border-1)">
                     <table class="w-full text-sm">
                         <thead>
-                            <tr class="bg-slate-100 border-b border-slate-200">
-                                <th class="text-left px-6 py-4 font-bold text-slate-700"></th>
-                                <th class="text-center px-4 py-4 font-bold text-slate-500">US local agency</th>
-                                <th class="text-center px-4 py-4 font-bold text-slate-500">Offshore (India, etc.)</th>
-                                <th class="text-center px-4 py-4 font-bold text-primary-600 bg-primary-50">Easyweb</th>
+                            <tr class="border-b" style="background:var(--bg-2);border-color:var(--border-1)">
+                                <th class="text-left px-6 py-4 font-bold text-ink"></th>
+                                <th class="text-center px-4 py-4 font-bold" style="color:var(--fg-2)">US local agency</th>
+                                <th class="text-center px-4 py-4 font-bold" style="color:var(--fg-2)">Offshore (India, etc.)</th>
+                                <th class="text-center px-4 py-4 font-bold text-brand-700 bg-brand-50">Easyweb</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100 bg-white">
+                        <tbody class="divide-y" style="divide-color:var(--border-1)">
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">Typical price</td>
-                                <td class="px-4 py-4 text-center text-slate-500">$5,000–$15,000</td>
-                                <td class="px-4 py-4 text-center text-slate-500">$300–$1,000</td>
-                                <td class="px-4 py-4 text-center font-bold text-primary-600 bg-primary-50/50">$499–$1,499</td>
+                                <td class="px-6 py-4 font-medium text-ink">Typical price</td>
+                                <td class="px-4 py-4 text-center" style="color:var(--fg-2)">$5,000–$15,000</td>
+                                <td class="px-4 py-4 text-center" style="color:var(--fg-2)">$300–$1,000</td>
+                                <td class="px-4 py-4 text-center font-bold text-brand-700 bg-brand-50/50">$499–$1,499</td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">US-registered entity</td>
-                                <td class="px-4 py-4 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-4 font-medium text-ink">US-registered entity</td>
+                                <td class="px-4 py-4 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-4 text-center" style="color:var(--border-1)"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-4 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">English communication</td>
-                                <td class="px-4 py-4 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-4 font-medium text-ink">English communication</td>
+                                <td class="px-4 py-4 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-4 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-4 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">US time zone overlap</td>
-                                <td class="px-4 py-4 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-4 font-medium text-ink">US time zone overlap</td>
+                                <td class="px-4 py-4 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-4 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-4 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">Signed MSA in English</td>
-                                <td class="px-4 py-4 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-4 font-medium text-ink">Signed MSA in English</td>
+                                <td class="px-4 py-4 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-4 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-4 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">Milestone-based payments</td>
-                                <td class="px-4 py-4 text-center text-slate-400 text-xs">Sometimes</td>
-                                <td class="px-4 py-4 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-4 font-medium text-ink">Milestone-based payments</td>
+                                <td class="px-4 py-4 text-center text-xs" style="color:var(--fg-2)">Sometimes</td>
+                                <td class="px-4 py-4 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-4 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-4 font-medium text-slate-700">Design approved before coding</td>
-                                <td class="px-4 py-4 text-center text-slate-400 text-xs">Sometimes</td>
-                                <td class="px-4 py-4 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-4 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-4 font-medium text-ink">Design approved before coding</td>
+                                <td class="px-4 py-4 text-center text-xs" style="color:var(--fg-2)">Sometimes</td>
+                                <td class="px-4 py-4 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-4 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -199,266 +198,262 @@
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- PLANS                                                         -->
-        <!-- ============================================================ -->
-        <section id="plans" class="py-24 px-6 bg-white border-b border-slate-200">
+        <!-- ════ PLANS ════ -->
+        <section id="plans" class="py-24 px-6 border-b" style="background:var(--bg-1);border-color:var(--border-1)">
             <div class="max-w-6xl mx-auto">
                 <div class="reveal text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Choose your plan</h2>
-                    <p class="text-slate-600 text-lg max-w-xl mx-auto">One-time payment. The site is yours. Pick based on how many pages you need and how fast you need it.</p>
+                    <h2 class="ew-h2 text-ink mb-4">Choose your plan</h2>
+                    <p class="ew-summary max-w-xl mx-auto">One-time payment. The site is yours. Pick based on how many pages you need and how fast you need it.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8 mb-16">
 
                     <!-- Starter -->
-                    <div class="reveal flex flex-col bg-slate-50 rounded-3xl p-8 border border-slate-200">
+                    <div class="reveal flex flex-col rounded-3xl p-8 border" style="background:var(--bg-2);border-color:var(--border-1)">
                         <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-dark mb-1">Starter</h3>
-                            <p class="text-slate-500 text-sm">Single-page site for local businesses and service providers.</p>
+                            <h3 class="font-bold text-ink mb-1" style="font-size:var(--text-md)">Starter</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body)">Single-page site for local businesses and service providers.</p>
                         </div>
-                        <div class="mb-8 pb-8 border-b border-slate-200">
-                            <span class="text-5xl font-extrabold text-dark">$499</span>
-                            <span class="text-slate-500 text-sm"> / one-time</span>
-                            <p class="text-slate-400 text-xs mt-2">Delivered in 7 business days</p>
+                        <div class="mb-8 pb-8 border-b" style="border-color:var(--border-1)">
+                            <span class="font-extrabold text-ink" style="font-size:var(--text-2xl)">$499</span>
+                            <span style="color:var(--fg-2);font-size:var(--body)"> / one-time</span>
+                            <p class="mt-2" style="color:var(--fg-3);font-size:var(--caption)">Delivered in 7 business days</p>
                         </div>
-                        <div class="flex-1 space-y-3 mb-8 text-sm">
-                            <p class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-4">What's included</p>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>1-page landing site (scroll sections: hero, services, about, contact)</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Custom design in Figma — your brand, not a template</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Contact form with spam protection</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Google Analytics 4 installed and configured</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>100% mobile responsive</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>PageSpeed score 90+ (mobile and desktop)</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Basic on-page SEO (meta tags, OG tags, schema)</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>SSL certificate</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>2 design revision rounds before development</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Signed MSA in English</span></div>
+                        <div class="flex-1 space-y-3 mb-8" style="font-size:var(--body)">
+                            <p class="font-bold uppercase tracking-wider mb-4" style="color:var(--fg-2);font-size:var(--caption)">What's included</p>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>1-page landing site (scroll sections: hero, services, about, contact)</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Custom design in Figma — your brand, not a template</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Contact form with spam protection</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Google Analytics 4 installed and configured</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>100% mobile responsive</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>PageSpeed score 90+ (mobile and desktop)</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Basic on-page SEO (meta tags, OG tags, schema)</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>SSL certificate</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>2 design revision rounds before development</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Signed MSA in English</span></div>
                         </div>
-                        <a href="contact.html" class="w-full block text-center bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold py-3.5 rounded-full transition-colors">
+                        <a href="contact.html" class="w-full block text-center font-bold py-3.5 rounded-full transition-colors" style="background:#fff;border:1px solid var(--border-1);color:var(--fg-1)">
                             Start with Starter
                         </a>
-                        <p class="text-xs text-slate-400 text-center mt-3">50% deposit to start · 50% on launch</p>
+                        <p class="text-xs text-center mt-3" style="color:var(--fg-3)">50% deposit to start · 50% on launch</p>
                     </div>
 
                     <!-- Business Website (featured) -->
-                    <div class="reveal flex flex-col bg-dark rounded-3xl p-8 border border-primary-500 relative transform md:-translate-y-4" style="transition-delay: 100ms;">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-glow">
+                    <div class="reveal flex flex-col rounded-3xl p-8 border border-brand-400 relative transform md:-translate-y-4 bg-ink" style="transition-delay: 100ms;">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-400 text-ink font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
                             Most Popular
                         </div>
                         <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-white mb-1">Business Website</h3>
-                            <p class="text-slate-400 text-sm">Full multi-page site. The right choice for most small businesses.</p>
+                            <h3 class="font-bold text-white mb-1" style="font-size:var(--text-md)">Business Website</h3>
+                            <p style="color:var(--fg-on-dark-muted);font-size:var(--body)">Full multi-page site. The right choice for most small businesses.</p>
                         </div>
-                        <div class="mb-8 pb-8 border-b border-slate-700">
-                            <span class="text-5xl font-extrabold text-white">$899</span>
-                            <span class="text-slate-400 text-sm"> / one-time</span>
-                            <p class="text-slate-500 text-xs mt-2">Delivered in 14 business days</p>
+                        <div class="mb-8 pb-8 border-b border-neutral-500">
+                            <span class="font-extrabold text-white" style="font-size:var(--text-2xl)">$899</span>
+                            <span style="color:var(--fg-on-dark-muted);font-size:var(--body)"> / one-time</span>
+                            <p class="mt-2" style="color:var(--fg-on-dark-muted);font-size:var(--caption)">Delivered in 14 business days</p>
                         </div>
-                        <div class="flex-1 space-y-3 mb-8 text-sm">
-                            <p class="font-bold text-slate-400 text-xs uppercase tracking-wider mb-4">Everything in Starter, plus</p>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>Up to 5 separate pages (Home, About, Services, Blog, Contact)</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>Self-managed CMS — update content yourself, no developer needed</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>Google Search Console setup + sitemap submitted</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>Full on-page SEO per page (keyword-targeted titles, descriptions)</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>Contact form with GA4 conversion tracking</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>Calendly or booking widget integration</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>30-min walkthrough session after launch</span></div>
-                            <div class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0 mt-0.5"></i><span>3 design revision rounds before development</span></div>
+                        <div class="flex-1 space-y-3 mb-8" style="font-size:var(--body)">
+                            <p class="font-bold uppercase tracking-wider mb-4" style="color:var(--fg-on-dark-muted);font-size:var(--caption)">Everything in Starter, plus</p>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Up to 5 separate pages (Home, About, Services, Blog, Contact)</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Self-managed CMS — update content yourself, no developer needed</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Google Search Console setup + sitemap submitted</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Full on-page SEO per page (keyword-targeted titles, descriptions)</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Contact form with GA4 conversion tracking</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Calendly or booking widget integration</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>30-min walkthrough session after launch</span></div>
+                            <div class="flex items-start gap-3 text-neutral-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>3 design revision rounds before development</span></div>
                         </div>
-                        <a href="contact.html" class="w-full block text-center bg-primary-600 hover:bg-primary-500 text-white font-bold py-3.5 rounded-full transition-colors shadow-glow">
+                        <a href="contact.html" class="w-full block text-center bg-brand-400 hover:bg-brand-300 text-ink font-bold py-3.5 rounded-full transition-colors">
                             Start with Business Website
                         </a>
-                        <p class="text-xs text-slate-500 text-center mt-3">50% deposit to start · 50% on launch</p>
+                        <p class="text-xs text-center mt-3" style="color:var(--fg-on-dark-muted)">50% deposit to start · 50% on launch</p>
                     </div>
 
                     <!-- Online Store -->
-                    <div class="reveal flex flex-col bg-slate-50 rounded-3xl p-8 border border-slate-200" style="transition-delay: 200ms;">
+                    <div class="reveal flex flex-col rounded-3xl p-8 border" style="background:var(--bg-2);border-color:var(--border-1);transition-delay:200ms">
                         <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-dark mb-1">Online Store</h3>
-                            <p class="text-slate-500 text-sm">Full WooCommerce store with product catalog and checkout.</p>
+                            <h3 class="font-bold text-ink mb-1" style="font-size:var(--text-md)">Online Store</h3>
+                            <p style="color:var(--fg-2);font-size:var(--body)">Full WooCommerce store with product catalog and checkout.</p>
                         </div>
-                        <div class="mb-8 pb-8 border-b border-slate-200">
-                            <span class="text-5xl font-extrabold text-dark">$1,499</span>
-                            <span class="text-slate-500 text-sm"> / one-time</span>
-                            <p class="text-slate-400 text-xs mt-2">Delivered in 21 business days</p>
+                        <div class="mb-8 pb-8 border-b" style="border-color:var(--border-1)">
+                            <span class="font-extrabold text-ink" style="font-size:var(--text-2xl)">$1,499</span>
+                            <span style="color:var(--fg-2);font-size:var(--body)"> / one-time</span>
+                            <p class="mt-2" style="color:var(--fg-3);font-size:var(--caption)">Delivered in 21 business days</p>
                         </div>
-                        <div class="flex-1 space-y-3 mb-8 text-sm">
-                            <p class="font-bold text-slate-700 text-xs uppercase tracking-wider mb-4">Everything in Business Website, plus</p>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Full WooCommerce store setup</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Payment gateway configuration (Stripe, PayPal, or similar)</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Up to 20 products loaded with descriptions and images</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Product filtering and category architecture</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Optimized checkout flow (fewer steps = more sales)</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>Shipping and tax configuration</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>1-on-1 admin training session (60 min)</span></div>
-                            <div class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"></i><span>eCommerce conversion tracking in GA4</span></div>
+                        <div class="flex-1 space-y-3 mb-8" style="font-size:var(--body)">
+                            <p class="font-bold uppercase tracking-wider mb-4" style="color:var(--fg-2);font-size:var(--caption)">Everything in Business Website, plus</p>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Full WooCommerce store setup</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Payment gateway configuration (Stripe, PayPal, or similar)</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Up to 20 products loaded with descriptions and images</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Product filtering and category architecture</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Optimized checkout flow (fewer steps = more sales)</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>Shipping and tax configuration</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>1-on-1 admin training session (60 min)</span></div>
+                            <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0 mt-0.5"></i><span>eCommerce conversion tracking in GA4</span></div>
                         </div>
-                        <a href="contact.html" class="w-full block text-center bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold py-3.5 rounded-full transition-colors">
+                        <a href="contact.html" class="w-full block text-center font-bold py-3.5 rounded-full transition-colors" style="background:#fff;border:1px solid var(--border-1);color:var(--fg-1)">
                             Start with Online Store
                         </a>
-                        <p class="text-xs text-slate-400 text-center mt-3">50% deposit to start · 50% on launch</p>
+                        <p class="text-xs text-center mt-3" style="color:var(--fg-3)">50% deposit to start · 50% on launch</p>
                     </div>
                 </div>
 
                 <!-- In every plan -->
-                <div class="reveal bg-slate-50 rounded-2xl p-8 border border-slate-200">
-                    <h3 class="font-bold text-dark text-lg mb-6">Included in every plan</h3>
-                    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="file-text" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Signed MSA in English (scope, IP transfer, dispute resolution)</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="shield" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Design approved by you before a single line of code is written</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="credit-card" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Milestone payments — 50% to start, 50% on launch. Never 100% upfront.</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="lock" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Full IP transfer to you on delivery — protected under USMCA</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="smartphone" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Mobile-first development. 90+ PageSpeed on mobile and desktop.</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="eye" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Staging site review before launch — you test the real thing first</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="clock" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>1 business day response time, always</span></div>
-                        <div class="flex items-start gap-3 text-slate-600"><i data-lucide="message-circle" class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5"></i><span>Communication in English via Slack, Zoom, or email — your choice</span></div>
+                <div class="reveal rounded-2xl p-8 border" style="background:var(--bg-2);border-color:var(--border-1)">
+                    <h3 class="font-bold text-ink mb-6" style="font-size:var(--text-md)">Included in every plan</h3>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4" style="font-size:var(--body)">
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="file-text" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Signed MSA in English (scope, IP transfer, dispute resolution)</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="shield" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Design approved by you before a single line of code is written</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="credit-card" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Milestone payments — 50% to start, 50% on launch. Never 100% upfront.</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="lock" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Full IP transfer to you on delivery — protected under USMCA</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="smartphone" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Mobile-first development. 90+ PageSpeed on mobile and desktop.</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="eye" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Staging site review before launch — you test the real thing first</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="clock" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>1 business day response time, always</span></div>
+                        <div class="flex items-start gap-3" style="color:var(--fg-1)"><i data-lucide="message-circle" class="w-4 h-4 text-brand-600 flex-shrink-0 mt-0.5"></i><span>Communication in English via Slack, Zoom, or email — your choice</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- ADD-ONS                                                       -->
-        <!-- ============================================================ -->
-        <section id="add-ons" class="py-24 px-6 bg-slate-50 border-b border-slate-200">
+        <!-- ════ ADD-ONS ════ -->
+        <section id="add-ons" class="py-24 px-6 border-b" style="background:var(--bg-2);border-color:var(--border-1)">
             <div class="max-w-5xl mx-auto">
                 <div class="reveal text-center mb-12">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">After your site launches</h2>
-                    <p class="text-slate-600 text-lg max-w-xl mx-auto">The build is a one-time cost. These are the optional recurring services for when you want us to keep managing things.</p>
+                    <h2 class="ew-h2 text-ink mb-4">After your site launches</h2>
+                    <p class="ew-summary max-w-xl mx-auto">The build is a one-time cost. These are the optional recurring services for when you want us to keep managing things.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
 
                     <!-- Hosting + Domain -->
-                    <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 shadow-soft">
+                    <div class="reveal bg-white rounded-2xl p-8 border" style="border-color:var(--border-1);box-shadow:var(--shadow-sm)">
                         <div class="flex items-start justify-between mb-6">
                             <div>
-                                <div class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                                    <i data-lucide="server" class="w-3.5 h-3.5"></i> Managed Hosting + Domain
+                                <div class="inline-flex items-center gap-1.5 font-bold uppercase tracking-wider mb-2" style="font-size:var(--caption);color:var(--fg-2)">
+                                    <i data-lucide="server" style="width:14px;height:14px"></i> Managed Hosting + Domain
                                 </div>
                                 <div class="flex items-baseline gap-2">
-                                    <span class="text-4xl font-extrabold text-dark">$85</span>
-                                    <span class="text-slate-500">/ year</span>
+                                    <span class="font-extrabold text-ink" style="font-size:var(--text-lg)">$85</span>
+                                    <span style="color:var(--fg-2);font-size:var(--body)">/ year</span>
                                 </div>
-                                <p class="text-slate-400 text-xs mt-1">~$7/month — billed annually</p>
+                                <p class="mt-1" style="color:var(--fg-3);font-size:var(--caption)">~$7/month — billed annually</p>
                             </div>
-                            <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="server" class="w-6 h-6 text-slate-600"></i>
+                            <div style="width:48px;height:48px;border-radius:var(--radius-md);background:var(--bg-2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <i data-lucide="server" style="width:24px;height:24px;color:var(--fg-2)"></i>
                             </div>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <p class="mb-6" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             We host your site on our enterprise Hostinger plan — the same infrastructure we use for all our clients. Includes domain registration and annual renewal, SSL certificate, and DNS management. You never have to log into a hosting dashboard again.
                         </p>
-                        <ul class="space-y-2 text-sm mb-6">
-                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Enterprise Hostinger hosting (fast, reliable)</li>
-                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Domain registration + annual renewal</li>
-                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> SSL certificate (HTTPS) — always active</li>
-                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> DNS configuration and management</li>
-                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> Daily backups + restore to any previous point</li>
-                            <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check" class="w-4 h-4 text-accent-500 flex-shrink-0"></i> No hosting dashboards to manage</li>
+                        <ul class="space-y-2 mb-6" style="font-size:var(--body)">
+                            <li class="flex items-center gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Enterprise Hostinger hosting (fast, reliable)</li>
+                            <li class="flex items-center gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Domain registration + annual renewal</li>
+                            <li class="flex items-center gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> SSL certificate (HTTPS) — always active</li>
+                            <li class="flex items-center gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> DNS configuration and management</li>
+                            <li class="flex items-center gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Daily backups + restore to any previous point</li>
+                            <li class="flex items-center gap-3" style="color:var(--fg-1)"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> No hosting dashboards to manage</li>
                         </ul>
-                        <a href="contact.html" class="w-full block text-center bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-full transition-colors text-sm">
+                        <a href="contact.html" class="btn-primary w-full justify-center">
                             Add Hosting + Domain
                         </a>
                     </div>
 
                     <!-- Monthly Care Plan -->
-                    <div id="care-plan" class="reveal bg-primary-900 rounded-2xl p-8 border border-primary-700 shadow-soft relative overflow-hidden">
-                        <div class="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Best value</div>
-                        <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary-600 rounded-full blur-[40px] opacity-40 pointer-events-none"></div>
+                    <div id="care-plan" class="reveal rounded-2xl p-8 border border-brand-700 relative overflow-hidden bg-ink">
+                        <div class="absolute top-4 right-4 bg-ew-green text-ink text-xs font-bold px-3 py-1 rounded-full">Best value</div>
+                        <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-brand-600 rounded-full blur-[40px] opacity-20 pointer-events-none"></div>
                         <div class="flex items-start justify-between mb-6 relative z-10">
                             <div>
-                                <div class="inline-flex items-center gap-1.5 text-xs font-bold text-primary-300 uppercase tracking-wider mb-2">
-                                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Monthly Care Plan
+                                <div class="inline-flex items-center gap-1.5 font-bold uppercase tracking-wider mb-2 text-brand-300" style="font-size:var(--caption)">
+                                    <i data-lucide="refresh-cw" style="width:14px;height:14px"></i> Monthly Care Plan
                                 </div>
                                 <div class="flex items-baseline gap-2">
-                                    <span class="text-4xl font-extrabold text-white">$99</span>
-                                    <span class="text-primary-300">/ month</span>
+                                    <span class="font-extrabold text-white" style="font-size:var(--text-lg)">$99</span>
+                                    <span class="text-brand-300" style="font-size:var(--body)">/ month</span>
                                 </div>
-                                <p class="text-primary-400 text-xs mt-1">Includes Hosting + Domain ($85/yr value)</p>
+                                <p class="mt-1 text-brand-400" style="font-size:var(--caption)">Includes Hosting + Domain ($85/yr value)</p>
                             </div>
-                            <div class="w-12 h-12 rounded-xl bg-primary-700 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="shield-check" class="w-6 h-6 text-accent-400"></i>
+                            <div style="width:48px;height:48px;border-radius:var(--radius-md);background:var(--brand-800);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#004e62">
+                                <i data-lucide="shield-check" style="width:24px;height:24px;color:var(--secundario-300)"></i>
                             </div>
                         </div>
-                        <p class="text-primary-200 text-sm leading-relaxed mb-6 relative z-10">
+                        <p class="mb-6 relative z-10 text-brand-100" style="font-size:var(--body);line-height:var(--body-lh)">
                             Full site management — so you never have to worry about your website again. Most months your site runs itself. When something needs to change, it's done the same day.
                         </p>
-                        <ul class="space-y-2 text-sm mb-6 relative z-10">
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Everything in Hosting + Domain</li>
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Daily automated backups</li>
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Uptime monitoring (24/7 alerts)</li>
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> WordPress core + plugin security updates</li>
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Up to 12 hours of content changes per month</li>
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Priority response (same business day)</li>
-                            <li class="flex items-center gap-3 text-primary-200"><i data-lucide="check" class="w-4 h-4 text-accent-400 flex-shrink-0"></i> Monthly performance report</li>
+                        <ul class="space-y-2 mb-6 relative z-10" style="font-size:var(--body)">
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Everything in Hosting + Domain</li>
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Daily automated backups</li>
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Uptime monitoring (24/7 alerts)</li>
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> WordPress core + plugin security updates</li>
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Up to 12 hours of content changes per month</li>
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Priority response (same business day)</li>
+                            <li class="flex items-center gap-3 text-brand-100"><i data-lucide="check" class="w-4 h-4 text-ew-green flex-shrink-0"></i> Monthly performance report</li>
                         </ul>
-                        <a href="contact.html" class="w-full block text-center bg-white hover:bg-slate-100 text-dark font-bold py-3 rounded-full transition-colors text-sm relative z-10">
+                        <a href="contact.html" class="w-full block text-center bg-white hover:bg-brand-50 text-ink font-bold py-3 rounded-full transition-colors relative z-10" style="font-size:var(--body)">
                             Add Monthly Care Plan
                         </a>
-                        <p class="text-primary-400 text-xs text-center mt-3 relative z-10">Cancel anytime. No long-term commitment.</p>
-                        <a href="services-care-plan.html" class="flex items-center justify-center gap-1 text-primary-300 hover:text-white text-xs font-bold mt-2 relative z-10 transition-colors">
-                            See everything that's included <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        <p class="text-center mt-3 relative z-10 text-brand-400" style="font-size:var(--caption)">Cancel anytime. No long-term commitment.</p>
+                        <a href="services-care-plan.html" class="flex items-center justify-center gap-1 text-brand-300 hover:text-white font-bold mt-2 relative z-10 transition-colors" style="font-size:var(--caption)">
+                            See everything that's included <i data-lucide="arrow-right" style="width:12px;height:12px"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Side-by-side comparison of add-ons -->
-                <div class="reveal mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <!-- Add-ons comparison table -->
+                <div class="reveal mt-8 overflow-hidden rounded-2xl border bg-white" style="border-color:var(--border-1)">
                     <table class="w-full text-sm">
                         <thead>
-                            <tr class="bg-slate-50 border-b border-slate-200">
-                                <th class="text-left px-6 py-4 font-bold text-slate-700 w-1/2"></th>
-                                <th class="text-center px-4 py-4 font-bold text-slate-600">Hosting + Domain<br><span class="text-primary-600 font-extrabold">$85/yr</span></th>
-                                <th class="text-center px-4 py-4 font-bold text-slate-600 bg-primary-50">Care Plan<br><span class="text-primary-600 font-extrabold">$99/mo</span></th>
+                            <tr class="border-b" style="background:var(--bg-2);border-color:var(--border-1)">
+                                <th class="text-left px-6 py-4 font-bold text-ink w-1/2"></th>
+                                <th class="text-center px-4 py-4 font-bold" style="color:var(--fg-1)">Hosting + Domain<br><span class="text-brand-700 font-extrabold">$85/yr</span></th>
+                                <th class="text-center px-4 py-4 font-bold bg-brand-50" style="color:var(--fg-1)">Care Plan<br><span class="text-brand-700 font-extrabold">$99/mo</span></th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100">
+                        <tbody class="divide-y" style="divide-color:var(--border-1)">
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Managed hosting (Hostinger enterprise)</td>
-                                <td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Managed hosting (Hostinger enterprise)</td>
+                                <td class="px-4 py-3 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Domain registration + renewal</td>
-                                <td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Domain registration + renewal</td>
+                                <td class="px-4 py-3 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">SSL certificate</td>
-                                <td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">SSL certificate</td>
+                                <td class="px-4 py-3 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Daily backups + restore to previous point</td>
-                                <td class="px-4 py-3 text-center text-accent-500"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Daily backups + restore to previous point</td>
+                                <td class="px-4 py-3 text-center text-ew-green"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Uptime monitoring</td>
-                                <td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Uptime monitoring</td>
+                                <td class="px-4 py-3 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Security + plugin updates</td>
-                                <td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Security + plugin updates</td>
+                                <td class="px-4 py-3 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Up to 12 hrs content changes/month</td>
-                                <td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Up to 12 hrs content changes/month</td>
+                                <td class="px-4 py-3 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Priority same-day response</td>
-                                <td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Priority same-day response</td>
+                                <td class="px-4 py-3 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-3 text-slate-600">Monthly performance report</td>
-                                <td class="px-4 py-3 text-center text-slate-300"><i data-lucide="x" class="w-4 h-4 mx-auto"></i></td>
-                                <td class="px-4 py-3 text-center text-accent-500 bg-primary-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
+                                <td class="px-6 py-3" style="color:var(--fg-1)">Monthly performance report</td>
+                                <td class="px-4 py-3 text-center"><i data-lucide="x" class="w-4 h-4 mx-auto" style="color:var(--fg-3)"></i></td>
+                                <td class="px-4 py-3 text-center text-ew-green bg-brand-50/50"><i data-lucide="check" class="w-4 h-4 mx-auto"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -466,72 +461,70 @@
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- FAQ                                                           -->
-        <!-- ============================================================ -->
-        <section class="py-24 px-6 bg-white border-b border-slate-200">
+        <!-- ════ FAQ ════ -->
+        <section class="py-24 px-6 border-b" style="background:var(--bg-1);border-color:var(--border-1)">
             <div class="max-w-3xl mx-auto">
                 <div class="reveal text-center mb-12">
-                    <h2 class="text-3xl font-extrabold text-dark mb-4">Pricing questions</h2>
+                    <h2 class="ew-h2 text-ink">Pricing questions</h2>
                 </div>
 
                 <div class="space-y-4">
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                    <details class="reveal group rounded-2xl border p-6" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Can I get a custom quote for something not in the plans?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             Yes. The plans above cover the most common cases, but if you need something outside them — a larger store, a custom web app, a site migration, or a specific integration — reach out and we'll scope it out. We'll give you a written proposal with a fixed price before anything starts.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                    <details class="reveal group rounded-2xl border p-6" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Why 50% upfront? What does the other 50% cover?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             The 50% deposit secures your spot and covers the design phase. The remaining 50% is due when the site launches — meaning you don't pay the second half until you've seen and approved the finished product on a staging site. This protects both parties: you don't pay in full for something you haven't seen, and we're not working for free.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                    <details class="reveal group rounded-2xl border p-6" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>What if I need more than 5 pages?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             Additional pages beyond the plan limit are $75 each. This covers design and development for the extra page — using the same design system as the rest of your site, so everything stays consistent.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                    <details class="reveal group rounded-2xl border p-6" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Do you offer refunds?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             The deposit is non-refundable once design work starts — it covers the time invested in discovery and Figma design. If we haven't started yet and you need to cancel, we'll work something out. The second payment (50% on launch) is only due once you've approved the site — if you don't approve it, we keep iterating until you do.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                    <details class="reveal group rounded-2xl border p-6" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>What does the Care Plan's 12 hours of content changes actually cover?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             Updating text, swapping photos, adding or removing services, updating business hours, adding a new team member, publishing a blog post you've written — anything that's a content change rather than a structural redesign. Most months clients use between 0 and 2 hours. The 12-hour ceiling is there for busy months, not as a target.
                         </div>
                     </details>
 
-                    <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 p-6">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer text-lg text-dark">
+                    <details class="reveal group rounded-2xl border p-6" style="background:var(--bg-2);border-color:var(--border-1)">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer text-ink" style="font-size:var(--text-md)">
                             <span>Can I cancel the Care Plan or Hosting at any time?</span>
-                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" class="w-5 h-5 text-primary-600"></i></span>
+                            <span class="transition group-open:rotate-180 bg-white p-1 rounded-full shadow-sm flex-shrink-0 ml-4"><i data-lucide="chevron-down" style="width:20px;height:20px;color:var(--primario-600)"></i></span>
                         </summary>
-                        <div class="text-slate-600 mt-4 leading-relaxed text-sm">
+                        <div class="mt-4 leading-relaxed" style="color:var(--fg-2);font-size:var(--body);line-height:var(--body-lh)">
                             The Care Plan is month-to-month — cancel anytime with 30 days notice. If you cancel hosting, we'll help you migrate your site to a hosting provider of your choice. You own the site and all its files regardless of whether you stay with our hosting or not.
                         </div>
                     </details>
@@ -539,71 +532,94 @@
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- CTA                                                           -->
-        <!-- ============================================================ -->
-        <section class="py-24 px-6 bg-slate-50">
-            <div class="max-w-3xl mx-auto reveal text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-4">Not sure which plan is right for you?</h2>
-                <p class="text-slate-600 text-lg mb-3">Tell us about your business. We'll recommend the right starting point — and be honest if a cheaper option makes more sense for your situation.</p>
-                <p class="text-slate-500 text-sm mb-10">Free 30-min call. No commitment. Response within 1 business day.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-full transition-transform hover:-translate-y-1 shadow-glow">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        Get a free quote
-                    </a>
-                    <a href="our-work.html" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 hover:border-primary-200 text-slate-700 font-bold py-4 px-8 rounded-full transition-colors">
-                        See our work first
-                    </a>
+        <!-- ════ CTA ════ -->
+        <section class="py-24 px-6" style="background:var(--primario-500)">
+            <div class="max-w-4xl mx-auto reveal">
+                <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-9);align-items:center;margin-bottom:var(--space-8)">
+                    <img src="brand_assets/mascot/webie-thumbs-up@3x.webp" alt="Webie" class="hidden md:block" style="height:200px">
+                    <div class="text-center md:text-left">
+                        <h2 class="ew-h2 text-ink mb-4">Not sure which plan is right for you?</h2>
+                        <p class="ew-summary mb-3" style="color:rgb(36,36,36)">Tell us about your business. We'll recommend the right starting point — and be honest if a cheaper option makes more sense for your situation.</p>
+                        <p class="mb-8" style="color:var(--fg-on-brand);font-size:var(--body)">Free 30-min call. No commitment. Response within 1 business day.</p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                            <a href="contact.html" class="btn-primary w-full sm:w-auto justify-center">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                                Get a free quote
+                            </a>
+                            <a href="our-work.html" class="btn-secondary btn-ghost w-full sm:w-auto justify-center">
+                                See our work first
+                            </a>
+                        </div>
+                        <p class="mt-6" style="font-size:var(--caption);color:var(--fg-on-brand)">US-Registered LLC · Signed MSA in English · Milestone payments · IP transfer on delivery</p>
+                    </div>
                 </div>
-                <p class="text-slate-400 text-xs mt-6">US-Registered LLC · Signed MSA in English · Milestone payments · IP transfer on delivery</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-3">
-                        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">e</div>
-                        <span class="font-extrabold text-xl text-white">Easy<span class="text-primary-400">web</span></span>
-                    </a>
-                    <p class="text-sm leading-relaxed max-w-xs">US-registered LLC building professional websites for small businesses across America. Starting at $499.</p>
-                    <p class="text-xs mt-3"><a href="mailto:hello@easyweb.monster" class="hover:text-white transition-colors">hello@easyweb.monster</a></p>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Services</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="services-corporate.html" class="hover:text-white transition-colors">Business Websites</a></li>
-                        <li><a href="services-ecommerce.html" class="hover:text-white transition-colors">Online Stores</a></li>
-                        <li><a href="services-speed-optimization.html" class="hover:text-white transition-colors">Landing Pages</a></li>
-                        <li><a href="services-care-plan.html" class="hover:text-white transition-colors">Monthly Care Plan</a></li>
-                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <p class="text-white font-bold text-sm mb-3">Company</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="our-work.html" class="hover:text-white transition-colors">Our Work</a></li>
-                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="text-primary-400 hover:text-primary-300 transition-colors">Get a Quote</a></li>
-                        <li><a href="terms-privacy.html" class="hover:text-white transition-colors">Terms &amp; Privacy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-                <p>© 2026 Easyweb LLC. All rights reserved.</p>
-                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-accent-500"></i> US-Registered LLC · Protected under USMCA</p>
-            </div>
+    <!-- ════ FOOTER ════ -->
+    <footer class="pt-32" style="background:var(--bg-dark)">
+      <div class="footer-grid max-w-7xl mx-auto px-6">
+        <div style="margin-right:32px">
+          <img src="brand_assets/logotipo-invertido.svg" alt="Easyweb" class="object-contain object-left" style="width:324px;height:96px;margin:-2rem 0 48px">
+          <p class="text-sm leading-relaxed max-w-xs" style="color:var(--fg-on-dark)">
+            US-registered LLC building professional websites for small businesses across America. Starting at $499.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
         </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Services</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="services-corporate.html" class="footer-link">Business Websites</a>
+            <a href="services-ecommerce.html" class="footer-link">Online Stores</a>
+            <a href="services-speed-optimization.html" class="footer-link">Landing Pages</a>
+            <a href="services-care-plan.html" class="footer-link">Monthly Care Plan</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Company</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start">
+            <a href="about.html" class="footer-link">About</a>
+            <a href="our-work.html" class="footer-link">Our Work</a>
+            <a href="pricing.html" class="footer-link">Pricing</a>
+            <a href="blog/index.html" class="footer-link">Blog</a>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold uppercase tracking-widest mb-8 text-white" style="font-size:var(--body)">Contact</p>
+          <div class="flex flex-col gap-3" style="align-items:flex-start;color:var(--fg-on-dark-muted);font-size:var(--body)">
+            <a href="mailto:hello@easyweb.monster" class="footer-link">hello@easyweb.monster</a>
+            <span>CST time zone</span>
+            <a href="contact.html" class="btn-primary btn-sm" style="margin-top:24px">Get a free quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-top:1px solid var(--gray-500);padding-top:32px;padding-bottom:32px">
+        <p style="font-size:var(--body);color:#fff">© 2026 Easyweb LLC. All rights reserved.</p>
+        <div class="flex gap-6" style="font-size:var(--body)">
+          <a href="terms-privacy.html" class="footer-link">Privacy</a>
+          <a href="terms-privacy.html" class="footer-link">Terms</a>
+        </div>
+      </div>
     </footer>
 
     <script>
         lucide.createIcons();
+
         function reveal() {
             document.querySelectorAll(".reveal").forEach(el => {
                 if (el.getBoundingClientRect().top < window.innerHeight - 100) {
@@ -613,6 +629,38 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        // Mobile menu toggle
+        (function () {
+            const btn  = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+            btn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden', isOpen);
+                menu.classList.toggle('flex', !isOpen);
+                icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+                lucide.createIcons();
+            });
+            menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }));
+        })();
+
+        // Pill nav + logo shrink on scroll
+        (function () {
+            const navbar  = document.getElementById('navbar');
+            const navLogo = document.getElementById('nav-logo');
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY > 20;
+                navbar.classList.toggle('scrolled', scrolled);
+                navLogo.style.width  = scrolled ? '160px' : '221px';
+                navLogo.style.height = scrolled ? '48px'  : '65px';
+            });
+        })();
     </script>
 </body>
 </html>
